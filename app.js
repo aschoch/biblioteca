@@ -262,12 +262,28 @@
   });
   let qt;
   const qInput = $("#q");
+  const qClear = $("#qClear");
+  const syncClear = () => {
+    const has = qInput.value.length > 0;
+    qClear.hidden = !has;
+    $(".search").classList.toggle("has-value", has);
+  };
+  // Tocar en cualquier parte de la caja enfoca el campo.
+  $(".search").addEventListener("click", (e) => { if (!e.target.closest("button")) qInput.focus(); });
+  // Mantener el foco (y el teclado del móvil) al pulsar la x.
+  qClear.addEventListener("pointerdown", (e) => e.preventDefault());
+  qClear.addEventListener("click", () => {
+    clearTimeout(qt);
+    qInput.value = ""; state.q = ""; syncClear(); render();
+    qInput.focus();
+  });
   qInput.addEventListener("input", () => {
+    syncClear();
     clearTimeout(qt);
     qt = setTimeout(() => { state.q = qInput.value.trim(); render(); }, 90);
   });
   function setQuery(q) {
-    qInput.value = q; state.q = q; state.theme = null; renderChips(); render();
+    qInput.value = q; state.q = q; state.theme = null; syncClear(); renderChips(); render();
     window.scrollTo({ top: Math.max(0, $("#toolbar").offsetTop - 2), behavior: reduceMotion ? "auto" : "smooth" });
   }
 
