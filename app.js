@@ -31,11 +31,13 @@
   BOOKS.forEach((b) => {
     const h = hash(b.id);
     b.text = lum(b.color) > .36 ? "#221e1a" : "#fbf6ec";
-    b.w = Math.round(Math.min(58, Math.max(22, 14 + (b.pages || 220) / 14)));
+    b.w = Math.round(Math.min(58, Math.max(26, 15 + (b.pages || 220) / 14)));
     b.h = b.theme === "Obras de consulta" ? 214 : 164 + (h % 46);
     b.band = h % 4;
     b.surname = b.sortKey === "~" ? "" : b.sortKey;
-    b.al = Math.min(84, Math.ceil(b.surname.length * 6.6));
+    // En el lomo va el título principal, sin subtítulo (como en los libros de verdad).
+    const main = b.title.replace(/\s*\(([^)]{6,})\)$/, "").split(/(?<=\S)(?:\. |: )/)[0];
+    b.spineTitle = main.length >= 4 ? main : b.title;
     b._hay = norm([b.title, b.author, b.theme, b.originalTitle, (b.tags || []).join(" "), b.note, b.summary, b.language].join(" · "));
     b._ti = norm(b.title); b._au = norm(b.author);
   });
@@ -116,13 +118,88 @@
   // ——— Pintado ———
   const lib = $("#library");
   function spineHTML(b, extra = "") {
-    const wide = b.w >= 42 ? " spine--wide" : "";
-    return `<div class="slot"><button class="spine${wide}${extra}" data-id="${b.id}" data-band="${b.band}"
-      style="--c:${b.color};--t:${b.text};--w:${b.w}px;--h:${b.h}px;--al:${b.al}px"
+    return `<div class="slot"><button class="spine${extra}" data-id="${b.id}" data-band="${b.band}"
+      style="--c:${b.color};--t:${b.text};--w:${b.w}px;--h:${b.h}px"
       aria-label="${esc(b.title)}, de ${esc(b.author)}" title="${esc(b.title)} — ${esc(b.author)}">
-      <span class="spine__title">${esc(b.title)}</span>
+      <span class="spine__title">${esc(b.spineTitle)}</span>
       <span class="spine__author">${esc(b.surname)}</span></button></div>`;
   }
+  // ——— Ajuste del texto en los lomos ———
+  // Busca el mayor tamaño de letra (y el menor número de líneas) con el que el
+  // título cabe entero en el lomo. Si no cabe ni así, se quita el apellido.
+  const meter = document.createElement("span");
+  meter.setAttribute("aria-hidden", "true");
+  meter.style.cssText = "position:absolute;left:-9999px;top:0;visibility:hidden;white-space:pre;contain:layout style";
+  document.body.appendChild(meter);
+  const widthCache = new Map();
+  function textWidth(text, kind) {
+    const key = kind + "|" + text;
+    if (!widthCache.has(key)) {
+      meter.className = kind === "serif" ? "measure-serif" : "measure-sans";
+      meter.textContent = text;
+      widthCache.set(key, meter.getBoundingClientRect().width);
+    }
+    return widthCache.get(key); // medido a 20px
+  }
+  function wrap(words, fs, avail, maxLines, kind) {
+    const w = (t) => textWidth(t, kind) * fs / 20 * 1.04;
+    const lines = [];
+    let cur = "";
+    for (const word of words) {
+      const test = cur ? cur + " " + word : word;
+      if (w(test) <= avail) { cur = test; continue; }
+      if (!cur || lines.length + 1 >= maxLines) return null;
+      lines.push(cur); cur = word;
+      if (w(cur) > avail) return null;
+    }
+    lines.push(cur);
+    return lines;
+  }
+  function fitText(text, { avail, cross, max, min, kind, lh }) {
+    const words = text.split(/\s+/);
+    for (let fs = max; fs >= min; fs -= .5) {
+      const maxLines = Math.max(1, Math.min(3, Math.floor(cross / (fs * lh))));
+      for (let n = 1; n <= maxLines; n++) {
+        const lines = wrap(words, fs, avail, n, kind);
+        if (lines) return { fs, lines };
+      }
+    }
+    return null;
+  }
+  function truncate(text, fs, avail, kind) {
+    const w = (t) => textWidth(t, kind) * fs / 20 * 1.04;
+    let t = text;
+    while (t.length > 1 && w(t + "…") > avail) t = t.slice(0, -1);
+    return t.trimEnd() + "…";
+  }
+  function fitSpines(root = lib) {
+    $$(".spine", root).forEach((el) => {
+      const b = byId[el.dataset.id];
+      const cross = b.w - 8;
+      const tEl = $(".spine__title", el), aEl = $(".spine__author", el);
+      const authorLen = b.surname ? Math.min(b.h * .4, textWidth(b.surname.toUpperCase(), "sans") * 8 / 20 * 1.12 + b.surname.length * .96) : 0;
+      let res = fitText(b.spineTitle, { avail: b.h - 28 - (authorLen ? authorLen + 8 : 0), cross, max: b.w >= 40 ? 15 : 13.5, min: 9, kind: "serif", lh: 1.1 });
+      let showAuthor = !!b.surname;
+      if (!res) {
+        showAuthor = false;
+        res = fitText(b.spineTitle, { avail: b.h - 26, cross, max: 12, min: 8.5, kind: "serif", lh: 1.1 });
+      }
+      if (!res) res = { fs: 9, lines: [truncate(b.spineTitle, 9, b.h - 26, "serif")] };
+      const natural = b.surname ? textWidth(b.surname.toUpperCase(), "sans") * 8 / 20 * 1.12 : 0;
+      aEl.style.fontSize = natural > b.h * .34 ? Math.max(6, 8 * b.h * .34 / natural) + "px" : "";
+      tEl.style.fontSize = res.fs + "px";
+      tEl.innerHTML = res.lines.map(esc).join("<br>");
+      aEl.hidden = !showAuthor;
+    });
+    $$(".divider:not(.divider--letter)", root).forEach((el) => {
+      const lab = $(".divider__label", el);
+      const text = lab.dataset.text || (lab.dataset.text = lab.textContent);
+      const res = fitText(text.toUpperCase(), { avail: 118, cross: 24, max: 10, min: 7.5, kind: "sans", lh: 1.25 });
+      if (res) { lab.style.fontSize = res.fs + "px"; lab.innerHTML = res.lines.map(esc).join("<br>"); }
+    });
+  }
+  if (document.fonts?.ready) document.fonts.ready.then(() => { widthCache.clear(); fitSpines(); });
+
   function tileHTML(b) {
     return `<button class="tile" data-id="${b.id}" aria-label="${esc(b.title)}, de ${esc(b.author)}">
       <div class="tile__cover">${coverHTML(b)}</div>
@@ -152,6 +229,7 @@
         <span class="divider__label">${esc(g.label)}</span><span class="divider__count">${g.items.length}</span></div></div>`;
       return divider + g.items.map((b) => spineHTML(b)).join("");
     }).join("")}</div>`;
+    fitSpines();
   }
 
   // ——— Chips de temas ———
@@ -199,6 +277,9 @@
   // ——— Escenario ———
   const stage = $("#stage");
   const inner = $("#bookInner");
+  const scroller = $("#stageScroll");
+  const detail = $(".detail");
+  const backdrop = $(".stage__backdrop");
   let current = null;   // libro abierto
   let source = null;    // elemento de la estantería desde el que salió
 
@@ -239,9 +320,17 @@
   }
 
   function rectOf(el) { const r = el.getBoundingClientRect(); return { x: r.left, y: r.top, w: r.width, h: r.height }; }
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const frame = () => new Promise((r) => requestAnimationFrame(r));
+  // Visible de verdad: no tapado por la barra fija de búsqueda.
+  const inView = (el) => {
+    const r = el.getBoundingClientRect();
+    const top = el.closest("#library") ? $("#toolbar").getBoundingClientRect().bottom : 0;
+    return r.top + r.height * .4 > top && r.bottom - r.height * .4 < innerHeight && r.right > 0 && r.left < innerWidth;
+  };
 
-  // Vuelo entre dos rectángulos con la portada; giro 3D para simular que sale de canto.
-  function fly(from, to, b, { fromSpine = false, reverse = false } = {}) {
+  // Vuelo plano de la portada (vista de portadas).
+  function flyFlat(from, to, b, reverse = false) {
     if (reduceMotion) return Promise.resolve();
     const f = document.createElement("div");
     f.className = "flyer";
@@ -249,17 +338,60 @@
     Object.assign(f.style, { left: to.x + "px", top: to.y + "px", width: to.w + "px", height: to.h + "px" });
     $(".cover", f).style.cssText += ";width:100%;height:100%;border-radius:3px 8px 8px 3px;box-shadow:var(--shadow-lg);font-size:22px";
     document.body.appendChild(f);
-    const sx = from.w / to.w, sy = from.h / to.h;
-    const start = fromSpine
-      ? `translate(${from.x - to.x}px, ${from.y - to.y}px) scale(${Math.max(sx, .12)}, ${sy}) perspective(900px) rotateY(-82deg)`
-      : `translate(${from.x - to.x}px, ${from.y - to.y}px) scale(${sx}, ${sy})`;
-    const mid = fromSpine ? `translate(${(from.x - to.x) * .35}px, ${(from.y - to.y) * .35 - 40}px) scale(${.5 + sx * .5}, ${.6 + sy * .4}) perspective(900px) rotateY(-40deg)` : null;
-    const end = "translate(0,0) scale(1,1) perspective(900px) rotateY(-14deg) rotateX(2deg)";
-    const frames = mid ? [{ transform: start, opacity: .4 }, { transform: mid, opacity: 1, offset: .45 }, { transform: end, opacity: 1 }]
-      : [{ transform: start }, { transform: end }];
-    const anim = f.animate(reverse ? frames.reverse() : frames, { duration: fromSpine ? 720 : 480, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" });
+    const frames = [
+      { transform: `translate(${from.x - to.x}px, ${from.y - to.y}px) scale(${from.w / to.w}, ${from.h / to.h})` },
+      { transform: "translate(0,0) scale(1,1) perspective(900px) rotateY(-14deg)" },
+    ];
+    if (reverse) frames.reverse();
+    return f.animate(frames, { duration: 460, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" }).finished.then(() => f.remove());
+  }
+
+  // Vuelo en 3D entre el lomo y el centro de la pantalla: un libro de verdad,
+  // con tapa, lomo, cantos de páginas y grosor, que gira 90° sobre sí mismo.
+  function flyBook(spineEl, b, { reverse = false, angle = -14 } = {}) {
+    if (reduceMotion) return Promise.resolve();
+    const btn = $("#book3d").getBoundingClientRect();
+    const W = inner.offsetWidth, H = inner.offsetHeight;
+    const cx = btn.left + btn.width / 2, cy = btn.top + H / 2;
+    const sr = spineEl.getBoundingClientRect();
+    const s = sr.height / H;
+    const D = Math.max(sr.width / s, 14);
+    const f = document.createElement("div");
+    f.className = "book-box";
+    Object.assign(f.style, { left: cx - W / 2 + "px", top: cy - H / 2 + "px", width: W + "px", height: H + "px" });
+    const half = D / 2;
+    f.innerHTML = `
+      <div class="bb bb--front" style="transform:translateZ(${half}px)">${coverHTML(b, true)}</div>
+      <div class="bb bb--back" style="background:${b.color};transform:rotateY(180deg) translateZ(${half}px)"></div>
+      <div class="bb bb--side" style="width:${D}px;left:${(W - D) / 2}px;transform:rotateY(-90deg) translateZ(${W / 2}px)"></div>
+      <div class="bb bb--pages" style="width:${D}px;left:${(W - D) / 2}px;transform:rotateY(90deg) translateZ(${W / 2 - 2}px)"></div>
+      <div class="bb bb--pages bb--top" style="height:${D}px;top:${(H - D) / 2}px;transform:rotateX(90deg) translateZ(${H / 2 - 2}px)"></div>
+      <div class="bb bb--pages bb--top" style="height:${D}px;top:${(H - D) / 2}px;transform:rotateX(-90deg) translateZ(${H / 2 - 2}px)"></div>`;
+    // El lomo es una copia del de la estantería, ampliada para que al final encaje al píxel.
+    const clone = spineEl.cloneNode(true);
+    clone.classList.remove("is-out");
+    clone.removeAttribute("id");
+    Object.assign(clone.style, { position: "absolute", left: 0, top: 0, transform: `scale(${1 / s})`, transformOrigin: "0 0", transition: "none", opacity: 1 });
+    $(".bb--side", f).appendChild(clone);
+    document.body.appendChild(f);
+    const dx = sr.left + sr.width / 2 - cx, dy = sr.top + sr.height / 2 - cy;
+    const tf = (x, y, sc, z, ry) => `translate(${x}px, ${y}px) scale(${sc}) perspective(1600px) translateZ(${z}px) rotateY(${ry}deg)`;
+    const frames = [
+      { transform: tf(0, 0, 1, 0, angle) },
+      { transform: tf(dx * .4, dy * .4 - 36, (1 + s) / 2 + .06, -W / 5, 34), offset: .5 },
+      { transform: tf(dx, dy, s, -W / 2, 90) },
+    ];
+    if (reverse) frames.reverse();
+    const anim = f.animate(frames, {
+      duration: reverse ? 760 : 640,
+      easing: reverse ? "cubic-bezier(.2,.8,.2,1)" : "cubic-bezier(.5,0,.25,1)",
+      fill: "forwards",
+    });
     return anim.finished.then(() => f.remove());
   }
+
+  let pushed = false;   // ¿hemos añadido una entrada al historial al abrir?
+  let closing = false;
 
   async function openBook(id, el, { card = false, push = true } = {}) {
     const b = byId[id]; if (!b) return;
@@ -271,15 +403,18 @@
     stage.classList.toggle("open", card);
     document.body.classList.add("locked");
     requestAnimationFrame(() => stage.classList.add("show"));
-    if (card && push) setHash(b.id);
+    if (push) setHash(b.id, wasOpen ? "replace" : "push");
 
     if (!wasOpen && el) {
       const isSpine = el.classList.contains("spine");
-      const fromRect = rectOf(isSpine ? el : ($(".cover", el) || el));
-      if (isSpine) el.classList.add("is-out");
       inner.style.visibility = "hidden";
-      await new Promise((r) => requestAnimationFrame(r));
-      await fly(fromRect, rectOf(inner), b, { fromSpine: isSpine });
+      await frame();
+      if (isSpine) {
+        el.classList.add("is-out");
+        await flyBook(el, b, { reverse: true });
+      } else {
+        await flyFlat(rectOf($(".cover", el) || el), rectOf(inner), b);
+      }
       inner.style.visibility = "";
     }
     (card ? $("#d-title") : $("#book3d")).focus({ preventScroll: true });
@@ -289,7 +424,7 @@
     if (!current) return;
     const before = rectOf(inner);
     stage.classList.add("open");
-    setHash(current.id);
+    setHash(current.id, "replace");
     const after = rectOf(inner);
     if (!reduceMotion) {
       inner.animate([
@@ -301,50 +436,72 @@
   }
 
   async function closeStage({ push = true } = {}) {
-    if (stage.hidden) return;
+    if (stage.hidden || closing) return;
+    closing = true;
     const b = current;
-    const spine = source && source.isConnected ? source : (b && $(`.spine[data-id="${b.id}"], .tile[data-id="${b.id}"]`));
-    const visible = spine && (() => { const r = spine.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; })();
+    const target = (source && source.isConnected ? source : null) || (b && $(`.spine[data-id="${b.id}"], .tile[data-id="${b.id}"]`));
+    const canFly = b && target && inView(target) && inView($("#book3d")) && !reduceMotion;
+    const angle = stage.classList.contains("open") ? -8 : -14;
+    detail.style.opacity = "";
     stage.classList.remove("show");
-    if (b && visible && !reduceMotion) {
+    if (canFly) {
+      const isSpine = target.classList.contains("spine");
       const to = rectOf(inner);
       inner.style.visibility = "hidden";
-      const isSpine = spine.classList.contains("spine");
-      await fly(rectOf(isSpine ? spine : ($(".cover", spine) || spine)), to, b, { fromSpine: isSpine, reverse: true });
+      if (isSpine) {
+        target.classList.add("is-out");
+        await flyBook(target, b, { angle });
+      } else {
+        await flyFlat(rectOf($(".cover", target) || target), to, b, true);
+      }
     } else {
-      await new Promise((r) => setTimeout(r, reduceMotion ? 0 : 280));
+      await wait(reduceMotion ? 0 : 300);
     }
     $$(".spine.is-out").forEach((s) => s.classList.remove("is-out"));
-    stage.hidden = true; stage.classList.remove("open");
+    stage.hidden = true; stage.classList.remove("open", "dragging");
     inner.style.visibility = "";
+    detail.style.transform = ""; detail.style.opacity = ""; backdrop.style.opacity = "";
     document.body.classList.remove("locked");
-    if (push && location.hash) history.pushState(null, "", location.pathname + location.search);
-    if (spine) spine.focus({ preventScroll: true });
-    current = null; source = null;
+    if (target) target.focus({ preventScroll: true });
+    current = null; source = null; closing = false;
+    if (push) {
+      if (pushed) { pushed = false; history.back(); }
+      else if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    }
   }
 
-  function step(dir) {
+  // Pasar de libro; `from` es el desplazamiento del dedo si viene de un gesto.
+  async function step(dir, from = 0) {
     if (!current) return;
     const list = state.list.length ? state.list : BOOKS;
     const i = list.indexOf(current);
     const next = list[(i + dir + list.length) % list.length];
+    if (!reduceMotion) {
+      const out = dir > 0 ? -1 : 1;
+      await detail.animate([
+        { transform: `translateX(${from}px)`, opacity: detail.style.opacity || 1 },
+        { transform: `translateX(${out * innerWidth * .5}px)`, opacity: 0 },
+      ], { duration: 170, easing: "cubic-bezier(.4,0,1,1)" }).finished;
+    }
+    detail.style.transform = ""; detail.style.opacity = "";
     current = next; source = $(`.spine[data-id="${next.id}"], .tile[data-id="${next.id}"]`);
     fillStage(next);
-    setHash(next.id, true);
-    if (!reduceMotion) $(".detail").animate([{ opacity: 0, transform: `translateX(${dir * 24}px)` }, { opacity: 1, transform: "none" }], { duration: 320, easing: "cubic-bezier(.2,.8,.2,1)" });
+    setHash(next.id, "replace");
+    if (!reduceMotion) detail.animate([{ opacity: 0, transform: `translateX(${(dir > 0 ? 1 : -1) * 60}px)` }, { opacity: 1, transform: "none" }], { duration: 340, easing: "cubic-bezier(.2,.8,.2,1)" });
   }
 
-  function setHash(id, replace = false) {
+  function setHash(id, mode = "replace") {
     const h = `#/libro/${id}`;
     if (location.hash === h) return;
-    replace || location.hash ? history.replaceState(null, "", h) : history.pushState(null, "", h);
+    if (mode === "push") { history.pushState(null, "", h); pushed = true; }
+    else history.replaceState(null, "", h);
   }
   function fromHash() {
     const m = location.hash.match(/^#\/libro\/(.+)$/);
     if (m && byId[decodeURIComponent(m[1])]) {
       const id = decodeURIComponent(m[1]);
       if (current?.id !== id) openBook(id, null, { card: true, push: false });
-    } else if (!stage.hidden) closeStage({ push: false });
+    } else if (!stage.hidden) { pushed = false; closeStage({ push: false }); }
   }
 
   // ——— Eventos ———
@@ -358,10 +515,10 @@
   $("#next").addEventListener("click", () => step(1));
   stage.addEventListener("click", (e) => {
     if (e.target.closest("[data-close]")) return closeStage();
-    if (e.target === $("#stageScroll") || e.target.classList.contains("detail")) return closeStage();
+    if (e.target === scroller || e.target === detail) return closeStage();
     const go = e.target.closest("[data-goto]");
-    if (go) { current = byId[go.dataset.goto]; source = null; fillStage(current); setHash(current.id, true);
-      if (!reduceMotion) $(".detail").animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260 }); return; }
+    if (go) { current = byId[go.dataset.goto]; source = null; fillStage(current); setHash(current.id, "replace");
+      if (!reduceMotion) detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260 }); return; }
     const s = e.target.closest("[data-search]");
     if (s) { const q = s.dataset.search; closeStage().then(() => setQuery(q)); return; }
     if (e.target.closest("[data-share]")) {
@@ -374,8 +531,8 @@
   document.addEventListener("keydown", (e) => {
     if (!stage.hidden) {
       if (e.key === "Escape") { e.preventDefault(); closeStage(); }
-      else if (stage.classList.contains("open") && e.key === "ArrowRight") step(1);
-      else if (stage.classList.contains("open") && e.key === "ArrowLeft") step(-1);
+      else if (e.key === "ArrowRight") step(1);
+      else if (e.key === "ArrowLeft") step(-1);
       else if (!stage.classList.contains("open") && e.key === "Enter" && document.activeElement === $("#book3d")) { e.preventDefault(); openCard(); }
       return;
     }
@@ -388,14 +545,66 @@
   let tt;
   function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 1800); }
 
-  // Deslizar en móvil para pasar de libro
-  let tx = null;
-  stage.addEventListener("touchstart", (e) => { tx = e.target.closest(".mini-row") ? null : e.touches[0].clientX; }, { passive: true });
-  stage.addEventListener("touchend", (e) => {
-    if (tx == null || !stage.classList.contains("open")) return;
-    const dx = e.changedTouches[0].clientX - tx; tx = null;
-    if (Math.abs(dx) > 80) step(dx < 0 ? 1 : -1);
+  // ——— Gestos táctiles ———
+  //  · deslizar hacia abajo (estando arriba del todo): cerrar
+  //  · deslizar desde el borde izquierdo hacia la derecha: volver (cerrar)
+  //  · deslizar a izquierda/derecha: libro siguiente/anterior
+  // El contenido sigue al dedo y, si no se llega al umbral, vuelve a su sitio.
+  let g = null;
+  function settle() {
+    stage.classList.remove("dragging");
+    const anim = detail.animate([
+      { transform: detail.style.transform || "none", opacity: detail.style.opacity || 1 },
+      { transform: "none", opacity: 1 },
+    ], { duration: 320, easing: "cubic-bezier(.2,.8,.2,1)" });
+    detail.style.transform = ""; detail.style.opacity = ""; backdrop.style.opacity = "";
+    return anim;
+  }
+  stage.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1 || closing) { g = null; return; }
+    const t = e.touches[0];
+    g = { x0: t.clientX, y0: t.clientY, t0: performance.now(), mode: null, dx: 0, dy: 0, inRow: !!e.target.closest(".mini-row") };
   }, { passive: true });
+  stage.addEventListener("touchmove", (e) => {
+    if (!g) return;
+    const t = e.touches[0];
+    const dx = t.clientX - g.x0, dy = t.clientY - g.y0;
+    if (!g.mode) {
+      if (Math.hypot(dx, dy) < 10) return;
+      const horizontal = Math.abs(dx) > Math.abs(dy) * 1.2;
+      if (g.x0 < 30 && dx > 0 && horizontal) g.mode = "edge";
+      else if (dy > 0 && !horizontal && Math.abs(dy) > Math.abs(dx) && scroller.scrollTop <= 0) g.mode = "down";
+      else if (horizontal && !g.inRow) g.mode = "side";
+      else g.mode = "native";
+      if (g.mode !== "native") stage.classList.add("dragging");
+    }
+    if (g.mode === "native") return;
+    e.preventDefault();
+    g.dx = dx; g.dy = dy;
+    if (g.mode === "down") {
+      const y = Math.max(0, dy);
+      detail.style.transform = `translateY(${y}px) scale(${1 - Math.min(y, 600) / 2000})`;
+      backdrop.style.opacity = String(1 - Math.min(y / 450, .75));
+    } else if (g.mode === "edge") {
+      const x = Math.max(0, dx);
+      detail.style.transform = `translateX(${x}px)`;
+      backdrop.style.opacity = String(1 - Math.min(x / innerWidth, .75));
+    } else {
+      detail.style.transform = `translateX(${dx}px) rotate(${dx / 60}deg)`;
+      detail.style.opacity = String(1 - Math.min(Math.abs(dx) / innerWidth, .6));
+    }
+  }, { passive: false });
+  stage.addEventListener("touchend", () => {
+    if (!g || !g.mode || g.mode === "native") { g = null; return; }
+    const { dx, dy, mode, t0 } = g; g = null;
+    const dt = Math.max(1, performance.now() - t0);
+    stage.classList.remove("dragging");
+    if (mode === "down" && (dy > 110 || (dy / dt > .5 && dy > 30))) return closeStage();
+    if (mode === "edge" && (dx > 90 || (dx / dt > .5 && dx > 30))) return closeStage();
+    if (mode === "side" && (Math.abs(dx) > 80 || (Math.abs(dx) / dt > .45 && Math.abs(dx) > 30))) return step(dx < 0 ? 1 : -1, dx);
+    settle();
+  });
+  stage.addEventListener("touchcancel", () => { if (g?.mode && g.mode !== "native") settle(); g = null; });
 
   // ——— Arranque ———
   syncSeg(); renderChips(); render(); fromHash();
