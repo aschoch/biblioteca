@@ -2,7 +2,7 @@
 
 Una estantería digital con los libros de casa. Pulsa un lomo para sacar el libro de la balda y verle la portada; pulsa la portada para abrir su ficha.
 
-**Web:** https://alfredoschoch.github.io/biblioteca/
+**Web:** https://aschoch.github.io/biblioteca/
 
 ## Cómo añadir o corregir un libro
 
