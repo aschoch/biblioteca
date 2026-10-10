@@ -68,6 +68,20 @@
       <div class="cover__a">${esc(b.author)}</div></div>`;
   }
 
+  // ——— Precarga de portadas (para que el libro salga ya con su portada) ———
+  const preloaded = new Map();
+  function preload(b) {
+    if (!b?.cover) return Promise.resolve();
+    if (!preloaded.has(b.id)) {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = b.cover;
+      preloaded.set(b.id, (img.decode ? img.decode() : new Promise((r) => (img.onload = r))).catch(() => {}));
+    }
+    return preloaded.get(b.id);
+  }
+  const preloadSoon = (b, ms = 450) => Promise.race([preload(b), new Promise((r) => setTimeout(r, ms))]);
+
   // ——— Agrupación y orden ———
   const stripArticle = (t) => norm(t).replace(/^[¿¡«"'.…\s]+/, "").replace(/^(el|la|los|las|un|una|the|a|an)\s+/, "");
   const cmp = (a, b) => a.localeCompare(b, "es", { sensitivity: "base" });
@@ -211,8 +225,10 @@
     const list = filtered();
     const groups = groupsFor(list);
     state.list = groups.flatMap((g) => g.items);
+    renderStatus(list.length);
     if (!list.length) {
-      lib.innerHTML = `<div class="empty"><h3>Ningún libro coincide</h3><p>Prueba con otra palabra, un apellido o un tema.</p></div>`;
+      lib.innerHTML = `<div class="empty"><h3>Ningún libro coincide</h3><p>Prueba con otra palabra, un apellido o un tema.</p>
+        <button class="btn btn--ghost" data-reset>Ver todos los libros</button></div>`;
       return;
     }
     const count = (n) => `${n} ${n === 1 ? "libro" : "libros"}`;
@@ -233,6 +249,31 @@
     fitSpines();
   }
 
+  // Resumen de la búsqueda o el filtro activo, con un atajo para quitarlos.
+  function renderStatus(n) {
+    const el = $("#results");
+    if (!state.q && !state.theme) { el.hidden = true; el.innerHTML = ""; return; }
+    const parts = [];
+    if (state.q) parts.push(`para «${esc(state.q)}»`);
+    if (state.theme) parts.push(`en <b>${esc(state.theme)}</b>`);
+    el.hidden = false;
+    el.innerHTML = `<span><b>${n}</b> ${n === 1 ? "libro" : "libros"} ${parts.join(" ")}</span>
+      <button class="results__reset" data-reset>Quitar filtros</button>`;
+  }
+  function resetFilters() {
+    clearTimeout(qt);
+    qInput.value = ""; state.q = ""; state.theme = null;
+    syncClear(); renderChips(); render(); scrollToLibrary();
+  }
+  document.addEventListener("click", (e) => { if (e.target.closest("[data-reset]") && stage.hidden) resetFilters(); });
+
+  // Si estamos más abajo de la estantería, volver a su principio tras cambiar lo que se ve.
+  const libraryTop = () => $(".masthead").offsetHeight;
+  function scrollToLibrary() {
+    const top = libraryTop();
+    if (scrollY > top + 4) window.scrollTo({ top, behavior: reduceMotion ? "auto" : "smooth" });
+  }
+
   // ——— Chips de temas ———
   function renderChips() {
     const counts = {};
@@ -245,8 +286,18 @@
   $("#chips").addEventListener("click", (e) => {
     const c = e.target.closest(".chip"); if (!c) return;
     state.theme = c.dataset.theme || null;
-    renderChips(); render();
+    renderChips(); render(); scrollToLibrary();
+    const active = $(`.chip[aria-pressed="true"]`);
+    active?.scrollIntoView({ inline: "center", block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
   });
+  const chipsEl = $("#chips");
+  const syncChipFade = () => {
+    chipsEl.classList.toggle("at-start", chipsEl.scrollLeft < 4);
+    chipsEl.classList.toggle("at-end", chipsEl.scrollLeft + chipsEl.clientWidth > chipsEl.scrollWidth - 4);
+  };
+  chipsEl.addEventListener("scroll", syncChipFade, { passive: true });
+  addEventListener("resize", syncChipFade);
+  requestAnimationFrame(syncChipFade);
 
   // ——— Controles ———
   function syncSeg() {
@@ -255,11 +306,11 @@
   }
   $("#sort").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
-    state.sort = b.dataset.sort; store.set("bib.sort", state.sort); syncSeg(); render();
+    state.sort = b.dataset.sort; store.set("bib.sort", state.sort); syncSeg(); render(); scrollToLibrary();
   });
   $("#view").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
-    state.view = b.dataset.view; store.set("bib.view", state.view); syncSeg(); render();
+    state.view = b.dataset.view; store.set("bib.view", state.view); syncSeg(); render(); scrollToLibrary();
   });
   let qt;
   const qInput = $("#q");
@@ -286,15 +337,46 @@
   qInput.addEventListener("input", () => {
     syncClear();
     clearTimeout(qt);
-    qt = setTimeout(() => { state.q = qInput.value.trim(); render(); }, 90);
+    qt = setTimeout(() => { state.q = qInput.value.trim(); render(); scrollToLibrary(); }, 90);
   });
   function setQuery(q) {
     qInput.value = q; state.q = q; state.theme = null; syncClear(); renderChips(); render();
-    window.scrollTo({ top: Math.max(0, $("#toolbar").offsetTop - 2), behavior: reduceMotion ? "auto" : "smooth" });
+    window.scrollTo({ top: libraryTop(), behavior: reduceMotion ? "auto" : "smooth" });
   }
 
   new IntersectionObserver(([e]) => $("#toolbar").classList.toggle("stuck", !e.isIntersecting), { rootMargin: "-1px 0px 0px 0px" })
     .observe($(".masthead"));
+
+  // En el móvil, al bajar se esconden los controles de orden y vista; al subir, vuelven.
+  const toolbar = $("#toolbar"), toTop = $("#toTop");
+  let lastY = scrollY, ticking = false;
+  addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = scrollY, dy = y - lastY;
+      const past = y > libraryTop() + 40;
+      if (!past || dy < -6) toolbar.classList.remove("condensed");
+      else if (dy > 6 && document.activeElement !== qInput) toolbar.classList.add("condensed");
+      if (Math.abs(dy) > 6) lastY = y;
+      toTop.classList.toggle("show", y > innerHeight * 1.5);
+      ticking = false;
+    });
+  }, { passive: true });
+  toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }));
+
+  // Sorpréndeme: saca un libro al azar de lo que se está viendo.
+  $("#random").addEventListener("click", async () => {
+    const list = state.list.length ? state.list : BOOKS;
+    const b = list[Math.floor(Math.random() * list.length)];
+    preload(b);
+    const el = $(`.spine[data-id="${b.id}"], .tile[data-id="${b.id}"]`);
+    if (el) {
+      el.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
+      await wait(reduceMotion ? 0 : 550);
+    }
+    openBook(b.id, el);
+  });
 
   // ¿Se está usando el teclado? Solo entonces movemos el foco al abrir y cerrar
   // (evita el contorno de foco tras tocar o hacer clic).
@@ -312,7 +394,12 @@
   let current = null;   // libro abierto
   let source = null;    // elemento de la estantería desde el que salió
 
+  const baseTitle = document.title;
   function fillStage(b) {
+    document.title = `${b.title} · ${baseTitle}`;
+    const list = state.list.length ? state.list : BOOKS;
+    const i = list.indexOf(b);
+    if (i >= 0) [list[i - 1], list[i + 1]].forEach(preload);
     inner.innerHTML = coverHTML(b, true) + (b.cover ? '<span class="book3d__pages"></span>' : "");
     inner.style.setProperty("--ratio", b.ratio);
     $("#p-title").textContent = b.title;
@@ -344,8 +431,22 @@
       ${sameAuthor.length ? `<h3>Más de ${esc(b.author)}</h3><div class="mini-row">${sameAuthor.map(mini).join("")}</div>` : ""}
       ${shelf.length ? `<h3>En la misma balda</h3><div class="mini-row">${shelf.map(mini).join("")}</div>` : ""}
       <div class="share">
-        <button class="btn btn--ghost" data-share>Copiar enlace</button>
-      </div>`;
+        <button class="btn btn--ghost" data-share>${canShare ? "Compartir" : "Copiar enlace"}</button>
+      </div>
+      ${pagerHTML(b)}`;
+  }
+
+  const canShare = !!navigator.share && matchMedia("(hover: none)").matches;
+  function pagerHTML(b) {
+    const list = state.list.length ? state.list : BOOKS;
+    const i = list.indexOf(b);
+    if (i < 0 || list.length < 2) return "";
+    const prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
+    return `<nav class="pager" aria-label="Otros libros">
+      <button class="pager__btn" data-step="-1"><small>← Anterior</small><span>${esc(prev.title)}</span></button>
+      <span class="pager__pos">${i + 1} de ${list.length}</span>
+      <button class="pager__btn pager__btn--next" data-step="1"><small>Siguiente →</small><span>${esc(next.title)}</span></button>
+    </nav>`;
   }
 
   function rectOf(el) { const r = el.getBoundingClientRect(); return { x: r.left, y: r.top, w: r.width, h: r.height }; }
@@ -437,6 +538,7 @@
     if (!wasOpen && el) {
       const isSpine = el.classList.contains("spine");
       inner.style.visibility = "hidden";
+      await preloadSoon(b);
       await frame();
       if (isSpine) {
         el.classList.add("is-out");
@@ -494,6 +596,7 @@
     if (keyboardNav) focusIfKeyboard(target);
     else if (document.activeElement && document.activeElement !== document.body && !document.activeElement.matches("input")) document.activeElement.blur();
     current = null; source = null; closing = false;
+    document.title = baseTitle;
     if (push) {
       if (pushed) { pushed = false; history.back(); }
       else if (location.hash) history.replaceState(null, "", location.pathname + location.search);
@@ -535,6 +638,8 @@
   }
 
   // ——— Eventos ———
+  lib.addEventListener("pointerover", (e) => { const el = e.target.closest(".spine, .tile"); if (el) preload(byId[el.dataset.id]); }, { passive: true });
+  lib.addEventListener("pointerdown", (e) => { const el = e.target.closest(".spine, .tile"); if (el) preload(byId[el.dataset.id]); }, { passive: true });
   lib.addEventListener("click", (e) => {
     const el = e.target.closest(".spine, .tile");
     if (el) openBook(el.dataset.id, el);
@@ -546,6 +651,8 @@
   stage.addEventListener("click", (e) => {
     if (e.target.closest("[data-close]")) return closeStage();
     if (e.target === scroller || e.target === detail) return closeStage();
+    const st = e.target.closest("[data-step]");
+    if (st) { scroller.scrollTo({ top: 0 }); return step(+st.dataset.step); }
     const go = e.target.closest("[data-goto]");
     if (go) { current = byId[go.dataset.goto]; source = null; fillStage(current); setHash(current.id, "replace");
       if (!reduceMotion) detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260 }); return; }
@@ -553,7 +660,7 @@
     if (s) { const q = s.dataset.search; closeStage().then(() => setQuery(q)); return; }
     if (e.target.closest("[data-share]")) {
       const url = location.href;
-      (navigator.share && matchMedia("(hover: none)").matches
+      (canShare
         ? navigator.share({ title: current.title, url }).catch(() => {})
         : navigator.clipboard.writeText(url).then(() => toast("Enlace copiado"))).catch?.(() => {});
     }
@@ -602,7 +709,9 @@
     if (!g.mode) {
       if (Math.hypot(dx, dy) < 10) return;
       const horizontal = Math.abs(dx) > Math.abs(dy) * 1.2;
+      const peeking = !stage.classList.contains("open");
       if (g.x0 < 30 && dx > 0 && horizontal) g.mode = "edge";
+      else if (peeking && dy < 0 && !horizontal) g.mode = "up";
       else if (dy > 0 && !horizontal && Math.abs(dy) > Math.abs(dx) && scroller.scrollTop <= 0) g.mode = "down";
       else if (horizontal && !g.inRow) g.mode = "side";
       else g.mode = "native";
@@ -611,7 +720,13 @@
     if (g.mode === "native") return;
     e.preventDefault();
     g.dx = dx; g.dy = dy;
-    if (g.mode === "down") {
+    if (g.mode === "up") {
+      // Resistencia elástica: el libro sube un poco, invitando a soltar.
+      const y = Math.min(0, dy);
+      const eased = -Math.pow(-y, .8);
+      detail.style.transform = `translateY(${eased}px)`;
+      inner.style.transform = `rotateY(${-14 + Math.min(10, -y / 12)}deg) scale(${1 + Math.min(.06, -y / 2500)})`;
+    } else if (g.mode === "down") {
       const y = Math.max(0, dy);
       detail.style.transform = `translateY(${y}px) scale(${1 - Math.min(y, 600) / 2000})`;
       backdrop.style.opacity = String(1 - Math.min(y / 450, .75));
@@ -629,12 +744,16 @@
     const { dx, dy, mode, t0 } = g; g = null;
     const dt = Math.max(1, performance.now() - t0);
     stage.classList.remove("dragging");
+    if (mode === "up") {
+      inner.style.transform = "";
+      if (dy < -70 || (dy / dt < -.45 && dy < -25)) { detail.style.transform = ""; return openCard(); }
+    }
     if (mode === "down" && (dy > 110 || (dy / dt > .5 && dy > 30))) return closeStage();
     if (mode === "edge" && (dx > 90 || (dx / dt > .5 && dx > 30))) return closeStage();
     if (mode === "side" && (Math.abs(dx) > 80 || (Math.abs(dx) / dt > .45 && Math.abs(dx) > 30))) return step(dx < 0 ? 1 : -1, dx);
     settle();
   });
-  stage.addEventListener("touchcancel", () => { if (g?.mode && g.mode !== "native") settle(); g = null; });
+  stage.addEventListener("touchcancel", () => { inner.style.transform = ""; if (g?.mode && g.mode !== "native") settle(); g = null; });
 
   // ——— Arranque ———
   syncSeg(); renderChips(); render(); fromHash();

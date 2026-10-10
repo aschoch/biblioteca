@@ -7,8 +7,20 @@
   <meta name="description" content="Una estantería digital con todos los libros de casa: búscalos, ordénalos y ábrelos.">
   <meta name="theme-color" content="#f3eee5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#14110e" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aschoch.github.io/biblioteca/">
   <meta property="og:title" content="La biblioteca de Bea y Alfredo">
   <meta property="og:description" content="Una estantería digital con todos los libros de casa.">
+  <meta property="og:image" content="https://aschoch.github.io/biblioteca/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Biblioteca">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='14' width='10' height='40' rx='2' fill='%238c2f2b'/%3E%3Crect x='21' y='8' width='12' height='46' rx='2' fill='%23234a5a'/%3E%3Crect x='36' y='18' width='9' height='36' rx='2' fill='%23b8892f'/%3E%3Crect x='46' y='12' width='10' height='42' rx='2' transform='rotate(8 51 33)' fill='%233d5a3f'/%3E%3Crect x='4' y='54' width='56' height='5' rx='1.5' fill='%23221e1a'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +32,13 @@
     <div class="wrap">
       <p class="eyebrow">Ex libris</p>
       <h1>La biblioteca <em>de Bea y Alfredo</em></h1>
-      <p class="stats" id="stats"></p>
+      <div class="masthead__row">
+        <p class="stats" id="stats"></p>
+        <button class="random" id="random" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg>
+          Sorpréndeme
+        </button>
+      </div>
     </div>
   </header>
 
@@ -56,7 +74,12 @@
     </div>
   </div>
 
-  <main class="wrap" id="library" aria-live="polite"></main>
+  <div class="wrap"><div class="results" id="results" role="status" aria-live="polite" hidden></div></div>
+  <main class="wrap" id="library"></main>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
 
   <footer class="wrap foot">
     <p>Portadas: Open Library y librerías. Hecho con cariño para casa.</p>
@@ -83,6 +106,7 @@
               <h2 class="peek__title" id="p-title"></h2>
               <p class="peek__author" id="p-author"></p>
               <button class="btn" id="openCard">Ver ficha <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <p class="peek__hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>o desliza hacia arriba</p>
             </div>
           </div>
           <article class="detail__info" id="info"></article>
