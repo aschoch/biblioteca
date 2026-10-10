@@ -1544,7 +1544,12 @@
   "h": 366
  },
  "el-espiritu-santo": {
-  "file": null
+  "file": "covers/el-espiritu-santo.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/90/9788425412790.webp",
+  "color": "#5bb2cf",
+  "w": 452,
+  "h": 640
  },
  "introduccion-al-cristianismo": {
   "file": "covers/introduccion-al-cristianismo.jpg",
@@ -1803,16 +1808,36 @@
   "h": 475
  },
  "leonardo-da-vinci": {
-  "file": null
+  "file": "covers/leonardo-da-vinci.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/04/9783836501804.webp",
+  "color": "#3f2d21",
+  "w": 534,
+  "h": 640
  },
  "la-historia-del-arte": {
-  "file": null
+  "file": "covers/la-historia-del-arte.jpg",
+  "src": "override",
+  "url": "https://covers.openlibrary.org/b/isbn/9780714898704-L.jpg?default=false",
+  "color": "#918c68",
+  "w": 288,
+  "h": 411
  },
  "los-miserables": {
-  "file": null
+  "file": "covers/los-miserables.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/isbn/9788483361108-es.jpg",
+  "color": "#281d0b",
+  "w": 285,
+  "h": 475
  },
  "cien-anos-de-soledad": {
-  "file": null
+  "file": "covers/cien-anos-de-soledad.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/39/9788420471839.webp",
+  "color": "#abb90d",
+  "w": 392,
+  "h": 640
  },
  "guerra-y-paz": {
   "file": "covers/guerra-y-paz.jpg",
@@ -1871,7 +1896,12 @@
   "h": 500
  },
  "ortodoxia": {
-  "file": null
+  "file": "covers/ortodoxia.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/08/9788415689508.webp",
+  "color": "#834442",
+  "w": 404,
+  "h": 640
  },
  "rebelion-en-la-granja": {
   "file": "covers/rebelion-en-la-granja.jpg",
@@ -2050,10 +2080,20 @@
   "h": 500
  },
  "camino": {
-  "file": null
+  "file": "covers/camino.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/31/9788432159831.webp",
+  "color": "#d18901",
+  "w": 413,
+  "h": 640
  },
  "sagrada-biblia": {
-  "file": null
+  "file": "covers/sagrada-biblia.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/P/8422017024.01.L.jpg",
+  "color": "#644226",
+  "w": 316,
+  "h": 500
  },
  "vida-y-misterio-de-jesus-de-nazaret-ii": {
   "file": "covers/vida-y-misterio-de-jesus-de-nazaret-ii.jpg",
@@ -2107,7 +2147,12 @@
   "h": 500
  },
  "las-moradas": {
-  "file": null
+  "file": "covers/las-moradas.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/02/9788426101402.webp",
+  "color": "#1a0203",
+  "w": 415,
+  "h": 640
  },
  "poesia-completa": {
   "file": "covers/poesia-completa.jpg",
@@ -2369,10 +2414,20 @@
   "h": 500
  },
  "el-descarte-del-aborto": {
-  "file": null
+  "file": "covers/el-descarte-del-aborto.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/isbn/9788496903821-es.jpg",
+  "color": "#bad36f",
+  "w": 334,
+  "h": 500
  },
  "es-bueno-que-existas-una-guia-para-comprender-la-teologia-de": {
-  "file": null
+  "file": "covers/es-bueno-que-existas-una-guia-para-comprender-la-teologia-de.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/45/9791387731045.webp",
+  "color": "#c1c2c3",
+  "w": 519,
+  "h": 640
  },
  "el-senor": {
   "file": "covers/el-senor.jpg",
@@ -2391,7 +2446,12 @@
   "h": 500
  },
  "el-pensamiento-debil": {
-  "file": null
+  "file": "covers/el-pensamiento-debil.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/99/9788437607399.webp",
+  "color": "#ea703c",
+  "w": 387,
+  "h": 640
  },
  "la-sociedad-del-cansancio": {
   "file": "covers/la-sociedad-del-cansancio.jpg",
@@ -2461,13 +2521,28 @@
   "h": 212
  },
  "para-mi-gloria-los-he-creado": {
-  "file": null
+  "file": "covers/para-mi-gloria-los-he-creado.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1515430447i/34828812.jpg",
+  "color": "#fa960c",
+  "w": 318,
+  "h": 455
  },
  "el-amor-o-la-fuerza-del-sino": {
-  "file": null
+  "file": "covers/el-amor-o-la-fuerza-del-sino.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1697662438i/99593135.jpg",
+  "color": "#959495",
+  "w": 480,
+  "h": 640
  },
  "esta-noche-en-casa": {
-  "file": null
+  "file": "covers/esta-noche-en-casa.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1551661106i/44222258.jpg",
+  "color": "#4e2522",
+  "w": 319,
+  "h": 500
  },
  "el-regreso-del-hijo-prodigo": {
   "file": "covers/el-regreso-del-hijo-prodigo.jpg",
@@ -2478,7 +2553,12 @@
   "h": 500
  },
  "jesus-el-hijo-prodigo-del-padre": {
-  "file": null
+  "file": "covers/jesus-el-hijo-prodigo-del-padre.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/30206730883.jpg",
+  "color": "#684a27",
+  "w": 412,
+  "h": 640
  },
  "tiempo-para-dios": {
   "file": "covers/tiempo-para-dios.jpg",
@@ -2489,19 +2569,44 @@
   "h": 500
  },
  "mensaje-de-misericordia-de-jesucristo-al-mundo-actual": {
-  "file": null
+  "file": "covers/mensaje-de-misericordia-de-jesucristo-al-mundo-actual.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1482754295i/33592126.jpg",
+  "color": "#f5dfa6",
+  "w": 379,
+  "h": 640
  },
  "la-libertad-cristiana": {
-  "file": null
+  "file": "covers/la-libertad-cristiana.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/18/9788413390918.webp",
+  "color": "#425f59",
+  "w": 455,
+  "h": 640
  },
  "el-bautismo-un-gran-si-a-la-vida": {
-  "file": null
+  "file": "covers/el-bautismo-un-gran-si-a-la-vida.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1674241418i/75602040.jpg",
+  "color": "#c7dedf",
+  "w": 429,
+  "h": 640
  },
  "tu-sed-mi-sed": {
-  "file": null
+  "file": "covers/tu-sed-mi-sed.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1666109979i/63033133.jpg",
+  "color": "#b1835a",
+  "w": 400,
+  "h": 640
  },
  "el-crucificado": {
-  "file": null
+  "file": "covers/el-crucificado.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1656742471i/61380706.jpg",
+  "color": "#a57548",
+  "w": 413,
+  "h": 640
  },
  "dejad-que-cristo-os-guie": {
   "file": "covers/dejad-que-cristo-os-guie.jpg",
@@ -2512,9 +2617,19 @@
   "h": 500
  },
  "catecismo-de-la-iglesia-catolica": {
-  "file": null
+  "file": "covers/catecismo-de-la-iglesia-catolica.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/isbn/9788428811026-es.jpg",
+  "color": "#f58621",
+  "w": 343,
+  "h": 500
  },
  "san-francisco-de-asis": {
-  "file": null
+  "file": "covers/san-francisco-de-asis.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/66/9788426100566.webp",
+  "color": "#083d25",
+  "w": 415,
+  "h": 640
  }
 }
