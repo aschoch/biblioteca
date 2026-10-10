@@ -278,6 +278,11 @@
     qInput.value = ""; state.q = ""; syncClear(); render();
     qInput.focus();
   });
+  // «Buscar» en el teclado del móvil: aplica ya la búsqueda y cierra el teclado.
+  qInput.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter") return;
+    clearTimeout(qt); state.q = qInput.value.trim(); render(); qInput.blur();
+  });
   qInput.addEventListener("input", () => {
     syncClear();
     clearTimeout(qt);
