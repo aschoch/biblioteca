@@ -241,7 +241,10 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   position: relative; z-index: 1; writing-mode: vertical-rl; transform: rotate(180deg);
   font: 500 12.5px/1.1 var(--serif); letter-spacing: .01em; text-align: center; white-space: nowrap;
   flex: 0 1 auto; min-height: 0; overflow: hidden;
+  /* Cada línea es un bloque centrado: no depende de text-align en texto vertical (Safari). */
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
+.spine__title > span { display: block; }
 .spine__author {
   position: relative; z-index: 1; writing-mode: vertical-rl; transform: rotate(180deg);
   font: 600 8px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; opacity: .75;
@@ -286,8 +289,10 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .tile__a { margin: 0; font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ——— Portada (imagen o generada) ——— */
-.cover { position: relative; overflow: hidden; background: var(--c); color: var(--t); }
+.cover { position: relative; overflow: hidden; background: var(--c) center / cover no-repeat; color: var(--t); }
 .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cover img.hi { opacity: 0; transition: opacity .35s ease; }
+.cover img.hi.ok { opacity: 1; }
 .cover::after { /* lomo y brillo */
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(90deg, rgba(0,0,0,.22) 0, rgba(255,255,255,.18) 2.5%, rgba(0,0,0,.06) 5%, transparent 9%, transparent 85%, rgba(255,255,255,.06));
@@ -351,6 +356,8 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 
 .detail { min-height: 100%; display: grid; place-items: center; padding: 72px 20px 48px; }
 .detail__book { display: flex; flex-direction: column; align-items: center; gap: 26px; }
+.book3d { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; touch-action: manipulation; }
+.book3d img { pointer-events: none; -webkit-user-drag: none; }
 .book3d { perspective: 1600px; width: min(300px, 64vw, calc((100dvh - 290px) / 1.55)); display: block; cursor: pointer; }
 .book3d__inner {
   display: block; position: relative; transform-style: preserve-3d; transform: rotateY(-14deg) rotateX(2deg);
@@ -360,11 +367,21 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 @media (hover: hover) { .stage:not(.open) .book3d:hover .book3d__inner { transform: rotateY(-4deg) rotateX(1deg) translateY(-4px); } }
 .book3d__inner .cover { width: 100%; aspect-ratio: 1 / var(--ratio, 1.5); height: auto; border-radius: 3px 8px 8px 3px; box-shadow: var(--shadow-lg); font-size: 22px; }
 .book3d__inner .cover--gen { aspect-ratio: 2 / 3; }
-.book3d__pages { /* canto de las páginas */
-  position: absolute; top: 1.5%; bottom: 1.5%; right: -14px; width: 16px; transform: rotateY(90deg) translateZ(1px); transform-origin: left;
-  background: repeating-linear-gradient(90deg, #f6f1e6 0 1px, #dcd3c1 1px 2px); border-radius: 0 3px 3px 0;
-}
-.peek { text-align: center; max-width: 420px; transition: opacity .3s; }
+/* Caras del libro 3D: la tapa está en el plano; lomo, cantos y páginas van hacia atrás (grosor --d). */
+.b3 { position: absolute; display: block; backface-visibility: hidden; -webkit-backface-visibility: hidden; pointer-events: none; }
+.b3--pages { left: 100%; top: .6%; bottom: .6%; width: var(--d, 16px); transform-origin: 0 50%; transform: rotateY(90deg);
+  background: linear-gradient(90deg, rgba(0,0,0,.18), transparent 30%), repeating-linear-gradient(90deg, #f7f2e7 0 1px, #ddd3c0 1px 2px); }
+.b3--top, .b3--bottom { left: 0; right: .6%; height: var(--d, 16px);
+  background: linear-gradient(90deg, rgba(0,0,0,.12), transparent 12%), repeating-linear-gradient(0deg, #f7f2e7 0 1px, #ddd3c0 1px 2px); }
+.b3--top { bottom: 100%; transform-origin: 50% 100%; transform: rotateX(90deg); }
+.b3--bottom { top: 100%; transform-origin: 50% 0; transform: rotateX(-90deg); }
+.b3--spine { right: 100%; top: 0; height: 100%; width: var(--d, 16px); transform-origin: 100% 50%; transform: rotateY(-90deg); overflow: hidden; border-radius: 2px 0 0 2px; }
+.b3--spine .spine { position: absolute; left: 0; top: 0; transform: scale(var(--sx, 1), var(--sy, 1)); transform-origin: 0 0; box-shadow: none; transition: none; }
+/* Girar el libro manteniéndolo pulsado */
+.book3d.tilting .book3d__inner { transition: none; }
+.book3d__inner.springing { transition: transform .8s cubic-bezier(.2, 1.35, .35, 1); }
+.peek { text-align: center; max-width: 420px; transition: opacity .35s ease .05s, transform .45s var(--ease); }
+.stage.flying .peek { opacity: 0; transform: translateY(10px); transition: none; }
 .peek__title { margin: 0; font: 400 clamp(24px, 4vw, 34px)/1.12 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
 .peek__author { margin: 8px 0 20px; color: var(--ink-2); font-size: 15px; }
 .btn {
@@ -442,6 +459,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .bb--back { border-radius: 6px 2px 2px 6px; filter: brightness(.85); }
 .bb--side { overflow: hidden; border-radius: 2px; }
 .bb--side .spine { box-shadow: none; }
+.bb--front .cover { box-shadow: none; }
 .bb--pages { top: 1.2%; height: 97.6%; background: repeating-linear-gradient(90deg, #f7f2e7 0 1px, #ddd3c0 1px 2px); }
 .bb--top { top: 0; left: 1%; width: 98%; background: repeating-linear-gradient(0deg, #f7f2e7 0 1px, #ddd3c0 1px 2px); }
 

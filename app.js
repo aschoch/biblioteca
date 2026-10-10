@@ -2,13 +2,13 @@
   "use strict";
 
   const BOOKS = window.BOOKS || [];
+  // Orden de las baldas: literatura → pensamiento y arte → familia y educación → fe → consulta y empresa.
   const THEMES = [
-    ["Liderazgo y empresa", "#2f5d7c"], ["Familia y crianza", "#c0703a"], ["Historia y actualidad", "#9a6a2f"],
-    ["Narrativa", "#8c2f2b"], ["Teatro", "#a3423a"], ["Clásicos grecolatinos", "#b08a3e"],
-    ["Filosofía", "#3e4f86"], ["Educación", "#3d7a5a"], ["Poesía", "#7a4b86"], ["Arte", "#b4532f"],
-    ["Obras de consulta", "#6b6257"], ["Magisterio de la Iglesia", "#b8892f"],
-    ["Teología del cuerpo", "#a2456a"],
-    ["Fe y espiritualidad", "#2f7480"], ["Schoenstatt", "#2f7a6a"],
+    ["Narrativa", "#8c2f2b"], ["Poesía", "#7a4b86"], ["Teatro", "#a3423a"], ["Clásicos grecolatinos", "#b08a3e"],
+    ["Filosofía", "#3e4f86"], ["Historia y actualidad", "#9a6a2f"], ["Arte", "#b4532f"],
+    ["Educación", "#3d7a5a"], ["Familia y crianza", "#c0703a"], ["Teología del cuerpo", "#a2456a"],
+    ["Fe y espiritualidad", "#2f7480"], ["Magisterio de la Iglesia", "#b8892f"], ["Schoenstatt", "#2f7a6a"],
+    ["Obras de consulta", "#6b6257"], ["Liderazgo y empresa", "#2f5d7c"],
   ];
   const THEME_COLOR = Object.fromEntries(THEMES);
   const THEME_ORDER = Object.fromEntries(THEMES.map(([t], i) => [t, i]));
@@ -58,10 +58,16 @@
   $("#stats").innerHTML = `<b>${BOOKS.length}</b> libros · <b>${authors.size}</b> autores · <b>${new Set(BOOKS.map((b) => b.theme)).size}</b> temas`;
 
   // ——— Portadas ———
-  function coverHTML(b, eager = false) {
+  // size "thumb": solo la miniatura (rejilla, miniaturas). size "full": la miniatura de fondo
+  // (aparece al instante) y encima la imagen grande, que entra con un fundido al cargar.
+  function coverHTML(b, eager = false, size = "full") {
     const st = `--c:${b.color};--t:${b.text};--ratio:${b.ratio}`;
+    if (b.cover && size === "thumb") {
+      return `<div class="cover" style="${st}"><img src="${esc(b.thumb)}" alt="Portada de ${esc(b.title)}" ${eager ? "" : 'loading="lazy"'} decoding="async"></div>`;
+    }
     if (b.cover) {
-      return `<div class="cover" style="${st}"><img src="${esc(b.cover)}" alt="Portada de ${esc(b.title)}" ${eager ? "" : 'loading="lazy"'} decoding="async"></div>`;
+      const ok = loadedFull.has(b.id) ? " ok" : "";
+      return `<div class="cover" style="${st};background-image:url('${esc(b.thumb)}')"><img class="hi${ok}" src="${esc(b.cover)}" alt="Portada de ${esc(b.title)}" decoding="async" fetchpriority="high" onload="this.classList.add('ok')"></div>`;
     }
     return `<div class="cover cover--gen" style="${st}">
       <div><div class="cover__t">${esc(b.title)}</div><div class="cover__orn"></div></div>
@@ -70,17 +76,45 @@
 
   // ——— Precarga de portadas (para que el libro salga ya con su portada) ———
   const preloaded = new Map();
-  function preload(b) {
-    if (!b?.cover) return Promise.resolve();
-    if (!preloaded.has(b.id)) {
+  const loadedFull = new Set();
+  function load(url) {
+    if (!preloaded.has(url)) {
       const img = new Image();
       img.decoding = "async";
-      img.src = b.cover;
-      preloaded.set(b.id, (img.decode ? img.decode() : new Promise((r) => (img.onload = r))).catch(() => {}));
+      img.src = url;
+      preloaded.set(url, (img.decode ? img.decode() : new Promise((r) => (img.onload = r))).catch(() => {}));
     }
-    return preloaded.get(b.id);
+    return preloaded.get(url);
   }
-  const preloadSoon = (b, ms = 450) => Promise.race([preload(b), new Promise((r) => setTimeout(r, ms))]);
+  const preloadThumb = (b) => (b?.thumb ? load(b.thumb) : Promise.resolve());
+  function preload(b) {
+    if (!b?.cover) return Promise.resolve();
+    preloadThumb(b);
+    return load(b.cover).then(() => loadedFull.add(b.id));
+  }
+  // Antes de que el libro salga basta con la miniatura (pesa poco y suele estar ya en caché).
+  const preloadSoon = (b, ms = 350) => Promise.race([preloadThumb(b), new Promise((r) => setTimeout(r, ms))]);
+
+  // Precarga en segundo plano de las miniaturas de los lomos que se ven en pantalla.
+  const thumbQueue = [];
+  let thumbBusy = 0;
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 60));
+  function pumpThumbs() {
+    while (thumbBusy < 6 && thumbQueue.length) {
+      const b = thumbQueue.shift();
+      thumbBusy++;
+      preloadThumb(b).finally(() => { thumbBusy--; idle(pumpThumbs); });
+    }
+  }
+  const spineObserver = "IntersectionObserver" in window ? new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      spineObserver.unobserve(e.target);
+      const b = byId[e.target.dataset.id];
+      if (b?.thumb) thumbQueue.push(b);
+    });
+    idle(pumpThumbs);
+  }, { rootMargin: "300px 0px" }) : null;
 
   // ——— Agrupación y orden ———
   const stripArticle = (t) => norm(t).replace(/^[¿¡«"'.…\s]+/, "").replace(/^(el|la|los|las|un|una|the|a|an)\s+/, "");
@@ -203,7 +237,7 @@
       const natural = b.surname ? textWidth(b.surname.toUpperCase(), "sans") * 8 / 20 * 1.12 : 0;
       aEl.style.fontSize = natural > b.h * .34 ? Math.max(6, 8 * b.h * .34 / natural) + "px" : "";
       tEl.style.fontSize = res.fs + "px";
-      tEl.innerHTML = res.lines.map(esc).join("<br>");
+      tEl.innerHTML = res.lines.map((l) => `<span>${esc(l)}</span>`).join("");
       aEl.hidden = !showAuthor;
     });
     $$(".divider:not(.divider--letter)", root).forEach((el) => {
@@ -217,7 +251,7 @@
 
   function tileHTML(b) {
     return `<button class="tile" data-id="${b.id}" aria-label="${esc(b.title)}, de ${esc(b.author)}">
-      <div class="tile__cover">${coverHTML(b)}</div>
+      <div class="tile__cover">${coverHTML(b, false, "thumb")}</div>
       <p class="tile__t">${esc(b.title)}</p><p class="tile__a">${esc(b.author)}</p></button>`;
   }
 
@@ -247,6 +281,7 @@
       return divider + g.items.map((b) => spineHTML(b)).join("");
     }).join("")}</div>`;
     fitSpines();
+    if (spineObserver) { spineObserver.disconnect(); $$(".spine", lib).forEach((el) => spineObserver.observe(el)); }
   }
 
   // Resumen de la búsqueda o el filtro activo, con un atajo para quitarlos.
@@ -400,13 +435,37 @@
     const list = state.list.length ? state.list : BOOKS;
     const i = list.indexOf(b);
     if (i >= 0) [list[i - 1], list[i + 1]].forEach(preload);
-    inner.innerHTML = coverHTML(b, true) + (b.cover ? '<span class="book3d__pages"></span>' : "");
+    inner.innerHTML = coverHTML(b, true) + `
+      <span class="b3 b3--pages" aria-hidden="true"></span>
+      <span class="b3 b3--top" aria-hidden="true"></span>
+      <span class="b3 b3--bottom" aria-hidden="true"></span>
+      <span class="b3 b3--spine" aria-hidden="true">${spineFaceHTML(b)}</span>`;
     inner.style.setProperty("--ratio", b.ratio);
+    fitSpines(inner);
+    sizeBook();
     $("#p-title").textContent = b.title;
     $("#p-author").textContent = b.author;
     $("#info").innerHTML = infoHTML(b);
     $("#stageScroll").scrollTop = 0;
   }
+
+  // Grosor del libro relativo a su altura: el mismo que tiene su lomo en la balda.
+  const depthOf = (b) => Math.min(.2, b.w / b.h);
+  function spineFaceHTML(b) {
+    return `<div class="spine" data-id="${b.id}" data-band="${b.band}" style="--c:${b.color};--t:${b.text};--w:${b.w}px;--h:${b.h}px">
+      <span class="spine__title">${esc(b.spineTitle)}</span><span class="spine__author">${esc(b.surname)}</span></div>`;
+  }
+  // Ajusta el grosor (y la escala del lomo) al tamaño real con el que se ve el libro.
+  function sizeBook() {
+    if (!current) return;
+    const H = inner.offsetHeight;
+    if (!H) return;
+    const d = H * depthOf(current);
+    inner.style.setProperty("--d", d + "px");
+    inner.style.setProperty("--sx", d / current.w);
+    inner.style.setProperty("--sy", H / current.h);
+  }
+  if ("ResizeObserver" in window) new ResizeObserver(sizeBook).observe(inner);
 
   function infoHTML(b) {
     const facts = [
@@ -418,7 +477,7 @@
     const sameAuthor = b.author !== "Autor desconocido" ? BOOKS.filter((x) => x.author === b.author && x.id !== b.id) : [];
     const shelf = BOOKS.filter((x) => x.theme === b.theme && x.id !== b.id && !sameAuthor.includes(x))
       .sort((x, y) => Math.abs(x.shelf - b.shelf) - Math.abs(y.shelf - b.shelf)).slice(0, 10);
-    const mini = (x) => `<button class="mini" data-goto="${x.id}">${coverHTML(x)}<span>${esc(x.title)}</span></button>`;
+    const mini = (x) => `<button class="mini" data-goto="${x.id}">${coverHTML(x, false, "thumb")}<span>${esc(x.title)}</span></button>`;
     return `
       <span class="theme-pill" style="--c:${THEME_COLOR[b.theme] || "#888"}"><i></i>${esc(b.theme)}</span>
       <h2 class="info__title" id="d-title">${esc(b.title)}</h2>
@@ -451,7 +510,7 @@
 
   function rectOf(el) { const r = el.getBoundingClientRect(); return { x: r.left, y: r.top, w: r.width, h: r.height }; }
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-  const frame = () => new Promise((r) => requestAnimationFrame(r));
+  const frame = () => new Promise((r) => { requestAnimationFrame(r); setTimeout(r, 60); });
   // Visible de verdad: no tapado por la barra fija de búsqueda.
   const inView = (el) => {
     const r = el.getBoundingClientRect();
@@ -473,51 +532,67 @@
       { transform: "translate(0,0) scale(1,1) perspective(900px) rotateY(-14deg)" },
     ];
     if (reverse) frames.reverse();
-    return f.animate(frames, { duration: 460, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" }).finished.then(() => f.remove());
+    const anim = f.animate(frames, { duration: 460, easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" });
+    return Promise.race([anim.finished, wait(860)]).catch(() => {}).then(() => f.remove());
   }
 
   // Vuelo en 3D entre el lomo y el centro de la pantalla: un libro de verdad,
   // con tapa, lomo, cantos de páginas y grosor, que gira 90° sobre sí mismo.
-  function flyBook(spineEl, b, { reverse = false, angle = -14 } = {}) {
+  // Vuelo en 3D entre el lomo y el centro de la pantalla. Es la misma caja que el libro
+  // de la ficha (mismo grosor, misma inclinación), así que al terminar encaja sin saltos.
+  // Al sacarlo: primero sale de la balda hacia nosotros, luego gira y vuela al centro.
+  function flyBook(spineEl, b, { reverse = false } = {}) {
     if (reduceMotion) return Promise.resolve();
+    const open = stage.classList.contains("open");
+    const ry0 = open ? -8 : -14, rx0 = open ? 0 : 2;
     const btn = $("#book3d").getBoundingClientRect();
     const W = inner.offsetWidth, H = inner.offsetHeight;
     const cx = btn.left + btn.width / 2, cy = btn.top + H / 2;
     const sr = spineEl.getBoundingClientRect();
-    const s = sr.height / H;
-    const D = Math.max(sr.width / s, 14);
+    const D = H * depthOf(b), half = D / 2;
+    const s = sr.height / H, sxs = sr.width / D;     // escala para encajar justo en el lomo
     const f = document.createElement("div");
     f.className = "book-box";
     Object.assign(f.style, { left: cx - W / 2 + "px", top: cy - H / 2 + "px", width: W + "px", height: H + "px" });
-    const half = D / 2;
     f.innerHTML = `
       <div class="bb bb--front" style="transform:translateZ(${half}px)">${coverHTML(b, true)}</div>
       <div class="bb bb--back" style="background:${b.color};transform:rotateY(180deg) translateZ(${half}px)"></div>
       <div class="bb bb--side" style="width:${D}px;left:${(W - D) / 2}px;transform:rotateY(-90deg) translateZ(${W / 2}px)"></div>
-      <div class="bb bb--pages" style="width:${D}px;left:${(W - D) / 2}px;transform:rotateY(90deg) translateZ(${W / 2 - 2}px)"></div>
-      <div class="bb bb--pages bb--top" style="height:${D}px;top:${(H - D) / 2}px;transform:rotateX(90deg) translateZ(${H / 2 - 2}px)"></div>
-      <div class="bb bb--pages bb--top" style="height:${D}px;top:${(H - D) / 2}px;transform:rotateX(-90deg) translateZ(${H / 2 - 2}px)"></div>`;
-    // El lomo es una copia del de la estantería, ampliada para que al final encaje al píxel.
+      <div class="bb bb--pages" style="width:${D}px;left:${(W - D) / 2}px;transform:rotateY(90deg) translateZ(${W / 2}px)"></div>
+      <div class="bb bb--pages bb--top" style="height:${D}px;top:${(H - D) / 2}px;transform:rotateX(90deg) translateZ(${H / 2}px)"></div>
+      <div class="bb bb--pages bb--top" style="height:${D}px;top:${(H - D) / 2}px;transform:rotateX(-90deg) translateZ(${H / 2}px)"></div>`;
+    // El lomo es una copia del de la estantería, escalada para cubrir la cara exacta.
     const clone = spineEl.cloneNode(true);
     clone.classList.remove("is-out");
     clone.removeAttribute("id");
-    Object.assign(clone.style, { position: "absolute", left: 0, top: 0, transform: `scale(${1 / s})`, transformOrigin: "0 0", transition: "none", opacity: 1 });
+    Object.assign(clone.style, { position: "absolute", left: 0, top: 0, transform: `scale(${D / sr.width}, ${H / sr.height})`, transformOrigin: "0 0", transition: "none", opacity: 1, boxShadow: "none" });
     $(".bb--side", f).appendChild(clone);
     document.body.appendChild(f);
     const dx = sr.left + sr.width / 2 - cx, dy = sr.top + sr.height / 2 - cy;
-    const tf = (x, y, sc, z, ry) => `translate(${x}px, ${y}px) scale(${sc}) perspective(1600px) translateZ(${z}px) rotateY(${ry}deg)`;
-    const frames = [
-      { transform: tf(0, 0, 1, 0, angle) },
-      { transform: tf(dx * .4, dy * .4 - 36, (1 + s) / 2 + .06, -W / 5, 34), offset: .5 },
-      { transform: tf(dx, dy, s, -W / 2, 90) },
-    ];
-    if (reverse) frames.reverse();
-    const anim = f.animate(frames, {
-      duration: reverse ? 760 : 640,
-      easing: reverse ? "cubic-bezier(.2,.8,.2,1)" : "cubic-bezier(.5,0,.25,1)",
-      fill: "forwards",
-    });
-    return anim.finished.then(() => f.remove());
+    // translateZ final (zc): desplaza la caja para que la tapa quede en el plano, como en la ficha.
+    const tf = (x, y, sx, sy, z, ry, rx, zc) =>
+      `translate(${x}px, ${y}px) scale(${sx}, ${sy}) perspective(1600px) translateZ(${z}px) rotateY(${ry}deg) rotateX(${rx}deg) translateZ(${zc}px)`;
+    const atShelf = tf(dx, dy, sxs, s, -W / 2, 90, 0, 0);
+    const pulled = tf(dx, dy - sr.height * .08, sxs * 1.14, s * 1.14, -W / 2, 84, 0, 0);
+    const mid = tf(dx * .42, dy * .42 - 28, (1 + s) / 2 + .05, (1 + s) / 2 + .05, -W / 5, 38, rx0 / 2, -half / 2);
+    const front = tf(0, 0, 1, 1, 0, ry0, rx0, -half);
+    const frames = reverse
+      ? [ // guardar: vuela hasta la balda y entra
+          { transform: front, easing: "cubic-bezier(.45,0,.55,1)" },
+          { transform: mid, offset: .45, easing: "cubic-bezier(.3,0,.3,1)" },
+          { transform: pulled, offset: .8, easing: "cubic-bezier(.2,.7,.3,1)" },
+          { transform: atShelf },
+        ]
+      : [ // sacar: sale de la balda, gira y vuela al centro
+          { transform: atShelf, easing: "cubic-bezier(.3,0,.3,1)" },
+          { transform: pulled, offset: .2, easing: "cubic-bezier(.45,0,.55,1)" },
+          { transform: mid, offset: .58, easing: "cubic-bezier(.2,.6,.25,1)" },
+          { transform: front },
+        ];
+    const duration = reverse ? 850 : 950;
+    const anim = f.animate(frames, { duration, easing: "linear", fill: "forwards" });
+    // Por si el navegador pausa la animación (pestaña en segundo plano): nunca nos quedamos esperando.
+    return Promise.race([anim.finished, wait(duration + 400)]).catch(() => {}).then(() => f.remove());
   }
 
   let pushed = false;   // ¿hemos añadido una entrada al historial al abrir?
@@ -534,10 +609,11 @@
     current = b;
     if (!wasOpen) source = el || null;
     fillStage(b);
+    stage.classList.toggle("flying", !wasOpen && !!el?.classList.contains("spine"));
     stage.hidden = false;
     stage.classList.toggle("open", card);
     document.body.classList.add("locked");
-    requestAnimationFrame(() => stage.classList.add("show"));
+    frame().then(() => stage.classList.add("show"));
     if (push) setHash(b.id, wasOpen ? "replace" : "push");
 
     if (!wasOpen && el) {
@@ -547,7 +623,8 @@
       await frame();
       if (isSpine) {
         el.classList.add("is-out");
-        await flyBook(el, b, { reverse: true });
+        await flyBook(el, b);
+        stage.classList.remove("flying");
       } else {
         await flyFlat(rectOf($(".cover", el) || el), rectOf(inner), b);
       }
@@ -577,7 +654,6 @@
     const b = current;
     const target = (source && source.isConnected ? source : null) || (b && $(`.spine[data-id="${b.id}"], .tile[data-id="${b.id}"]`));
     const canFly = b && target && inView(target) && inView($("#book3d")) && !reduceMotion;
-    const angle = stage.classList.contains("open") ? -8 : -14;
     detail.style.opacity = "";
     stage.classList.remove("show");
     if (canFly) {
@@ -586,7 +662,7 @@
       inner.style.visibility = "hidden";
       if (isSpine) {
         target.classList.add("is-out");
-        await flyBook(target, b, { angle });
+        await flyBook(target, b, { reverse: true });
       } else {
         await flyFlat(rectOf($(".cover", target) || target), to, b, true);
       }
@@ -650,7 +726,53 @@
     const el = e.target.closest(".spine, .tile");
     if (el) openBook(el.dataset.id, el);
   });
-  $("#book3d").addEventListener("click", () => { if (!stage.classList.contains("open")) openCard(); });
+  $("#book3d").addEventListener("click", () => { if (suppressClick) return; if (!stage.classList.contains("open")) openCard(); });
+
+  // ——— Girar el libro en 3D manteniéndolo pulsado ———
+  // Ratón: arrastrar. Táctil: mantener pulsado un instante y mover el dedo.
+  // Al soltar, el libro vuelve a su sitio con un pequeño rebote.
+  const book3d = $("#book3d");
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  let tilt = null, suppressClick = false;
+  function tiltTo(dx, dy) {
+    const open = stage.classList.contains("open");
+    const ry = (open ? -8 : -14) + clamp(dx * .4, -60, 60);
+    const rx = (open ? 0 : 2) + clamp(-dy * .3, -30, 30);
+    inner.style.transform = `rotateY(${ry}deg) rotateX(${rx}deg) scale(1.04)`;
+  }
+  function startTilt() {
+    if (!tilt) return;
+    tilt.active = true;
+    book3d.classList.add("tilting");
+    inner.classList.remove("springing");
+    inner.style.transform = inner.style.transform || getComputedStyle(inner).transform;
+    navigator.vibrate?.(8);
+  }
+  function endTilt() {
+    if (!tilt) return;
+    clearTimeout(tilt.timer);
+    if (tilt.active) {
+      suppressClick = true;
+      setTimeout(() => (suppressClick = false), 60);
+      book3d.classList.remove("tilting");
+      inner.classList.add("springing");
+      inner.style.transform = "";
+      setTimeout(() => inner.classList.remove("springing"), 820);
+    }
+    tilt = null;
+  }
+  book3d.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    tilt = { x0: e.clientX, y0: e.clientY, active: false };
+  });
+  addEventListener("pointermove", (e) => {
+    if (!tilt || e.pointerType !== "mouse") return;
+    const dx = e.clientX - tilt.x0, dy = e.clientY - tilt.y0;
+    if (!tilt.active && Math.hypot(dx, dy) > 5) startTilt();
+    if (tilt.active) tiltTo(dx, dy);
+  });
+  addEventListener("pointerup", (e) => { if (e.pointerType === "mouse") endTilt(); });
+  book3d.addEventListener("dragstart", (e) => e.preventDefault());
   $("#openCard").addEventListener("click", openCard);
   $("#prev").addEventListener("click", () => step(-1));
   $("#next").addEventListener("click", () => step(1));
@@ -707,11 +829,17 @@
     if (e.touches.length !== 1 || closing) { g = null; return; }
     const t = e.touches[0];
     g = { x0: t.clientX, y0: t.clientY, t0: performance.now(), mode: null, dx: 0, dy: 0, inRow: !!e.target.closest(".mini-row") };
+    if (e.target.closest("#book3d")) {
+      tilt = { x0: t.clientX, y0: t.clientY, active: false };
+      tilt.timer = setTimeout(() => { if (g && !g.mode) startTilt(); }, 260);
+    }
   }, { passive: true });
   stage.addEventListener("touchmove", (e) => {
     if (!g) return;
     const t = e.touches[0];
     const dx = t.clientX - g.x0, dy = t.clientY - g.y0;
+    if (tilt?.active) { e.preventDefault(); tiltTo(dx, dy); return; }
+    if (tilt && Math.hypot(dx, dy) > 10) { clearTimeout(tilt.timer); tilt = null; }
     if (!g.mode) {
       if (Math.hypot(dx, dy) < 10) return;
       const horizontal = Math.abs(dx) > Math.abs(dy) * 1.2;
@@ -746,6 +874,7 @@
     }
   }, { passive: false });
   stage.addEventListener("touchend", () => {
+    if (tilt) { const was = tilt.active; endTilt(); if (was) { g = null; return; } }
     if (!g || !g.mode || g.mode === "native") { g = null; return; }
     const { dx, dy, mode, t0 } = g; g = null;
     const dt = Math.max(1, performance.now() - t0);
@@ -759,7 +888,7 @@
     if (mode === "side" && (Math.abs(dx) > 80 || (Math.abs(dx) / dt > .45 && Math.abs(dx) > 30))) return step(dx < 0 ? 1 : -1, dx);
     settle();
   });
-  stage.addEventListener("touchcancel", () => { inner.style.transform = ""; if (g?.mode && g.mode !== "native") settle(); g = null; });
+  stage.addEventListener("touchcancel", () => { endTilt(); inner.style.transform = ""; if (g?.mode && g.mode !== "native") settle(); g = null; });
 
   // ——— Arranque ———
   syncSeg(); renderChips(); render(); fromHash();

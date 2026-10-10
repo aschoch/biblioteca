@@ -26,6 +26,15 @@ def spine_color(hexc, seed, theme):
     r, g, b = colorsys.hls_to_rgb(hh, ll, ss)
     return "#%02x%02x%02x" % tuple(round(x * 255) for x in (r, g, b))
 
+# Versiones web de las portadas: miniatura (rejilla, lomos, vuelo) y grande (ficha).
+from PIL import Image
+os.makedirs("covers/t", exist_ok=True); os.makedirs("covers/w", exist_ok=True)
+def webp(src, dst, h, q):
+    if os.path.exists(dst) and os.path.getmtime(dst) >= os.path.getmtime(src): return
+    im = Image.open(src).convert("RGB")
+    if im.height > h: im = im.resize((round(im.width * h / im.height), h), Image.LANCZOS)
+    im.save(dst, "WEBP", quality=q, method=6)
+
 out = []
 for b in base:
     e = {**en.get(b["id"], {}), **fix.get(b["id"], {})}
@@ -40,10 +49,14 @@ for b in base:
         "year": e.get("year"), "originalTitle": e.get("originalTitle"),
         "language": e.get("language"), "pages": e.get("pages"),
         "tags": e.get("tags", []),
-        "cover": c.get("file"),
+        "cover": c.get("file") and f"covers/w/{b['id']}.webp",
+        "thumb": c.get("file") and f"covers/t/{b['id']}.webp",
         "ratio": round(c["h"] / c["w"], 3) if c.get("file") else 1.5,
         "color": spine_color(c.get("color"), b["id"], b["theme"]),
     }
+    if c.get("file"):
+        webp(c["file"], rec["cover"], 640, 80)
+        webp(c["file"], rec["thumb"], 360, 72)
     out.append({k: v for k, v in rec.items() if v not in (None, "", [])})
 with open("data/books.js", "w") as f:
     f.write("window.BOOKS = ")
