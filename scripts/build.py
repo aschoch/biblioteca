@@ -3,15 +3,16 @@ import json, os, colorsys, hashlib
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(ROOT)
 base = json.load(open("data/base.json"))
 en = {}
-for n in range(4):
-    for e in json.load(open(f"data/enrich{n}.json")): en[e["id"]] = e
+import glob
+for f in sorted(glob.glob("data/enrich*.json")):
+    for e in json.load(open(f)): en[e["id"]] = e
 fix = json.load(open("data/fixes.json")) if os.path.exists("data/fixes.json") else {}
 cov = json.load(open("data/covers.json"))
 
 THEME_HUES = {"Liderazgo y empresa": 205, "Familia y crianza": 25, "Historia y actualidad": 35,
   "Narrativa": 350, "Teatro": 5, "Clásicos grecolatinos": 40, "Filosofía": 225, "Educación": 150,
   "Poesía": 280, "Obras de consulta": 0, "Magisterio de la Iglesia": 45, "Fe y espiritualidad": 190,
-  "Schoenstatt": 165}
+  "Schoenstatt": 165, "Arte": 15, "Teología del cuerpo": 330}
 
 def spine_color(hexc, seed, theme):
     h = int(hashlib.md5(seed.encode()).hexdigest(), 16)

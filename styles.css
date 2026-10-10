@@ -52,6 +52,8 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
 @media (min-width: 720px) { .wrap { padding: 0 32px; } }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+:focus:not(:focus-visible) { outline: none; }
+#d-title:focus, .book3d:focus { outline: none; }
 
 /* ——— Cabecera ——— */
 .masthead { padding: 56px 0 22px; }
@@ -62,7 +64,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   margin: 0; font: 400 clamp(40px, 7vw, 76px)/1 var(--serif); letter-spacing: -.02em;
   font-variation-settings: "opsz" 144;
 }
-.masthead h1 em { font-style: italic; font-weight: 300; color: var(--ink-2); }
+.masthead h1 em { font-style: italic; font-weight: 300; color: var(--ink-2); white-space: nowrap; }
 .stats { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
 .stats b { color: var(--ink); font-weight: 600; }
 
@@ -82,7 +84,11 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 }
 .search:focus-within { border-color: color-mix(in srgb, var(--accent) 55%, transparent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 14%, transparent); }
 .search svg { color: var(--muted); flex: none; }
-.search input { flex: 1; min-width: 0; border: 0; background: none; outline: none; font: 16px var(--sans); color: var(--ink); }
+.search input {
+  flex: 1; min-width: 0; align-self: stretch; height: auto; margin: 0; padding: 0; border: 0; border-radius: 0;
+  background: none; outline: none; font: 16px/normal var(--sans); color: var(--ink);
+  -webkit-appearance: none; appearance: none;
+}
 .search input::placeholder { color: var(--muted); }
 .search input::-webkit-search-cancel-button { -webkit-appearance: none; }
 .search__clear {

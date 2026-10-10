@@ -671,9 +671,6 @@
   "w": 330,
   "h": 500
  },
- "nietzsche": {
-  "file": null
- },
  "etica-sin-moral": {
   "file": "covers/etica-sin-moral.jpg",
   "src": "ol-search",
@@ -938,9 +935,6 @@
   "w": 306,
   "h": 500
  },
- "adelante-2": {
-  "file": null
- },
  "el-dia-que-cambie-mi-vida": {
   "file": "covers/el-dia-que-cambie-mi-vida.jpg",
   "src": "ol-search",
@@ -964,9 +958,6 @@
   "color": "#016171",
   "w": 333,
   "h": 500
- },
- "educar-es-de-valientes": {
-  "file": null
  },
  "la-fase-cero-de-tu-futuro": {
   "file": "covers/la-fase-cero-de-tu-futuro.jpg",
@@ -1160,9 +1151,6 @@
   "w": 401,
   "h": 640
  },
- "jacques-maritain-y-la-polemica-del-bien-comun": {
-  "file": null
- },
  "la-rebelion-de-las-masas-y-otros-ensayos": {
   "file": "covers/la-rebelion-de-las-masas-y-otros-ensayos.jpg",
   "src": "override",
@@ -1283,9 +1271,6 @@
   "w": 321,
   "h": 500
  },
- "tierra-granada": {
-  "file": null
- },
  "himnos-a-la-iglesia": {
   "file": "covers/himnos-a-la-iglesia.jpg",
   "src": "override",
@@ -1318,12 +1303,6 @@
   "w": 302,
   "h": 500
  },
- "textos-sobre-la-regulacion-de-la-natalidad": {
-  "file": null
- },
- "palabras-de-su-santidad-leon-xiv-en-su-viaje-a-espana": {
-  "file": null
- },
  "dilexit-nos": {
   "file": "covers/dilexit-nos.jpg",
   "src": "override",
@@ -1340,12 +1319,6 @@
   "w": 175,
   "h": 245
  },
- "tormentas-de-otono-1912": {
-  "file": null
- },
- "la-educacion-en-un-cambio-de-epoca": {
-  "file": null
- },
  "dios-mi-padre": {
   "file": "covers/dios-mi-padre.jpg",
   "src": "override",
@@ -1353,12 +1326,6 @@
   "color": "#5d3d25",
   "w": 390,
   "h": 520
- },
- "lunes-por-la-tarde-3": {
-  "file": null
- },
- "lunes-por-la-tarde-4": {
-  "file": null
  },
  "lunes-por-la-tarde-5": {
   "file": "covers/lunes-por-la-tarde-5.jpg",
@@ -1376,12 +1343,6 @@
   "w": 357,
   "h": 500
  },
- "lunes-por-la-tarde-29": {
-  "file": null
- },
- "lunes-por-la-tarde-30": {
-  "file": null
- },
  "la-santidad-de-la-vida-diaria": {
   "file": "covers/la-santidad-de-la-vida-diaria.jpg",
   "src": "override",
@@ -1390,9 +1351,6 @@
   "w": 345,
   "h": 500
  },
- "los-anos-ocultos-padre-jose-kentenich-infancia-y-juventud-18": {
-  "file": null
- },
  "julio-steinkaul-un-heroe-de-la-primavera-sagrada": {
   "file": "covers/julio-steinkaul-un-heroe-de-la-primavera-sagrada.jpg",
   "src": "override",
@@ -1400,9 +1358,6 @@
   "color": "#bd243e",
   "w": 358,
   "h": 520
- },
- "adelante": {
-  "file": null
  },
  "pedagogia-mariana-el-estilo-pedagogico-kentenijiano": {
   "file": "covers/pedagogia-mariana-el-estilo-pedagogico-kentenijiano.jpg",
@@ -1444,12 +1399,6 @@
   "w": 361,
   "h": 500
  },
- "heroes-de-fuego-ardieron-hasta-consumirse": {
-  "file": null
- },
- "el-padre-kentenich": {
-  "file": null
- },
  "jose-kentenich": {
   "file": "covers/jose-kentenich.jpg",
   "src": "override",
@@ -1482,12 +1431,6 @@
   "w": 400,
   "h": 536
  },
- "la-familia-de-nazareth": {
-  "file": null
- },
- "bajo-la-proteccion-de-maria": {
-  "file": null
- },
  "mision-personal": {
   "file": "covers/mision-personal.jpg",
   "src": "override",
@@ -1503,5 +1446,1075 @@
   "color": "#1b251d",
   "w": 500,
   "h": 638
+ },
+ "hombre-y-mujer-los-creo-catequesis-sobre-el-amor-humano": {
+  "file": "covers/hombre-y-mujer-los-creo-catequesis-sobre-el-amor-humano.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13941922-L.jpg",
+  "color": "#859873",
+  "w": 330,
+  "h": 500
+ },
+ "hombre-mujer-el-misterio-nupcial": {
+  "file": "covers/hombre-mujer-el-misterio-nupcial.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13728816-L.jpg",
+  "color": "#424669",
+  "w": 334,
+  "h": 500
+ },
+ "la-mujer": {
+  "file": "covers/la-mujer.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5273186-L.jpg",
+  "color": "#284fa5",
+  "w": 128,
+  "h": 213
+ },
+ "la-mujer-femenina": {
+  "file": "covers/la-mujer-femenina.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13704072-L.jpg",
+  "color": "#ffffff",
+  "w": 332,
+  "h": 500
+ },
+ "masculino": {
+  "file": "covers/masculino.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13702525-L.jpg",
+  "color": "#57492f",
+  "w": 332,
+  "h": 500
+ },
+ "erotica-y-materna": {
+  "file": "covers/erotica-y-materna.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/12324563-L.jpg",
+  "color": "#a46c3c",
+  "w": 334,
+  "h": 500
+ },
+ "amor-y-responsabilidad": {
+  "file": "covers/amor-y-responsabilidad.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/10721817-L.jpg",
+  "color": "#fdd381",
+  "w": 310,
+  "h": 500
+ },
+ "el-taller-del-orfebre": {
+  "file": "covers/el-taller-del-orfebre.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/3360846-L.jpg",
+  "color": "#fffeda",
+  "w": 336,
+  "h": 475
+ },
+ "asegurar-el-amor": {
+  "file": "covers/asegurar-el-amor.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5264601-L.jpg",
+  "color": "#0e0d0a",
+  "w": 128,
+  "h": 188
+ },
+ "a-mi-toda-la-gloria": {
+  "file": "covers/a-mi-toda-la-gloria.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13507453-L.jpg",
+  "color": "#55251d",
+  "w": 309,
+  "h": 500
+ },
+ "ultimas-noticias-del-hombre-y-de-la-mujer": {
+  "file": "covers/ultimas-noticias-del-hombre-y-de-la-mujer.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13512834-L.jpg",
+  "color": "#664843",
+  "w": 333,
+  "h": 500
+ },
+ "ser-padre-con-san-jose": {
+  "file": "covers/ser-padre-con-san-jose.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13732823-L.jpg",
+  "color": "#a7784b",
+  "w": 250,
+  "h": 366
+ },
+ "el-espiritu-santo": {
+  "file": null
+ },
+ "introduccion-al-cristianismo": {
+  "file": "covers/introduccion-al-cristianismo.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13071498-L.jpg",
+  "color": "#a07103",
+  "w": 295,
+  "h": 500
+ },
+ "jesus-and-the-jewish-roots-of-the-eucharist": {
+  "file": "covers/jesus-and-the-jewish-roots-of-the-eucharist.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/7105685-L.jpg",
+  "color": "#814b35",
+  "w": 300,
+  "h": 450
+ },
+ "jesus-de-nazaret": {
+  "file": "covers/jesus-de-nazaret.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13158317-L.jpg",
+  "color": "#f5fbf5",
+  "w": 311,
+  "h": 500
+ },
+ "paul-gauguin": {
+  "file": "covers/paul-gauguin.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/4864501-L.jpg",
+  "color": "#c6b42e",
+  "w": 128,
+  "h": 177
+ },
+ "henri-matisse": {
+  "file": "covers/henri-matisse.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030658-L.jpg",
+  "color": "#080247",
+  "w": 342,
+  "h": 475
+ },
+ "miguel-angel": {
+  "file": "covers/miguel-angel.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/4865415-L.jpg",
+  "color": "#b09f7d",
+  "w": 128,
+  "h": 166
+ },
+ "edward-hopper": {
+  "file": "covers/edward-hopper.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/6799774-L.jpg",
+  "color": "#010100",
+  "w": 384,
+  "h": 500
+ },
+ "diego-velazquez": {
+  "file": "covers/diego-velazquez.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030234-L.jpg",
+  "color": "#8e674f",
+  "w": 376,
+  "h": 475
+ },
+ "andy-warhol": {
+  "file": "covers/andy-warhol.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1029426-L.jpg",
+  "color": "#682216",
+  "w": 342,
+  "h": 475
+ },
+ "francisco-de-goya": {
+  "file": "covers/francisco-de-goya.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1029661-L.jpg",
+  "color": "#85684c",
+  "w": 377,
+  "h": 475
+ },
+ "caravaggio": {
+  "file": "covers/caravaggio.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/11818793-L.jpg",
+  "color": "#694131",
+  "w": 384,
+  "h": 500
+ },
+ "frida-kahlo": {
+  "file": "covers/frida-kahlo.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5231703-L.jpg",
+  "color": "#9f570b",
+  "w": 128,
+  "h": 180
+ },
+ "salvador-dali": {
+  "file": "covers/salvador-dali.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5415779-L.jpg",
+  "color": "#cdcacc",
+  "w": 128,
+  "h": 165
+ },
+ "edouard-manet": {
+  "file": "covers/edouard-manet.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1029590-L.jpg",
+  "color": "#08090c",
+  "w": 385,
+  "h": 475
+ },
+ "paul-cezanne": {
+  "file": "covers/paul-cezanne.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030589-L.jpg",
+  "color": "#8e3d34",
+  "w": 351,
+  "h": 475
+ },
+ "amedeo-modigliani": {
+  "file": "covers/amedeo-modigliani.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/14134603-L.jpg",
+  "color": "#a73d31",
+  "w": 406,
+  "h": 500
+ },
+ "pierre-auguste-renoir": {
+  "file": "covers/pierre-auguste-renoir.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1029431-L.jpg",
+  "color": "#061a19",
+  "w": 344,
+  "h": 475
+ },
+ "rafael": {
+  "file": "covers/rafael.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/2244763-L.jpg",
+  "color": "#b38f5c",
+  "w": 415,
+  "h": 500
+ },
+ "vermeer": {
+  "file": "covers/vermeer.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5231710-L.jpg",
+  "color": "#a9986b",
+  "w": 128,
+  "h": 166
+ },
+ "el-greco": {
+  "file": "covers/el-greco.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/9009843-L.jpg",
+  "color": "#793f42",
+  "w": 406,
+  "h": 500
+ },
+ "pablo-picasso": {
+  "file": "covers/pablo-picasso.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030652-L.jpg",
+  "color": "#7088a7",
+  "w": 345,
+  "h": 475
+ },
+ "claude-monet": {
+  "file": "covers/claude-monet.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030618-L.jpg",
+  "color": "#66683e",
+  "w": 346,
+  "h": 475
+ },
+ "sandro-botticelli": {
+  "file": "covers/sandro-botticelli.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030617-L.jpg",
+  "color": "#c97918",
+  "w": 343,
+  "h": 475
+ },
+ "vincent-van-gogh": {
+  "file": "covers/vincent-van-gogh.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/4703873-L.jpg",
+  "color": "#6e4c2e",
+  "w": 128,
+  "h": 180
+ },
+ "diego-rivera": {
+  "file": "covers/diego-rivera.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030534-L.jpg",
+  "color": "#3c3324",
+  "w": 345,
+  "h": 475
+ },
+ "fernando-botero": {
+  "file": "covers/fernando-botero.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/2244760-L.jpg",
+  "color": "#345961",
+  "w": 390,
+  "h": 500
+ },
+ "mark-rothko": {
+  "file": "covers/mark-rothko.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1029574-L.jpg",
+  "color": "#2b4c8a",
+  "w": 385,
+  "h": 475
+ },
+ "rembrandt": {
+  "file": "covers/rembrandt.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/9009793-L.jpg",
+  "color": "#392d28",
+  "w": 400,
+  "h": 500
+ },
+ "jean-michel-basquiat": {
+  "file": "covers/jean-michel-basquiat.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1029544-L.jpg",
+  "color": "#8c3c37",
+  "w": 385,
+  "h": 475
+ },
+ "wassily-kandinsky": {
+  "file": "covers/wassily-kandinsky.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030169-L.jpg",
+  "color": "#905452",
+  "w": 382,
+  "h": 475
+ },
+ "gustav-klimt": {
+  "file": "covers/gustav-klimt.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/9291419-L.jpg",
+  "color": "#925c1d",
+  "w": 395,
+  "h": 500
+ },
+ "joan-miro": {
+  "file": "covers/joan-miro.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1030666-L.jpg",
+  "color": "#2b74b5",
+  "w": 343,
+  "h": 475
+ },
+ "leonardo-da-vinci": {
+  "file": null
+ },
+ "la-historia-del-arte": {
+  "file": null
+ },
+ "los-miserables": {
+  "file": null
+ },
+ "cien-anos-de-soledad": {
+  "file": null
+ },
+ "guerra-y-paz": {
+  "file": "covers/guerra-y-paz.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13859412-L.jpg",
+  "color": "#171b4a",
+  "w": 309,
+  "h": 500
+ },
+ "crimen-y-castigo": {
+  "file": "covers/crimen-y-castigo.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/12328823-L.jpg",
+  "color": "#0a0706",
+  "w": 326,
+  "h": 500
+ },
+ "momo": {
+  "file": "covers/momo.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/8574580-L.jpg",
+  "color": "#982412",
+  "w": 312,
+  "h": 500
+ },
+ "the-age-of-surveillance-capitalism": {
+  "file": "covers/the-age-of-surveillance-capitalism.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/8353262-L.jpg",
+  "color": "#ebe2cf",
+  "w": 301,
+  "h": 500
+ },
+ "la-musica-de-la-memoria": {
+  "file": "covers/la-musica-de-la-memoria.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/7350819-L.jpg",
+  "color": "#7a6733",
+  "w": 302,
+  "h": 500
+ },
+ "la-libertad-de-ser-libres": {
+  "file": "covers/la-libertad-de-ser-libres.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13951813-L.jpg",
+  "color": "#c86584",
+  "w": 303,
+  "h": 500
+ },
+ "la-resistencia-intima": {
+  "file": "covers/la-resistencia-intima.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/7898046-L.jpg",
+  "color": "#304c2d",
+  "w": 318,
+  "h": 500
+ },
+ "ortodoxia": {
+  "file": null
+ },
+ "rebelion-en-la-granja": {
+  "file": "covers/rebelion-en-la-granja.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13712713-L.jpg",
+  "color": "#5a1315",
+  "w": 326,
+  "h": 500
+ },
+ "ciencia-y-tecnica-como-ideologia": {
+  "file": "covers/ciencia-y-tecnica-como-ideologia.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13591809-L.jpg",
+  "color": "#e6e3de",
+  "w": 329,
+  "h": 500
+ },
+ "una-interpretacion-de-la-historia-universal": {
+  "file": "covers/una-interpretacion-de-la-historia-universal.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/4369806-L.jpg",
+  "color": "#354d81",
+  "w": 128,
+  "h": 219
+ },
+ "vida-liquida": {
+  "file": "covers/vida-liquida.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13661891-L.jpg",
+  "color": "#5a5d82",
+  "w": 337,
+  "h": 500
+ },
+ "el-diablo-propone-un-brindis": {
+  "file": "covers/el-diablo-propone-un-brindis.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13702791-L.jpg",
+  "color": "#7b9fb9",
+  "w": 337,
+  "h": 500
+ },
+ "the-future-of-capitalism": {
+  "file": "covers/the-future-of-capitalism.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/8814733-L.jpg",
+  "color": "#03465a",
+  "w": 331,
+  "h": 500
+ },
+ "sin-raices": {
+  "file": "covers/sin-raices.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13537807-L.jpg",
+  "color": "#2c3473",
+  "w": 297,
+  "h": 500
+ },
+ "el-mundo-de-las-ideologias": {
+  "file": "covers/el-mundo-de-las-ideologias.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13512948-L.jpg",
+  "color": "#704427",
+  "w": 356,
+  "h": 500
+ },
+ "dialectica-de-la-ilustracion": {
+  "file": "covers/dialectica-de-la-ilustracion.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13478473-L.jpg",
+  "color": "#eaaa00",
+  "w": 308,
+  "h": 500
+ },
+ "la-era-del-vacio": {
+  "file": "covers/la-era-del-vacio.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/4909172-L.jpg",
+  "color": "#aa018f",
+  "w": 128,
+  "h": 195
+ },
+ "adios-a-la-verdad": {
+  "file": "covers/adios-a-la-verdad.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13658121-L.jpg",
+  "color": "#559552",
+  "w": 341,
+  "h": 500
+ },
+ "con-ojos-nuevos": {
+  "file": "covers/con-ojos-nuevos.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13481643-L.jpg",
+  "color": "#fefefe",
+  "w": 337,
+  "h": 500
+ },
+ "el-don-de-la-comunion-trinitaria": {
+  "file": "covers/el-don-de-la-comunion-trinitaria.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/14054550-L.jpg",
+  "color": "#d73928",
+  "w": 352,
+  "h": 500
+ },
+ "a-la-espera-de-dios": {
+  "file": "covers/a-la-espera-de-dios.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13188246-L.jpg",
+  "color": "#51402c",
+  "w": 302,
+  "h": 500
+ },
+ "la-teologia-de-chesterton-y-tolkien": {
+  "file": "covers/la-teologia-de-chesterton-y-tolkien.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/14011236-L.jpg",
+  "color": "#83541f",
+  "w": 361,
+  "h": 500
+ },
+ "el-hecho-extraordinario": {
+  "file": "covers/el-hecho-extraordinario.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/4904429-L.jpg",
+  "color": "#c9b49f",
+  "w": 128,
+  "h": 205
+ },
+ "en-la-escuela-del-espiritu-santo": {
+  "file": "covers/en-la-escuela-del-espiritu-santo.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/3326554-L.jpg",
+  "color": "#bc1023",
+  "w": 329,
+  "h": 500
+ },
+ "llamados-a-la-vida": {
+  "file": "covers/llamados-a-la-vida.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13733520-L.jpg",
+  "color": "#a23e3a",
+  "w": 325,
+  "h": 500
+ },
+ "el-arte-de-la-vida-sana": {
+  "file": "covers/el-arte-de-la-vida-sana.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/14253583-L.jpg",
+  "color": "#ede2d2",
+  "w": 331,
+  "h": 500
+ },
+ "ejercicios-de-contemplacion": {
+  "file": "covers/ejercicios-de-contemplacion.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13344048-L.jpg",
+  "color": "#dabc7a",
+  "w": 328,
+  "h": 500
+ },
+ "que-me-ves-que-me-oyes": {
+  "file": "covers/que-me-ves-que-me-oyes.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13507933-L.jpg",
+  "color": "#ffffff",
+  "w": 333,
+  "h": 500
+ },
+ "forja": {
+  "file": "covers/forja.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13702449-L.jpg",
+  "color": "#b0482c",
+  "w": 331,
+  "h": 500
+ },
+ "camino": {
+  "file": null
+ },
+ "sagrada-biblia": {
+  "file": null
+ },
+ "vida-y-misterio-de-jesus-de-nazaret-ii": {
+  "file": "covers/vida-y-misterio-de-jesus-de-nazaret-ii.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/14106234-L.jpg",
+  "color": "#211e20",
+  "w": 328,
+  "h": 500
+ },
+ "obras-archivo-silveriano-1": {
+  "file": null
+ },
+ "utopia": {
+  "file": "covers/utopia.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/10540128-L.jpg",
+  "color": "#b1a388",
+  "w": 315,
+  "h": 500
+ },
+ "los-caminos-del-silencio-interior": {
+  "file": "covers/los-caminos-del-silencio-interior.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5233221-L.jpg",
+  "color": "#f7ab07",
+  "w": 128,
+  "h": 207
+ },
+ "san-jose-el-eco-del-padre": {
+  "file": "covers/san-jose-el-eco-del-padre.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13727853-L.jpg",
+  "color": "#6d4a32",
+  "w": 357,
+  "h": 500
+ },
+ "cinco-panes-y-dos-peces": {
+  "file": "covers/cinco-panes-y-dos-peces.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/3348182-L.jpg",
+  "color": "#120f12",
+  "w": 303,
+  "h": 475
+ },
+ "simon-pedro": {
+  "file": "covers/simon-pedro.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13733357-L.jpg",
+  "color": "#a54344",
+  "w": 321,
+  "h": 500
+ },
+ "las-moradas": {
+  "file": null
+ },
+ "poesia-completa": {
+  "file": "covers/poesia-completa.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/15252383-L.jpg",
+  "color": "#84765a",
+  "w": 310,
+  "h": 500
+ },
+ "las-confesiones": {
+  "file": "covers/las-confesiones.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/1047126-L.jpg",
+  "color": "#ffffff",
+  "w": 278,
+  "h": 500
+ },
+ "historia-de-un-alma": {
+  "file": "covers/historia-de-un-alma.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/3347438-L.jpg",
+  "color": "#ffffff",
+  "w": 337,
+  "h": 475
+ },
+ "libro-de-la-vida": {
+  "file": "covers/libro-de-la-vida.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13983001-L.jpg",
+  "color": "#4a3d2c",
+  "w": 334,
+  "h": 500
+ },
+ "el-cura-de-ars": {
+  "file": "covers/el-cura-de-ars.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13508484-L.jpg",
+  "color": "#4a3d35",
+  "w": 314,
+  "h": 500
+ },
+ "san-francisco-de-sales": {
+  "file": "covers/san-francisco-de-sales.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13508480-L.jpg",
+  "color": "#463626",
+  "w": 314,
+  "h": 500
+ },
+ "al-asalto-del-cielo": {
+  "file": "covers/al-asalto-del-cielo.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13508540-L.jpg",
+  "color": "#a99269",
+  "w": 314,
+  "h": 500
+ },
+ "la-vida-de-santa-teresa-de-jesus": {
+  "file": "covers/la-vida-de-santa-teresa-de-jesus.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5428204-L.jpg",
+  "color": "#ebebf7",
+  "w": 128,
+  "h": 222
+ },
+ "corazon-inquieto": {
+  "file": "covers/corazon-inquieto.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13508570-L.jpg",
+  "color": "#6d382d",
+  "w": 314,
+  "h": 500
+ },
+ "el-evangelio-secreto-de-la-virgen-maria": {
+  "file": "covers/el-evangelio-secreto-de-la-virgen-maria.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5257370-L.jpg",
+  "color": "#7c6039",
+  "w": 128,
+  "h": 204
+ },
+ "una-amistad-como-ninguna": {
+  "file": "covers/una-amistad-como-ninguna.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/13554438-L.jpg",
+  "color": "#e5ba75",
+  "w": 331,
+  "h": 500
+ },
+ "el-joven-que-llego-a-papa": {
+  "file": "covers/el-joven-que-llego-a-papa.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5262109-L.jpg",
+  "color": "#f7d803",
+  "w": 128,
+  "h": 180
+ },
+ "el-olvido-de-si": {
+  "file": "covers/el-olvido-de-si.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/7278636-L.jpg",
+  "color": "#40302b",
+  "w": 174,
+  "h": 290
+ },
+ "nietzsche": {
+  "file": "covers/nietzsche.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/34307-L.jpg",
+  "color": "#72492d",
+  "w": 331,
+  "h": 500
+ },
+ "adelante-2": {
+  "file": "covers/adelante-2.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/4757639-L.jpg",
+  "color": "#162c63",
+  "w": 128,
+  "h": 160
+ },
+ "pedro-pablo-rubens": {
+  "file": "covers/pedro-pablo-rubens.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9783822828847-L.jpg?default=false",
+  "color": "#85a8c1",
+  "w": 404,
+  "h": 500
+ },
+ "pensar-rapido-pensar-despacio": {
+  "file": "covers/pensar-rapido-pensar-despacio.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788483068618-L.jpg?default=false",
+  "color": "#fcfbf7",
+  "w": 326,
+  "h": 500
+ },
+ "el-hombre-corriente": {
+  "file": "covers/el-hombre-corriente.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788415177821-L.jpg?default=false",
+  "color": "#f5cf84",
+  "w": 357,
+  "h": 500
+ },
+ "el-arte-del-buen-combate": {
+  "file": "covers/el-arte-del-buen-combate.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/847057681X.01.LZZZZZZZ.jpg",
+  "color": "#654f32",
+  "w": 404,
+  "h": 640
+ },
+ "vida-y-misterio-de-jesus-de-nazaret-iii": {
+  "file": "covers/vida-y-misterio-de-jesus-de-nazaret-iii.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8430110372.01.LZZZZZZZ.jpg",
+  "color": "#613c35",
+  "w": 323,
+  "h": 500
+ },
+ "las-florecillas-de-san-francisco-de-asis": {
+  "file": "covers/las-florecillas-de-san-francisco-de-asis.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788428532785-L.jpg?default=false",
+  "color": "#e8f2d9",
+  "w": 316,
+  "h": 500
+ },
+ "tres-monjes-rebeldes": {
+  "file": "covers/tres-monjes-rebeldes.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8425412625.01.LZZZZZZZ.jpg",
+  "color": "#ae293c",
+  "w": 326,
+  "h": 500
+ },
+ "educar-es-de-valientes": {
+  "file": null
+ },
+ "jacques-maritain-y-la-polemica-del-bien-comun": {
+  "file": null
+ },
+ "tierra-granada": {
+  "file": null
+ },
+ "textos-sobre-la-regulacion-de-la-natalidad": {
+  "file": null
+ },
+ "palabras-de-su-santidad-leon-xiv-en-su-viaje-a-espana": {
+  "file": null
+ },
+ "tormentas-de-otono-1912": {
+  "file": null
+ },
+ "la-educacion-en-un-cambio-de-epoca": {
+  "file": null
+ },
+ "lunes-por-la-tarde-3": {
+  "file": null
+ },
+ "lunes-por-la-tarde-4": {
+  "file": null
+ },
+ "lunes-por-la-tarde-29": {
+  "file": null
+ },
+ "lunes-por-la-tarde-30": {
+  "file": null
+ },
+ "los-anos-ocultos-padre-jose-kentenich-infancia-y-juventud-18": {
+  "file": null
+ },
+ "adelante": {
+  "file": null
+ },
+ "heroes-de-fuego-ardieron-hasta-consumirse": {
+  "file": null
+ },
+ "el-padre-kentenich": {
+  "file": null
+ },
+ "la-familia-de-nazareth": {
+  "file": null
+ },
+ "bajo-la-proteccion-de-maria": {
+  "file": null
+ },
+ "ser-finito-y-ser-eterno": {
+  "file": "covers/ser-finito-y-ser-eterno.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8413391598.01.LZZZZZZZ.jpg",
+  "color": "#eceade",
+  "w": 326,
+  "h": 500
+ },
+ "castidad": {
+  "file": "covers/castidad.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8413391652.01.LZZZZZZZ.jpg",
+  "color": "#8e7960",
+  "w": 352,
+  "h": 500
+ },
+ "genero-jovenes-e-iglesia": {
+  "file": "covers/genero-jovenes-e-iglesia.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8413391806.01.LZZZZZZZ.jpg",
+  "color": "#20bfd8",
+  "w": 355,
+  "h": 500
+ },
+ "la-profundidad-de-los-sexos-por-una-mistica-de-la-carne": {
+  "file": "covers/la-profundidad-de-los-sexos-por-una-mistica-de-la-carne.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8493610224.01.LZZZZZZZ.jpg",
+  "color": "#513716",
+  "w": 359,
+  "h": 500
+ },
+ "el-descarte-del-aborto": {
+  "file": null
+ },
+ "es-bueno-que-existas-una-guia-para-comprender-la-teologia-de": {
+  "file": null
+ },
+ "el-senor": {
+  "file": "covers/el-senor.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8470575066.01.LZZZZZZZ.jpg",
+  "color": "#413727",
+  "w": 328,
+  "h": 500
+ },
+ "baby-s-first-bible-little-stories-for-little-hearts": {
+  "file": "covers/baby-s-first-bible-little-stories-for-little-hearts.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9780310704485-L.jpg?default=false",
+  "color": "#ebe3cd",
+  "w": 359,
+  "h": 500
+ },
+ "el-pensamiento-debil": {
+  "file": null
+ },
+ "la-sociedad-del-cansancio": {
+  "file": "covers/la-sociedad-del-cansancio.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788425428685-L.jpg?default=false",
+  "color": "#704639",
+  "w": 326,
+  "h": 500
+ },
+ "biografia-de-la-humanidad": {
+  "file": "covers/biografia-de-la-humanidad.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788434429352-L.jpg?default=false",
+  "color": "#68564d",
+  "w": 318,
+  "h": 500
+ },
+ "el-tranvia-de-mis-recuerdos": {
+  "file": null
+ },
+ "pensar-diferente": {
+  "file": "covers/pensar-diferente.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8413640636.01.LZZZZZZZ.jpg",
+  "color": "#01a7e3",
+  "w": 315,
+  "h": 500
+ },
+ "contracorriente-hacia-la-libertad": {
+  "file": "covers/contracorriente-hacia-la-libertad.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8417703098.01.LZZZZZZZ.jpg",
+  "color": "#030303",
+  "w": 333,
+  "h": 500
+ },
+ "pensadoras-para-el-siglo-xxi": {
+  "file": "covers/pensadoras-para-el-siglo-xxi.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8432149098.01.LZZZZZZZ.jpg",
+  "color": "#f0aa48",
+  "w": 336,
+  "h": 500
+ },
+ "la-fatal-arrogancia-los-errores-del-socialismo": {
+  "file": "covers/la-fatal-arrogancia-los-errores-del-socialismo.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788472092365-L.jpg?default=false",
+  "color": "#c4c1b2",
+  "w": 361,
+  "h": 500
+ },
+ "cine-e-ideologia": {
+  "file": "covers/cine-e-ideologia.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8416541000.01.LZZZZZZZ.jpg",
+  "color": "#af0e16",
+  "w": 328,
+  "h": 500
+ },
+ "cambiemos-de-via": {
+  "file": "covers/cambiemos-de-via.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788449337611-L.jpg?default=false",
+  "color": "#f5f1ee",
+  "w": 143,
+  "h": 212
+ },
+ "para-mi-gloria-los-he-creado": {
+  "file": null
+ },
+ "el-amor-o-la-fuerza-del-sino": {
+  "file": null
+ },
+ "esta-noche-en-casa": {
+  "file": null
+ },
+ "el-regreso-del-hijo-prodigo": {
+  "file": "covers/el-regreso-del-hijo-prodigo.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788428811514-L.jpg?default=false",
+  "color": "#2a363d",
+  "w": 353,
+  "h": 500
+ },
+ "jesus-el-hijo-prodigo-del-padre": {
+  "file": null
+ },
+ "tiempo-para-dios": {
+  "file": "covers/tiempo-para-dios.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8432133590.01.LZZZZZZZ.jpg",
+  "color": "#8a2523",
+  "w": 328,
+  "h": 500
+ },
+ "mensaje-de-misericordia-de-jesucristo-al-mundo-actual": {
+  "file": null
+ },
+ "la-libertad-cristiana": {
+  "file": null
+ },
+ "el-bautismo-un-gran-si-a-la-vida": {
+  "file": null
+ },
+ "tu-sed-mi-sed": {
+  "file": null
+ },
+ "el-crucificado": {
+  "file": null
+ },
+ "dejad-que-cristo-os-guie": {
+  "file": "covers/dejad-que-cristo-os-guie.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788470576348-L.jpg?default=false",
+  "color": "#ffffff",
+  "w": 304,
+  "h": 500
+ },
+ "catecismo-de-la-iglesia-catolica": {
+  "file": null
+ },
+ "san-francisco-de-asis": {
+  "file": null
  }
 }

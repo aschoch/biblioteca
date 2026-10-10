@@ -8,10 +8,9 @@ os.chdir(ROOT)
 UA = {"User-Agent": "biblioteca-personal/1.0 (alfredo)"}
 books = json.load(open("data/base.json"))
 extra = {}
-for n in range(4):
-    p = f"data/enrich{n}.json"
-    if os.path.exists(p):
-        for e in json.load(open(p)): extra[e["id"]] = e
+import glob
+for p in sorted(glob.glob("data/enrich*.json")):
+    for e in json.load(open(p)): extra[e["id"]] = e
 meta = json.load(open("data/covers.json")) if os.path.exists("data/covers.json") else {}
 overrides = json.load(open("data/cover_overrides.json")) if os.path.exists("data/cover_overrides.json") else {}
 force = "--force" in sys.argv

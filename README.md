@@ -1,4 +1,4 @@
-# La biblioteca de Alfredo
+# La biblioteca de Bea y Alfredo
 
 Una estantería digital con los libros de casa. Pulsa un lomo para sacar el libro de la balda y verle la portada; pulsa la portada para abrir su ficha.
 

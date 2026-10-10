@@ -1798,5 +1798,1274 @@
   "theme": "Schoenstatt",
   "shelf": 200,
   "note": ""
+ },
+ {
+  "id": "hombre-y-mujer-los-creo-catequesis-sobre-el-amor-humano",
+  "title": "Hombre y mujer los creó. Catequesis sobre el amor humano",
+  "author": "Juan Pablo II",
+  "sortKey": "Juan Pablo II",
+  "theme": "Teología del cuerpo",
+  "shelf": 201,
+  "note": ""
+ },
+ {
+  "id": "hombre-mujer-el-misterio-nupcial",
+  "title": "Hombre-mujer. El misterio nupcial",
+  "author": "Angelo Scola",
+  "sortKey": "Scola",
+  "theme": "Teología del cuerpo",
+  "shelf": 202,
+  "note": ""
+ },
+ {
+  "id": "ser-finito-y-ser-eterno",
+  "title": "Ser finito y ser eterno",
+  "author": "Edith Stein",
+  "sortKey": "Stein",
+  "theme": "Filosofía",
+  "shelf": 203,
+  "note": ""
+ },
+ {
+  "id": "la-mujer",
+  "title": "La mujer",
+  "author": "Edith Stein",
+  "sortKey": "Stein",
+  "theme": "Teología del cuerpo",
+  "shelf": 204,
+  "note": ""
+ },
+ {
+  "id": "castidad",
+  "title": "Castidad",
+  "author": "Erik Varden",
+  "sortKey": "Varden",
+  "theme": "Teología del cuerpo",
+  "shelf": 205,
+  "note": ""
+ },
+ {
+  "id": "la-mujer-femenina",
+  "title": "La mujer femenina",
+  "author": "María Calvo",
+  "sortKey": "Calvo",
+  "theme": "Teología del cuerpo",
+  "shelf": 206,
+  "note": ""
+ },
+ {
+  "id": "masculino",
+  "title": "Masculino",
+  "author": "Mariolina Ceriotti Migliarese",
+  "sortKey": "Ceriotti",
+  "theme": "Teología del cuerpo",
+  "shelf": 207,
+  "note": ""
+ },
+ {
+  "id": "erotica-y-materna",
+  "title": "Erótica y materna",
+  "author": "Mariolina Ceriotti Migliarese",
+  "sortKey": "Ceriotti",
+  "theme": "Teología del cuerpo",
+  "shelf": 208,
+  "note": ""
+ },
+ {
+  "id": "genero-jovenes-e-iglesia",
+  "title": "Género, jóvenes e Iglesia",
+  "author": "Marta Rodríguez Díaz",
+  "sortKey": "Rodríguez Díaz",
+  "theme": "Teología del cuerpo",
+  "shelf": 209,
+  "note": ""
+ },
+ {
+  "id": "amor-y-responsabilidad",
+  "title": "Amor y responsabilidad",
+  "author": "Karol Wojtyła",
+  "sortKey": "Wojtyła",
+  "theme": "Teología del cuerpo",
+  "shelf": 210,
+  "note": ""
+ },
+ {
+  "id": "el-taller-del-orfebre",
+  "title": "El taller del orfebre",
+  "author": "Karol Wojtyła",
+  "sortKey": "Wojtyła",
+  "theme": "Teología del cuerpo",
+  "shelf": 211,
+  "note": ""
+ },
+ {
+  "id": "asegurar-el-amor",
+  "title": "Asegurar el amor",
+  "author": "Tomás Melendo y Lourdes Millán-Puelles",
+  "sortKey": "Melendo",
+  "theme": "Teología del cuerpo",
+  "shelf": 212,
+  "note": ""
+ },
+ {
+  "id": "a-mi-toda-la-gloria",
+  "title": "A mí toda la gloria",
+  "author": "Fabrice Hadjadj",
+  "sortKey": "Hadjadj",
+  "theme": "Teología del cuerpo",
+  "shelf": 213,
+  "note": ""
+ },
+ {
+  "id": "ultimas-noticias-del-hombre-y-de-la-mujer",
+  "title": "Últimas noticias del hombre (y de la mujer)",
+  "author": "Fabrice Hadjadj",
+  "sortKey": "Hadjadj",
+  "theme": "Teología del cuerpo",
+  "shelf": 214,
+  "note": ""
+ },
+ {
+  "id": "la-profundidad-de-los-sexos-por-una-mistica-de-la-carne",
+  "title": "La profundidad de los sexos. Por una mística de la carne",
+  "author": "Fabrice Hadjadj",
+  "sortKey": "Hadjadj",
+  "theme": "Teología del cuerpo",
+  "shelf": 215,
+  "note": ""
+ },
+ {
+  "id": "ser-padre-con-san-jose",
+  "title": "Ser padre con san José",
+  "author": "Fabrice Hadjadj",
+  "sortKey": "Hadjadj",
+  "theme": "Teología del cuerpo",
+  "shelf": 216,
+  "note": ""
+ },
+ {
+  "id": "el-descarte-del-aborto",
+  "title": "El «descarte» del aborto",
+  "author": "José Ignacio Munilla",
+  "sortKey": "Munilla",
+  "theme": "Teología del cuerpo",
+  "shelf": 217,
+  "note": ""
+ },
+ {
+  "id": "es-bueno-que-existas-una-guia-para-comprender-la-teologia-de",
+  "title": "Es bueno que existas. Una guía para comprender la Teología del cuerpo de san Juan Pablo II",
+  "author": "",
+  "sortKey": "",
+  "theme": "Teología del cuerpo",
+  "shelf": 218,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "el-senor",
+  "title": "El Señor",
+  "author": "Romano Guardini",
+  "sortKey": "Guardini",
+  "theme": "Fe y espiritualidad",
+  "shelf": 219,
+  "note": ""
+ },
+ {
+  "id": "el-espiritu-santo",
+  "title": "El Espíritu Santo",
+  "author": "Yves M.-J. Congar",
+  "sortKey": "Congar",
+  "theme": "Fe y espiritualidad",
+  "shelf": 220,
+  "note": ""
+ },
+ {
+  "id": "introduccion-al-cristianismo",
+  "title": "Introducción al cristianismo",
+  "author": "Joseph Ratzinger",
+  "sortKey": "Ratzinger",
+  "theme": "Fe y espiritualidad",
+  "shelf": 221,
+  "note": ""
+ },
+ {
+  "id": "jesus-and-the-jewish-roots-of-the-eucharist",
+  "title": "Jesus and the Jewish Roots of the Eucharist",
+  "author": "Brant Pitre",
+  "sortKey": "Pitre",
+  "theme": "Fe y espiritualidad",
+  "shelf": 222,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "jesus-de-nazaret",
+  "title": "Jesús de Nazaret",
+  "author": "Joseph Ratzinger / Benedicto XVI",
+  "sortKey": "Ratzinger",
+  "theme": "Fe y espiritualidad",
+  "shelf": 223,
+  "note": ""
+ },
+ {
+  "id": "baby-s-first-bible-little-stories-for-little-hearts",
+  "title": "Baby's First Bible. Little Stories for Little Hearts",
+  "author": "Zonderkidz",
+  "sortKey": "Zonderkidz",
+  "theme": "Familia y crianza",
+  "shelf": 224,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "paul-gauguin",
+  "title": "Paul Gauguin",
+  "author": "Ingo F. Walther",
+  "sortKey": "Walther",
+  "theme": "Arte",
+  "shelf": 225,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "henri-matisse",
+  "title": "Henri Matisse",
+  "author": "Volkmar Essers",
+  "sortKey": "Essers",
+  "theme": "Arte",
+  "shelf": 226,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "miguel-angel",
+  "title": "Miguel Ángel",
+  "author": "Gilles Néret",
+  "sortKey": "Néret",
+  "theme": "Arte",
+  "shelf": 227,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "edward-hopper",
+  "title": "Edward Hopper",
+  "author": "Rolf G. Renner",
+  "sortKey": "Renner",
+  "theme": "Arte",
+  "shelf": 228,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "diego-velazquez",
+  "title": "Diego Velázquez",
+  "author": "Norbert Wolf",
+  "sortKey": "Wolf",
+  "theme": "Arte",
+  "shelf": 229,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "andy-warhol",
+  "title": "Andy Warhol",
+  "author": "Klaus Honnef",
+  "sortKey": "Honnef",
+  "theme": "Arte",
+  "shelf": 230,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "francisco-de-goya",
+  "title": "Francisco de Goya",
+  "author": "Rose-Marie y Rainer Hagen",
+  "sortKey": "Hagen",
+  "theme": "Arte",
+  "shelf": 231,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "caravaggio",
+  "title": "Caravaggio",
+  "author": "Gilles Lambert",
+  "sortKey": "Lambert",
+  "theme": "Arte",
+  "shelf": 232,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "frida-kahlo",
+  "title": "Frida Kahlo",
+  "author": "Andrea Kettenmann",
+  "sortKey": "Kettenmann",
+  "theme": "Arte",
+  "shelf": 233,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "salvador-dali",
+  "title": "Salvador Dalí",
+  "author": "Gilles Néret",
+  "sortKey": "Néret",
+  "theme": "Arte",
+  "shelf": 234,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "edouard-manet",
+  "title": "Edouard Manet",
+  "author": "Gilles Néret",
+  "sortKey": "Néret",
+  "theme": "Arte",
+  "shelf": 235,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "paul-cezanne",
+  "title": "Paul Cézanne",
+  "author": "Ulrike Becks-Malorny",
+  "sortKey": "Becks-Malorny",
+  "theme": "Arte",
+  "shelf": 236,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "amedeo-modigliani",
+  "title": "Amedeo Modigliani",
+  "author": "Doris Krystof",
+  "sortKey": "Krystof",
+  "theme": "Arte",
+  "shelf": 237,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "pierre-auguste-renoir",
+  "title": "Pierre-Auguste Renoir",
+  "author": "Peter H. Feist",
+  "sortKey": "Feist",
+  "theme": "Arte",
+  "shelf": 238,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "rafael",
+  "title": "Rafael",
+  "author": "Christof Thoenes",
+  "sortKey": "Thoenes",
+  "theme": "Arte",
+  "shelf": 239,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "vermeer",
+  "title": "Vermeer",
+  "author": "Norbert Schneider",
+  "sortKey": "Schneider",
+  "theme": "Arte",
+  "shelf": 240,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "el-greco",
+  "title": "El Greco",
+  "author": "Michael Scholz-Hänsel",
+  "sortKey": "Scholz-Hänsel",
+  "theme": "Arte",
+  "shelf": 241,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "pablo-picasso",
+  "title": "Pablo Picasso",
+  "author": "Ingo F. Walther",
+  "sortKey": "Walther",
+  "theme": "Arte",
+  "shelf": 242,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "claude-monet",
+  "title": "Claude Monet",
+  "author": "Christoph Heinrich",
+  "sortKey": "Heinrich",
+  "theme": "Arte",
+  "shelf": 243,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "pedro-pablo-rubens",
+  "title": "Pedro Pablo Rubens",
+  "author": "Gilles Néret",
+  "sortKey": "Néret",
+  "theme": "Arte",
+  "shelf": 244,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "sandro-botticelli",
+  "title": "Sandro Botticelli",
+  "author": "Barbara Deimling",
+  "sortKey": "Deimling",
+  "theme": "Arte",
+  "shelf": 245,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "vincent-van-gogh",
+  "title": "Vincent van Gogh",
+  "author": "Ingo F. Walther",
+  "sortKey": "Walther",
+  "theme": "Arte",
+  "shelf": 246,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "diego-rivera",
+  "title": "Diego Rivera",
+  "author": "Andrea Kettenmann",
+  "sortKey": "Kettenmann",
+  "theme": "Arte",
+  "shelf": 247,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "fernando-botero",
+  "title": "Fernando Botero",
+  "author": "Mariana Hanstein",
+  "sortKey": "Hanstein",
+  "theme": "Arte",
+  "shelf": 248,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "mark-rothko",
+  "title": "Mark Rothko",
+  "author": "Jacob Baal-Teshuva",
+  "sortKey": "Baal-Teshuva",
+  "theme": "Arte",
+  "shelf": 249,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "rembrandt",
+  "title": "Rembrandt",
+  "author": "Michael Bockemühl",
+  "sortKey": "Bockemühl",
+  "theme": "Arte",
+  "shelf": 250,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "jean-michel-basquiat",
+  "title": "Jean-Michel Basquiat",
+  "author": "Leonhard Emmerling",
+  "sortKey": "Emmerling",
+  "theme": "Arte",
+  "shelf": 251,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "wassily-kandinsky",
+  "title": "Wassily Kandinsky",
+  "author": "Hajo Düchting",
+  "sortKey": "Düchting",
+  "theme": "Arte",
+  "shelf": 252,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "gustav-klimt",
+  "title": "Gustav Klimt",
+  "author": "Gilles Néret",
+  "sortKey": "Néret",
+  "theme": "Arte",
+  "shelf": 253,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "joan-miro",
+  "title": "Joan Miró",
+  "author": "Janis Mink",
+  "sortKey": "Mink",
+  "theme": "Arte",
+  "shelf": 254,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "leonardo-da-vinci",
+  "title": "Leonardo da Vinci",
+  "author": "Frank Zöllner",
+  "sortKey": "Zöllner",
+  "theme": "Arte",
+  "shelf": 255,
+  "note": "Taschen, colección Basic Art"
+ },
+ {
+  "id": "la-historia-del-arte",
+  "title": "La historia del arte",
+  "author": "E. H. Gombrich",
+  "sortKey": "Gombrich",
+  "theme": "Arte",
+  "shelf": 256,
+  "note": ""
+ },
+ {
+  "id": "los-miserables",
+  "title": "Los miserables",
+  "author": "Victor Hugo",
+  "sortKey": "Hugo",
+  "theme": "Narrativa",
+  "shelf": 257,
+  "note": ""
+ },
+ {
+  "id": "cien-anos-de-soledad",
+  "title": "Cien años de soledad",
+  "author": "Gabriel García Márquez",
+  "sortKey": "García Márquez",
+  "theme": "Narrativa",
+  "shelf": 258,
+  "note": "Edición conmemorativa de la RAE"
+ },
+ {
+  "id": "guerra-y-paz",
+  "title": "Guerra y paz",
+  "author": "Lev Tolstói",
+  "sortKey": "Tolstói",
+  "theme": "Narrativa",
+  "shelf": 259,
+  "note": ""
+ },
+ {
+  "id": "crimen-y-castigo",
+  "title": "Crimen y castigo",
+  "author": "Fiódor M. Dostoievski",
+  "sortKey": "Dostoievski",
+  "theme": "Narrativa",
+  "shelf": 260,
+  "note": ""
+ },
+ {
+  "id": "momo",
+  "title": "Momo",
+  "author": "Michael Ende",
+  "sortKey": "Ende",
+  "theme": "Narrativa",
+  "shelf": 261,
+  "note": ""
+ },
+ {
+  "id": "pensar-rapido-pensar-despacio",
+  "title": "Pensar rápido, pensar despacio",
+  "author": "Daniel Kahneman",
+  "sortKey": "Kahneman",
+  "theme": "Historia y actualidad",
+  "shelf": 262,
+  "note": ""
+ },
+ {
+  "id": "the-age-of-surveillance-capitalism",
+  "title": "The Age of Surveillance Capitalism",
+  "author": "Shoshana Zuboff",
+  "sortKey": "Zuboff",
+  "theme": "Historia y actualidad",
+  "shelf": 263,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "la-musica-de-la-memoria",
+  "title": "La música de la memoria",
+  "author": "Xavier Güell",
+  "sortKey": "Güell",
+  "theme": "Narrativa",
+  "shelf": 264,
+  "note": ""
+ },
+ {
+  "id": "la-libertad-de-ser-libres",
+  "title": "La libertad de ser libres",
+  "author": "Hannah Arendt",
+  "sortKey": "Arendt",
+  "theme": "Filosofía",
+  "shelf": 265,
+  "note": ""
+ },
+ {
+  "id": "el-hombre-corriente",
+  "title": "El hombre corriente",
+  "author": "G. K. Chesterton",
+  "sortKey": "Chesterton",
+  "theme": "Filosofía",
+  "shelf": 266,
+  "note": ""
+ },
+ {
+  "id": "la-resistencia-intima",
+  "title": "La resistencia íntima",
+  "author": "Josep Maria Esquirol",
+  "sortKey": "Esquirol",
+  "theme": "Filosofía",
+  "shelf": 267,
+  "note": ""
+ },
+ {
+  "id": "ortodoxia",
+  "title": "Ortodoxia",
+  "author": "G. K. Chesterton",
+  "sortKey": "Chesterton",
+  "theme": "Fe y espiritualidad",
+  "shelf": 268,
+  "note": ""
+ },
+ {
+  "id": "rebelion-en-la-granja",
+  "title": "Rebelión en la granja",
+  "author": "George Orwell",
+  "sortKey": "Orwell",
+  "theme": "Narrativa",
+  "shelf": 269,
+  "note": ""
+ },
+ {
+  "id": "el-pensamiento-debil",
+  "title": "El pensamiento débil",
+  "author": "Gianni Vattimo y Pier Aldo Rovatti (eds.)",
+  "sortKey": "Vattimo",
+  "theme": "Filosofía",
+  "shelf": 270,
+  "note": ""
+ },
+ {
+  "id": "ciencia-y-tecnica-como-ideologia",
+  "title": "Ciencia y técnica como «ideología»",
+  "author": "Jürgen Habermas",
+  "sortKey": "Habermas",
+  "theme": "Filosofía",
+  "shelf": 271,
+  "note": ""
+ },
+ {
+  "id": "una-interpretacion-de-la-historia-universal",
+  "title": "Una interpretación de la historia universal",
+  "author": "José Ortega y Gasset",
+  "sortKey": "Ortega",
+  "theme": "Filosofía",
+  "shelf": 272,
+  "note": ""
+ },
+ {
+  "id": "vida-liquida",
+  "title": "Vida líquida",
+  "author": "Zygmunt Bauman",
+  "sortKey": "Bauman",
+  "theme": "Filosofía",
+  "shelf": 273,
+  "note": ""
+ },
+ {
+  "id": "la-sociedad-del-cansancio",
+  "title": "La sociedad del cansancio",
+  "author": "Byung-Chul Han",
+  "sortKey": "Han",
+  "theme": "Filosofía",
+  "shelf": 274,
+  "note": ""
+ },
+ {
+  "id": "el-diablo-propone-un-brindis",
+  "title": "El diablo propone un brindis",
+  "author": "C. S. Lewis",
+  "sortKey": "Lewis",
+  "theme": "Fe y espiritualidad",
+  "shelf": 275,
+  "note": ""
+ },
+ {
+  "id": "the-future-of-capitalism",
+  "title": "The Future of Capitalism",
+  "author": "Paul Collier",
+  "sortKey": "Collier",
+  "theme": "Historia y actualidad",
+  "shelf": 276,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "biografia-de-la-humanidad",
+  "title": "Biografía de la humanidad",
+  "author": "José Antonio Marina y Javier Rambaud",
+  "sortKey": "Marina",
+  "theme": "Historia y actualidad",
+  "shelf": 277,
+  "note": ""
+ },
+ {
+  "id": "sin-raices",
+  "title": "Sin raíces",
+  "author": "Marcello Pera y Joseph Ratzinger",
+  "sortKey": "Pera",
+  "theme": "Filosofía",
+  "shelf": 278,
+  "note": ""
+ },
+ {
+  "id": "el-tranvia-de-mis-recuerdos",
+  "title": "El tranvía de mis recuerdos",
+  "author": "Francisco Nuño Mellado",
+  "sortKey": "Nuño",
+  "theme": "Narrativa",
+  "shelf": 279,
+  "note": ""
+ },
+ {
+  "id": "pensar-diferente",
+  "title": "Pensar diferente",
+  "author": "Diego Fusaro",
+  "sortKey": "Fusaro",
+  "theme": "Filosofía",
+  "shelf": 280,
+  "note": ""
+ },
+ {
+  "id": "el-mundo-de-las-ideologias",
+  "title": "El mundo de las ideologías",
+  "author": "José Ramón Ayllón",
+  "sortKey": "Ayllón",
+  "theme": "Filosofía",
+  "shelf": 281,
+  "note": ""
+ },
+ {
+  "id": "contracorriente-hacia-la-libertad",
+  "title": "Contracorriente… hacia la libertad",
+  "author": "Mariano Fazio",
+  "sortKey": "Fazio",
+  "theme": "Filosofía",
+  "shelf": 282,
+  "note": ""
+ },
+ {
+  "id": "pensadoras-para-el-siglo-xxi",
+  "title": "Pensadoras para el siglo XXI",
+  "author": "Iván López Casanova",
+  "sortKey": "López Casanova",
+  "theme": "Filosofía",
+  "shelf": 283,
+  "note": ""
+ },
+ {
+  "id": "la-fatal-arrogancia-los-errores-del-socialismo",
+  "title": "La fatal arrogancia. Los errores del socialismo",
+  "author": "F. A. Hayek",
+  "sortKey": "Hayek",
+  "theme": "Historia y actualidad",
+  "shelf": 284,
+  "note": "Obras completas, vol. I"
+ },
+ {
+  "id": "cine-e-ideologia",
+  "title": "Cine e ideología",
+  "author": "Juan Orellana",
+  "sortKey": "Orellana",
+  "theme": "Arte",
+  "shelf": 285,
+  "note": ""
+ },
+ {
+  "id": "cambiemos-de-via",
+  "title": "Cambiemos de vía",
+  "author": "Edgar Morin",
+  "sortKey": "Morin",
+  "theme": "Filosofía",
+  "shelf": 286,
+  "note": ""
+ },
+ {
+  "id": "dialectica-de-la-ilustracion",
+  "title": "Dialéctica de la Ilustración",
+  "author": "Max Horkheimer y Theodor W. Adorno",
+  "sortKey": "Horkheimer",
+  "theme": "Filosofía",
+  "shelf": 287,
+  "note": ""
+ },
+ {
+  "id": "la-era-del-vacio",
+  "title": "La era del vacío",
+  "author": "Gilles Lipovetsky",
+  "sortKey": "Lipovetsky",
+  "theme": "Filosofía",
+  "shelf": 288,
+  "note": ""
+ },
+ {
+  "id": "adios-a-la-verdad",
+  "title": "Adiós a la verdad",
+  "author": "Gianni Vattimo",
+  "sortKey": "Vattimo",
+  "theme": "Filosofía",
+  "shelf": 289,
+  "note": ""
+ },
+ {
+  "id": "con-ojos-nuevos",
+  "title": "Con ojos nuevos",
+  "author": "Alessandra Borghese",
+  "sortKey": "Borghese",
+  "theme": "Fe y espiritualidad",
+  "shelf": 290,
+  "note": ""
+ },
+ {
+  "id": "el-don-de-la-comunion-trinitaria",
+  "title": "El don de la comunión trinitaria",
+  "author": "Cardenal Marc Ouellet",
+  "sortKey": "Ouellet",
+  "theme": "Teología del cuerpo",
+  "shelf": 291,
+  "note": ""
+ },
+ {
+  "id": "a-la-espera-de-dios",
+  "title": "A la espera de Dios",
+  "author": "Simone Weil",
+  "sortKey": "Weil",
+  "theme": "Fe y espiritualidad",
+  "shelf": 292,
+  "note": ""
+ },
+ {
+  "id": "para-mi-gloria-los-he-creado",
+  "title": "Para mi gloria los he creado",
+  "author": "Juan José Ayán",
+  "sortKey": "Ayán",
+  "theme": "Fe y espiritualidad",
+  "shelf": 293,
+  "note": ""
+ },
+ {
+  "id": "la-teologia-de-chesterton-y-tolkien",
+  "title": "La teología de Chesterton y Tolkien",
+  "author": "Alison Milbank",
+  "sortKey": "Milbank",
+  "theme": "Fe y espiritualidad",
+  "shelf": 294,
+  "note": ""
+ },
+ {
+  "id": "el-amor-o-la-fuerza-del-sino",
+  "title": "El amor o la fuerza del sino",
+  "author": "G. K. Chesterton",
+  "sortKey": "Chesterton",
+  "theme": "Fe y espiritualidad",
+  "shelf": 295,
+  "note": ""
+ },
+ {
+  "id": "el-hecho-extraordinario",
+  "title": "El «hecho extraordinario»",
+  "author": "Manuel García Morente",
+  "sortKey": "García Morente",
+  "theme": "Fe y espiritualidad",
+  "shelf": 296,
+  "note": ""
+ },
+ {
+  "id": "esta-noche-en-casa",
+  "title": "Esta noche en casa",
+  "author": "Henri J. M. Nouwen",
+  "sortKey": "Nouwen",
+  "theme": "Fe y espiritualidad",
+  "shelf": 297,
+  "note": ""
+ },
+ {
+  "id": "el-regreso-del-hijo-prodigo",
+  "title": "El regreso del hijo pródigo",
+  "author": "Henri J. M. Nouwen",
+  "sortKey": "Nouwen",
+  "theme": "Fe y espiritualidad",
+  "shelf": 298,
+  "note": ""
+ },
+ {
+  "id": "jesus-el-hijo-prodigo-del-padre",
+  "title": "Jesús, el Hijo Pródigo del Padre",
+  "author": "Henri Denis",
+  "sortKey": "Denis",
+  "theme": "Fe y espiritualidad",
+  "shelf": 299,
+  "note": ""
+ },
+ {
+  "id": "tiempo-para-dios",
+  "title": "Tiempo para Dios",
+  "author": "Jacques Philippe",
+  "sortKey": "Philippe",
+  "theme": "Fe y espiritualidad",
+  "shelf": 300,
+  "note": ""
+ },
+ {
+  "id": "en-la-escuela-del-espiritu-santo",
+  "title": "En la escuela del Espíritu Santo",
+  "author": "Jacques Philippe",
+  "sortKey": "Philippe",
+  "theme": "Fe y espiritualidad",
+  "shelf": 301,
+  "note": ""
+ },
+ {
+  "id": "llamados-a-la-vida",
+  "title": "Llamados a la vida",
+  "author": "Jacques Philippe",
+  "sortKey": "Philippe",
+  "theme": "Fe y espiritualidad",
+  "shelf": 302,
+  "note": ""
+ },
+ {
+  "id": "mensaje-de-misericordia-de-jesucristo-al-mundo-actual",
+  "title": "Mensaje de Misericordia de Jesucristo al mundo actual",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 303,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "la-libertad-cristiana",
+  "title": "La libertad cristiana",
+  "author": "Adrien Candiard",
+  "sortKey": "Candiard",
+  "theme": "Fe y espiritualidad",
+  "shelf": 304,
+  "note": ""
+ },
+ {
+  "id": "el-bautismo-un-gran-si-a-la-vida",
+  "title": "El bautismo, un gran sí a la vida",
+  "author": "Benedicto XVI",
+  "sortKey": "Benedicto XVI",
+  "theme": "Fe y espiritualidad",
+  "shelf": 305,
+  "note": ""
+ },
+ {
+  "id": "tu-sed-mi-sed",
+  "title": "Tu sed, mi sed",
+  "author": "Madre Verónica María",
+  "sortKey": "Verónica María",
+  "theme": "Fe y espiritualidad",
+  "shelf": 306,
+  "note": ""
+ },
+ {
+  "id": "el-crucificado",
+  "title": "El crucificado",
+  "author": "José Pedro Manglano",
+  "sortKey": "Manglano",
+  "theme": "Fe y espiritualidad",
+  "shelf": 307,
+  "note": ""
+ },
+ {
+  "id": "dejad-que-cristo-os-guie",
+  "title": "Dejad que Cristo os guíe",
+  "author": "Albert Peyriguère",
+  "sortKey": "Peyriguère",
+  "theme": "Fe y espiritualidad",
+  "shelf": 308,
+  "note": ""
+ },
+ {
+  "id": "el-arte-de-la-vida-sana",
+  "title": "El arte de la vida sana",
+  "author": "Fabio Rosini",
+  "sortKey": "Rosini",
+  "theme": "Fe y espiritualidad",
+  "shelf": 309,
+  "note": ""
+ },
+ {
+  "id": "ejercicios-de-contemplacion",
+  "title": "Ejercicios de contemplación",
+  "author": "Franz Jalics",
+  "sortKey": "Jalics",
+  "theme": "Fe y espiritualidad",
+  "shelf": 310,
+  "note": ""
+ },
+ {
+  "id": "el-arte-del-buen-combate",
+  "title": "El arte del buen combate",
+  "author": "Fabio Rosini",
+  "sortKey": "Rosini",
+  "theme": "Fe y espiritualidad",
+  "shelf": 311,
+  "note": ""
+ },
+ {
+  "id": "que-me-ves-que-me-oyes",
+  "title": "Que me ves, que me oyes",
+  "author": "Antonio Iniesta",
+  "sortKey": "Iniesta",
+  "theme": "Fe y espiritualidad",
+  "shelf": 312,
+  "note": ""
+ },
+ {
+  "id": "forja",
+  "title": "Forja",
+  "author": "San Josemaría Escrivá de Balaguer",
+  "sortKey": "Escrivá",
+  "theme": "Fe y espiritualidad",
+  "shelf": 313,
+  "note": ""
+ },
+ {
+  "id": "camino",
+  "title": "Camino",
+  "author": "San Josemaría Escrivá de Balaguer",
+  "sortKey": "Escrivá",
+  "theme": "Fe y espiritualidad",
+  "shelf": 314,
+  "note": ""
+ },
+ {
+  "id": "sagrada-biblia",
+  "title": "Sagrada Biblia",
+  "author": "Conferencia Episcopal Española",
+  "sortKey": "Conferencia Episcopal",
+  "theme": "Fe y espiritualidad",
+  "shelf": 315,
+  "note": "Versión oficial de la CEE, BAC"
+ },
+ {
+  "id": "vida-y-misterio-de-jesus-de-nazaret-ii",
+  "title": "Vida y misterio de Jesús de Nazaret II",
+  "author": "José Luis Martín Descalzo",
+  "sortKey": "Martín Descalzo",
+  "theme": "Fe y espiritualidad",
+  "shelf": 316,
+  "note": ""
+ },
+ {
+  "id": "vida-y-misterio-de-jesus-de-nazaret-iii",
+  "title": "Vida y misterio de Jesús de Nazaret III",
+  "author": "José Luis Martín Descalzo",
+  "sortKey": "Martín Descalzo",
+  "theme": "Fe y espiritualidad",
+  "shelf": 317,
+  "note": ""
+ },
+ {
+  "id": "catecismo-de-la-iglesia-catolica",
+  "title": "Catecismo de la Iglesia Católica",
+  "author": "Iglesia Católica",
+  "sortKey": "Catecismo",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 318,
+  "note": ""
+ },
+ {
+  "id": "obras-archivo-silveriano-1",
+  "title": "Obras. Archivo Silveriano 1",
+  "author": "Santa Teresa de Jesús",
+  "sortKey": "Teresa de Jesús",
+  "theme": "Fe y espiritualidad",
+  "shelf": 319,
+  "note": ""
+ },
+ {
+  "id": "utopia",
+  "title": "Utopía",
+  "author": "Tomás Moro",
+  "sortKey": "Moro",
+  "theme": "Filosofía",
+  "shelf": 320,
+  "note": ""
+ },
+ {
+  "id": "san-francisco-de-asis",
+  "title": "San Francisco de Asís",
+  "author": "G. K. Chesterton",
+  "sortKey": "Chesterton",
+  "theme": "Fe y espiritualidad",
+  "shelf": 321,
+  "note": ""
+ },
+ {
+  "id": "los-caminos-del-silencio-interior",
+  "title": "Los caminos del silencio interior",
+  "author": "Edith Stein",
+  "sortKey": "Stein",
+  "theme": "Fe y espiritualidad",
+  "shelf": 322,
+  "note": ""
+ },
+ {
+  "id": "san-jose-el-eco-del-padre",
+  "title": "San José, el eco del Padre",
+  "author": "Mauro Giuseppe Lepori",
+  "sortKey": "Lepori",
+  "theme": "Fe y espiritualidad",
+  "shelf": 323,
+  "note": ""
+ },
+ {
+  "id": "cinco-panes-y-dos-peces",
+  "title": "Cinco panes y dos peces",
+  "author": "Cardenal F. X. Nguyen van Thuan",
+  "sortKey": "Nguyen van Thuan",
+  "theme": "Fe y espiritualidad",
+  "shelf": 324,
+  "note": ""
+ },
+ {
+  "id": "simon-pedro",
+  "title": "Simón Pedro",
+  "author": "Georges Chevrot",
+  "sortKey": "Chevrot",
+  "theme": "Fe y espiritualidad",
+  "shelf": 325,
+  "note": ""
+ },
+ {
+  "id": "las-moradas",
+  "title": "Las moradas",
+  "author": "Santa Teresa de Jesús",
+  "sortKey": "Teresa de Jesús",
+  "theme": "Fe y espiritualidad",
+  "shelf": 326,
+  "note": ""
+ },
+ {
+  "id": "poesia-completa",
+  "title": "Poesía completa",
+  "author": "San Juan de la Cruz",
+  "sortKey": "Juan de la Cruz",
+  "theme": "Poesía",
+  "shelf": 327,
+  "note": ""
+ },
+ {
+  "id": "las-confesiones",
+  "title": "Las Confesiones",
+  "author": "San Agustín de Hipona",
+  "sortKey": "Agustín",
+  "theme": "Fe y espiritualidad",
+  "shelf": 328,
+  "note": ""
+ },
+ {
+  "id": "historia-de-un-alma",
+  "title": "Historia de un alma",
+  "author": "Santa Teresa de Lisieux",
+  "sortKey": "Teresa de Lisieux",
+  "theme": "Fe y espiritualidad",
+  "shelf": 329,
+  "note": ""
+ },
+ {
+  "id": "las-florecillas-de-san-francisco-de-asis",
+  "title": "Las Florecillas de san Francisco de Asís",
+  "author": "Anónimo franciscano",
+  "sortKey": "Florecillas",
+  "theme": "Fe y espiritualidad",
+  "shelf": 330,
+  "note": ""
+ },
+ {
+  "id": "libro-de-la-vida",
+  "title": "Libro de la vida",
+  "author": "Santa Teresa de Jesús",
+  "sortKey": "Teresa de Jesús",
+  "theme": "Fe y espiritualidad",
+  "shelf": 331,
+  "note": ""
+ },
+ {
+  "id": "el-cura-de-ars",
+  "title": "El cura de Ars",
+  "author": "Francis Trochu",
+  "sortKey": "Trochu",
+  "theme": "Fe y espiritualidad",
+  "shelf": 332,
+  "note": ""
+ },
+ {
+  "id": "tres-monjes-rebeldes",
+  "title": "Tres monjes rebeldes",
+  "author": "M. Raymond, O.C.S.O.",
+  "sortKey": "Raymond",
+  "theme": "Fe y espiritualidad",
+  "shelf": 333,
+  "note": ""
+ },
+ {
+  "id": "san-francisco-de-sales",
+  "title": "San Francisco de Sales",
+  "author": "Valentín Viguera",
+  "sortKey": "Viguera",
+  "theme": "Fe y espiritualidad",
+  "shelf": 334,
+  "note": ""
+ },
+ {
+  "id": "al-asalto-del-cielo",
+  "title": "Al asalto del cielo",
+  "author": "Louis de Wohl",
+  "sortKey": "Wohl",
+  "theme": "Fe y espiritualidad",
+  "shelf": 335,
+  "note": ""
+ },
+ {
+  "id": "la-vida-de-santa-teresa-de-jesus",
+  "title": "La vida de santa Teresa de Jesús",
+  "author": "Marcelle Auclair",
+  "sortKey": "Auclair",
+  "theme": "Fe y espiritualidad",
+  "shelf": 336,
+  "note": ""
+ },
+ {
+  "id": "corazon-inquieto",
+  "title": "Corazón inquieto",
+  "author": "Louis de Wohl",
+  "sortKey": "Wohl",
+  "theme": "Fe y espiritualidad",
+  "shelf": 337,
+  "note": ""
+ },
+ {
+  "id": "el-evangelio-secreto-de-la-virgen-maria",
+  "title": "El Evangelio secreto de la Virgen María",
+  "author": "P. Santiago Martín, FM",
+  "sortKey": "Martín",
+  "theme": "Fe y espiritualidad",
+  "shelf": 338,
+  "note": ""
+ },
+ {
+  "id": "una-amistad-como-ninguna",
+  "title": "Una amistad como ninguna",
+  "author": "William A. Barry, SJ",
+  "sortKey": "Barry",
+  "theme": "Fe y espiritualidad",
+  "shelf": 339,
+  "note": ""
+ },
+ {
+  "id": "el-joven-que-llego-a-papa",
+  "title": "El joven que llegó a Papa",
+  "author": "Miguel Álvarez",
+  "sortKey": "Álvarez",
+  "theme": "Fe y espiritualidad",
+  "shelf": 340,
+  "note": ""
+ },
+ {
+  "id": "el-olvido-de-si",
+  "title": "El olvido de sí",
+  "author": "Pablo d'Ors",
+  "sortKey": "d'Ors",
+  "theme": "Narrativa",
+  "shelf": 341,
+  "note": ""
  }
 ]

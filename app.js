@@ -5,8 +5,9 @@
   const THEMES = [
     ["Liderazgo y empresa", "#2f5d7c"], ["Familia y crianza", "#c0703a"], ["Historia y actualidad", "#9a6a2f"],
     ["Narrativa", "#8c2f2b"], ["Teatro", "#a3423a"], ["Clásicos grecolatinos", "#b08a3e"],
-    ["Filosofía", "#3e4f86"], ["Educación", "#3d7a5a"], ["Poesía", "#7a4b86"],
+    ["Filosofía", "#3e4f86"], ["Educación", "#3d7a5a"], ["Poesía", "#7a4b86"], ["Arte", "#b4532f"],
     ["Obras de consulta", "#6b6257"], ["Magisterio de la Iglesia", "#b8892f"],
+    ["Teología del cuerpo", "#a2456a"],
     ["Fe y espiritualidad", "#2f7480"], ["Schoenstatt", "#2f7a6a"],
   ];
   const THEME_COLOR = Object.fromEntries(THEMES);
@@ -290,6 +291,13 @@
   new IntersectionObserver(([e]) => $("#toolbar").classList.toggle("stuck", !e.isIntersecting), { rootMargin: "-1px 0px 0px 0px" })
     .observe($(".masthead"));
 
+  // ¿Se está usando el teclado? Solo entonces movemos el foco al abrir y cerrar
+  // (evita el contorno de foco tras tocar o hacer clic).
+  let keyboardNav = false;
+  document.addEventListener("keydown", (e) => { if (e.key === "Tab" || e.key.startsWith("Arrow") || e.key === "Enter" || e.key === "Escape") keyboardNav = true; }, true);
+  document.addEventListener("pointerdown", () => { keyboardNav = false; }, true);
+  const focusIfKeyboard = (el) => { if (el && keyboardNav) el.focus({ preventScroll: true }); };
+
   // ——— Escenario ———
   const stage = $("#stage");
   const inner = $("#bookInner");
@@ -433,7 +441,7 @@
       }
       inner.style.visibility = "";
     }
-    (card ? $("#d-title") : $("#book3d")).focus({ preventScroll: true });
+    focusIfKeyboard(card ? $("#d-title") : $("#book3d"));
   }
 
   async function openCard() {
@@ -448,7 +456,7 @@
         { transform: "translate(0,0) scale(1)", transformOrigin: "0 0" },
       ], { duration: 560, easing: "cubic-bezier(.2,.8,.2,1)" });
     }
-    $("#d-title").focus({ preventScroll: true });
+    focusIfKeyboard($("#d-title"));
   }
 
   async function closeStage({ push = true } = {}) {
@@ -478,7 +486,8 @@
     inner.style.visibility = "";
     detail.style.transform = ""; detail.style.opacity = ""; backdrop.style.opacity = "";
     document.body.classList.remove("locked");
-    if (target) target.focus({ preventScroll: true });
+    if (keyboardNav) focusIfKeyboard(target);
+    else if (document.activeElement && document.activeElement !== document.body && !document.activeElement.matches("input")) document.activeElement.blur();
     current = null; source = null; closing = false;
     if (push) {
       if (pushed) { pushed = false; history.back(); }
