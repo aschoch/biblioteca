@@ -1,0 +1,1802 @@
+[
+ {
+  "id": "como-defender-la-fe-sin-levantar-la-voz",
+  "title": "Cómo defender la fe sin levantar la voz",
+  "author": "Austen Ivereigh y Yago de la Cierva",
+  "sortKey": "Ivereigh",
+  "theme": "Fe y espiritualidad",
+  "shelf": 1,
+  "note": ""
+ },
+ {
+  "id": "descubre-el-lider-que-hay-en-ti",
+  "title": "Descubre el líder que hay en ti",
+  "author": "Virginia Prieto Menéndez",
+  "sortKey": "Prieto",
+  "theme": "Liderazgo y empresa",
+  "shelf": 2,
+  "note": ""
+ },
+ {
+  "id": "deviate",
+  "title": "Deviate",
+  "author": "Beau Lotto",
+  "sortKey": "Lotto",
+  "theme": "Liderazgo y empresa",
+  "shelf": 3,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "infinito-una-mirada-creativa-y-humana-del-liderazgo",
+  "title": "Infinito. Una mirada creativa y humana del liderazgo",
+  "author": "Marcos Abollado Rego",
+  "sortKey": "Abollado",
+  "theme": "Liderazgo y empresa",
+  "shelf": 4,
+  "note": ""
+ },
+ {
+  "id": "etica-para-maquinas",
+  "title": "Ética para máquinas",
+  "author": "José Ignacio Latorre",
+  "sortKey": "Latorre",
+  "theme": "Liderazgo y empresa",
+  "shelf": 5,
+  "note": ""
+ },
+ {
+  "id": "inspired",
+  "title": "Inspired",
+  "author": "Marty Cagan",
+  "sortKey": "Cagan",
+  "theme": "Liderazgo y empresa",
+  "shelf": 6,
+  "note": "Segunda edición, en inglés"
+ },
+ {
+  "id": "educar-es-de-valientes",
+  "title": "Educar es de valientes",
+  "author": "Julio de la Iglesia",
+  "sortKey": "Iglesia",
+  "theme": "Familia y crianza",
+  "shelf": 7,
+  "note": "Título por confirmar"
+ },
+ {
+  "id": "guia-practica-para-tener-bebes-tranquilos-y-felices",
+  "title": "Guía práctica para tener bebés tranquilos y felices",
+  "author": "Tracy Hogg y Melinda Blau",
+  "sortKey": "Hogg",
+  "theme": "Familia y crianza",
+  "shelf": 8,
+  "note": ""
+ },
+ {
+  "id": "la-fase-cero-de-tu-futuro",
+  "title": "La fase cero de tu futuro",
+  "author": "Chechu Salas",
+  "sortKey": "Salas",
+  "theme": "Liderazgo y empresa",
+  "shelf": 9,
+  "note": ""
+ },
+ {
+  "id": "factfulness",
+  "title": "Factfulness",
+  "author": "Hans Rosling, Ola Rosling y Anna Rosling Rönnlund",
+  "sortKey": "Rosling",
+  "theme": "Historia y actualidad",
+  "shelf": 10,
+  "note": ""
+ },
+ {
+  "id": "reinventar-las-organizaciones",
+  "title": "Reinventar las organizaciones",
+  "author": "Frederic Laloux",
+  "sortKey": "Laloux",
+  "theme": "Liderazgo y empresa",
+  "shelf": 11,
+  "note": ""
+ },
+ {
+  "id": "talk-like-ted",
+  "title": "Talk Like TED",
+  "author": "Carmine Gallo",
+  "sortKey": "Gallo",
+  "theme": "Liderazgo y empresa",
+  "shelf": 12,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "inventar-criar",
+  "title": "Inventar & Criar",
+  "author": "Jeff Bezos",
+  "sortKey": "Bezos",
+  "theme": "Liderazgo y empresa",
+  "shelf": 13,
+  "note": "Edición portuguesa de «Invent and Wander»"
+ },
+ {
+  "id": "healthy-business",
+  "title": "Healthy Business",
+  "author": "Alan",
+  "sortKey": "Alan",
+  "theme": "Liderazgo y empresa",
+  "shelf": 14,
+  "note": ""
+ },
+ {
+  "id": "el-alma-popular",
+  "title": "El alma popular",
+  "author": "Carlos Arniches",
+  "sortKey": "Arniches",
+  "theme": "Teatro",
+  "shelf": 15,
+  "note": ""
+ },
+ {
+  "id": "obtenga-el-si",
+  "title": "Obtenga el sí",
+  "author": "Roger Fisher, William Ury y Bruce Patton",
+  "sortKey": "Fisher",
+  "theme": "Liderazgo y empresa",
+  "shelf": 16,
+  "note": ""
+ },
+ {
+  "id": "escucha-cataluna-escucha-espana",
+  "title": "Escucha, Cataluña. Escucha, España",
+  "author": "Josep Borrell, Francesc de Carreras, Juan-José López Burniol y Josep Piqué",
+  "sortKey": "Borrell",
+  "theme": "Historia y actualidad",
+  "shelf": 17,
+  "note": ""
+ },
+ {
+  "id": "the-new-father-a-dad-s-guide-to-the-first-year",
+  "title": "The New Father. A Dad's Guide to the First Year",
+  "author": "Armin A. Brott",
+  "sortKey": "Brott",
+  "theme": "Familia y crianza",
+  "shelf": 18,
+  "note": "Tercera edición, en inglés"
+ },
+ {
+  "id": "como-polvo-en-el-viento",
+  "title": "Como polvo en el viento",
+  "author": "Leonardo Padura",
+  "sortKey": "Padura",
+  "theme": "Narrativa",
+  "shelf": 19,
+  "note": ""
+ },
+ {
+  "id": "don-quijote-de-la-mancha-version-de-jose-luis-gimenez-fronti",
+  "title": "Don Quijote de la Mancha (versión de José Luis Giménez-Frontín)",
+  "author": "Miguel de Cervantes",
+  "sortKey": "Cervantes",
+  "theme": "Narrativa",
+  "shelf": 20,
+  "note": "Adaptación de José Luis Giménez-Frontín"
+ },
+ {
+  "id": "vivir-la-vida-con-sentido",
+  "title": "Vivir la vida con sentido",
+  "author": "Víctor Küppers",
+  "sortKey": "Küppers",
+  "theme": "Liderazgo y empresa",
+  "shelf": 21,
+  "note": ""
+ },
+ {
+  "id": "la-primera-revolucion-mundial-informe-del-consejo-al-club-de",
+  "title": "La primera revolución mundial. Informe del Consejo al Club de Roma",
+  "author": "Alexander King y Bertrand Schneider",
+  "sortKey": "King",
+  "theme": "Historia y actualidad",
+  "shelf": 22,
+  "note": ""
+ },
+ {
+  "id": "juegos-de-ninos",
+  "title": "Juegos de niños",
+  "author": "Ana Merino",
+  "sortKey": "Merino",
+  "theme": "Poesía",
+  "shelf": 23,
+  "note": ""
+ },
+ {
+  "id": "1808-el-dos-de-mayo-tres-miradas",
+  "title": "1808. El dos de mayo, tres miradas",
+  "author": "Alejo Carpentier, Benito Pérez Galdós y José María Blanco White",
+  "sortKey": "Carpentier",
+  "theme": "Historia y actualidad",
+  "shelf": 24,
+  "note": ""
+ },
+ {
+  "id": "milagro-en-los-andes",
+  "title": "Milagro en los Andes",
+  "author": "Nando Parrado",
+  "sortKey": "Parrado",
+  "theme": "Historia y actualidad",
+  "shelf": 25,
+  "note": ""
+ },
+ {
+  "id": "la-vida-es-sueno",
+  "title": "La vida es sueño",
+  "author": "Pedro Calderón de la Barca",
+  "sortKey": "Calderón",
+  "theme": "Teatro",
+  "shelf": 26,
+  "note": ""
+ },
+ {
+  "id": "divinas-palabras",
+  "title": "Divinas palabras",
+  "author": "Ramón María del Valle-Inclán",
+  "sortKey": "Valle-Inclán",
+  "theme": "Teatro",
+  "shelf": 27,
+  "note": ""
+ },
+ {
+  "id": "luces-de-bohemia",
+  "title": "Luces de bohemia",
+  "author": "Ramón María del Valle-Inclán",
+  "sortKey": "Valle-Inclán",
+  "theme": "Teatro",
+  "shelf": 28,
+  "note": ""
+ },
+ {
+  "id": "ivanov-la-gaviota-tio-vania",
+  "title": "Ivánov. La gaviota. Tío Vania",
+  "author": "Antón Chéjov",
+  "sortKey": "Chéjov",
+  "theme": "Teatro",
+  "shelf": 29,
+  "note": ""
+ },
+ {
+  "id": "el-persa",
+  "title": "El persa",
+  "author": "Plauto",
+  "sortKey": "Plauto",
+  "theme": "Clásicos grecolatinos",
+  "shelf": 30,
+  "note": ""
+ },
+ {
+  "id": "edipo-rey",
+  "title": "Edipo rey",
+  "author": "Sófocles",
+  "sortKey": "Sófocles",
+  "theme": "Clásicos grecolatinos",
+  "shelf": 31,
+  "note": ""
+ },
+ {
+  "id": "eloisa-esta-debajo-de-un-almendro-las-cinco-advertencias-de-",
+  "title": "Eloísa está debajo de un almendro. Las cinco advertencias de Satanás",
+  "author": "Enrique Jardiel Poncela",
+  "sortKey": "Jardiel",
+  "theme": "Teatro",
+  "shelf": 32,
+  "note": ""
+ },
+ {
+  "id": "la-mujer-eterna",
+  "title": "La mujer eterna",
+  "author": "Gertrud von le Fort",
+  "sortKey": "Le Fort",
+  "theme": "Fe y espiritualidad",
+  "shelf": 33,
+  "note": ""
+ },
+ {
+  "id": "the-god-of-small-things",
+  "title": "The God of Small Things",
+  "author": "Arundhati Roy",
+  "sortKey": "Roy",
+  "theme": "Narrativa",
+  "shelf": 34,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "cartas-a-un-joven-poeta",
+  "title": "Cartas a un joven poeta",
+  "author": "Rainer Maria Rilke",
+  "sortKey": "Rilke",
+  "theme": "Poesía",
+  "shelf": 35,
+  "note": ""
+ },
+ {
+  "id": "surprised-by-joy",
+  "title": "Surprised by Joy",
+  "author": "C. S. Lewis",
+  "sortKey": "Lewis",
+  "theme": "Fe y espiritualidad",
+  "shelf": 36,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "el-despertar-de-la-senorita-prim",
+  "title": "El despertar de la señorita Prim",
+  "author": "Natalia Sanmartín Fenollera",
+  "sortKey": "Sanmartín",
+  "theme": "Narrativa",
+  "shelf": 37,
+  "note": ""
+ },
+ {
+  "id": "el-autobus-perdido",
+  "title": "El autobús perdido",
+  "author": "John Steinbeck",
+  "sortKey": "Steinbeck",
+  "theme": "Narrativa",
+  "shelf": 38,
+  "note": ""
+ },
+ {
+  "id": "post-office",
+  "title": "Post Office",
+  "author": "Charles Bukowski",
+  "sortKey": "Bukowski",
+  "theme": "Narrativa",
+  "shelf": 39,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "momentos-estelares-de-la-humanidad",
+  "title": "Momentos estelares de la humanidad",
+  "author": "Stefan Zweig",
+  "sortKey": "Zweig",
+  "theme": "Historia y actualidad",
+  "shelf": 40,
+  "note": ""
+ },
+ {
+  "id": "soldados-de-salamina",
+  "title": "Soldados de Salamina",
+  "author": "Javier Cercas",
+  "sortKey": "Cercas",
+  "theme": "Narrativa",
+  "shelf": 41,
+  "note": ""
+ },
+ {
+  "id": "sin-noticias-de-gurb",
+  "title": "Sin noticias de Gurb",
+  "author": "Eduardo Mendoza",
+  "sortKey": "Mendoza",
+  "theme": "Narrativa",
+  "shelf": 42,
+  "note": ""
+ },
+ {
+  "id": "un-lugar-llamado-antano",
+  "title": "Un lugar llamado Antaño",
+  "author": "Olga Tokarczuk",
+  "sortKey": "Tokarczuk",
+  "theme": "Narrativa",
+  "shelf": 43,
+  "note": ""
+ },
+ {
+  "id": "sendas-equivocas",
+  "title": "Sendas equívocas",
+  "author": "Stefan Zweig",
+  "sortKey": "Zweig",
+  "theme": "Narrativa",
+  "shelf": 44,
+  "note": ""
+ },
+ {
+  "id": "patria",
+  "title": "Patria",
+  "author": "Fernando Aramburu",
+  "sortKey": "Aramburu",
+  "theme": "Narrativa",
+  "shelf": 45,
+  "note": ""
+ },
+ {
+  "id": "cinco-horas-con-mario",
+  "title": "Cinco horas con Mario",
+  "author": "Miguel Delibes",
+  "sortKey": "Delibes",
+  "theme": "Narrativa",
+  "shelf": 46,
+  "note": ""
+ },
+ {
+  "id": "la-insoportable-levedad-del-ser",
+  "title": "La insoportable levedad del ser",
+  "author": "Milan Kundera",
+  "sortKey": "Kundera",
+  "theme": "Narrativa",
+  "shelf": 47,
+  "note": ""
+ },
+ {
+  "id": "niebla",
+  "title": "Niebla",
+  "author": "Miguel de Unamuno",
+  "sortKey": "Unamuno",
+  "theme": "Narrativa",
+  "shelf": 48,
+  "note": ""
+ },
+ {
+  "id": "la-celestina",
+  "title": "La Celestina",
+  "author": "Fernando de Rojas",
+  "sortKey": "Rojas",
+  "theme": "Teatro",
+  "shelf": 49,
+  "note": ""
+ },
+ {
+  "id": "la-espuma-de-los-dias",
+  "title": "La espuma de los días",
+  "author": "Boris Vian",
+  "sortKey": "Vian",
+  "theme": "Narrativa",
+  "shelf": 50,
+  "note": ""
+ },
+ {
+  "id": "1984",
+  "title": "1984",
+  "author": "George Orwell",
+  "sortKey": "Orwell",
+  "theme": "Narrativa",
+  "shelf": 51,
+  "note": ""
+ },
+ {
+  "id": "nada",
+  "title": "Nada",
+  "author": "Carmen Laforet",
+  "sortKey": "Laforet",
+  "theme": "Narrativa",
+  "shelf": 52,
+  "note": ""
+ },
+ {
+  "id": "el-jugador",
+  "title": "El jugador",
+  "author": "Fiódor M. Dostoievski",
+  "sortKey": "Dostoievski",
+  "theme": "Narrativa",
+  "shelf": 53,
+  "note": ""
+ },
+ {
+  "id": "la-suerte-esta-echada",
+  "title": "La suerte está echada",
+  "author": "Jean-Paul Sartre",
+  "sortKey": "Sartre",
+  "theme": "Narrativa",
+  "shelf": 54,
+  "note": ""
+ },
+ {
+  "id": "los-cantos-de-maldoror",
+  "title": "Los cantos de Maldoror",
+  "author": "Conde de Lautréamont",
+  "sortKey": "Lautréamont",
+  "theme": "Poesía",
+  "shelf": 55,
+  "note": ""
+ },
+ {
+  "id": "historia-de-un-idiota-contada-por-el-mismo",
+  "title": "Historia de un idiota contada por él mismo",
+  "author": "Félix de Azúa",
+  "sortKey": "Azúa",
+  "theme": "Narrativa",
+  "shelf": 56,
+  "note": ""
+ },
+ {
+  "id": "san-manuel-bueno-martir",
+  "title": "San Manuel Bueno, mártir",
+  "author": "Miguel de Unamuno",
+  "sortKey": "Unamuno",
+  "theme": "Narrativa",
+  "shelf": 57,
+  "note": ""
+ },
+ {
+  "id": "elogio-de-la-locura",
+  "title": "Elogio de la locura",
+  "author": "Erasmo de Rotterdam",
+  "sortKey": "Erasmo",
+  "theme": "Filosofía",
+  "shelf": 58,
+  "note": ""
+ },
+ {
+  "id": "el-ultimo-dia-de-un-condenado-a-muerte",
+  "title": "El último día de un condenado a muerte",
+  "author": "Victor Hugo",
+  "sortKey": "Hugo",
+  "theme": "Narrativa",
+  "shelf": 59,
+  "note": ""
+ },
+ {
+  "id": "fausto",
+  "title": "Fausto",
+  "author": "Johann Wolfgang von Goethe",
+  "sortKey": "Goethe",
+  "theme": "Teatro",
+  "shelf": 60,
+  "note": ""
+ },
+ {
+  "id": "el-proceso",
+  "title": "El proceso",
+  "author": "Franz Kafka",
+  "sortKey": "Kafka",
+  "theme": "Narrativa",
+  "shelf": 61,
+  "note": ""
+ },
+ {
+  "id": "madame-bovary",
+  "title": "Madame Bovary",
+  "author": "Gustave Flaubert",
+  "sortKey": "Flaubert",
+  "theme": "Narrativa",
+  "shelf": 62,
+  "note": ""
+ },
+ {
+  "id": "escupire-sobre-vuestra-tumba",
+  "title": "Escupiré sobre vuestra tumba",
+  "author": "Boris Vian",
+  "sortKey": "Vian",
+  "theme": "Narrativa",
+  "shelf": 63,
+  "note": ""
+ },
+ {
+  "id": "la-perla",
+  "title": "La perla",
+  "author": "John Steinbeck",
+  "sortKey": "Steinbeck",
+  "theme": "Narrativa",
+  "shelf": 64,
+  "note": ""
+ },
+ {
+  "id": "historia-universal-de-la-infamia",
+  "title": "Historia universal de la infamia",
+  "author": "Jorge Luis Borges",
+  "sortKey": "Borges",
+  "theme": "Narrativa",
+  "shelf": 65,
+  "note": ""
+ },
+ {
+  "id": "rayuela",
+  "title": "Rayuela",
+  "author": "Julio Cortázar",
+  "sortKey": "Cortázar",
+  "theme": "Narrativa",
+  "shelf": 66,
+  "note": ""
+ },
+ {
+  "id": "historias-de-cronopios-y-de-famas",
+  "title": "Historias de cronopios y de famas",
+  "author": "Julio Cortázar",
+  "sortKey": "Cortázar",
+  "theme": "Narrativa",
+  "shelf": 67,
+  "note": ""
+ },
+ {
+  "id": "octaedro",
+  "title": "Octaedro",
+  "author": "Julio Cortázar",
+  "sortKey": "Cortázar",
+  "theme": "Narrativa",
+  "shelf": 68,
+  "note": ""
+ },
+ {
+  "id": "el-arbol-de-la-ciencia",
+  "title": "El árbol de la ciencia",
+  "author": "Pío Baroja",
+  "sortKey": "Baroja",
+  "theme": "Narrativa",
+  "shelf": 69,
+  "note": ""
+ },
+ {
+  "id": "odisea",
+  "title": "Odisea",
+  "author": "Homero",
+  "sortKey": "Homero",
+  "theme": "Clásicos grecolatinos",
+  "shelf": 70,
+  "note": "Colección Austral, Espasa-Calpe"
+ },
+ {
+  "id": "don-quijote-de-la-mancha",
+  "title": "Don Quijote de la Mancha",
+  "author": "Miguel de Cervantes",
+  "sortKey": "Cervantes",
+  "theme": "Narrativa",
+  "shelf": 71,
+  "note": "Colección Austral, Espasa-Calpe"
+ },
+ {
+  "id": "la-iliada",
+  "title": "La Ilíada",
+  "author": "Homero",
+  "sortKey": "Homero",
+  "theme": "Clásicos grecolatinos",
+  "shelf": 72,
+  "note": "Editorial Moretón"
+ },
+ {
+  "id": "la-eneida",
+  "title": "La Eneida",
+  "author": "Virgilio",
+  "sortKey": "Virgilio",
+  "theme": "Clásicos grecolatinos",
+  "shelf": 73,
+  "note": "Editorial Moretón"
+ },
+ {
+  "id": "el-senor-de-los-anillos-i-la-comunidad-del-anillo",
+  "title": "El Señor de los Anillos I. La Comunidad del Anillo",
+  "author": "J. R. R. Tolkien",
+  "sortKey": "Tolkien",
+  "theme": "Narrativa",
+  "shelf": 74,
+  "note": ""
+ },
+ {
+  "id": "el-senor-de-los-anillos-ii-las-dos-torres",
+  "title": "El Señor de los Anillos II. Las dos torres",
+  "author": "J. R. R. Tolkien",
+  "sortKey": "Tolkien",
+  "theme": "Narrativa",
+  "shelf": 75,
+  "note": ""
+ },
+ {
+  "id": "el-senor-de-los-anillos-iii-el-retorno-del-rey",
+  "title": "El Señor de los Anillos III. El retorno del rey",
+  "author": "J. R. R. Tolkien",
+  "sortKey": "Tolkien",
+  "theme": "Narrativa",
+  "shelf": 76,
+  "note": ""
+ },
+ {
+  "id": "el-silmarillion",
+  "title": "El Silmarillion",
+  "author": "J. R. R. Tolkien",
+  "sortKey": "Tolkien",
+  "theme": "Narrativa",
+  "shelf": 77,
+  "note": ""
+ },
+ {
+  "id": "alicia-en-el-pais-de-las-maravillas",
+  "title": "Alicia en el País de las Maravillas",
+  "author": "Lewis Carroll",
+  "sortKey": "Carroll",
+  "theme": "Narrativa",
+  "shelf": 78,
+  "note": ""
+ },
+ {
+  "id": "dante-poeta-del-deseo",
+  "title": "Dante, poeta del deseo",
+  "author": "Franco Nembrini",
+  "sortKey": "Nembrini",
+  "theme": "Poesía",
+  "shelf": 79,
+  "note": ""
+ },
+ {
+  "id": "yo-siempre-vi-un-sombrero",
+  "title": "Yo siempre vi un sombrero",
+  "author": "Álvaro Abellán-García Barrio",
+  "sortKey": "Abellán-García",
+  "theme": "Narrativa",
+  "shelf": 80,
+  "note": ""
+ },
+ {
+  "id": "historia-del-pensamiento-filosofico-y-cientifico-i",
+  "title": "Historia del pensamiento filosófico y científico I",
+  "author": "Giovanni Reale y Dario Antiseri",
+  "sortKey": "Reale",
+  "theme": "Filosofía",
+  "shelf": 81,
+  "note": ""
+ },
+ {
+  "id": "historia-del-pensamiento-filosofico-y-cientifico-ii",
+  "title": "Historia del pensamiento filosófico y científico II",
+  "author": "Giovanni Reale y Dario Antiseri",
+  "sortKey": "Reale",
+  "theme": "Filosofía",
+  "shelf": 82,
+  "note": ""
+ },
+ {
+  "id": "historia-del-pensamiento-filosofico-y-cientifico-iii",
+  "title": "Historia del pensamiento filosófico y científico III",
+  "author": "Giovanni Reale y Dario Antiseri",
+  "sortKey": "Reale",
+  "theme": "Filosofía",
+  "shelf": 83,
+  "note": ""
+ },
+ {
+  "id": "la-tarea-de-ser-mejor-curso-de-etica",
+  "title": "La tarea de ser mejor. Curso de ética",
+  "author": "",
+  "sortKey": "",
+  "theme": "Filosofía",
+  "shelf": 84,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "historia-sencilla-de-la-filosofia",
+  "title": "Historia sencilla de la filosofía",
+  "author": "Rafael Gambra",
+  "sortKey": "Gambra",
+  "theme": "Filosofía",
+  "shelf": 85,
+  "note": ""
+ },
+ {
+  "id": "historia-de-las-ideas-contemporaneas",
+  "title": "Historia de las ideas contemporáneas",
+  "author": "Mariano Fazio",
+  "sortKey": "Fazio",
+  "theme": "Filosofía",
+  "shelf": 86,
+  "note": ""
+ },
+ {
+  "id": "filosofia-minima",
+  "title": "Filosofía mínima",
+  "author": "José Ramón Ayllón",
+  "sortKey": "Ayllón",
+  "theme": "Filosofía",
+  "shelf": 87,
+  "note": ""
+ },
+ {
+  "id": "etica-aplicada-y-democracia-radical",
+  "title": "Ética aplicada y democracia radical",
+  "author": "Adela Cortina",
+  "sortKey": "Cortina",
+  "theme": "Filosofía",
+  "shelf": 88,
+  "note": ""
+ },
+ {
+  "id": "explicame-la-persona",
+  "title": "Explícame la persona",
+  "author": "Ramón Lucas Lucas",
+  "sortKey": "Lucas",
+  "theme": "Filosofía",
+  "shelf": 89,
+  "note": ""
+ },
+ {
+  "id": "vertigo-y-extasis",
+  "title": "Vértigo y éxtasis",
+  "author": "Alfonso López Quintás",
+  "sortKey": "López Quintás",
+  "theme": "Filosofía",
+  "shelf": 90,
+  "note": ""
+ },
+ {
+  "id": "el-secuestro-del-lenguaje",
+  "title": "El secuestro del lenguaje",
+  "author": "Alfonso López Quintás",
+  "sortKey": "López Quintás",
+  "theme": "Filosofía",
+  "shelf": 91,
+  "note": ""
+ },
+ {
+  "id": "mundus",
+  "title": "Mundus",
+  "author": "Higinio Marín",
+  "sortKey": "Marín",
+  "theme": "Filosofía",
+  "shelf": 92,
+  "note": ""
+ },
+ {
+  "id": "gnoseologia",
+  "title": "Gnoseología",
+  "author": "Alejandro Llano",
+  "sortKey": "Llano",
+  "theme": "Filosofía",
+  "shelf": 93,
+  "note": ""
+ },
+ {
+  "id": "sobre-dios",
+  "title": "Sobre Dios",
+  "author": "Byung-Chul Han",
+  "sortKey": "Han",
+  "theme": "Filosofía",
+  "shelf": 94,
+  "note": ""
+ },
+ {
+  "id": "vida-contemplativa",
+  "title": "Vida contemplativa",
+  "author": "Byung-Chul Han",
+  "sortKey": "Han",
+  "theme": "Filosofía",
+  "shelf": 95,
+  "note": ""
+ },
+ {
+  "id": "la-desaparicion-de-los-rituales",
+  "title": "La desaparición de los rituales",
+  "author": "Byung-Chul Han",
+  "sortKey": "Han",
+  "theme": "Filosofía",
+  "shelf": 96,
+  "note": ""
+ },
+ {
+  "id": "el-espiritu-de-la-esperanza",
+  "title": "El espíritu de la esperanza",
+  "author": "Byung-Chul Han",
+  "sortKey": "Han",
+  "theme": "Filosofía",
+  "shelf": 97,
+  "note": ""
+ },
+ {
+  "id": "el-arte-de-pensar",
+  "title": "El arte de pensar",
+  "author": "José Carlos Ruiz",
+  "sortKey": "Ruiz",
+  "theme": "Filosofía",
+  "shelf": 98,
+  "note": ""
+ },
+ {
+  "id": "el-hombre-espiritu-encarnado",
+  "title": "El hombre, espíritu encarnado",
+  "author": "Ramón Lucas Lucas",
+  "sortKey": "Lucas",
+  "theme": "Filosofía",
+  "shelf": 99,
+  "note": ""
+ },
+ {
+  "id": "humanismo-integral",
+  "title": "Humanismo integral",
+  "author": "Jacques Maritain",
+  "sortKey": "Maritain",
+  "theme": "Filosofía",
+  "shelf": 100,
+  "note": ""
+ },
+ {
+  "id": "horizonte-vertical",
+  "title": "Horizonte vertical",
+  "author": "Ramón Lucas Lucas",
+  "sortKey": "Lucas",
+  "theme": "Filosofía",
+  "shelf": 101,
+  "note": ""
+ },
+ {
+  "id": "la-sombra-del-padre",
+  "title": "La sombra del Padre",
+  "author": "Jan Dobraczyński",
+  "sortKey": "Dobraczyński",
+  "theme": "Narrativa",
+  "shelf": 102,
+  "note": ""
+ },
+ {
+  "id": "canon-inverso",
+  "title": "Canon inverso",
+  "author": "Paolo Maurensig",
+  "sortKey": "Maurensig",
+  "theme": "Narrativa",
+  "shelf": 103,
+  "note": ""
+ },
+ {
+  "id": "como-ser-un-estoico",
+  "title": "Cómo ser un estoico",
+  "author": "Massimo Pigliucci",
+  "sortKey": "Pigliucci",
+  "theme": "Filosofía",
+  "shelf": 104,
+  "note": ""
+ },
+ {
+  "id": "ensayo-sobre-la-vida-privada",
+  "title": "Ensayo sobre la vida privada",
+  "author": "Manuel García Morente",
+  "sortKey": "García Morente",
+  "theme": "Filosofía",
+  "shelf": 105,
+  "note": ""
+ },
+ {
+  "id": "reflexiones-sobre-la-persona-humana",
+  "title": "Reflexiones sobre la persona humana",
+  "author": "Jacques Maritain",
+  "sortKey": "Maritain",
+  "theme": "Filosofía",
+  "shelf": 106,
+  "note": ""
+ },
+ {
+  "id": "the-person-and-the-common-good",
+  "title": "The Person and the Common Good",
+  "author": "Jacques Maritain",
+  "sortKey": "Maritain",
+  "theme": "Filosofía",
+  "shelf": 107,
+  "note": "Edición en inglés"
+ },
+ {
+  "id": "el-hombre-y-sus-alrededores",
+  "title": "El hombre y sus alrededores",
+  "author": "Higinio Marín",
+  "sortKey": "Marín",
+  "theme": "Filosofía",
+  "shelf": 108,
+  "note": ""
+ },
+ {
+  "id": "tao-te-ching",
+  "title": "Tao Te Ching",
+  "author": "Lao Tse",
+  "sortKey": "Lao Tse",
+  "theme": "Filosofía",
+  "shelf": 109,
+  "note": ""
+ },
+ {
+  "id": "jacques-maritain-y-la-polemica-del-bien-comun",
+  "title": "Jacques Maritain y la polémica del bien común",
+  "author": "Carlos Santamaría",
+  "sortKey": "Santamaría",
+  "theme": "Filosofía",
+  "shelf": 110,
+  "note": ""
+ },
+ {
+  "id": "bosquejo-de-una-teoria-de-las-emociones",
+  "title": "Bosquejo de una teoría de las emociones",
+  "author": "Jean-Paul Sartre",
+  "sortKey": "Sartre",
+  "theme": "Filosofía",
+  "shelf": 111,
+  "note": ""
+ },
+ {
+  "id": "breviario-del-animal-humano",
+  "title": "Breviario del animal humano",
+  "author": "Enrique Baca",
+  "sortKey": "Baca",
+  "theme": "Filosofía",
+  "shelf": 112,
+  "note": ""
+ },
+ {
+  "id": "nietzsche",
+  "title": "Nietzsche",
+  "author": "",
+  "sortKey": "",
+  "theme": "Filosofía",
+  "shelf": 113,
+  "note": "Edición por confirmar"
+ },
+ {
+  "id": "etica-sin-moral",
+  "title": "Ética sin moral",
+  "author": "Adela Cortina",
+  "sortKey": "Cortina",
+  "theme": "Filosofía",
+  "shelf": 114,
+  "note": ""
+ },
+ {
+  "id": "los-cuatro-amores",
+  "title": "Los cuatro amores",
+  "author": "C. S. Lewis",
+  "sortKey": "Lewis",
+  "theme": "Filosofía",
+  "shelf": 115,
+  "note": ""
+ },
+ {
+  "id": "antropologia",
+  "title": "Antropología",
+  "author": "Santo Tomás de Aquino",
+  "sortKey": "Tomás de Aquino",
+  "theme": "Filosofía",
+  "shelf": 116,
+  "note": ""
+ },
+ {
+  "id": "mision-de-la-universidad",
+  "title": "Misión de la universidad",
+  "author": "José Ortega y Gasset",
+  "sortKey": "Ortega",
+  "theme": "Filosofía",
+  "shelf": 117,
+  "note": ""
+ },
+ {
+  "id": "dialogos",
+  "title": "Diálogos",
+  "author": "Platón",
+  "sortKey": "Platón",
+  "theme": "Clásicos grecolatinos",
+  "shelf": 118,
+  "note": ""
+ },
+ {
+  "id": "sobre-la-vejez-sobre-la-amistad",
+  "title": "Sobre la vejez. Sobre la amistad",
+  "author": "Cicerón",
+  "sortKey": "Cicerón",
+  "theme": "Clásicos grecolatinos",
+  "shelf": 119,
+  "note": ""
+ },
+ {
+  "id": "la-rebelion-de-las-masas-y-otros-ensayos",
+  "title": "La rebelión de las masas y otros ensayos",
+  "author": "José Ortega y Gasset",
+  "sortKey": "Ortega",
+  "theme": "Filosofía",
+  "shelf": 120,
+  "note": ""
+ },
+ {
+  "id": "coyuntura-economica-y-reformismo-burgues",
+  "title": "Coyuntura económica y reformismo burgués",
+  "author": "Jaime Vicens Vives",
+  "sortKey": "Vicens Vives",
+  "theme": "Historia y actualidad",
+  "shelf": 121,
+  "note": ""
+ },
+ {
+  "id": "el-poder-de-la-oracion",
+  "title": "El poder de la oración",
+  "author": "Jean Lafrance",
+  "sortKey": "Lafrance",
+  "theme": "Fe y espiritualidad",
+  "shelf": 122,
+  "note": ""
+ },
+ {
+  "id": "jesus-tambien-estaba-invitado",
+  "title": "Jesús también estaba invitado",
+  "author": "Mauro Giuseppe Lepori",
+  "sortKey": "Lepori",
+  "theme": "Fe y espiritualidad",
+  "shelf": 123,
+  "note": ""
+ },
+ {
+  "id": "persona",
+  "title": "Persona",
+  "author": "Julián Marías",
+  "sortKey": "Marías",
+  "theme": "Filosofía",
+  "shelf": 124,
+  "note": ""
+ },
+ {
+  "id": "que-surja-el-hombre-nuevo",
+  "title": "Que surja el hombre nuevo",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 125,
+  "note": ""
+ },
+ {
+  "id": "pequena-historia-de-espana",
+  "title": "Pequeña historia de España",
+  "author": "Manuel Fernández Álvarez",
+  "sortKey": "Fernández Álvarez",
+  "theme": "Historia y actualidad",
+  "shelf": 126,
+  "note": ""
+ },
+ {
+  "id": "pequena-historia-del-mundo",
+  "title": "Pequeña historia del mundo",
+  "author": "Fernando García de Cortázar",
+  "sortKey": "García de Cortázar",
+  "theme": "Historia y actualidad",
+  "shelf": 127,
+  "note": ""
+ },
+ {
+  "id": "breve-historia-de-espana-ii",
+  "title": "Breve historia de España II",
+  "author": "Fernando García de Cortázar y José Manuel González Vesga",
+  "sortKey": "García de Cortázar",
+  "theme": "Historia y actualidad",
+  "shelf": 128,
+  "note": ""
+ },
+ {
+  "id": "el-hombre-en-busca-de-sentido",
+  "title": "El hombre en busca de sentido",
+  "author": "Viktor Frankl",
+  "sortKey": "Frankl",
+  "theme": "Filosofía",
+  "shelf": 129,
+  "note": ""
+ },
+ {
+  "id": "el-mundo-de-sofia",
+  "title": "El mundo de Sofía",
+  "author": "Jostein Gaarder",
+  "sortKey": "Gaarder",
+  "theme": "Filosofía",
+  "shelf": 130,
+  "note": ""
+ },
+ {
+  "id": "montessori-ante-el-legado-de-rousseau",
+  "title": "Montessori ante el legado de Rousseau",
+  "author": "Catherine L'Ecuyer",
+  "sortKey": "L'Ecuyer",
+  "theme": "Educación",
+  "shelf": 131,
+  "note": ""
+ },
+ {
+  "id": "pedagogia-de-la-lucha-ascetica",
+  "title": "Pedagogía de la lucha ascética",
+  "author": "Víctor García Hoz",
+  "sortKey": "García Hoz",
+  "theme": "Educación",
+  "shelf": 132,
+  "note": "Edición de 1942"
+ },
+ {
+  "id": "exigir-para-educar",
+  "title": "Exigir para educar",
+  "author": "Eusebio Ferrer",
+  "sortKey": "Ferrer",
+  "theme": "Educación",
+  "shelf": 133,
+  "note": ""
+ },
+ {
+  "id": "matar-a-socrates",
+  "title": "¿Matar a Sócrates?",
+  "author": "Gregorio Luri",
+  "sortKey": "Luri",
+  "theme": "Educación",
+  "shelf": 134,
+  "note": ""
+ },
+ {
+  "id": "cultivar-el-caracter-en-la-familia-una-tarea-ineludible",
+  "title": "Cultivar el carácter en la familia: una tarea ineludible",
+  "author": "Josu Ahedo, Carmen Caro y Juan Luis Fuentes (coords.)",
+  "sortKey": "Ahedo",
+  "theme": "Educación",
+  "shelf": 135,
+  "note": ""
+ },
+ {
+  "id": "perspectivas-actuales-de-la-condicion-humana-y-la-accion-edu",
+  "title": "Perspectivas actuales de la condición humana y la acción educativa",
+  "author": "Concepción Naval, Antonio Bernal, Gonzalo Jover y Juan Luis Fuentes (coords.)",
+  "sortKey": "Naval",
+  "theme": "Educación",
+  "shelf": 136,
+  "note": ""
+ },
+ {
+  "id": "conversaciones-con-mi-maestra",
+  "title": "Conversaciones con mi maestra",
+  "author": "Catherine L'Ecuyer",
+  "sortKey": "L'Ecuyer",
+  "theme": "Educación",
+  "shelf": 137,
+  "note": ""
+ },
+ {
+  "id": "el-talento-de-los-adolescentes",
+  "title": "El talento de los adolescentes",
+  "author": "José Antonio Marina",
+  "sortKey": "Marina",
+  "theme": "Educación",
+  "shelf": 138,
+  "note": ""
+ },
+ {
+  "id": "socrates-en-el-aula",
+  "title": "Sócrates en el aula",
+  "author": "José María Barrio Maestre",
+  "sortKey": "Barrio",
+  "theme": "Educación",
+  "shelf": 139,
+  "note": ""
+ },
+ {
+  "id": "las-flores-del-mal",
+  "title": "Las flores del mal",
+  "author": "Charles Baudelaire",
+  "sortKey": "Baudelaire",
+  "theme": "Poesía",
+  "shelf": 140,
+  "note": ""
+ },
+ {
+  "id": "oracion-de-la-lluvia",
+  "title": "Oración de la lluvia",
+  "author": "Carmen María López",
+  "sortKey": "López",
+  "theme": "Poesía",
+  "shelf": 141,
+  "note": ""
+ },
+ {
+  "id": "azul-cantos-de-vida-y-esperanza",
+  "title": "Azul... Cantos de vida y esperanza",
+  "author": "Rubén Darío",
+  "sortKey": "Darío",
+  "theme": "Poesía",
+  "shelf": 142,
+  "note": ""
+ },
+ {
+  "id": "el-cristo-de-velazquez",
+  "title": "El Cristo de Velázquez",
+  "author": "Miguel de Unamuno",
+  "sortKey": "Unamuno",
+  "theme": "Poesía",
+  "shelf": 143,
+  "note": ""
+ },
+ {
+  "id": "alumbramiento",
+  "title": "Alumbramiento",
+  "author": "Daniel Cotta",
+  "sortKey": "Cotta",
+  "theme": "Poesía",
+  "shelf": 144,
+  "note": "Colección Adonáis"
+ },
+ {
+  "id": "cancion-de-cuna",
+  "title": "Canción de cuna",
+  "author": "Jesús Montiel",
+  "sortKey": "Montiel",
+  "theme": "Poesía",
+  "shelf": 145,
+  "note": ""
+ },
+ {
+  "id": "veinte-poemas-de-amor-y-una-cancion-desesperada",
+  "title": "Veinte poemas de amor y una canción desesperada",
+  "author": "Pablo Neruda",
+  "sortKey": "Neruda",
+  "theme": "Poesía",
+  "shelf": 146,
+  "note": ""
+ },
+ {
+  "id": "ancia",
+  "title": "Ancia",
+  "author": "Blas de Otero",
+  "sortKey": "Otero",
+  "theme": "Poesía",
+  "shelf": 147,
+  "note": ""
+ },
+ {
+  "id": "antologia-poetica",
+  "title": "Antología poética",
+  "author": "Federico García Lorca",
+  "sortKey": "García Lorca",
+  "theme": "Poesía",
+  "shelf": 148,
+  "note": ""
+ },
+ {
+  "id": "tierra-granada",
+  "title": "Tierra granada",
+  "author": "Manuel Jesús Gámiz Gordo",
+  "sortKey": "Gámiz",
+  "theme": "Poesía",
+  "shelf": 149,
+  "note": ""
+ },
+ {
+  "id": "himnos-a-la-iglesia",
+  "title": "Himnos a la Iglesia",
+  "author": "Gertrud von le Fort",
+  "sortKey": "Le Fort",
+  "theme": "Poesía",
+  "shelf": 150,
+  "note": ""
+ },
+ {
+  "id": "el-vuelo-de-la-bruma",
+  "title": "El vuelo de la bruma",
+  "author": "Alejandro López Andrada",
+  "sortKey": "López Andrada",
+  "theme": "Poesía",
+  "shelf": 151,
+  "note": ""
+ },
+ {
+  "id": "atomos-y-galaxias",
+  "title": "Átomos y galaxias",
+  "author": "Miguel d'Ors",
+  "sortKey": "d'Ors",
+  "theme": "Poesía",
+  "shelf": 152,
+  "note": ""
+ },
+ {
+  "id": "teoria-teatral",
+  "title": "Teoría teatral",
+  "author": "Vsévolod E. Meyerhold",
+  "sortKey": "Meyerhold",
+  "theme": "Teatro",
+  "shelf": 153,
+  "note": ""
+ },
+ {
+  "id": "diccionario-de-la-lengua-espanola-ag",
+  "title": "Diccionario de la lengua española (A–G)",
+  "author": "Real Academia Española",
+  "sortKey": "Real Academia",
+  "theme": "Obras de consulta",
+  "shelf": 154,
+  "note": "22.ª edición, 2001"
+ },
+ {
+  "id": "diccionario-de-la-lengua-espanola-hz",
+  "title": "Diccionario de la lengua española (H–Z)",
+  "author": "Real Academia Española",
+  "sortKey": "Real Academia",
+  "theme": "Obras de consulta",
+  "shelf": 155,
+  "note": "22.ª edición, 2001"
+ },
+ {
+  "id": "documentos-completos-del-vaticano-ii",
+  "title": "Documentos completos del Vaticano II",
+  "author": "Concilio Vaticano II",
+  "sortKey": "Vaticano II",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 156,
+  "note": ""
+ },
+ {
+  "id": "textos-sobre-la-regulacion-de-la-natalidad",
+  "title": "Textos sobre la regulación de la natalidad",
+  "author": "Pablo VI y Juan Pablo II",
+  "sortKey": "Pablo VI",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 157,
+  "note": ""
+ },
+ {
+  "id": "amoris-laetitia",
+  "title": "Amoris laetitia",
+  "author": "Papa Francisco",
+  "sortKey": "Francisco",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 158,
+  "note": "Exhortación apostólica"
+ },
+ {
+  "id": "spe-salvi",
+  "title": "Spe salvi",
+  "author": "Benedicto XVI",
+  "sortKey": "Benedicto XVI",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 159,
+  "note": "Carta encíclica"
+ },
+ {
+  "id": "palabras-de-su-santidad-leon-xiv-en-su-viaje-a-espana",
+  "title": "Palabras de Su Santidad León XIV en su viaje a España",
+  "author": "León XIV",
+  "sortKey": "León XIV",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 160,
+  "note": "Junio de 2026"
+ },
+ {
+  "id": "redemptor-hominis",
+  "title": "Redemptor hominis",
+  "author": "Juan Pablo II",
+  "sortKey": "Juan Pablo II",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 161,
+  "note": "Carta encíclica"
+ },
+ {
+  "id": "evangelium-vitae",
+  "title": "Evangelium vitae",
+  "author": "Juan Pablo II",
+  "sortKey": "Juan Pablo II",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 162,
+  "note": "Carta encíclica"
+ },
+ {
+  "id": "redemptoris-mater",
+  "title": "Redemptoris Mater",
+  "author": "Juan Pablo II",
+  "sortKey": "Juan Pablo II",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 163,
+  "note": "Carta encíclica"
+ },
+ {
+  "id": "familiaris-consortio",
+  "title": "Familiaris consortio",
+  "author": "Juan Pablo II",
+  "sortKey": "Juan Pablo II",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 164,
+  "note": "Exhortación apostólica"
+ },
+ {
+  "id": "mulieris-dignitatem",
+  "title": "Mulieris dignitatem",
+  "author": "Juan Pablo II",
+  "sortKey": "Juan Pablo II",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 165,
+  "note": "Carta apostólica"
+ },
+ {
+  "id": "sollicitudo-rei-socialis",
+  "title": "Sollicitudo rei socialis",
+  "author": "Juan Pablo II",
+  "sortKey": "Juan Pablo II",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 166,
+  "note": "Carta encíclica"
+ },
+ {
+  "id": "magnifica-humanitas",
+  "title": "Magnifica humanitas",
+  "author": "León XIV",
+  "sortKey": "León XIV",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 167,
+  "note": "Carta encíclica"
+ },
+ {
+  "id": "dilexit-nos",
+  "title": "Dilexit nos",
+  "author": "Papa Francisco",
+  "sortKey": "Francisco",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 168,
+  "note": "Carta encíclica"
+ },
+ {
+  "id": "caritas-in-veritate",
+  "title": "Caritas in veritate",
+  "author": "Benedicto XVI",
+  "sortKey": "Benedicto XVI",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 169,
+  "note": "Carta encíclica"
+ },
+ {
+  "id": "la-alegria-de-ser-familia",
+  "title": "La alegría de ser familia",
+  "author": "Hna. Gertrud-Maria Erhard (ed.)",
+  "sortKey": "Erhard",
+  "theme": "Schoenstatt",
+  "shelf": 170,
+  "note": ""
+ },
+ {
+  "id": "tormentas-de-otono-1912",
+  "title": "Tormentas de otoño 1912",
+  "author": "Dorothea M. Schlickmann",
+  "sortKey": "Schlickmann",
+  "theme": "Schoenstatt",
+  "shelf": 171,
+  "note": ""
+ },
+ {
+  "id": "la-educacion-en-un-cambio-de-epoca",
+  "title": "La educación en un cambio de época",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 172,
+  "note": ""
+ },
+ {
+  "id": "dios-mi-padre",
+  "title": "Dios, mi Padre",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 173,
+  "note": ""
+ },
+ {
+  "id": "lunes-por-la-tarde-3",
+  "title": "Lunes por la tarde… 3",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 174,
+  "note": ""
+ },
+ {
+  "id": "lunes-por-la-tarde-4",
+  "title": "Lunes por la tarde… 4",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 175,
+  "note": ""
+ },
+ {
+  "id": "lunes-por-la-tarde-5",
+  "title": "Lunes por la tarde… 5",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 176,
+  "note": ""
+ },
+ {
+  "id": "lunes-por-la-tarde-20",
+  "title": "Lunes por la tarde… 20",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 177,
+  "note": ""
+ },
+ {
+  "id": "lunes-por-la-tarde-29",
+  "title": "Lunes por la tarde… 29",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 178,
+  "note": ""
+ },
+ {
+  "id": "lunes-por-la-tarde-30",
+  "title": "Lunes por la tarde… 30",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 179,
+  "note": ""
+ },
+ {
+  "id": "la-santidad-de-la-vida-diaria",
+  "title": "La santidad de la vida diaria",
+  "author": "Herbert King",
+  "sortKey": "King",
+  "theme": "Schoenstatt",
+  "shelf": 180,
+  "note": "José Kentenich: una presentación de su pensamiento en textos, 6"
+ },
+ {
+  "id": "los-anos-ocultos-padre-jose-kentenich-infancia-y-juventud-18",
+  "title": "Los años ocultos. Padre José Kentenich: infancia y juventud (1885–1910)",
+  "author": "Dorothea M. Schlickmann",
+  "sortKey": "Schlickmann",
+  "theme": "Schoenstatt",
+  "shelf": 181,
+  "note": ""
+ },
+ {
+  "id": "julio-steinkaul-un-heroe-de-la-primavera-sagrada",
+  "title": "Julio Steinkaul. Un héroe de la «Primavera Sagrada»",
+  "author": "",
+  "sortKey": "",
+  "theme": "Schoenstatt",
+  "shelf": 182,
+  "note": "Dos ejemplares"
+ },
+ {
+  "id": "adelante",
+  "title": "Adelante",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 183,
+  "note": "Fundación Instituto de Familias"
+ },
+ {
+  "id": "adelante-2",
+  "title": "¡Adelante!",
+  "author": "",
+  "sortKey": "",
+  "theme": "Schoenstatt",
+  "shelf": 184,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "pedagogia-mariana-el-estilo-pedagogico-kentenijiano",
+  "title": "Pedagogía mariana. El estilo pedagógico kentenijiano",
+  "author": "P. Rafael Fernández de A.",
+  "sortKey": "Fernández de Andraca",
+  "theme": "Schoenstatt",
+  "shelf": 185,
+  "note": ""
+ },
+ {
+  "id": "eres-el-alma-de-mi-alma",
+  "title": "Eres el alma de mi alma",
+  "author": "P. Patricio Moore Infante",
+  "sortKey": "Moore",
+  "theme": "Schoenstatt",
+  "shelf": 186,
+  "note": ""
+ },
+ {
+  "id": "el-dios-de-la-vida-huellas-religiosas-en-los-procesos-psiqui",
+  "title": "El Dios de la vida. Huellas religiosas en los procesos psíquicos",
+  "author": "Heriberto King",
+  "sortKey": "King",
+  "theme": "Schoenstatt",
+  "shelf": 187,
+  "note": ""
+ },
+ {
+  "id": "me-amas-una-mirada-sobre-la-castidad-matrimonial",
+  "title": "¿Me amas? Una mirada sobre la castidad matrimonial",
+  "author": "P. Carlos Padilla Esteban",
+  "sortKey": "Padilla",
+  "theme": "Schoenstatt",
+  "shelf": 188,
+  "note": ""
+ },
+ {
+  "id": "beber-de-la-fuente-de-vida-reflexiones-sobre-los-evangelios-",
+  "title": "Beber de la fuente de vida. Reflexiones sobre los Evangelios dominicales",
+  "author": "P. Carlos Padilla Esteban",
+  "sortKey": "Padilla",
+  "theme": "Schoenstatt",
+  "shelf": 189,
+  "note": ""
+ },
+ {
+  "id": "heroes-de-fuego-ardieron-hasta-consumirse",
+  "title": "Héroes de fuego. Ardieron hasta consumirse",
+  "author": "P. Jonathan Niehaus",
+  "sortKey": "Niehaus",
+  "theme": "Schoenstatt",
+  "shelf": 190,
+  "note": ""
+ },
+ {
+  "id": "el-padre-kentenich",
+  "title": "El Padre Kentenich",
+  "author": "",
+  "sortKey": "",
+  "theme": "Schoenstatt",
+  "shelf": 191,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "jose-kentenich",
+  "title": "José Kentenich",
+  "author": "Eduardo T. Gil de Muro",
+  "sortKey": "Gil de Muro",
+  "theme": "Schoenstatt",
+  "shelf": 192,
+  "note": ""
+ },
+ {
+  "id": "el-31-de-mayo-una-mision-para-nuestro-tiempo",
+  "title": "El 31 de mayo. Una misión para nuestro tiempo",
+  "author": "P. Rafael Fernández de A.",
+  "sortKey": "Fernández de Andraca",
+  "theme": "Schoenstatt",
+  "shelf": 193,
+  "note": ""
+ },
+ {
+  "id": "el-verdadero-amor",
+  "title": "El verdadero amor",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 194,
+  "note": ""
+ },
+ {
+  "id": "la-renovacion-de-la-iglesia-textos-escogidos",
+  "title": "La renovación de la Iglesia. Textos escogidos",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 195,
+  "note": "Dos ejemplares"
+ },
+ {
+  "id": "la-familia-de-nazareth",
+  "title": "La familia de Nazareth",
+  "author": "Míriam de Manuel San José",
+  "sortKey": "Manuel",
+  "theme": "Schoenstatt",
+  "shelf": 196,
+  "note": "Dos ejemplares"
+ },
+ {
+  "id": "el-dia-que-cambie-mi-vida",
+  "title": "El día que cambié mi vida",
+  "author": "Francisco Fernández-Carvajal",
+  "sortKey": "Fernández-Carvajal",
+  "theme": "Fe y espiritualidad",
+  "shelf": 197,
+  "note": ""
+ },
+ {
+  "id": "bajo-la-proteccion-de-maria",
+  "title": "Bajo la protección de María",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 198,
+  "note": ""
+ },
+ {
+  "id": "mision-personal",
+  "title": "Misión personal",
+  "author": "María Gorostiaga",
+  "sortKey": "Gorostiaga",
+  "theme": "Schoenstatt",
+  "shelf": 199,
+  "note": ""
+ },
+ {
+  "id": "la-historia-del-p-kentenich",
+  "title": "La historia del P. Kentenich",
+  "author": "P. Hernán Alessandri M.",
+  "sortKey": "Alessandri",
+  "theme": "Schoenstatt",
+  "shelf": 200,
+  "note": ""
+ }
+]
