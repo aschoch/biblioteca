@@ -523,6 +523,11 @@
   let pushed = false;   // ¿hemos añadido una entrada al historial al abrir?
   let closing = false;
 
+  // Al cambiar de libro con la ficha abierta, el anterior vuelve a su hueco en la balda.
+  function releaseSpines() {
+    $$(".spine.is-out").forEach((sp) => sp.classList.remove("is-out"));
+  }
+
   async function openBook(id, el, { card = false, push = true } = {}) {
     const b = byId[id]; if (!b) return;
     const wasOpen = !stage.hidden;
@@ -617,6 +622,7 @@
       ], { duration: 170, easing: "cubic-bezier(.4,0,1,1)" }).finished;
     }
     detail.style.transform = ""; detail.style.opacity = "";
+    releaseSpines();
     current = next; source = $(`.spine[data-id="${next.id}"], .tile[data-id="${next.id}"]`);
     fillStage(next);
     setHash(next.id, "replace");
@@ -654,7 +660,7 @@
     const st = e.target.closest("[data-step]");
     if (st) { scroller.scrollTo({ top: 0 }); return step(+st.dataset.step); }
     const go = e.target.closest("[data-goto]");
-    if (go) { current = byId[go.dataset.goto]; source = null; fillStage(current); setHash(current.id, "replace");
+    if (go) { releaseSpines(); current = byId[go.dataset.goto]; source = null; fillStage(current); setHash(current.id, "replace");
       if (!reduceMotion) detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260 }); return; }
     const s = e.target.closest("[data-search]");
     if (s) { const q = s.dataset.search; closeStage().then(() => setQuery(q)); return; }
