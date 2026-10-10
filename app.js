@@ -390,7 +390,7 @@
 
   // Deslizar en móvil para pasar de libro
   let tx = null;
-  stage.addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; }, { passive: true });
+  stage.addEventListener("touchstart", (e) => { tx = e.target.closest(".mini-row") ? null : e.touches[0].clientX; }, { passive: true });
   stage.addEventListener("touchend", (e) => {
     if (tx == null || !stage.classList.contains("open")) return;
     const dx = e.changedTouches[0].clientX - tx; tx = null;

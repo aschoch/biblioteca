@@ -1,6 +1,6 @@
 """Busca portadas: Open Library (búsqueda y por ISBN) y Amazon por ISBN.
 Guarda covers/<id>.jpg (máx. 640 px de alto) y data/covers.json con color dominante."""
-import json, io, os, sys, time, urllib.parse, urllib.request
+import gzip, json, io, os, sys, time, urllib.parse, urllib.request
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +20,10 @@ only = [a for a in sys.argv[1:] if not a.startswith("--")]
 def get(url, timeout=20):
     req = urllib.request.Request(url, headers=UA)
     with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+        data = r.read()
+    if data[:2] == b"\x1f\x8b":  # algunas tiendas sirven la imagen comprimida con gzip
+        data = gzip.decompress(data)
+    return data
 
 def img_ok(data):
     try:

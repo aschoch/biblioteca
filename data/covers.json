@@ -64,7 +64,12 @@
   "h": 187
  },
  "healthy-business": {
-  "file": null
+  "file": "covers/healthy-business.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/P/2381582312.01.L.jpg",
+  "color": "#ffffff",
+  "w": 414,
+  "h": 500
  },
  "obtenga-el-si": {
   "file": "covers/obtenga-el-si.jpg",
@@ -83,7 +88,12 @@
   "h": 500
  },
  "the-new-father-a-dad-s-guide-to-the-first-year": {
-  "file": null
+  "file": "covers/the-new-father-a-dad-s-guide-to-the-first-year.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/P/0789211777.01.L.jpg",
+  "color": "#f6f6f5",
+  "w": 334,
+  "h": 500
  },
  "como-polvo-en-el-viento": {
   "file": "covers/como-polvo-en-el-viento.jpg",
@@ -222,7 +232,12 @@
   "h": 500
  },
  "momentos-estelares-de-la-humanidad": {
-  "file": null
+  "file": "covers/momentos-estelares-de-la-humanidad.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/26/9788495359926.webp",
+  "color": "#631713",
+  "w": 420,
+  "h": 640
  },
  "soldados-de-salamina": {
   "file": "covers/soldados-de-salamina.jpg",
@@ -233,7 +248,12 @@
   "h": 500
  },
  "sin-noticias-de-gurb": {
-  "file": null
+  "file": "covers/sin-noticias-de-gurb.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/22/9788432207822.webp",
+  "color": "#a58771",
+  "w": 372,
+  "h": 640
  },
  "sendas-equivocas": {
   "file": "covers/sendas-equivocas.jpg",
@@ -268,7 +288,12 @@
   "h": 500
  },
  "niebla": {
-  "file": null
+  "file": "covers/niebla.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/76/9788437603476.webp",
+  "color": "#000000",
+  "w": 387,
+  "h": 640
  },
  "la-celestina": {
   "file": "covers/la-celestina.jpg",
@@ -327,7 +352,12 @@
   "h": 181
  },
  "elogio-de-la-locura": {
-  "file": null
+  "file": "covers/elogio-de-la-locura.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/90/9788411326490.webp",
+  "color": "#dae4dc",
+  "w": 399,
+  "h": 640
  },
  "el-ultimo-dia-de-un-condenado-a-muerte": {
   "file": "covers/el-ultimo-dia-de-un-condenado-a-muerte.jpg",
@@ -346,7 +376,12 @@
   "h": 500
  },
  "el-proceso": {
-  "file": null
+  "file": "covers/el-proceso.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/91/9788420678191.webp",
+  "color": "#b31b16",
+  "w": 427,
+  "h": 640
  },
  "madame-bovary": {
   "file": "covers/madame-bovary.jpg",
@@ -453,7 +488,12 @@
   "h": 500
  },
  "dante-poeta-del-deseo": {
-  "file": null
+  "file": "covers/dante-poeta-del-deseo.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/P/8490551952.01.L.jpg",
+  "color": "#2a2125",
+  "w": 349,
+  "h": 500
  },
  "yo-siempre-vi-un-sombrero": {
   "file": "covers/yo-siempre-vi-un-sombrero.jpg",
@@ -544,7 +584,12 @@
   "h": 500
  },
  "horizonte-vertical": {
-  "file": null
+  "file": "covers/horizonte-vertical.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/37/9788479149437.webp",
+  "color": "#444c36",
+  "w": 424,
+  "h": 640
  },
  "la-sombra-del-padre": {
   "file": "covers/la-sombra-del-padre.jpg",
@@ -587,7 +632,12 @@
   "h": 500
  },
  "the-person-and-the-common-good": {
-  "file": null
+  "file": "covers/the-person-and-the-common-good.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/P/0268002045.01.L.jpg",
+  "color": "#a7978a",
+  "w": 328,
+  "h": 500
  },
  "el-hombre-y-sus-alrededores": {
   "file": "covers/el-hombre-y-sus-alrededores.jpg",
@@ -769,7 +819,12 @@
   "h": 500
  },
  "el-cristo-de-velazquez": {
-  "file": null
+  "file": "covers/el-cristo-de-velazquez.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/31704535804._SL500_.jpg",
+  "color": "#8b4a68",
+  "w": 321,
+  "h": 500
  },
  "antologia-poetica": {
   "file": "covers/antologia-poetica.jpg",
@@ -922,55 +977,140 @@
   "h": 500
  },
  "inventar-criar": {
-  "file": null
+  "file": "covers/inventar-criar.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/20/9789897774720.webp",
+  "color": "#f9faf5",
+  "w": 422,
+  "h": 640
  },
  "el-alma-popular": {
-  "file": null
+  "file": "covers/el-alma-popular.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32468866091.jpg",
+  "color": "#db2c17",
+  "w": 441,
+  "h": 640
  },
  "milagro-en-los-andes": {
-  "file": null
+  "file": "covers/milagro-en-los-andes.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/92/9788408067092.webp",
+  "color": "#385dbd",
+  "w": 426,
+  "h": 640
  },
  "ivanov-la-gaviota-tio-vania": {
-  "file": null
+  "file": "covers/ivanov-la-gaviota-tio-vania.jpg",
+  "src": "override",
+  "url": "https://covers.openlibrary.org/b/isbn/9788420604749-L.jpg",
+  "color": "#b74a34",
+  "w": 301,
+  "h": 500
  },
  "la-mujer-eterna": {
-  "file": null
+  "file": "covers/la-mujer-eterna.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/31320715065._SL500_.jpg",
+  "color": "#a38e79",
+  "w": 375,
+  "h": 500
  },
  "el-autobus-perdido": {
-  "file": null
+  "file": "covers/el-autobus-perdido.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/49/9788418451249.webp",
+  "color": "#878787",
+  "w": 414,
+  "h": 640
  },
  "un-lugar-llamado-antano": {
-  "file": null
+  "file": "covers/un-lugar-llamado-antano.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/25/9788433980625.webp",
+  "color": "#fdf497",
+  "w": 407,
+  "h": 640
  },
  "la-espuma-de-los-dias": {
-  "file": null
+  "file": "covers/la-espuma-de-los-dias.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/14/9788420688114.webp",
+  "color": "#1b1814",
+  "w": 427,
+  "h": 640
  },
  "la-suerte-esta-echada": {
-  "file": null
+  "file": "covers/la-suerte-esta-echada.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/25/9789500303125.webp",
+  "color": "#6e2213",
+  "w": 415,
+  "h": 640
  },
  "el-senor-de-los-anillos-i-la-comunidad-del-anillo": {
-  "file": null
+  "file": "covers/el-senor-de-los-anillos-i-la-comunidad-del-anillo.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/63/9788445000663.webp",
+  "color": "#676333",
+  "w": 421,
+  "h": 640
  },
  "el-senor-de-los-anillos-ii-las-dos-torres": {
-  "file": null
+  "file": "covers/el-senor-de-los-anillos-ii-las-dos-torres.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/70/9788445000670.webp",
+  "color": "#12192a",
+  "w": 421,
+  "h": 640
  },
  "el-senor-de-los-anillos-iii-el-retorno-del-rey": {
-  "file": null
+  "file": "covers/el-senor-de-los-anillos-iii-el-retorno-del-rey.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/87/9788445000687.webp",
+  "color": "#12131a",
+  "w": 421,
+  "h": 640
  },
  "el-silmarillion": {
-  "file": null
+  "file": "covers/el-silmarillion.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/37/9788445013137.webp",
+  "color": "#6a4d3a",
+  "w": 411,
+  "h": 640
  },
  "historia-del-pensamiento-filosofico-y-cientifico-i": {
-  "file": null
+  "file": "covers/historia-del-pensamiento-filosofico-y-cientifico-i.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/76/9788425415876.webp",
+  "color": "#a28a71",
+  "w": 417,
+  "h": 640
  },
  "historia-del-pensamiento-filosofico-y-cientifico-ii": {
-  "file": null
+  "file": "covers/historia-del-pensamiento-filosofico-y-cientifico-ii.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/90/9788425415890.webp",
+  "color": "#9c835e",
+  "w": 414,
+  "h": 640
  },
  "historia-del-pensamiento-filosofico-y-cientifico-iii": {
-  "file": null
+  "file": "covers/historia-del-pensamiento-filosofico-y-cientifico-iii.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/13/9788425415913.webp",
+  "color": "#cfcdb2",
+  "w": 412,
+  "h": 640
  },
  "historia-de-las-ideas-contemporaneas": {
-  "file": null
+  "file": "covers/historia-de-las-ideas-contemporaneas.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/39/9788432136139.webp",
+  "color": "#84785c",
+  "w": 432,
+  "h": 640
  },
  "explicame-la-persona": {
   "file": "covers/explicame-la-persona.jpg",
@@ -981,46 +1121,111 @@
   "h": 500
  },
  "vertigo-y-extasis": {
-  "file": null
+  "file": "covers/vertigo-y-extasis.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/08/9788432136108.webp",
+  "color": "#010101",
+  "w": 447,
+  "h": 640
  },
  "el-secuestro-del-lenguaje": {
-  "file": null
+  "file": "covers/el-secuestro-del-lenguaje.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32511694045.jpg",
+  "color": "#775c4d",
+  "w": 428,
+  "h": 640
  },
  "vida-contemplativa": {
-  "file": null
+  "file": "covers/vida-contemplativa.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/28/9788430625628.webp",
+  "color": "#5c8841",
+  "w": 392,
+  "h": 640
  },
  "la-desaparicion-de-los-rituales": {
-  "file": null
+  "file": "covers/la-desaparicion-de-los-rituales.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/05/9788425444005.webp",
+  "color": "#12071d",
+  "w": 394,
+  "h": 640
  },
  "el-espiritu-de-la-esperanza": {
-  "file": null
+  "file": "covers/el-espiritu-de-la-esperanza.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/10/9788425451010.webp",
+  "color": "#473b2c",
+  "w": 401,
+  "h": 640
  },
  "jacques-maritain-y-la-polemica-del-bien-comun": {
   "file": null
  },
  "la-rebelion-de-las-masas-y-otros-ensayos": {
-  "file": null
+  "file": "covers/la-rebelion-de-las-masas-y-otros-ensayos.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/73/9788420686073.webp",
+  "color": "#ffffff",
+  "w": 427,
+  "h": 640
  },
  "que-surja-el-hombre-nuevo": {
-  "file": null
+  "file": "covers/que-surja-el-hombre-nuevo.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/P/956759824X.01.L.jpg",
+  "color": "#312821",
+  "w": 337,
+  "h": 500
  },
  "breve-historia-de-espana-ii": {
-  "file": null
+  "file": "covers/breve-historia-de-espana-ii.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/isbn/9788448706395-es.jpg",
+  "color": "#c4bfc0",
+  "w": 315,
+  "h": 500
  },
  "el-hombre-en-busca-de-sentido": {
-  "file": null
+  "file": "covers/el-hombre-en-busca-de-sentido.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/26/9788425432026.webp",
+  "color": "#edeeef",
+  "w": 417,
+  "h": 640
  },
  "montessori-ante-el-legado-de-rousseau": {
-  "file": null
+  "file": "covers/montessori-ante-el-legado-de-rousseau.jpg",
+  "src": "override",
+  "url": "https://m.media-amazon.com/images/P/8409576902.01.L.jpg",
+  "color": "#372a26",
+  "w": 335,
+  "h": 500
  },
  "pedagogia-de-la-lucha-ascetica": {
-  "file": null
+  "file": "covers/pedagogia-de-la-lucha-ascetica.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/10471474622.jpg",
+  "color": "#cbb8a9",
+  "w": 250,
+  "h": 400
  },
  "matar-a-socrates": {
-  "file": null
+  "file": "covers/matar-a-socrates.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/08/9788434422308.webp",
+  "color": "#fefaef",
+  "w": 403,
+  "h": 640
  },
  "cultivar-el-caracter-en-la-familia-una-tarea-ineludible": {
-  "file": null
+  "file": "covers/cultivar-el-caracter-en-la-familia-una-tarea-ineludible.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8413774179.01.LZZZZZZZ.jpg",
+  "color": "#252422",
+  "w": 354,
+  "h": 500
  },
  "conversaciones-con-mi-maestra": {
   "file": "covers/conversaciones-con-mi-maestra.jpg",
@@ -1031,7 +1236,12 @@
   "h": 500
  },
  "socrates-en-el-aula": {
-  "file": null
+  "file": "covers/socrates-en-el-aula.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8413392594.01.LZZZZZZZ.jpg",
+  "color": "#361020",
+  "w": 326,
+  "h": 500
  },
  "oracion-de-la-lluvia": {
   "file": "covers/oracion-de-la-lluvia.jpg",
@@ -1058,25 +1268,55 @@
   "h": 500
  },
  "veinte-poemas-de-amor-y-una-cancion-desesperada": {
-  "file": null
+  "file": "covers/veinte-poemas-de-amor-y-una-cancion-desesperada.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8432244449.01.LZZZZZZZ.jpg",
+  "color": "#faf08a",
+  "w": 324,
+  "h": 500
  },
  "ancia": {
-  "file": null
+  "file": "covers/ancia.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8475220126.01.LZZZZZZZ.jpg",
+  "color": "#000000",
+  "w": 321,
+  "h": 500
  },
  "tierra-granada": {
   "file": null
  },
  "himnos-a-la-iglesia": {
-  "file": null
+  "file": "covers/himnos-a-la-iglesia.jpg",
+  "src": "override",
+  "url": "https://images.cdn3.buscalibre.com/fit-in/520x520/6d/7d/6d7d7735949d8bcf04dda0557c8f3359.jpg",
+  "color": "#bf9225",
+  "w": 348,
+  "h": 520
  },
  "atomos-y-galaxias": {
-  "file": null
+  "file": "covers/atomos-y-galaxias.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/848472770X.01.LZZZZZZZ.jpg",
+  "color": "#004c92",
+  "w": 354,
+  "h": 500
  },
  "teoria-teatral": {
-  "file": null
+  "file": "covers/teoria-teatral.jpg",
+  "src": "override",
+  "url": "https://covers.openlibrary.org/b/isbn/9788424500214-L.jpg",
+  "color": "#7c190e",
+  "w": 189,
+  "h": 274
  },
  "documentos-completos-del-vaticano-ii": {
-  "file": null
+  "file": "covers/documentos-completos-del-vaticano-ii.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8427102755.01.LZZZZZZZ.jpg",
+  "color": "#4b3221",
+  "w": 302,
+  "h": 500
  },
  "textos-sobre-la-regulacion-de-la-natalidad": {
   "file": null
@@ -1085,10 +1325,20 @@
   "file": null
  },
  "dilexit-nos": {
-  "file": null
+  "file": "covers/dilexit-nos.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8428572380.01.LZZZZZZZ.jpg",
+  "color": "#c85e5c",
+  "w": 395,
+  "h": 640
  },
  "la-alegria-de-ser-familia": {
-  "file": null
+  "file": "covers/la-alegria-de-ser-familia.jpg",
+  "src": "override",
+  "url": "https://cdn.agapea.com/Editorial-Schoenstatt/La-alegria-de-ser-familia-i1n27111767.jpg",
+  "color": "#704d46",
+  "w": 175,
+  "h": 245
  },
  "tormentas-de-otono-1912": {
   "file": null
@@ -1097,7 +1347,12 @@
   "file": null
  },
  "dios-mi-padre": {
-  "file": null
+  "file": "covers/dios-mi-padre.jpg",
+  "src": "override",
+  "url": "https://images.cdn2.buscalibre.com/fit-in/520x520/03/20/0320a2670533d7e6fda3ca655828b3ad.jpg",
+  "color": "#5d3d25",
+  "w": 390,
+  "h": 520
  },
  "lunes-por-la-tarde-3": {
   "file": null
@@ -1106,10 +1361,20 @@
   "file": null
  },
  "lunes-por-la-tarde-5": {
-  "file": null
+  "file": "covers/lunes-por-la-tarde-5.jpg",
+  "src": "override",
+  "url": "https://images.cdn1.buscalibre.com/fit-in/520x520/48/d9/48d957710a0d21e90a19db5ac38ee9e7.jpg",
+  "color": "#60a180",
+  "w": 358,
+  "h": 520
  },
  "lunes-por-la-tarde-20": {
-  "file": null
+  "file": "covers/lunes-por-la-tarde-20.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/9567598339.01.LZZZZZZZ.jpg",
+  "color": "#4b9480",
+  "w": 357,
+  "h": 500
  },
  "lunes-por-la-tarde-29": {
   "file": null
@@ -1118,31 +1383,66 @@
   "file": null
  },
  "la-santidad-de-la-vida-diaria": {
-  "file": null
+  "file": "covers/la-santidad-de-la-vida-diaria.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/9562469476.01.LZZZZZZZ.jpg",
+  "color": "#97865f",
+  "w": 345,
+  "h": 500
  },
  "los-anos-ocultos-padre-jose-kentenich-infancia-y-juventud-18": {
   "file": null
  },
  "julio-steinkaul-un-heroe-de-la-primavera-sagrada": {
-  "file": null
+  "file": "covers/julio-steinkaul-un-heroe-de-la-primavera-sagrada.jpg",
+  "src": "override",
+  "url": "https://images.cdn3.buscalibre.com/fit-in/520x520/8e/dd/8edd550ac0d103580e8d8512dcb03204.jpg",
+  "color": "#bd243e",
+  "w": 358,
+  "h": 520
  },
  "adelante": {
   "file": null
  },
  "pedagogia-mariana-el-estilo-pedagogico-kentenijiano": {
-  "file": null
+  "file": "covers/pedagogia-mariana-el-estilo-pedagogico-kentenijiano.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/9562467457.01.LZZZZZZZ.jpg",
+  "color": "#1d3558",
+  "w": 442,
+  "h": 640
  },
  "eres-el-alma-de-mi-alma": {
-  "file": null
+  "file": "covers/eres-el-alma-de-mi-alma.jpg",
+  "src": "override",
+  "url": "https://dojiw2m9tvv09.cloudfront.net/59904/product/ereselalmademialma4941.jpg",
+  "color": "#d5bbb7",
+  "w": 400,
+  "h": 579
  },
  "el-dios-de-la-vida-huellas-religiosas-en-los-procesos-psiqui": {
-  "file": null
+  "file": "covers/el-dios-de-la-vida-huellas-religiosas-en-los-procesos-psiqui.jpg",
+  "src": "override",
+  "url": "https://dojiw2m9tvv09.cloudfront.net/59904/product/whatsappimage2021-12-13at12-52-492061.jpeg",
+  "color": "#636958",
+  "w": 443,
+  "h": 640
  },
  "me-amas-una-mirada-sobre-la-castidad-matrimonial": {
-  "file": null
+  "file": "covers/me-amas-una-mirada-sobre-la-castidad-matrimonial.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/9562467910.01.LZZZZZZZ.jpg",
+  "color": "#e2724e",
+  "w": 333,
+  "h": 500
  },
  "beber-de-la-fuente-de-vida-reflexiones-sobre-los-evangelios-": {
-  "file": null
+  "file": "covers/beber-de-la-fuente-de-vida-reflexiones-sobre-los-evangelios-.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32452135369._SL500_.jpg",
+  "color": "#51533c",
+  "w": 361,
+  "h": 500
  },
  "heroes-de-fuego-ardieron-hasta-consumirse": {
   "file": null
@@ -1151,16 +1451,36 @@
   "file": null
  },
  "jose-kentenich": {
-  "file": null
+  "file": "covers/jose-kentenich.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8483531488.01.LZZZZZZZ.jpg",
+  "color": "#566846",
+  "w": 310,
+  "h": 500
  },
  "el-31-de-mayo-una-mision-para-nuestro-tiempo": {
-  "file": null
+  "file": "covers/el-31-de-mayo-una-mision-para-nuestro-tiempo.jpg",
+  "src": "override",
+  "url": "https://dojiw2m9tvv09.cloudfront.net/59904/product/el31demayo-unamisionparanuestrotiempo9847.jpg",
+  "color": "#ba8f5f",
+  "w": 435,
+  "h": 640
  },
  "el-verdadero-amor": {
-  "file": null
+  "file": "covers/el-verdadero-amor.jpg",
+  "src": "override",
+  "url": "https://dojiw2m9tvv09.cloudfront.net/59904/product/elverdaderoamor-amaralprojimo4537.jpg",
+  "color": "#654946",
+  "w": 349,
+  "h": 500
  },
  "la-renovacion-de-la-iglesia-textos-escogidos": {
-  "file": null
+  "file": "covers/la-renovacion-de-la-iglesia-textos-escogidos.jpg",
+  "src": "override",
+  "url": "https://dojiw2m9tvv09.cloudfront.net/59904/product/larenovaciondelaiglesia3951.jpg",
+  "color": "#be4823",
+  "w": 400,
+  "h": 536
  },
  "la-familia-de-nazareth": {
   "file": null
@@ -1169,9 +1489,19 @@
   "file": null
  },
  "mision-personal": {
-  "file": null
+  "file": "covers/mision-personal.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/30608583601._SL500_.jpg",
+  "color": "#8cabc8",
+  "w": 375,
+  "h": 500
  },
  "la-historia-del-p-kentenich": {
-  "file": null
+  "file": "covers/la-historia-del-p-kentenich.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/956246198X.01.LZZZZZZZ.jpg",
+  "color": "#1b251d",
+  "w": 500,
+  "h": 638
  }
 }
