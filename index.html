@@ -33,7 +33,7 @@
       <p class="eyebrow">Ex libris</p>
       <h1>La biblioteca <em>de Bea y Alfredo</em></h1>
       <div class="masthead__row">
-        <p class="stats" id="stats"></p>
+        <p class="stats"><span id="stats"></span> <span class="rstats" id="rstats"></span></p>
         <button class="random" id="random" type="button">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg>
           Sorpréndeme
@@ -82,7 +82,8 @@
   </button>
 
   <footer class="wrap foot">
-    <p>Portadas: Open Library y librerías. Hecho con cariño para casa.</p>
+    <p>Portadas: Open Library, librerías y fotos de casa. Hecho con cariño para casa.</p>
+    <p><button class="link" id="editReads" type="button">Marcar lecturas desde este dispositivo</button></p>
   </footer>
 
   <!-- Libro sacado de la estantería + ficha -->
@@ -105,6 +106,7 @@
             <div class="peek" id="peek">
               <h2 class="peek__title" id="p-title"></h2>
               <p class="peek__author" id="p-author"></p>
+              <div class="peek__reads" id="p-reads"></div>
               <button class="btn" id="openCard">Ver ficha <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
               <p class="peek__hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>o desliza hacia arriba</p>
             </div>
@@ -114,6 +116,32 @@
       </div>
     </div>
   </div>
+
+  <dialog class="access" id="access" aria-labelledby="accessTitle">
+    <div class="access__body">
+      <button class="icon-btn access__close" data-close-access aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="access__when-off">
+        <h2 id="accessTitle">Marcar lecturas</h2>
+        <p>Para marcar qué libros habéis leído, conecta este dispositivo una sola vez. Las marcas se guardan en GitHub y las veis los dos.</p>
+        <ol>
+          <li><a id="tokenUrl" target="_blank" rel="noopener">Crea un token en GitHub</a> (ya viene rellenado).</li>
+          <li>En <i>Repository access</i> elige <b>Only select repositories → biblioteca-lecturas</b> y comprueba que <i>Contents</i> está en <b>Read and write</b>.</li>
+          <li>Pulsa <i>Generate token</i>, cópialo y pégalo aquí:</li>
+        </ol>
+        <input id="tokenInput" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…" aria-label="Token de GitHub">
+        <p class="access__err" id="accessErr" role="alert"></p>
+        <button class="btn" id="tokenSave" type="button">Conectar</button>
+        <p class="access__fine">El token solo puede modificar la lista de lecturas, nunca la web, y se queda guardado en este dispositivo.</p>
+      </div>
+      <div class="access__when-on">
+        <h2>Este dispositivo puede marcar lecturas</h2>
+        <p>Toca <b>Bea</b> o <b>Alfredo</b> en cualquier libro para marcarlo como leído.</p>
+        <button class="btn" id="shareAccess" type="button">Enviar acceso al otro móvil</button>
+        <p class="access__fine">Crea un enlace que conecta otro dispositivo sin tener que repetir estos pasos. Compártelo solo entre vosotros.</p>
+        <button class="link" id="disconnect" type="button">Desconectar este dispositivo</button>
+      </div>
+    </div>
+  </dialog>
 
   <div class="toast" id="toast" role="status"></div>
 

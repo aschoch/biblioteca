@@ -15,3 +15,9 @@ Una estantería digital con los libros de casa. Pulsa un lomo para sacar el libr
 4. Regenera los datos de la web: `python3 scripts/build.py`, y sube los cambios.
 
 Es una web estática (HTML, CSS y JS sin dependencias), publicada con GitHub Pages.
+
+## Lecturas de Bea y Alfredo
+
+Qué libros ha leído cada uno se guarda en otro repositorio público, [aschoch/biblioteca-lecturas](https://github.com/aschoch/biblioteca-lecturas) (`lecturas.json`), para que la web pueda escribir en él sin poder tocar la propia web.
+
+Para marcar lecturas desde un dispositivo: pie de la página → «Marcar lecturas desde este dispositivo», y pegar un *fine-grained token* de GitHub con acceso solo a `biblioteca-lecturas` y permiso *Contents: Read and write*. Desde ahí se puede enviar un enlace de acceso al otro móvil.

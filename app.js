@@ -50,6 +50,7 @@
     sort: store.get("bib.sort", "theme"),
     view: store.get("bib.view", "shelf"),
     theme: null,
+    read: "",   // filtro de lecturas: "", "bea", "alfredo", "both", "none", "!bea", "!alfredo"
     list: [],
   };
 
@@ -161,7 +162,190 @@
 
   function filtered() {
     const terms = norm(state.q).split(/\s+/).filter(Boolean);
-    return BOOKS.filter((b) => (!state.theme || b.theme === state.theme) && terms.every((t) => b._hay.includes(t)));
+    return BOOKS.filter((b) => (!state.theme || b.theme === state.theme) && matchesRead(b) && terms.every((t) => b._hay.includes(t)));
+  }
+
+  // ——— Lecturas de Bea y Alfredo ———
+  // Se guardan en un repositorio público aparte (aschoch/biblioteca-lecturas, lecturas.json).
+  // Cualquiera puede verlas; para marcarlas, cada dispositivo se conecta una vez con un
+  // token de GitHub que solo puede escribir en ese repositorio.
+  const READERS = [
+    { id: "bea", name: "Bea", color: "#b85079" },
+    { id: "alfredo", name: "Alfredo", color: "#3a6d93" },
+  ];
+  const READER = Object.fromEntries(READERS.map((r) => [r.id, r]));
+  const READS_API = "https://api.github.com/repos/aschoch/biblioteca-lecturas/contents/lecturas.json";
+  const parseReads = (o) => Object.fromEntries(READERS.map((r) => [r.id, (o && typeof o[r.id] === "object" && o[r.id]) || {}]));
+  let reads = parseReads((() => { try { return JSON.parse(store.get("bib.reads", "{}")); } catch { return {}; } })());
+  let token = store.get("bib.token", "");
+  const pending = [];          // cambios aún no guardados: { who, id, value }
+  const isRead = (who, id) => !!reads[who]?.[id];
+  const today = () => new Date().toISOString().slice(0, 10);
+
+  function readStatsHTML() {
+    return READERS.map((r) => `<span class="rstat" style="--rc:${r.color}"><i></i>${r.name} <b>${Object.keys(reads[r.id]).filter((id) => byId[id]).length}</b></span>`).join("");
+  }
+  // Pareja de marcas (✓ / ○) para un libro. size: "sm" (vista del libro) o "lg" (ficha).
+  function readFlagsHTML(b, size = "sm") {
+    return `<div class="rflags rflags--${size}" role="group" aria-label="Leído por">${READERS.map((r) => {
+      const on = isRead(r.id, b.id);
+      return `<button class="rflag${on ? " on" : ""}" data-read="${r.id}" data-book="${b.id}" style="--rc:${r.color}"
+        aria-pressed="${on}" aria-label="${r.name}: ${on ? "leído" : "sin leer"}">
+        <span class="rflag__dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 12.5l3.5 3.5 7.5-8"/></svg></span>
+        <span class="rflag__name">${r.name}</span></button>`;
+    }).join("")}</div>`;
+  }
+  function readDotsHTML(b) {
+    const who = READERS.filter((r) => isRead(r.id, b.id));
+    return who.length ? `<span class="rdots" aria-hidden="true">${who.map((r) => `<i style="--rc:${r.color}"></i>`).join("")}</span>` : "";
+  }
+  function matchesRead(b) {
+    const f = state.read;
+    if (!f) return true;
+    const be = isRead("bea", b.id), al = isRead("alfredo", b.id);
+    return { bea: be, alfredo: al, both: be && al, none: !be && !al, "!bea": !be, "!alfredo": !al }[f];
+  }
+  const READ_FILTERS = [
+    ["", "Lecturas"], ["bea", "Leídos por Bea"], ["alfredo", "Leídos por Alfredo"], ["both", "Leídos por los dos"],
+    ["!bea", "Pendientes de Bea"], ["!alfredo", "Pendientes de Alfredo"], ["none", "Sin leer por nadie"],
+  ];
+
+  // Refresca todo lo que depende de las lecturas sin redibujar la estantería entera.
+  function refreshReads(changedId) {
+    $("#rstats").innerHTML = readStatsHTML();
+    $$(`.rflags`).forEach((el) => {
+      const id = el.querySelector("[data-book]")?.dataset.book;
+      if (!changedId || id === changedId) el.outerHTML = readFlagsHTML(byId[id], el.classList.contains("rflags--lg") ? "lg" : "sm");
+    });
+    $$(changedId ? `.spine[data-id="${changedId}"], .tile[data-id="${changedId}"]` : ".spine, .tile", lib).forEach((el) => {
+      const b = byId[el.dataset.id];
+      el.querySelector(".rdots")?.remove();
+      const host = el.classList.contains("tile") ? el.querySelector(".tile__cover") : el;
+      host.insertAdjacentHTML("beforeend", readDotsHTML(b));
+    });
+    renderChips();
+    if (state.read && !changedId) render();
+  }
+
+  async function fetchReads() {
+    try {
+      const r = await fetch(READS_API + "?t=" + Date.now(), {
+        headers: { Accept: "application/vnd.github+json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+        cache: "no-store",
+      });
+      if (!r.ok) throw new Error(r.status);
+      const j = await r.json();
+      const data = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g, "")))));
+      return { data: parseReads(data), sha: j.sha };
+    } catch {
+      return null;
+    }
+  }
+  async function loadReads() {
+    const got = await fetchReads();
+    if (!got) return;
+    reads = got.data;
+    pending.forEach((op) => applyOp(reads, op));   // no perder lo marcado mientras cargaba
+    store.set("bib.reads", JSON.stringify(reads));
+    refreshReads();
+  }
+  function applyOp(target, { who, id, value }) {
+    if (value) target[who][id] = target[who][id] || value;
+    else delete target[who][id];
+  }
+
+  let saveTimer = null, saving = false;
+  function queueSave() { clearTimeout(saveTimer); saveTimer = setTimeout(flushReads, 900); }
+  async function flushReads(attempt = 0) {
+    if (saving || !pending.length || !token) return;
+    saving = true;
+    const batch = pending.splice(0, pending.length);
+    try {
+      const got = await fetchReads();
+      if (!got) throw new Error("read");
+      const next = got.data;
+      batch.forEach((op) => applyOp(next, op));
+      const sorted = Object.fromEntries(READERS.map((r) => [r.id, Object.fromEntries(Object.entries(next[r.id]).sort())]));
+      const msg = batch.length === 1
+        ? `${READER[batch[0].who].name} ${batch[0].value ? "ha leído" : "desmarca"} «${byId[batch[0].id]?.title || batch[0].id}»`
+        : `Actualiza ${batch.length} lecturas`;
+      const body = { message: msg, sha: got.sha, content: btoa(unescape(encodeURIComponent(JSON.stringify(sorted, null, 1) + "\n"))) };
+      const r = await fetch(READS_API, {
+        method: "PUT",
+        headers: { Accept: "application/vnd.github+json", Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (r.status === 401 || r.status === 403 || r.status === 404) {
+        pending.unshift(...batch);
+        saving = false;
+        toast("Este dispositivo ya no tiene permiso para marcar lecturas");
+        openAccess();
+        return;
+      }
+      if (!r.ok) throw new Error(r.status);   // 409: alguien guardó a la vez → reintentar
+      const before = JSON.stringify(reads);
+      reads = sorted;
+      pending.forEach((op) => applyOp(reads, op));
+      store.set("bib.reads", JSON.stringify(reads));
+      saving = false;
+      if (JSON.stringify(reads) !== before) refreshReads();   // trae también lo marcado desde el otro móvil
+      if (pending.length) queueSave();
+    } catch {
+      pending.unshift(...batch);
+      saving = false;
+      if (attempt < 3) setTimeout(() => flushReads(attempt + 1), 800 * (attempt + 1));
+      else toast("No se pudo guardar. Se reintentará al volver a marcar.");
+    }
+  }
+  addEventListener("pagehide", () => { if (pending.length) flushReads(); });
+
+  function toggleRead(who, id) {
+    if (!token) { openAccess(who, id); return; }
+    const value = isRead(who, id) ? null : today();
+    const op = { who, id, value };
+    applyOp(reads, op);
+    pending.push(op);
+    store.set("bib.reads", JSON.stringify(reads));
+    navigator.vibrate?.(value ? 10 : 6);
+    refreshReads(id);
+    const btn = $(`.rflags [data-read="${who}"][data-book="${id}"]`);
+    if (btn && value && !reduceMotion) btn.querySelector(".rflag__dot")?.animate(
+      [{ transform: "scale(.6)" }, { transform: "scale(1.18)" }, { transform: "scale(1)" }], { duration: 380, easing: "cubic-bezier(.2,.8,.2,1)" });
+    if (state.read) render();
+    queueSave();
+  }
+
+  // ——— Conectar este dispositivo ———
+  const TOKEN_URL = "https://github.com/settings/personal-access-tokens/new?" + new URLSearchParams({
+    name: "Biblioteca · lecturas",
+    description: "Marcar lecturas en aschoch.github.io/biblioteca",
+    target_name: "aschoch",
+    expires_in: "none",
+    contents: "write",
+  });
+  let afterConnect = null;
+  function openAccess(who, id) {
+    afterConnect = who && id ? () => toggleRead(who, id) : null;
+    const dlg = $("#access");
+    dlg.querySelector("#tokenUrl").href = TOKEN_URL;
+    dlg.classList.toggle("connected", !!token);
+    $("#accessErr").textContent = "";
+    $("#tokenInput").value = "";
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  async function connect(t) {
+    t = (t || "").trim();
+    if (!t) return false;
+    try {
+      const r = await fetch("https://api.github.com/repos/aschoch/biblioteca-lecturas", { headers: { Authorization: `Bearer ${t}`, Accept: "application/vnd.github+json" } });
+      const j = r.ok ? await r.json() : null;
+      if (!j?.permissions?.push) throw new Error("perm");
+    } catch {
+      return false;
+    }
+    token = t;
+    store.set("bib.token", t);
+    return true;
   }
 
   // ——— Pintado ———
@@ -171,7 +355,7 @@
       style="--c:${b.color};--t:${b.text};--w:${b.w}px;--h:${b.h}px"
       aria-label="${esc(b.title)}, de ${esc(b.author)}" title="${esc(b.title)} — ${esc(b.author)}">
       <span class="spine__title">${esc(b.spineTitle)}</span>
-      <span class="spine__author">${esc(b.surname)}</span></button></div>`;
+      <span class="spine__author">${esc(b.surname)}</span>${readDotsHTML(b)}</button></div>`;
   }
   // ——— Ajuste del texto en los lomos ———
   // Busca el mayor tamaño de letra (y el menor número de líneas) con el que el
@@ -251,7 +435,7 @@
 
   function tileHTML(b) {
     return `<button class="tile" data-id="${b.id}" aria-label="${esc(b.title)}, de ${esc(b.author)}">
-      <div class="tile__cover">${coverHTML(b, false, "thumb")}</div>
+      <div class="tile__cover">${coverHTML(b, false, "thumb")}${readDotsHTML(b)}</div>
       <p class="tile__t">${esc(b.title)}</p><p class="tile__a">${esc(b.author)}</p></button>`;
   }
 
@@ -287,8 +471,9 @@
   // Resumen de la búsqueda o el filtro activo, con un atajo para quitarlos.
   function renderStatus(n) {
     const el = $("#results");
-    if (!state.q && !state.theme) { el.hidden = true; el.innerHTML = ""; return; }
+    if (!state.q && !state.theme && !state.read) { el.hidden = true; el.innerHTML = ""; return; }
     const parts = [];
+    if (state.read) { const t = READ_FILTERS.find(([k]) => k === state.read)[1]; parts.push(`· <b>${t[0].toLowerCase() + t.slice(1)}</b>`); }
     if (state.q) parts.push(`para «${esc(state.q)}»`);
     if (state.theme) parts.push(`en <b>${esc(state.theme)}</b>`);
     el.hidden = false;
@@ -297,7 +482,7 @@
   }
   function resetFilters() {
     clearTimeout(qt);
-    qInput.value = ""; state.q = ""; state.theme = null;
+    qInput.value = ""; state.q = ""; state.theme = null; state.read = "";
     syncClear(); renderChips(); render(); scrollToLibrary();
   }
   document.addEventListener("click", (e) => { if (e.target.closest("[data-reset]") && stage.hidden) resetFilters(); });
@@ -313,17 +498,31 @@
   function renderChips() {
     const counts = {};
     BOOKS.forEach((b) => (counts[b.theme] = (counts[b.theme] || 0) + 1));
+    const rcount = (k) => BOOKS.filter((b) => { const keep = state.read; state.read = k; const ok = matchesRead(b); state.read = keep; return ok; }).length;
+    const label = READ_FILTERS.find(([k]) => k === state.read)[1];
     $("#chips").innerHTML =
+      `<label class="chip chip--read" aria-pressed="${!!state.read}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5v13c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13"/></svg>
+        <span>${label}</span>${state.read ? `<small>${rcount(state.read)}</small>` : ""}
+        <svg class="chip__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+        <select id="readFilter" aria-label="Filtrar por lecturas">${READ_FILTERS.map(([k, t]) =>
+          `<option value="${k}"${k === state.read ? " selected" : ""}>${k ? `${t} (${rcount(k)})` : "Todas las lecturas"}</option>`).join("")}</select>
+      </label><span class="chips__sep" aria-hidden="true"></span>` +
       `<button class="chip" data-theme="" aria-pressed="${!state.theme}">Todos <small>${BOOKS.length}</small></button>` +
       THEMES.filter(([t]) => counts[t]).map(([t, c]) =>
         `<button class="chip" data-theme="${esc(t)}" style="--c:${c}" aria-pressed="${state.theme === t}"><i></i>${esc(t)} <small>${counts[t]}</small></button>`).join("");
   }
   $("#chips").addEventListener("click", (e) => {
-    const c = e.target.closest(".chip"); if (!c) return;
+    const c = e.target.closest(".chip"); if (!c || c.classList.contains("chip--read")) return;
     state.theme = c.dataset.theme || null;
     renderChips(); render(); scrollToLibrary();
     const active = $(`.chip[aria-pressed="true"]`);
     active?.scrollIntoView({ inline: "center", block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
+  });
+  $("#chips").addEventListener("change", (e) => {
+    if (e.target.id !== "readFilter") return;
+    state.read = e.target.value;
+    renderChips(); render(); scrollToLibrary();
   });
   const chipsEl = $("#chips");
   const syncChipFade = () => {
@@ -445,6 +644,7 @@
     sizeBook();
     $("#p-title").textContent = b.title;
     $("#p-author").textContent = b.author;
+    $("#p-reads").innerHTML = readFlagsHTML(b, "sm");
     $("#info").innerHTML = infoHTML(b);
     $("#stageScroll").scrollTop = 0;
   }
@@ -482,6 +682,7 @@
       <span class="theme-pill" style="--c:${THEME_COLOR[b.theme] || "#888"}"><i></i>${esc(b.theme)}</span>
       <h2 class="info__title" id="d-title">${esc(b.title)}</h2>
       <p class="info__author">de <button data-search="${esc(b.author)}">${esc(b.author)}</button></p>
+      ${readFlagsHTML(b, "lg")}
       ${facts.length ? `<dl class="facts">${facts.map(([k, v]) => `<div class="fact"><dt>${k}</dt><dd>${typeof v === "string" && v.startsWith("<i>") ? v : esc(v)}</dd></div>`).join("")}</dl>` : '<div style="height:26px"></div>'}
       ${b.summary ? `<p class="summary">${esc(b.summary)}</p>` : ""}
       ${b.note ? `<p class="note">${esc(b.note)}</p>` : ""}
@@ -779,6 +980,8 @@
   stage.addEventListener("click", (e) => {
     if (e.target.closest("[data-close]")) return closeStage();
     if (e.target === scroller || e.target === detail) return closeStage();
+    const rf = e.target.closest("[data-read]");
+    if (rf) { toggleRead(rf.dataset.read, rf.dataset.book); return; }
     const st = e.target.closest("[data-step]");
     if (st) { scroller.scrollTo({ top: 0 }); return step(+st.dataset.step); }
     const go = e.target.closest("[data-goto]");
@@ -890,6 +1093,48 @@
   });
   stage.addEventListener("touchcancel", () => { endTilt(); inner.style.transform = ""; if (g?.mode && g.mode !== "native") settle(); g = null; });
 
+  // ——— Diálogo de acceso ———
+  const accessDlg = $("#access");
+  const closeAccess = () => { if (accessDlg.close) accessDlg.close(); else accessDlg.removeAttribute("open"); };
+  accessDlg.addEventListener("click", async (e) => {
+    if (e.target === accessDlg || e.target.closest("[data-close-access]")) return closeAccess();
+    if (e.target.closest("#tokenSave")) {
+      const btn = e.target.closest("#tokenSave");
+      btn.disabled = true; btn.textContent = "Comprobando…";
+      const ok = await connect($("#tokenInput").value);
+      btn.disabled = false; btn.textContent = "Conectar";
+      if (!ok) { $("#accessErr").textContent = "Ese token no puede escribir en aschoch/biblioteca-lecturas. Revisa el repositorio y el permiso «Contents: Read and write»."; return; }
+      closeAccess();
+      toast("Listo: este dispositivo ya puede marcar lecturas");
+      afterConnect?.(); afterConnect = null;
+      flushReads();
+    }
+    if (e.target.closest("#shareAccess")) {
+      const url = `${location.origin}${location.pathname}#acceso=${encodeURIComponent(token)}`;
+      const text = "Enlace para marcar lecturas en nuestra biblioteca (no lo compartas con nadie más)";
+      if (navigator.share && matchMedia("(hover: none)").matches) navigator.share({ title: "Biblioteca", text, url }).catch(() => {});
+      else navigator.clipboard.writeText(url).then(() => toast("Enlace de acceso copiado")).catch(() => {});
+    }
+    if (e.target.closest("#disconnect")) {
+      token = ""; store.set("bib.token", "");
+      closeAccess(); toast("Este dispositivo ya no puede marcar lecturas");
+    }
+  });
+  $("#editReads").addEventListener("click", () => openAccess());
+
+  // Enlace de acceso enviado por WhatsApp: …#acceso=TOKEN
+  (async () => {
+    const m = location.hash.match(/^#acceso=(.+)$/);
+    if (!m) return;
+    history.replaceState(null, "", location.pathname + location.search);
+    const ok = await connect(decodeURIComponent(m[1]));
+    toast(ok ? "Listo: este dispositivo ya puede marcar lecturas" : "El enlace de acceso no es válido");
+  })();
+
   // ——— Arranque ———
+  $("#rstats").innerHTML = readStatsHTML();
   syncSeg(); renderChips(); render(); fromHash();
+  loadReads();
+  // Al volver a la pestaña (p. ej. tras marcar algo en el otro móvil), traer lo último.
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && !pending.length && !saving) loadReads(); });
 })();
