@@ -1,0 +1,675 @@
+[
+ {
+  "id": "la-biblia-de-masterchef",
+  "author": "Shine Iberia y RTVE",
+  "sortKey": "MasterChef",
+  "summary": "Un gran manual de cocina nacido del popular concurso de Televisión Española. Reúne de forma ordenada las técnicas básicas y avanzadas que se ven en el programa, los utensilios imprescindibles, los cortes, las cocciones, las salsas y los fondos, y una amplia selección de recetas emblemáticas explicadas paso a paso y con abundantes fotografías. Está pensado tanto para quien empieza como para el aficionado que quiere ganar soltura y seguridad entre fogones. Es un libro de consulta para tener siempre a mano en la cocina familiar, útil para aprender, repasar trucos y animarse a preparar platos más ambiciosos en casa.",
+  "authorBio": "Shine Iberia es la productora audiovisual que realiza en España el formato MasterChef para RTVE, la radiotelevisión pública española, y firma junto a ella los libros oficiales del programa.",
+  "year": 2020,
+  "language": "español",
+  "pages": 448,
+  "tags": [
+   "cocina",
+   "recetas",
+   "técnicas culinarias",
+   "masterchef",
+   "televisión",
+   "manual"
+  ],
+  "isbn": "9788467058895",
+  "confidence": "high"
+ },
+ {
+  "id": "options-futures-and-other-derivatives",
+  "summary": "Es probablemente el manual de referencia más utilizado en el mundo para estudiar los derivados financieros. Explica con claridad el funcionamiento de los mercados de futuros, forwards, swaps y opciones, y desarrolla los modelos de valoración clásicos, como el árbol binomial y la fórmula de Black-Scholes-Merton. También trata las letras griegas, la volatilidad, los derivados de crédito, los tipos de interés y la gestión del riesgo. Combina el rigor matemático con numerosos ejemplos prácticos tomados de la realidad de los mercados. Esta novena edición incorpora las lecciones de la crisis financiera y los cambios en la regulación posteriores. Imprescindible para estudiantes de finanzas, ingenieros financieros y profesionales del sector.",
+  "authorBio": "John C. Hull es catedrático de derivados y gestión de riesgos en la Rotman School of Management de la Universidad de Toronto y uno de los autores más influyentes en ingeniería financiera.",
+  "year": 1989,
+  "language": "inglés",
+  "pages": 896,
+  "tags": [
+   "finanzas",
+   "derivados",
+   "opciones",
+   "futuros",
+   "gestión del riesgo",
+   "mercados financieros"
+  ],
+  "isbn": "9780133456318",
+  "confidence": "high"
+ },
+ {
+  "id": "strategic-management-competitiveness-globalization-concepts",
+  "summary": "Manual universitario de dirección estratégica muy extendido en escuelas de negocios. Presenta el proceso estratégico completo: el análisis del entorno externo y de los recursos y capacidades internos de la empresa, la formulación de estrategias de negocio, competitivas, corporativas e internacionales, las fusiones y adquisiciones, las alianzas y la innovación. Dedica también atención al gobierno corporativo, la estructura organizativa y el liderazgo estratégico como claves para llevar las estrategias a la práctica. Su enfoque insiste en cómo lograr ventajas competitivas sostenibles en una economía globalizada. Esta undécima edición, en su volumen de conceptos, ofrece una base teórica clara y actualizada, ilustrada con ejemplos de empresas reales.",
+  "authorBio": "Michael A. Hitt, R. Duane Ireland y Robert E. Hoskisson son destacados profesores estadounidenses de gestión estratégica, con una extensa obra académica y amplia experiencia en la formación de directivos.",
+  "year": 1995,
+  "language": "inglés",
+  "pages": 480,
+  "tags": [
+   "estrategia",
+   "dirección de empresas",
+   "competitividad",
+   "globalización",
+   "management",
+   "escuelas de negocios"
+  ],
+  "isbn": "9781285425184",
+  "confidence": "high"
+ },
+ {
+  "id": "pattern-classification",
+  "summary": "Clásico indiscutible del reconocimiento de patrones y del aprendizaje automático. Heredero del célebre libro de Duda y Hart de 1973, esta segunda edición, ampliamente renovada con David Stork, expone de forma sistemática la teoría bayesiana de la decisión, la estimación de parámetros, los métodos no paramétricos, los discriminantes lineales, las redes neuronales multicapa, los métodos estocásticos, el aprendizaje no supervisado y el agrupamiento. Cada capítulo combina fundamentos matemáticos, ejemplos ilustrativos y ejercicios. Durante años ha sido texto de referencia en cursos de posgrado de ingeniería e informática, y sigue siendo una lectura muy valiosa para comprender las bases de la inteligencia artificial actual.",
+  "authorBio": "Richard O. Duda y Peter E. Hart son pioneros del reconocimiento de patrones formados en el Stanford Research Institute; David G. Stork es un investigador estadounidense en visión artificial y aprendizaje automático.",
+  "year": 2001,
+  "language": "inglés",
+  "pages": 654,
+  "tags": [
+   "reconocimiento de patrones",
+   "aprendizaje automático",
+   "estadística",
+   "inteligencia artificial",
+   "redes neuronales",
+   "ingeniería"
+  ],
+  "isbn": "9780471056690",
+  "confidence": "high"
+ },
+ {
+  "id": "fundamentals-of-statistical-signal-processing-i-estimation-t",
+  "summary": "Primer volumen de una trilogía de referencia sobre el procesado estadístico de señales, dedicado a la teoría de la estimación. Explica cómo extraer parámetros de interés a partir de datos contaminados por ruido, desarrollando con detalle la cota de Cramér-Rao, los estimadores insesgados de varianza mínima, la máxima verosimilitud, los mínimos cuadrados, los métodos bayesianos y el filtro de Kalman. El enfoque es muy pedagógico: parte de ejemplos sencillos, avanza paso a paso y conecta siempre la teoría con aplicaciones reales en radar, sonar, comunicaciones o procesado de voz. Es un libro muy apreciado por estudiantes de posgrado e ingenieros que trabajan en telecomunicaciones.",
+  "authorBio": "Steven M. Kay es catedrático de ingeniería eléctrica en la Universidad de Rhode Island y una autoridad internacional en procesado estadístico de señales.",
+  "year": 1993,
+  "language": "inglés",
+  "pages": 595,
+  "tags": [
+   "procesado de señales",
+   "estimación",
+   "estadística",
+   "telecomunicaciones",
+   "ingeniería",
+   "filtro de kalman"
+  ],
+  "isbn": "9780133457117",
+  "confidence": "high"
+ },
+ {
+  "id": "network-security-private-communication-in-a-public-world",
+  "summary": "Uno de los textos más claros y amenos sobre seguridad en redes informáticas. Sus autores, ingenieros con experiencia directa en el diseño de protocolos, explican los fundamentos de la criptografía, de clave secreta y de clave pública, las funciones hash, la autenticación, la gestión de claves y certificados, y protocolos reales como Kerberos, IPsec, SSL/TLS o el correo seguro. Destaca por su estilo cercano, con humor y anécdotas, y por explicar no solo cómo funcionan las cosas, sino por qué se diseñaron así y dónde fallan. Esta segunda edición amplía y actualiza el contenido. Muy recomendable para estudiantes y profesionales de redes y ciberseguridad.",
+  "authorBio": "Charlie Kaufman, Radia Perlman y Mike Speciner son ingenieros estadounidenses de gran prestigio en redes y seguridad; Perlman es célebre por haber inventado el protocolo Spanning Tree.",
+  "year": 1995,
+  "language": "inglés",
+  "pages": 713,
+  "tags": [
+   "seguridad informática",
+   "criptografía",
+   "redes",
+   "protocolos",
+   "ciberseguridad",
+   "ingeniería"
+  ],
+  "isbn": "9780130460196",
+  "confidence": "high"
+ },
+ {
+  "id": "linear-and-nonlinear-optimization",
+  "summary": "Manual completo de optimización matemática, sucesor del conocido libro de Nash y Sofer sobre programación lineal y no lineal. Presenta con rigor y claridad la programación lineal y el método símplex, los métodos de punto interior, la optimización sin restricciones, los métodos de Newton y cuasi-Newton, y la optimización con restricciones, incluidas las condiciones de optimalidad y los métodos de penalización y barrera. Combina la teoría con la atención a los algoritmos y a su comportamiento práctico en el ordenador, con numerosos ejemplos y ejercicios. Es un texto muy útil para estudiantes de ingeniería, matemáticas aplicadas, investigación operativa y economía.",
+  "authorBio": "Igor Griva, Stephen G. Nash y Ariela Sofer son profesores de la Universidad George Mason (Virginia) especializados en optimización numérica e investigación operativa.",
+  "year": 2009,
+  "language": "inglés",
+  "pages": 742,
+  "tags": [
+   "optimización",
+   "matemáticas aplicadas",
+   "programación lineal",
+   "investigación operativa",
+   "algoritmos",
+   "ingeniería"
+  ],
+  "isbn": "9780898716610",
+  "confidence": "high"
+ },
+ {
+  "id": "market-operations-in-electric-power-systems",
+  "summary": "Obra de referencia sobre el funcionamiento de los mercados eléctricos liberalizados. Aborda cómo se organizan y operan los sistemas eléctricos cuando la generación y la venta de energía se abren a la competencia: la previsión de la demanda y de los precios, la programación de las centrales, el despacho económico, la gestión de la transmisión y sus congestiones, los servicios auxiliares y la gestión del riesgo para los distintos agentes del mercado. Combina modelos matemáticos con ejemplos prácticos y casos reales. Es especialmente útil para ingenieros eléctricos, economistas de la energía y profesionales del sector que necesiten comprender la operación de un mercado eléctrico moderno.",
+  "authorBio": "Mohammad Shahidehpour es catedrático del Illinois Institute of Technology y una figura destacada en sistemas eléctricos de potencia; Hatim Yamin y Zuyi Li son investigadores en mercados eléctricos.",
+  "year": 2002,
+  "language": "inglés",
+  "pages": 531,
+  "tags": [
+   "mercados eléctricos",
+   "sistemas de potencia",
+   "energía",
+   "previsión",
+   "gestión del riesgo",
+   "ingeniería eléctrica"
+  ],
+  "isbn": "9780471443377",
+  "confidence": "high"
+ },
+ {
+  "id": "video-processing-and-communications",
+  "summary": "Manual universitario que reúne en un solo volumen los fundamentos del procesado y la transmisión de vídeo digital. Explica la formación y representación de las señales de vídeo, el muestreo, la estimación de movimiento, las técnicas de codificación por transformada, predictiva y basada en objetos, y los estándares que hicieron posible el vídeo digital, como MPEG y H.26x. Dedica además una parte importante a la transmisión de vídeo por redes, la protección frente a errores y la comunicación en tiempo real. Escrito por especialistas que participaron en el desarrollo de estas tecnologías, es un texto riguroso y muy útil para estudiantes de telecomunicaciones.",
+  "authorBio": "Yao Wang es catedrática de la Universidad de Nueva York; Jörn Ostermann, profesor en la Universidad de Hannover, y Ya-Qin Zhang, investigador y directivo tecnológico, son referentes en codificación de vídeo.",
+  "year": 2001,
+  "language": "inglés",
+  "pages": 595,
+  "tags": [
+   "vídeo digital",
+   "procesado de imagen",
+   "compresión",
+   "telecomunicaciones",
+   "mpeg",
+   "ingeniería"
+  ],
+  "isbn": "9780130175472",
+  "confidence": "high"
+ },
+ {
+  "id": "pasteleria-creativa-tartas-con-frutas",
+  "summary": "Libro de repostería dedicado a las tartas elaboradas con fruta, dentro de una colección de pastelería creativa. Por su título, cabe esperar recetas de tartas y tartaletas con frutas de temporada, acompañadas de indicaciones sobre masas, cremas y coberturas, así como ideas para decorar y presentar los postres de forma atractiva. No hemos podido identificar con seguridad la edición ni sus autores, por lo que esta ficha es orientativa. En cualquier caso, es un recetario práctico para disfrutar en familia de la repostería casera, aprovechar la fruta de cada estación y preparar postres vistosos para celebraciones y ocasiones especiales.",
+  "authorBio": "Autoría no identificada; probablemente se trata de una obra colectiva de una colección editorial de repostería.",
+  "year": null,
+  "language": "español",
+  "pages": null,
+  "tags": [
+   "repostería",
+   "tartas",
+   "frutas",
+   "postres",
+   "recetas",
+   "pastelería"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "sabores-del-mundo-recetas-de-los-cinco-continentes",
+  "summary": "Un viaje gastronómico alrededor del mundo a través de más de un centenar de recetas representativas de los cinco continentes. Cada plato se presenta con su receta detallada y una breve introducción sobre el país y la cultura de la que procede, acompañada de cuidadas fotografías. Desde la cocina mediterránea hasta las tradiciones de Asia, África o América, el libro invita a descubrir ingredientes, técnicas y sabores muy diversos sin salir de casa. Es una obra a la vez práctica y bonita de hojear, ideal para quien disfruta cocinando y quiere sorprender a la familia con platos de otras tierras, o simplemente aprender sobre otros pueblos a través de su mesa.",
+  "authorBio": "Paolo Paci y Roberto Mottadelli son autores italianos de libros de gastronomía ilustrados, publicados originalmente por la editorial White Star y traducidos a varios idiomas.",
+  "year": 2011,
+  "originalTitle": "Giro del mondo a tavola",
+  "language": "italiano",
+  "pages": null,
+  "tags": [
+   "cocina internacional",
+   "recetas",
+   "gastronomía",
+   "viajes",
+   "culturas del mundo"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "v-de-vendetta",
+  "summary": "Novela gráfica ambientada en una Gran Bretaña futura sometida a un régimen totalitario que controla a la población mediante el miedo, la vigilancia y la propaganda. Un misterioso enmascarado, que se hace llamar V y oculta su rostro tras una careta de Guy Fawkes, emprende una campaña de sabotaje contra el poder, mientras rescata y transforma a la joven Evey. La obra plantea preguntas incómodas sobre la libertad, la violencia, la identidad y la responsabilidad personal frente a la tiranía. Con un guion denso y un dibujo sombrío, es uno de los grandes clásicos del cómic. Por su dureza y su violencia, es lectura para adultos.",
+  "authorBio": "Alan Moore es un guionista británico considerado uno de los autores más influyentes del cómic moderno (Watchmen); David Lloyd es el dibujante británico que dio forma visual a la obra.",
+  "year": 1982,
+  "originalTitle": "V for Vendetta",
+  "language": "inglés",
+  "pages": 296,
+  "tags": [
+   "novela gráfica",
+   "cómic",
+   "distopía",
+   "totalitarismo",
+   "libertad",
+   "clásico"
+  ],
+  "isbn": "9788416070336",
+  "confidence": "high"
+ },
+ {
+  "id": "el-espejo-magico-de-m-c-escher",
+  "summary": "Un libro fascinante para adentrarse en el universo del artista holandés M. C. Escher, famoso por sus escaleras imposibles, sus mosaicos de figuras que se transforman y sus juegos con el infinito y la perspectiva. Su autor, que trató personalmente a Escher, explica cómo nacieron muchas de sus obras, qué ideas matemáticas y geométricas hay detrás de ellas y cómo el propio artista entendía su trabajo. Acompañado de numerosas reproducciones de grabados y dibujos, el texto es claro y accesible, sin necesidad de conocimientos previos. Ideal para amantes del arte, de las matemáticas y de los enigmas visuales, y estupendo para compartir con los hijos.",
+  "authorBio": "Bruno Ernst (seudónimo de Johannes Antonius Frederikus de Rijk, 1926–2021) fue un profesor y divulgador neerlandés de matemáticas, amigo de Escher y experto en figuras imposibles.",
+  "year": 1976,
+  "originalTitle": "De toverspiegel van M. C. Escher",
+  "language": "neerlandés",
+  "pages": 116,
+  "tags": [
+   "arte",
+   "escher",
+   "grabado",
+   "matemáticas",
+   "ilusiones ópticas",
+   "geometría"
+  ],
+  "isbn": "9783836573986",
+  "confidence": "high"
+ },
+ {
+  "id": "harry-potter-y-la-piedra-filosofal",
+  "summary": "Harry Potter es un niño huérfano que vive con unos tíos que lo desprecian, hasta que el día en que cumple once años descubre que es mago y que ha sido admitido en el Colegio Hogwarts de Magia y Hechicería. Allí encontrará amigos inseparables, Ron y Hermione, aprenderá a volar en escoba y a lanzar hechizos, y empezará a conocer la verdad sobre la muerte de sus padres y sobre el oscuro Voldemort. Primera entrega de una saga que ha cautivado a generaciones enteras, es una historia llena de imaginación, humor y aventura, que habla también de la amistad, la valentía y el amor que protege.",
+  "authorBio": "J. K. Rowling es una escritora británica, autora de la saga Harry Potter, una de las series de libros más leídas de la historia.",
+  "year": 1997,
+  "originalTitle": "Harry Potter and the Philosopher's Stone",
+  "language": "inglés",
+  "pages": 254,
+  "tags": [
+   "fantasía",
+   "magia",
+   "aventuras",
+   "juvenil",
+   "amistad",
+   "colegio"
+  ],
+  "isbn": "9788478884452",
+  "confidence": "high"
+ },
+ {
+  "id": "harry-potter-y-la-camara-secreta",
+  "summary": "En su segundo curso en Hogwarts, Harry recibe la advertencia de un extraño elfo doméstico: no debe volver al colegio, porque allí le aguarda un grave peligro. Pronto empiezan a aparecer alumnos petrificados y un mensaje escrito en la pared anuncia que la legendaria Cámara de los Secretos ha sido abierta. Junto a Ron y Hermione, Harry investiga el misterio, que le llevará a descubrir secretos del pasado del colegio y de su propia relación con Voldemort. La novela mantiene el encanto y el humor del primer libro, añade una intriga más oscura y reflexiona sobre los prejuicios y sobre cómo nuestras decisiones definen quiénes somos.",
+  "authorBio": "J. K. Rowling es una escritora británica, autora de la saga Harry Potter, una de las series de libros más leídas de la historia.",
+  "year": 1998,
+  "originalTitle": "Harry Potter and the Chamber of Secrets",
+  "language": "inglés",
+  "pages": 286,
+  "tags": [
+   "fantasía",
+   "magia",
+   "aventuras",
+   "juvenil",
+   "misterio",
+   "amistad"
+  ],
+  "isbn": "9788478884957",
+  "confidence": "high"
+ },
+ {
+  "id": "harry-potter-y-el-prisionero-de-azkaban",
+  "summary": "Sirius Black, un peligroso preso, ha escapado de la temible cárcel de Azkaban y todo indica que busca a Harry. Mientras los aterradores dementores vigilan Hogwarts, Harry afronta su tercer curso entre clases nuevas, partidos de quidditch y un profesor de Defensa Contra las Artes Oscuras muy especial. Poco a poco irá desvelando la verdad sobre la traición que costó la vida a sus padres. Para muchos lectores es una de las mejores entregas de la saga: más madura, con un misterio muy bien construido y un desenlace sorprendente, que habla de la lealtad, del perdón y de no juzgar por las apariencias.",
+  "authorBio": "J. K. Rowling es una escritora británica, autora de la saga Harry Potter, una de las series de libros más leídas de la historia.",
+  "year": 1999,
+  "originalTitle": "Harry Potter and the Prisoner of Azkaban",
+  "language": "inglés",
+  "pages": 359,
+  "tags": [
+   "fantasía",
+   "magia",
+   "aventuras",
+   "juvenil",
+   "lealtad",
+   "misterio"
+  ],
+  "isbn": "9788478885190",
+  "confidence": "high"
+ },
+ {
+  "id": "harry-potter-y-el-caliz-de-fuego",
+  "summary": "Hogwarts acoge el Torneo de los Tres Magos, una peligrosa competición entre tres colegios de magia, y de forma inexplicable el Cáliz de Fuego elige a Harry como cuarto participante, aunque es demasiado joven para competir. Entre dragones, pruebas bajo el agua y laberintos encantados, Harry deberá enfrentarse además a las sospechas de sus compañeros y a una trampa que apunta al regreso de Voldemort. Es el libro en el que la saga se vuelve más oscura y adulta: una aventura trepidante que trata la amistad puesta a prueba, el valor, la verdad frente a la mentira y el dolor de la pérdida.",
+  "authorBio": "J. K. Rowling es una escritora británica, autora de la saga Harry Potter, una de las series de libros más leídas de la historia.",
+  "year": 2000,
+  "originalTitle": "Harry Potter and the Goblet of Fire",
+  "language": "inglés",
+  "pages": 635,
+  "tags": [
+   "fantasía",
+   "magia",
+   "aventuras",
+   "juvenil",
+   "torneo",
+   "valentía"
+  ],
+  "isbn": "9788478886456",
+  "confidence": "high"
+ },
+ {
+  "id": "harry-potter-y-la-orden-del-fenix",
+  "summary": "Tras el regreso de Voldemort, el mundo mágico se niega a creer a Harry, y el Ministerio de Magia emprende una campaña para desacreditarlo a él y a Dumbledore. En Hogwarts, una nueva profesora impone un control cada vez más asfixiante, mientras Harry, agobiado por pesadillas y por el aislamiento, organiza en secreto con sus amigos un grupo para aprender a defenderse. Mientras, la Orden del Fénix lucha en la sombra. Es la entrega más larga de la saga y una de las más intensas: retrata la adolescencia con sus enfados y dudas, y habla del coraje de decir la verdad y de resistir frente al abuso de poder.",
+  "authorBio": "J. K. Rowling es una escritora británica, autora de la saga Harry Potter, una de las series de libros más leídas de la historia.",
+  "year": 2003,
+  "originalTitle": "Harry Potter and the Order of the Phoenix",
+  "language": "inglés",
+  "pages": 893,
+  "tags": [
+   "fantasía",
+   "magia",
+   "aventuras",
+   "juvenil",
+   "adolescencia",
+   "verdad"
+  ],
+  "isbn": "9788478887422",
+  "confidence": "high"
+ },
+ {
+  "id": "no-tengais-miedo",
+  "summary": "Pocos años después de la elección de Juan Pablo II, el escritor francés André Frossard mantuvo con él una larga serie de conversaciones que dieron lugar a este libro. A través de preguntas directas y sencillas, el Papa habla de su infancia en Polonia, de su vocación, de la fe, de la oración, de la Virgen, de la Iglesia, de la moral y de los grandes retos del mundo moderno. El título recoge las palabras con que Juan Pablo II inauguró su pontificado, una invitación a abrir las puertas a Cristo sin temor. Es un retrato cercano y luminoso de un santo, y una conversación que sigue siendo hoy alentadora para cualquier creyente.",
+  "authorBio": "André Frossard (1915–1995) fue un periodista y escritor francés, miembro de la Academia Francesa, que se convirtió repentinamente del ateísmo al catolicismo, experiencia que narró en «Dios existe, yo me lo encontré».",
+  "year": 1982,
+  "originalTitle": "N'ayez pas peur!",
+  "language": "francés",
+  "pages": null,
+  "tags": [
+   "juan pablo ii",
+   "papas",
+   "entrevista",
+   "fe",
+   "iglesia",
+   "santos"
+  ],
+  "isbn": "9788401332081",
+  "confidence": "high"
+ },
+ {
+  "id": "vida-de-la-santisima-virgen",
+  "summary": "Libro devocional antiguo que narra la vida de la Virgen María, desde su nacimiento y su infancia hasta la Anunciación, la vida oculta en Nazaret, la Pasión de su Hijo y su gloriosa Asunción a los cielos. Este tipo de obras, muy difundidas en los hogares católicos, combinan los datos del Evangelio con la tradición de la Iglesia y con consideraciones piadosas para alimentar el amor a la Madre de Dios. No hemos podido identificar con seguridad al autor ni la edición concreta, por lo que esta ficha es orientativa. Es un libro para leer despacio, como meditación, y para crecer en devoción mariana.",
+  "authorBio": "Autor no identificado en la edición conservada.",
+  "year": null,
+  "language": "español",
+  "pages": null,
+  "tags": [
+   "virgen maría",
+   "devoción mariana",
+   "vida de maría",
+   "espiritualidad",
+   "libro antiguo"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "mi-hermano-el-papa",
+  "summary": "Georg Ratzinger, hermano mayor de Benedicto XVI, comparte en conversación con el historiador Michael Hesemann los recuerdos de toda una vida junto a Joseph. Cuenta cómo era la familia Ratzinger, la fe sencilla y firme de sus padres, la infancia en pueblos de Baviera, los duros años del nazismo y de la guerra, la vocación sacerdotal compartida por ambos hermanos y la trayectoria de Joseph como teólogo, obispo, cardenal y Papa. Con tono cercano, lleno de anécdotas y de cariño fraterno, ofrece un retrato humano e íntimo del Papa, muy distinto de la imagen pública. Un libro entrañable que muestra la importancia de la familia en la fe.",
+  "authorBio": "Georg Ratzinger (1924–2020) fue un sacerdote y músico alemán que dirigió durante tres décadas el célebre coro de niños de la catedral de Ratisbona; Michael Hesemann es un historiador y periodista alemán.",
+  "year": 2011,
+  "originalTitle": "Mein Bruder, der Papst",
+  "language": "alemán",
+  "pages": 312,
+  "tags": [
+   "benedicto xvi",
+   "papas",
+   "biografía",
+   "familia",
+   "memorias",
+   "alemania"
+  ],
+  "isbn": "9788428539272",
+  "confidence": "high"
+ },
+ {
+  "id": "la-infancia-de-jesus",
+  "summary": "Último volumen de la trilogía de Benedicto XVI sobre Jesús de Nazaret, dedicado a los relatos de la infancia que recogen los evangelios de Mateo y Lucas. El Papa analiza la genealogía de Jesús, la Anunciación a María, el nacimiento en Belén, la visita de los Magos, la huida a Egipto y el episodio del Niño perdido y hallado en el Templo. Con rigor de teólogo y profundidad de creyente, muestra que estos relatos no son leyendas piadosas, sino historia interpretada a la luz de la fe, y se pregunta qué significan hoy para nosotros. Breve, claro y hondo, es una lectura muy recomendable, especialmente para preparar la Navidad.",
+  "authorBio": "Joseph Ratzinger (1927–2022), teólogo alemán, fue prefecto de la Congregación para la Doctrina de la Fe y, entre 2005 y 2013, Papa con el nombre de Benedicto XVI.",
+  "year": 2012,
+  "originalTitle": "Jesus von Nazareth. Prolog: Die Kindheitsgeschichten",
+  "language": "alemán",
+  "pages": 144,
+  "tags": [
+   "jesucristo",
+   "evangelios",
+   "navidad",
+   "infancia de jesús",
+   "benedicto xvi",
+   "teología"
+  ],
+  "isbn": "9788408039433",
+  "confidence": "high"
+ },
+ {
+  "id": "jesus-de-nazaret-desde-la-entrada-en-jerusalen-hasta-la-resu",
+  "summary": "Segunda parte del gran estudio de Benedicto XVI sobre la figura de Jesús, centrada en los acontecimientos decisivos de su vida: la entrada en Jerusalén, la purificación del Templo, el discurso escatológico, el lavatorio de los pies, la Última Cena, la oración en Getsemaní, el proceso, la crucifixión y la resurrección. El autor dialoga con la exégesis moderna, sin renunciar a la lectura creyente de la Escritura, para mostrar al Jesús real, el que nos presentan los evangelios. Escrito con claridad y hondura espiritual, es un libro para leer con calma, ideal para la Cuaresma y la Semana Santa, que ilumina el corazón del misterio cristiano.",
+  "authorBio": "Joseph Ratzinger (1927–2022), teólogo alemán, fue prefecto de la Congregación para la Doctrina de la Fe y, entre 2005 y 2013, Papa con el nombre de Benedicto XVI.",
+  "year": 2011,
+  "originalTitle": "Jesus von Nazareth. Zweiter Teil: Vom Einzug in Jerusalem bis zur Auferstehung",
+  "language": "alemán",
+  "pages": 400,
+  "tags": [
+   "jesucristo",
+   "pasión",
+   "resurrección",
+   "evangelios",
+   "benedicto xvi",
+   "semana santa"
+  ],
+  "isbn": "9788499200781",
+  "confidence": "high"
+ },
+ {
+  "id": "el-papa-francisco-conversaciones-con-jorge-bergoglio",
+  "summary": "Libro de entrevistas que dos periodistas mantuvieron con el entonces cardenal Jorge Mario Bergoglio, arzobispo de Buenos Aires, años antes de su elección como Papa. A lo largo de estas conversaciones, Bergoglio habla de su familia de inmigrantes italianos, de su juventud, de cómo descubrió la vocación, de su vida como jesuita y como obispo, y de cuestiones como la fe, la educación, la pobreza, la política argentina o los desafíos de la Iglesia. Publicado originalmente como «El jesuita» y reeditado tras el cónclave de 2013, ofrece un retrato cercano y espontáneo del hombre que llegaría a ser el Papa Francisco.",
+  "authorBio": "Sergio Rubin es un periodista argentino especializado en información religiosa; Francesca Ambrogetti es una periodista italiana afincada durante años en Buenos Aires.",
+  "year": 2010,
+  "originalTitle": "El jesuita",
+  "language": "español",
+  "pages": 200,
+  "tags": [
+   "papa francisco",
+   "papas",
+   "entrevista",
+   "biografía",
+   "argentina",
+   "jesuitas"
+  ],
+  "isbn": "9788466653565",
+  "confidence": "high"
+ },
+ {
+  "id": "mi-vida",
+  "summary": "Autobiografía en la que Joseph Ratzinger, siendo todavía cardenal, recorre los primeros cincuenta años de su vida, desde su nacimiento en Baviera en 1927 hasta su nombramiento como arzobispo de Múnich en 1977. Evoca con sencillez su infancia en una familia profundamente creyente, los años del nazismo y de la guerra, el seminario, la ordenación sacerdotal junto a su hermano Georg, su carrera como profesor de teología y su participación en el Concilio Vaticano II. Es un libro breve, sereno y lleno de gratitud, que ayuda a comprender la persona y el pensamiento de quien sería después el Papa Benedicto XVI.",
+  "authorBio": "Joseph Ratzinger (1927–2022), teólogo alemán, fue prefecto de la Congregación para la Doctrina de la Fe y, entre 2005 y 2013, Papa con el nombre de Benedicto XVI.",
+  "year": 1997,
+  "originalTitle": "Aus meinem Leben. Erinnerungen (1927–1977)",
+  "language": "alemán",
+  "pages": 176,
+  "tags": [
+   "benedicto xvi",
+   "autobiografía",
+   "memorias",
+   "teología",
+   "concilio vaticano ii",
+   "alemania"
+  ],
+  "confidence": "high"
+ },
+ {
+  "id": "la-nascita-di-un-enciclica-humanae-vitae-alla-luce-degli-arc",
+  "summary": "Estudio histórico, en italiano, que reconstruye cómo se gestó la encíclica Humanae vitae de san Pablo VI, publicada en 1968, a partir de documentos de los Archivos Vaticanos consultados por primera vez. El autor sigue paso a paso el trabajo de la comisión pontificia, las consultas a teólogos y obispos, los borradores sucesivos y el largo discernimiento personal del Papa, hasta su decisión de reafirmar la enseñanza de la Iglesia sobre la transmisión de la vida y la apertura del amor conyugal a la fecundidad. Publicado con motivo del cincuentenario de la encíclica, es una obra valiosa para conocer de cerca un documento decisivo del Magisterio.",
+  "authorBio": "Gilfredo Marengo es un sacerdote y teólogo italiano, profesor de antropología teológica en el Pontificio Instituto Teológico Juan Pablo II para las Ciencias del Matrimonio y de la Familia, en Roma.",
+  "year": 2018,
+  "language": "italiano",
+  "pages": 284,
+  "tags": [
+   "humanae vitae",
+   "pablo vi",
+   "magisterio",
+   "matrimonio",
+   "historia de la iglesia",
+   "encíclicas"
+  ],
+  "isbn": "9788826601601",
+  "confidence": "high"
+ },
+ {
+  "id": "san-pedro-primer-papa",
+  "summary": "Libro dedicado a la figura del apóstol san Pedro, el pescador de Galilea al que Jesús llamó a ser roca de su Iglesia. Por su título, cabe esperar un recorrido por su vida según los evangelios y los Hechos de los Apóstoles: la llamada junto al lago, su fe impulsiva, las negaciones y el arrepentimiento, la confirmación de su misión por Cristo resucitado, su predicación y su martirio en Roma, así como el fundamento del primado del Papa. No hemos podido identificar con seguridad al autor ni la edición, por lo que esta ficha es orientativa. Una lectura sencilla para conocer mejor al primer sucesor de Cristo al frente de la Iglesia.",
+  "authorBio": "Autor no identificado en la edición conservada.",
+  "year": null,
+  "language": "español",
+  "pages": null,
+  "tags": [
+   "san pedro",
+   "apóstoles",
+   "papado",
+   "iglesia primitiva",
+   "santos"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "el-dogma-catolico",
+  "summary": "Obra antigua de exposición de la doctrina católica, del tipo de los manuales que durante décadas sirvieron para la formación de seminaristas, catequistas y laicos cultos. Por su título, cabe esperar una presentación ordenada de las grandes verdades de la fe: Dios uno y trino, la creación, Cristo y la redención, la Virgen María, la gracia, la Iglesia, los sacramentos y los novísimos, apoyada en la Escritura, la Tradición y el Magisterio. No hemos podido identificar con seguridad al autor ni la edición, por lo que esta ficha es orientativa. Es un libro útil para repasar con orden los fundamentos de lo que la Iglesia cree.",
+  "authorBio": "Autor no identificado en la edición conservada.",
+  "year": null,
+  "language": "español",
+  "pages": null,
+  "tags": [
+   "dogma",
+   "teología",
+   "doctrina católica",
+   "fe",
+   "libro antiguo"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "la-vida-sobrenatural",
+  "summary": "Libro antiguo de espiritualidad sobre la vida de la gracia en el alma del cristiano. Por su título, cabe esperar una explicación de lo que significa participar de la vida divina por el bautismo: la gracia santificante, la inhabitación de la Santísima Trinidad, las virtudes teologales, los dones del Espíritu Santo y el camino de crecimiento hacia la santidad mediante la oración y los sacramentos. No hemos podido identificar con seguridad al autor ni la edición, por lo que esta ficha es orientativa. Es una lectura para quienes desean profundizar en la vida interior y descubrir la grandeza de ser hijos de Dios.",
+  "authorBio": "Autor no identificado en la edición conservada.",
+  "year": null,
+  "language": "español",
+  "pages": null,
+  "tags": [
+   "gracia",
+   "vida interior",
+   "espiritualidad",
+   "santidad",
+   "libro antiguo"
+  ],
+  "confidence": "low"
+ },
+ {
+  "id": "101-preguntas-y-respuestas-sobre-la-biblia",
+  "summary": "Un gran biblista responde de forma breve y clara a las preguntas que más a menudo le planteaban en sus conferencias: cómo se escribió la Biblia, qué libros la forman y por qué, qué relación hay entre el Antiguo y el Nuevo Testamento, cómo deben leerse los relatos de la creación o los milagros, qué sabemos de los evangelios y de su historicidad, o qué papel tiene la Iglesia en su interpretación. Con lenguaje accesible y sin tecnicismos, el autor ayuda a disipar confusiones y a acercarse a la Escritura con más confianza. Es una buena introducción para catequistas, grupos de estudio y cualquier lector curioso.",
+  "authorBio": "Raymond E. Brown (1928–1998) fue un sacerdote sulpiciano estadounidense, uno de los exegetas católicos más reconocidos del siglo XX y miembro de la Pontificia Comisión Bíblica.",
+  "year": 1990,
+  "originalTitle": "Responses to 101 Questions on the Bible",
+  "language": "inglés",
+  "pages": 155,
+  "tags": [
+   "biblia",
+   "sagrada escritura",
+   "exégesis",
+   "catequesis",
+   "preguntas y respuestas"
+  ],
+  "isbn": "9788430113040",
+  "confidence": "high"
+ },
+ {
+  "id": "de-los-pobres-al-papa-del-papa-al-mundo",
+  "summary": "Un libro singular en el que el Papa Francisco responde a decenas de preguntas formuladas por personas que viven en la pobreza o en la calle en distintos países del mundo. El proyecto nació de una iniciativa de la asociación Lázaro, que promueve pisos compartidos entre jóvenes y personas sin hogar. Las preguntas, sencillas y a menudo muy duras, tocan temas como el sufrimiento, la fe, la dignidad, el perdón, el trabajo, la familia o la vida del propio Papa, que contesta con cercanía y franqueza. El resultado es un diálogo conmovedor que pone a los pobres en el centro y recuerda que el Evangelio se dirige ante todo a ellos.",
+  "authorBio": "Jorge Mario Bergoglio (1936–2025), jesuita argentino y arzobispo de Buenos Aires, fue Papa con el nombre de Francisco entre 2013 y 2025.",
+  "year": 2022,
+  "originalTitle": "Des pauvres au pape, du pape au monde",
+  "language": "francés",
+  "pages": null,
+  "tags": [
+   "papa francisco",
+   "pobreza",
+   "entrevista",
+   "dignidad",
+   "caridad",
+   "exclusión social"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "el-mensaje-chaminade-hoy",
+  "author": "Eduardo Benlloch",
+  "sortKey": "Benlloch",
+  "summary": "Estudio sobre el beato Guillermo José Chaminade, sacerdote francés que en los años difíciles posteriores a la Revolución quiso volver a cristianizar Francia y fundó la Familia Marianista. El autor recorre el contexto histórico en que surgió su obra, su proyecto misionero y los medios de evangelización que ideó: las congregaciones de laicos, las comunidades religiosas y una forma de vivir la fe en alianza con María. Busca, además, mostrar qué sigue diciendo hoy este carisma a la Iglesia y al mundo. Es una lectura muy recomendable para quienes se han formado en colegios marianistas o desean conocer esta espiritualidad.",
+  "authorBio": "Eduardo Benlloch es un religioso marianista español, estudioso de la figura y la obra del beato Guillermo José Chaminade.",
+  "year": null,
+  "language": "español",
+  "pages": null,
+  "tags": [
+   "chaminade",
+   "marianistas",
+   "carisma",
+   "evangelización",
+   "virgen maría",
+   "vida religiosa"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "el-papa-con-las-familias",
+  "summary": "Recopilación de las enseñanzas de Benedicto XVI sobre la familia, presentada por la Conferencia Episcopal Española. Reúne homilías, discursos, mensajes y otros textos en los que el Papa habla del matrimonio como alianza de amor fiel e indisoluble entre un hombre y una mujer, de la apertura a la vida, de la educación de los hijos, de la familia como primera escuela de la fe y de su papel insustituible en la sociedad. Ordenados para facilitar su consulta, los textos ofrecen una visión de conjunto del pensamiento del Papa sobre la vida familiar. Útil para matrimonios, educadores y agentes de pastoral familiar.",
+  "authorBio": "José Gascó Casesnoves es el compilador y editor de esta selección de textos de Benedicto XVI sobre la familia.",
+  "year": null,
+  "language": "español",
+  "pages": null,
+  "tags": [
+   "familia",
+   "matrimonio",
+   "benedicto xvi",
+   "magisterio",
+   "pastoral familiar",
+   "educación"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "oriente-y-occidente",
+  "author": "Jean R. Rivière y Joseph Needham",
+  "sortKey": "Rivière",
+  "summary": "Volumen de la Biblioteca Salvat de Grandes Temas, una colección divulgativa de los años setenta que abría cada libro con una entrevista a un gran especialista. En este caso, el diálogo es con Joseph Needham, el gran historiador de la ciencia china, y a continuación Jean R. Rivière ofrece un panorama de las relaciones entre las civilizaciones de Oriente y Occidente: sus diferentes visiones del mundo, sus intercambios culturales, científicos y religiosos a lo largo de la historia y las posibilidades de comprensión mutua. Con un estilo accesible y abundantes ilustraciones, es una obra de divulgación amena, aunque algo datada, para curiosos de la historia y las culturas.",
+  "authorBio": "Joseph Needham (1900–1995) fue un bioquímico e historiador británico, autor de la monumental obra «Ciencia y civilización en China»; Jean R. Rivière es el autor francés del texto divulgativo del volumen.",
+  "year": 1975,
+  "originalTitle": "Orient et Occident",
+  "language": "francés",
+  "pages": 141,
+  "tags": [
+   "historia",
+   "civilizaciones",
+   "oriente",
+   "occidente",
+   "china",
+   "divulgación"
+  ],
+  "isbn": "9788434574342",
+  "confidence": "medium"
+ },
+ {
+  "id": "huracan-wojtyla",
+  "summary": "Crónica periodística de los primeros años del pontificado de Juan Pablo II, escrita por la corresponsal española que siguió de cerca su actividad desde Roma. Publicado en 1982, el título alude al impulso arrollador con que el Papa polaco irrumpió en la Iglesia y en el mundo: sus multitudinarios viajes, su cercanía con la gente, su energía incansable y su firmeza en la defensa de la fe y de la dignidad humana. Con el estilo vivo y cercano de una periodista testigo directo, el libro transmite el entusiasmo de aquellos años y ayuda a recordar la extraordinaria figura de san Juan Pablo II.",
+  "authorBio": "Paloma Gómez Borrero (1934–2017) fue una periodista española, durante décadas corresponsal en Roma y el Vaticano para TVE y la cadena COPE, muy querida por su cercanía con los Papas.",
+  "year": 1982,
+  "language": "español",
+  "pages": null,
+  "tags": [
+   "juan pablo ii",
+   "papas",
+   "periodismo",
+   "vaticano",
+   "crónica",
+   "santos"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "donde-dios-llora",
+  "summary": "El padre Werenfried van Straaten, fundador de Ayuda a la Iglesia Necesitada, relata en este libro lo que vio en sus viajes por los lugares del mundo donde la Iglesia sufre: países bajo regímenes que perseguían a los cristianos, refugiados, comunidades pobres de varios continentes, sacerdotes y fieles que mantenían la fe en medio de enormes dificultades. Con un estilo directo y a veces estremecedor, combina el testimonio con una llamada a la caridad y a la oración por los hermanos perseguidos. Es un libro que despierta la conciencia, ayuda a sentirse parte de una Iglesia universal y anima a la generosidad con quienes más lo necesitan.",
+  "authorBio": "Werenfried van Straaten (1913–2003) fue un religioso premonstratense neerlandés, conocido como el «Padre Tocino», que fundó en 1947 la obra pontificia Ayuda a la Iglesia Necesitada.",
+  "year": null,
+  "language": "alemán",
+  "pages": null,
+  "tags": [
+   "iglesia perseguida",
+   "caridad",
+   "ayuda a la iglesia necesitada",
+   "testimonio",
+   "misiones",
+   "pobreza"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "id": "11-grandes-mensajes",
+  "author": "Jesús Iribarren y José Luis Gutiérrez García (eds.)",
+  "sortKey": "Iribarren",
+  "summary": "Volumen de la BAC que reúne los once grandes documentos de la doctrina social de la Iglesia, desde la Rerum novarum de León XIII hasta la Centesimus annus de san Juan Pablo II, pasando por textos de Pío XI, Pío XII, san Juan XXIII, el Concilio Vaticano II y san Pablo VI. Cada documento va acompañado de introducciones y notas de los editores que ayudan a situarlo en su contexto histórico y a comprender su contenido. Reflexiones sobre la justicia social, la dignidad del trabajo, el bien común, la libertad, la participación, la solidaridad y el desarrollo humano integral. Una herramienta de consulta esencial para conocer la enseñanza social católica.",
+  "authorBio": "Jesús Iribarren y José Luis Gutiérrez García fueron destacados estudiosos españoles de la doctrina social de la Iglesia, editores durante décadas de esta recopilación de documentos pontificios en la BAC.",
+  "year": 1992,
+  "language": "español",
+  "pages": 848,
+  "tags": [
+   "doctrina social de la iglesia",
+   "encíclicas",
+   "magisterio",
+   "justicia social",
+   "bien común",
+   "trabajo"
+  ],
+  "isbn": "9788479140601",
+  "confidence": "medium"
+ }
+]

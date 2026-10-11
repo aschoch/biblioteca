@@ -1,1 +1,11 @@
-{}
+{
+ "fray-escoba": {
+  "theme": "Narrativa",
+  "author": "Emilio Lapayese y Ángel Antonio Mingote",
+  "sortKey": "Mingote",
+  "note": "Vida de san Martín de Porres en historieta. Madrid, 1958"
+ },
+ "vida-espiritual": {
+  "title": "Vida espiritual en clave monástica"
+ }
+}

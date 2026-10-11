@@ -3067,5 +3067,653 @@
   "theme": "Narrativa",
   "shelf": 341,
   "note": ""
+ },
+ {
+  "id": "la-biblia-de-masterchef",
+  "title": "La Biblia de MasterChef",
+  "author": "RTVE",
+  "sortKey": "MasterChef",
+  "theme": "Cocina",
+  "shelf": 342,
+  "note": ""
+ },
+ {
+  "id": "options-futures-and-other-derivatives",
+  "title": "Options, Futures and Other Derivatives",
+  "author": "John C. Hull",
+  "sortKey": "Hull",
+  "theme": "Ciencia y técnica",
+  "shelf": 343,
+  "note": "Novena edición, en inglés"
+ },
+ {
+  "id": "strategic-management-competitiveness-globalization-concepts",
+  "title": "Strategic Management. Competitiveness & Globalization. Concepts",
+  "author": "Michael A. Hitt, R. Duane Ireland y Robert E. Hoskisson",
+  "sortKey": "Hitt",
+  "theme": "Liderazgo y empresa",
+  "shelf": 344,
+  "note": "11.ª edición, en inglés"
+ },
+ {
+  "id": "pattern-classification",
+  "title": "Pattern Classification",
+  "author": "Richard O. Duda, Peter E. Hart y David G. Stork",
+  "sortKey": "Duda",
+  "theme": "Ciencia y técnica",
+  "shelf": 345,
+  "note": "Segunda edición, en inglés"
+ },
+ {
+  "id": "fundamentals-of-statistical-signal-processing-i-estimation-t",
+  "title": "Fundamentals of Statistical Signal Processing I. Estimation Theory",
+  "author": "Steven M. Kay",
+  "sortKey": "Kay",
+  "theme": "Ciencia y técnica",
+  "shelf": 346,
+  "note": "En inglés"
+ },
+ {
+  "id": "network-security-private-communication-in-a-public-world",
+  "title": "Network Security. Private Communication in a Public World",
+  "author": "Charlie Kaufman, Radia Perlman y Mike Speciner",
+  "sortKey": "Kaufman",
+  "theme": "Ciencia y técnica",
+  "shelf": 347,
+  "note": "Segunda edición, en inglés"
+ },
+ {
+  "id": "linear-and-nonlinear-optimization",
+  "title": "Linear and Nonlinear Optimization",
+  "author": "Igor Griva, Stephen G. Nash y Ariela Sofer",
+  "sortKey": "Griva",
+  "theme": "Ciencia y técnica",
+  "shelf": 348,
+  "note": "Segunda edición, en inglés"
+ },
+ {
+  "id": "market-operations-in-electric-power-systems",
+  "title": "Market Operations in Electric Power Systems",
+  "author": "Mohammad Shahidehpour, Hatim Yamin y Zuyi Li",
+  "sortKey": "Shahidehpour",
+  "theme": "Ciencia y técnica",
+  "shelf": 349,
+  "note": "En inglés"
+ },
+ {
+  "id": "video-processing-and-communications",
+  "title": "Video Processing and Communications",
+  "author": "Yao Wang, Jörn Ostermann y Ya-Qin Zhang",
+  "sortKey": "Wang",
+  "theme": "Ciencia y técnica",
+  "shelf": 350,
+  "note": "En inglés"
+ },
+ {
+  "id": "pasteleria-creativa-tartas-con-frutas",
+  "title": "Pastelería creativa. Tartas con frutas",
+  "author": "",
+  "sortKey": "",
+  "theme": "Cocina",
+  "shelf": 351,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "sabores-del-mundo-recetas-de-los-cinco-continentes",
+  "title": "Sabores del mundo. Recetas de los cinco continentes",
+  "author": "Paolo Paci y Roberto Mottadelli",
+  "sortKey": "Paci",
+  "theme": "Cocina",
+  "shelf": 352,
+  "note": ""
+ },
+ {
+  "id": "v-de-vendetta",
+  "title": "V de Vendetta",
+  "author": "Alan Moore y David Lloyd",
+  "sortKey": "Moore",
+  "theme": "Narrativa",
+  "shelf": 353,
+  "note": "Novela gráfica"
+ },
+ {
+  "id": "el-espejo-magico-de-m-c-escher",
+  "title": "El espejo mágico de M. C. Escher",
+  "author": "Bruno Ernst",
+  "sortKey": "Ernst",
+  "theme": "Arte",
+  "shelf": 354,
+  "note": ""
+ },
+ {
+  "id": "harry-potter-y-la-piedra-filosofal",
+  "title": "Harry Potter y la piedra filosofal",
+  "author": "J. K. Rowling",
+  "sortKey": "Rowling",
+  "theme": "Narrativa",
+  "shelf": 355,
+  "note": ""
+ },
+ {
+  "id": "harry-potter-y-la-camara-secreta",
+  "title": "Harry Potter y la cámara secreta",
+  "author": "J. K. Rowling",
+  "sortKey": "Rowling",
+  "theme": "Narrativa",
+  "shelf": 356,
+  "note": ""
+ },
+ {
+  "id": "harry-potter-y-el-prisionero-de-azkaban",
+  "title": "Harry Potter y el prisionero de Azkaban",
+  "author": "J. K. Rowling",
+  "sortKey": "Rowling",
+  "theme": "Narrativa",
+  "shelf": 357,
+  "note": ""
+ },
+ {
+  "id": "harry-potter-y-el-caliz-de-fuego",
+  "title": "Harry Potter y el cáliz de fuego",
+  "author": "J. K. Rowling",
+  "sortKey": "Rowling",
+  "theme": "Narrativa",
+  "shelf": 358,
+  "note": ""
+ },
+ {
+  "id": "harry-potter-y-la-orden-del-fenix",
+  "title": "Harry Potter y la Orden del Fénix",
+  "author": "J. K. Rowling",
+  "sortKey": "Rowling",
+  "theme": "Narrativa",
+  "shelf": 359,
+  "note": ""
+ },
+ {
+  "id": "no-tengais-miedo",
+  "title": "¡No tengáis miedo!",
+  "author": "André Frossard y Juan Pablo II",
+  "sortKey": "Frossard",
+  "theme": "Fe y espiritualidad",
+  "shelf": 360,
+  "note": ""
+ },
+ {
+  "id": "vida-de-la-santisima-virgen",
+  "title": "Vida de la Santísima Virgen",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 361,
+  "note": "Edición antigua; autor por confirmar"
+ },
+ {
+  "id": "mi-hermano-el-papa",
+  "title": "Mi hermano, el Papa",
+  "author": "Georg Ratzinger y Michael Hesemann (ed.)",
+  "sortKey": "Ratzinger",
+  "theme": "Fe y espiritualidad",
+  "shelf": 362,
+  "note": ""
+ },
+ {
+  "id": "la-infancia-de-jesus",
+  "title": "La infancia de Jesús",
+  "author": "Joseph Ratzinger / Benedicto XVI",
+  "sortKey": "Ratzinger",
+  "theme": "Fe y espiritualidad",
+  "shelf": 363,
+  "note": ""
+ },
+ {
+  "id": "jesus-de-nazaret-desde-la-entrada-en-jerusalen-hasta-la-resu",
+  "title": "Jesús de Nazaret. Desde la Entrada en Jerusalén hasta la Resurrección",
+  "author": "Joseph Ratzinger / Benedicto XVI",
+  "sortKey": "Ratzinger",
+  "theme": "Fe y espiritualidad",
+  "shelf": 364,
+  "note": ""
+ },
+ {
+  "id": "el-papa-francisco-conversaciones-con-jorge-bergoglio",
+  "title": "El Papa Francisco. Conversaciones con Jorge Bergoglio",
+  "author": "Sergio Rubin y Francesca Ambrogetti",
+  "sortKey": "Rubin",
+  "theme": "Fe y espiritualidad",
+  "shelf": 365,
+  "note": ""
+ },
+ {
+  "id": "mi-vida",
+  "title": "Mi vida",
+  "author": "Joseph Ratzinger",
+  "sortKey": "Ratzinger",
+  "theme": "Fe y espiritualidad",
+  "shelf": 366,
+  "note": ""
+ },
+ {
+  "id": "la-nascita-di-un-enciclica-humanae-vitae-alla-luce-degli-arc",
+  "title": "La nascita di un'enciclica. Humanae vitae alla luce degli Archivi Vaticani",
+  "author": "Gilfredo Marengo",
+  "sortKey": "Marengo",
+  "theme": "Teología del cuerpo",
+  "shelf": 367,
+  "note": "En italiano"
+ },
+ {
+  "id": "san-pedro-primer-papa",
+  "title": "San Pedro, primer Papa",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 368,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "el-dogma-catolico",
+  "title": "El dogma católico",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 369,
+  "note": "Edición antigua; autor por confirmar"
+ },
+ {
+  "id": "la-vida-sobrenatural",
+  "title": "La vida sobrenatural",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 370,
+  "note": "Edición antigua; autor por confirmar"
+ },
+ {
+  "id": "101-preguntas-y-respuestas-sobre-la-biblia",
+  "title": "101 preguntas y respuestas sobre la Biblia",
+  "author": "Raymond E. Brown",
+  "sortKey": "Brown",
+  "theme": "Fe y espiritualidad",
+  "shelf": 371,
+  "note": ""
+ },
+ {
+  "id": "de-los-pobres-al-papa-del-papa-al-mundo",
+  "title": "De los pobres al Papa, del Papa al mundo",
+  "author": "Papa Francisco",
+  "sortKey": "Francisco",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 372,
+  "note": ""
+ },
+ {
+  "id": "el-mensaje-chaminade-hoy",
+  "title": "El mensaje Chaminade hoy",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 373,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "el-papa-con-las-familias",
+  "title": "El Papa con las familias",
+  "author": "José Gascó Casesnoves (ed.)",
+  "sortKey": "Gascó",
+  "theme": "Teología del cuerpo",
+  "shelf": 374,
+  "note": ""
+ },
+ {
+  "id": "oriente-y-occidente",
+  "title": "Oriente y Occidente",
+  "author": "",
+  "sortKey": "",
+  "theme": "Historia y actualidad",
+  "shelf": 375,
+  "note": "Salvat, Biblioteca General nº 76"
+ },
+ {
+  "id": "huracan-wojtyla",
+  "title": "Huracán Wojtyla",
+  "author": "Paloma Gómez Borrero",
+  "sortKey": "Gómez Borrero",
+  "theme": "Fe y espiritualidad",
+  "shelf": 376,
+  "note": ""
+ },
+ {
+  "id": "donde-dios-llora",
+  "title": "Donde Dios llora",
+  "author": "Werenfried van Straaten",
+  "sortKey": "van Straaten",
+  "theme": "Fe y espiritualidad",
+  "shelf": 377,
+  "note": ""
+ },
+ {
+  "id": "11-grandes-mensajes",
+  "title": "11 grandes mensajes",
+  "author": "",
+  "sortKey": "",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 378,
+  "note": "BAC Minor 2"
+ },
+ {
+  "id": "biblia-para-la-familia-evangelios",
+  "title": "Biblia para la familia. Evangelios",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 379,
+  "note": "Desclée / Epesa"
+ },
+ {
+  "id": "youcat-catecismo-joven-de-la-iglesia-catolica",
+  "title": "Youcat. Catecismo joven de la Iglesia Católica",
+  "author": "Iglesia Católica",
+  "sortKey": "Youcat",
+  "theme": "Magisterio de la Iglesia",
+  "shelf": 380,
+  "note": "Dos ejemplares"
+ },
+ {
+  "id": "luz-del-mundo",
+  "title": "Luz del mundo",
+  "author": "Benedicto XVI y Peter Seewald",
+  "sortKey": "Benedicto XVI",
+  "theme": "Fe y espiritualidad",
+  "shelf": 381,
+  "note": ""
+ },
+ {
+  "id": "jerusalen-ida-sin-vuelta",
+  "title": "Jerusalén, ida sin vuelta",
+  "author": "Francisco Zurbano, S.I.",
+  "sortKey": "Zurbano",
+  "theme": "Fe y espiritualidad",
+  "shelf": 382,
+  "note": ""
+ },
+ {
+  "id": "hija-del-silencio",
+  "title": "Hija del silencio",
+  "author": "Morris West",
+  "sortKey": "West",
+  "theme": "Narrativa",
+  "shelf": 383,
+  "note": ""
+ },
+ {
+  "id": "sentido-del-pobre",
+  "title": "Sentido del pobre",
+  "author": "Mons. Alfred Ancel",
+  "sortKey": "Ancel",
+  "theme": "Fe y espiritualidad",
+  "shelf": 384,
+  "note": ""
+ },
+ {
+  "id": "pequeno-evangelio",
+  "title": "Pequeño evangelio",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 385,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "vida-espiritual",
+  "title": "Vida espiritual",
+  "author": "Dom Eufrasio Carretón",
+  "sortKey": "Carretón",
+  "theme": "Fe y espiritualidad",
+  "shelf": 386,
+  "note": ""
+ },
+ {
+  "id": "la-vida-en-fosforo",
+  "title": "La vida en Fósforo",
+  "author": "Belén Torregrosa",
+  "sortKey": "Torregrosa",
+  "theme": "Narrativa",
+  "shelf": 387,
+  "note": ""
+ },
+ {
+  "id": "dios-ha-nacido-en-el-exilio",
+  "title": "Dios ha nacido en el exilio",
+  "author": "Vintila Horia",
+  "sortKey": "Horia",
+  "theme": "Narrativa",
+  "shelf": 388,
+  "note": ""
+ },
+ {
+  "id": "las-tinieblas-y-el-alba",
+  "title": "Las tinieblas y el alba",
+  "author": "Ken Follett",
+  "sortKey": "Follett",
+  "theme": "Narrativa",
+  "shelf": 389,
+  "note": ""
+ },
+ {
+  "id": "sociologia-de-las-organizaciones",
+  "title": "Sociología de las organizaciones",
+  "author": "Charles Perrow",
+  "sortKey": "Perrow",
+  "theme": "Liderazgo y empresa",
+  "shelf": 390,
+  "note": "Tercera edición"
+ },
+ {
+  "id": "se-llamaba-lidia",
+  "title": "Se llamaba Lidia",
+  "author": "Sara Hurtado San Segundo",
+  "sortKey": "Hurtado",
+  "theme": "Narrativa",
+  "shelf": 391,
+  "note": ""
+ },
+ {
+  "id": "el-nombre-de-la-rosa",
+  "title": "El nombre de la rosa",
+  "author": "Umberto Eco",
+  "sortKey": "Eco",
+  "theme": "Narrativa",
+  "shelf": 392,
+  "note": ""
+ },
+ {
+  "id": "la-construccion-del-personaje",
+  "title": "La construcción del personaje",
+  "author": "Constantin Stanislavski",
+  "sortKey": "Stanislavski",
+  "theme": "Teatro",
+  "shelf": 393,
+  "note": ""
+ },
+ {
+  "id": "miguel-strogoff",
+  "title": "Miguel Strogoff",
+  "author": "Jules Verne",
+  "sortKey": "Verne",
+  "theme": "Narrativa",
+  "shelf": 394,
+  "note": ""
+ },
+ {
+  "id": "la-ciudad-de-la-alegria",
+  "title": "La ciudad de la alegría",
+  "author": "Dominique Lapierre",
+  "sortKey": "Lapierre",
+  "theme": "Narrativa",
+  "shelf": 395,
+  "note": ""
+ },
+ {
+  "id": "del-origen-de-las-especies",
+  "title": "Del origen de las especies",
+  "author": "H. Querner, H. Holder, J. Jacobs y otros",
+  "sortKey": "Querner",
+  "theme": "Historia y actualidad",
+  "shelf": 396,
+  "note": ""
+ },
+ {
+  "id": "fray-escoba",
+  "title": "Fray Escoba",
+  "author": "Ángel Antonio Mingote",
+  "sortKey": "Mingote",
+  "theme": "Teatro",
+  "shelf": 397,
+  "note": "Madrid, 1958"
+ },
+ {
+  "id": "lazarillo-de-tormes",
+  "title": "Lazarillo de Tormes",
+  "author": "Anónimo",
+  "sortKey": "Lazarillo",
+  "theme": "Narrativa",
+  "shelf": 398,
+  "note": ""
+ },
+ {
+  "id": "el-mes-de-maria",
+  "title": "El mes de María",
+  "author": "",
+  "sortKey": "",
+  "theme": "Fe y espiritualidad",
+  "shelf": 399,
+  "note": "Autor por confirmar"
+ },
+ {
+  "id": "las-glorias-de-maria",
+  "title": "Las glorias de María",
+  "author": "San Alfonso María de Ligorio",
+  "sortKey": "Ligorio",
+  "theme": "Fe y espiritualidad",
+  "shelf": 400,
+  "note": ""
+ },
+ {
+  "id": "flush",
+  "title": "Flush",
+  "author": "Virginia Woolf",
+  "sortKey": "Woolf",
+  "theme": "Narrativa",
+  "shelf": 401,
+  "note": ""
+ },
+ {
+  "id": "el-arte-de-recomenzar",
+  "title": "El arte de recomenzar",
+  "author": "Fabio Rosini",
+  "sortKey": "Rosini",
+  "theme": "Fe y espiritualidad",
+  "shelf": 402,
+  "note": ""
+ },
+ {
+  "id": "john-henry-newman-cronica-de-un-amor-a-la-verdad",
+  "title": "John Henry Newman. Crónica de un amor a la verdad",
+  "author": "Meriol Trevor",
+  "sortKey": "Trevor",
+  "theme": "Fe y espiritualidad",
+  "shelf": 403,
+  "note": ""
+ },
+ {
+  "id": "la-suerte-de-haber-nacido-en-nuestro-tiempo",
+  "title": "La suerte de haber nacido en nuestro tiempo",
+  "author": "Fabrice Hadjadj",
+  "sortKey": "Hadjadj",
+  "theme": "Filosofía",
+  "shelf": 404,
+  "note": ""
+ },
+ {
+  "id": "manipulacion-del-hombre-en-la-defensa-del-divorcio",
+  "title": "Manipulación del hombre en la defensa del divorcio",
+  "author": "Alfonso López Quintás",
+  "sortKey": "López Quintás",
+  "theme": "Teología del cuerpo",
+  "shelf": 405,
+  "note": ""
+ },
+ {
+  "id": "el-loco-de-dios-en-el-fin-del-mundo",
+  "title": "El loco de Dios en el fin del mundo",
+  "author": "Javier Cercas",
+  "sortKey": "Cercas",
+  "theme": "Narrativa",
+  "shelf": 406,
+  "note": ""
+ },
+ {
+  "id": "tu-y-tu-dios",
+  "title": "Tú y tu Dios",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 407,
+  "note": ""
+ },
+ {
+  "id": "testimonios-el-p-jose-kentenich-y-el-nuevo-orden-social",
+  "title": "Testimonios. El P. José Kentenich y el nuevo orden social",
+  "author": "P. Humberto Anwandter",
+  "sortKey": "Anwandter",
+  "theme": "Schoenstatt",
+  "shelf": 408,
+  "note": ""
+ },
+ {
+  "id": "mi-filosofia-de-la-educacion",
+  "title": "Mi filosofía de la educación",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 409,
+  "note": ""
+ },
+ {
+  "id": "para-un-mundo-del-manana",
+  "title": "Para un mundo del mañana",
+  "author": "P. José Kentenich",
+  "sortKey": "Kentenich",
+  "theme": "Schoenstatt",
+  "shelf": 410,
+  "note": ""
+ },
+ {
+  "id": "schoenstatt-camino-de-santidad",
+  "title": "Schoenstatt, camino de santidad",
+  "author": "P. Carlos Padilla Esteban",
+  "sortKey": "Padilla",
+  "theme": "Schoenstatt",
+  "shelf": 411,
+  "note": ""
+ },
+ {
+  "id": "cantos-de-vida-y-esperanza",
+  "title": "Cantos de vida y esperanza",
+  "author": "Rubén Darío",
+  "sortKey": "Darío",
+  "theme": "Poesía",
+  "shelf": 412,
+  "note": "Biblioteca Anaya, edición de Antonio Oliver Belmás"
+ },
+ {
+  "id": "aqui-es-mi-casa-o-algunas-formas-de-un-paisaje-inacabado",
+  "title": "Aquí es mi casa. O algunas formas de un paisaje inacabado",
+  "author": "Mario Guixeras",
+  "sortKey": "Guixeras",
+  "theme": "Poesía",
+  "shelf": 413,
+  "note": ""
  }
 ]

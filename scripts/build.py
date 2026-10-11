@@ -12,7 +12,7 @@ cov = json.load(open("data/covers.json"))
 THEME_HUES = {"Liderazgo y empresa": 205, "Familia y crianza": 25, "Historia y actualidad": 35,
   "Narrativa": 350, "Teatro": 5, "Clásicos grecolatinos": 40, "Filosofía": 225, "Educación": 150,
   "Poesía": 280, "Obras de consulta": 0, "Magisterio de la Iglesia": 45, "Fe y espiritualidad": 190,
-  "Schoenstatt": 165, "Arte": 15, "Teología del cuerpo": 330}
+  "Schoenstatt": 165, "Arte": 15, "Teología del cuerpo": 330, "Cocina": 22, "Ciencia y técnica": 195}
 
 def spine_color(hexc, seed, theme):
     h = int(hashlib.md5(seed.encode()).hexdigest(), 16)

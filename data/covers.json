@@ -1233,11 +1233,11 @@
  },
  "oracion-de-la-lluvia": {
   "file": "covers/oracion-de-la-lluvia.jpg",
-  "src": "amazon",
-  "url": "https://images-na.ssl-images-amazon.com/images/P/8432173355.01.LZZZZZZZ.jpg",
-  "color": "#f5eedb",
-  "w": 337,
-  "h": 500
+  "src": "foto",
+  "url": "IMG_7971.JPG",
+  "color": "#b0a99e",
+  "w": 434,
+  "h": 640
  },
  "alumbramiento": {
   "file": "covers/alumbramiento.jpg",
@@ -2089,11 +2089,11 @@
  },
  "sagrada-biblia": {
   "file": "covers/sagrada-biblia.jpg",
-  "src": "override",
-  "url": "https://m.media-amazon.com/images/P/8422017024.01.L.jpg",
-  "color": "#644226",
-  "w": 316,
-  "h": 500
+  "src": "foto",
+  "url": "IMG_7963.JPG",
+  "color": "#5e5d5d",
+  "w": 433,
+  "h": 640
  },
  "vida-y-misterio-de-jesus-de-nazaret-ii": {
   "file": "covers/vida-y-misterio-de-jesus-de-nazaret-ii.jpg",
@@ -2631,5 +2631,431 @@
   "color": "#083d25",
   "w": 415,
   "h": 640
+ },
+ "el-arte-de-recomenzar": {
+  "file": "covers/el-arte-de-recomenzar.jpg",
+  "src": "foto",
+  "url": "IMG_7962.JPG",
+  "color": "#7d756a",
+  "w": 413,
+  "h": 640
+ },
+ "john-henry-newman-cronica-de-un-amor-a-la-verdad": {
+  "file": "covers/john-henry-newman-cronica-de-un-amor-a-la-verdad.jpg",
+  "src": "foto",
+  "url": "IMG_7962.JPG",
+  "color": "#aea2a1",
+  "w": 407,
+  "h": 640
+ },
+ "la-suerte-de-haber-nacido-en-nuestro-tiempo": {
+  "file": "covers/la-suerte-de-haber-nacido-en-nuestro-tiempo.jpg",
+  "src": "foto",
+  "url": "IMG_7964.JPG",
+  "color": "#8b7b69",
+  "w": 307,
+  "h": 640
+ },
+ "manipulacion-del-hombre-en-la-defensa-del-divorcio": {
+  "file": "covers/manipulacion-del-hombre-en-la-defensa-del-divorcio.jpg",
+  "src": "foto",
+  "url": "IMG_7964.JPG",
+  "color": "#897762",
+  "w": 315,
+  "h": 640
+ },
+ "el-loco-de-dios-en-el-fin-del-mundo": {
+  "file": "covers/el-loco-de-dios-en-el-fin-del-mundo.jpg",
+  "src": "foto",
+  "url": "IMG_7965.JPG",
+  "color": "#1b1a15",
+  "w": 355,
+  "h": 640
+ },
+ "tu-y-tu-dios": {
+  "file": "covers/tu-y-tu-dios.jpg",
+  "src": "foto",
+  "url": "IMG_7966.JPG",
+  "color": "#7b726c",
+  "w": 383,
+  "h": 640
+ },
+ "testimonios-el-p-jose-kentenich-y-el-nuevo-orden-social": {
+  "file": "covers/testimonios-el-p-jose-kentenich-y-el-nuevo-orden-social.jpg",
+  "src": "foto",
+  "url": "IMG_7967.JPG",
+  "color": "#5e5d56",
+  "w": 455,
+  "h": 640
+ },
+ "mi-filosofia-de-la-educacion": {
+  "file": "covers/mi-filosofia-de-la-educacion.jpg",
+  "src": "foto",
+  "url": "IMG_7968.JPG",
+  "color": "#aba398",
+  "w": 422,
+  "h": 640
+ },
+ "para-un-mundo-del-manana": {
+  "file": "covers/para-un-mundo-del-manana.jpg",
+  "src": "foto",
+  "url": "IMG_7969.JPG",
+  "color": "#c0c1bb",
+  "w": 532,
+  "h": 640
+ },
+ "schoenstatt-camino-de-santidad": {
+  "file": "covers/schoenstatt-camino-de-santidad.jpg",
+  "src": "foto",
+  "url": "IMG_7970.JPG",
+  "color": "#444543",
+  "w": 444,
+  "h": 640
+ },
+ "cantos-de-vida-y-esperanza": {
+  "file": "covers/cantos-de-vida-y-esperanza.jpg",
+  "src": "foto",
+  "url": "IMG_7972.JPG",
+  "color": "#8a5f56",
+  "w": 443,
+  "h": 640
+ },
+ "aqui-es-mi-casa-o-algunas-formas-de-un-paisaje-inacabado": {
+  "file": "covers/aqui-es-mi-casa-o-algunas-formas-de-un-paisaje-inacabado.jpg",
+  "src": "foto",
+  "url": "IMG_7973.JPG",
+  "color": "#968f85",
+  "w": 445,
+  "h": 640
+ },
+ "la-biblia-de-masterchef": {
+  "file": "covers/la-biblia-de-masterchef.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788467058895-L.jpg?default=false",
+  "color": "#5b272e",
+  "w": 229,
+  "h": 301
+ },
+ "options-futures-and-other-derivatives": {
+  "file": "covers/options-futures-and-other-derivatives.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9780133456318-L.jpg?default=false",
+  "color": "#be895e",
+  "w": 400,
+  "h": 500
+ },
+ "strategic-management-competitiveness-globalization-concepts": {
+  "file": "covers/strategic-management-competitiveness-globalization-concepts.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/1285425189.01.LZZZZZZZ.jpg",
+  "color": "#103a4a",
+  "w": 400,
+  "h": 500
+ },
+ "pattern-classification": {
+  "file": "covers/pattern-classification.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9780471056690-L.jpg?default=false",
+  "color": "#fe0000",
+  "w": 333,
+  "h": 475
+ },
+ "fundamentals-of-statistical-signal-processing-i-estimation-t": {
+  "file": null
+ },
+ "network-security-private-communication-in-a-public-world": {
+  "file": "covers/network-security-private-communication-in-a-public-world.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9780130460196-L.jpg?default=false",
+  "color": "#427ab9",
+  "w": 360,
+  "h": 500
+ },
+ "linear-and-nonlinear-optimization": {
+  "file": null
+ },
+ "market-operations-in-electric-power-systems": {
+  "file": "covers/market-operations-in-electric-power-systems.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9780471443377-L.jpg?default=false",
+  "color": "#0d0505",
+  "w": 297,
+  "h": 475
+ },
+ "video-processing-and-communications": {
+  "file": "covers/video-processing-and-communications.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9780130175472-L.jpg?default=false",
+  "color": "#ece664",
+  "w": 359,
+  "h": 500
+ },
+ "pasteleria-creativa-tartas-con-frutas": {
+  "file": null
+ },
+ "sabores-del-mundo-recetas-de-los-cinco-continentes": {
+  "file": null
+ },
+ "v-de-vendetta": {
+  "file": "covers/v-de-vendetta.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788416070336-L.jpg?default=false",
+  "color": "#211a10",
+  "w": 327,
+  "h": 500
+ },
+ "el-espejo-magico-de-m-c-escher": {
+  "file": "covers/el-espejo-magico-de-m-c-escher.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/3836573989.01.LZZZZZZZ.jpg",
+  "color": "#b5b5b6",
+  "w": 394,
+  "h": 500
+ },
+ "harry-potter-y-la-piedra-filosofal": {
+  "file": "covers/harry-potter-y-la-piedra-filosofal.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788478884452-L.jpg?default=false",
+  "color": "#1b2d34",
+  "w": 350,
+  "h": 500
+ },
+ "harry-potter-y-la-camara-secreta": {
+  "file": "covers/harry-potter-y-la-camara-secreta.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788478884957-L.jpg?default=false",
+  "color": "#6f4c48",
+  "w": 301,
+  "h": 500
+ },
+ "harry-potter-y-el-prisionero-de-azkaban": {
+  "file": "covers/harry-potter-y-el-prisionero-de-azkaban.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788478885190-L.jpg?default=false",
+  "color": "#2b2628",
+  "w": 286,
+  "h": 500
+ },
+ "harry-potter-y-el-caliz-de-fuego": {
+  "file": "covers/harry-potter-y-el-caliz-de-fuego.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788478886456-L.jpg?default=false",
+  "color": "#bc8b74",
+  "w": 303,
+  "h": 475
+ },
+ "harry-potter-y-la-orden-del-fenix": {
+  "file": "covers/harry-potter-y-la-orden-del-fenix.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788478887422-L.jpg?default=false",
+  "color": "#181a31",
+  "w": 319,
+  "h": 500
+ },
+ "no-tengais-miedo": {
+  "file": null
+ },
+ "vida-de-la-santisima-virgen": {
+  "file": null
+ },
+ "mi-hermano-el-papa": {
+  "file": "covers/mi-hermano-el-papa.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8428539278.01.LZZZZZZZ.jpg",
+  "color": "#652223",
+  "w": 328,
+  "h": 500
+ },
+ "la-infancia-de-jesus": {
+  "file": "covers/la-infancia-de-jesus.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788408039433-L.jpg?default=false",
+  "color": "#bba285",
+  "w": 327,
+  "h": 500
+ },
+ "jesus-de-nazaret-desde-la-entrada-en-jerusalen-hasta-la-resu": {
+  "file": "covers/jesus-de-nazaret-desde-la-entrada-en-jerusalen-hasta-la-resu.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788499200781-L.jpg?default=false",
+  "color": "#ffffff",
+  "w": 316,
+  "h": 499
+ },
+ "el-papa-francisco-conversaciones-con-jorge-bergoglio": {
+  "file": "covers/el-papa-francisco-conversaciones-con-jorge-bergoglio.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8466653562.01.LZZZZZZZ.jpg",
+  "color": "#ad7027",
+  "w": 326,
+  "h": 500
+ },
+ "mi-vida": {
+  "file": "covers/mi-vida.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/2271399-L.jpg",
+  "color": "#233737",
+  "w": 316,
+  "h": 500
+ },
+ "la-nascita-di-un-enciclica-humanae-vitae-alla-luce-degli-arc": {
+  "file": "covers/la-nascita-di-un-enciclica-humanae-vitae-alla-luce-degli-arc.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8826601607.01.LZZZZZZZ.jpg",
+  "color": "#79545c",
+  "w": 345,
+  "h": 500
+ },
+ "san-pedro-primer-papa": {
+  "file": null
+ },
+ "el-dogma-catolico": {
+  "file": null
+ },
+ "la-vida-sobrenatural": {
+  "file": null
+ },
+ "101-preguntas-y-respuestas-sobre-la-biblia": {
+  "file": "covers/101-preguntas-y-respuestas-sobre-la-biblia.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8430113045.01.LZZZZZZZ.jpg",
+  "color": "#353a3c",
+  "w": 320,
+  "h": 500
+ },
+ "de-los-pobres-al-papa-del-papa-al-mundo": {
+  "file": null
+ },
+ "el-mensaje-chaminade-hoy": {
+  "file": null
+ },
+ "el-papa-con-las-familias": {
+  "file": null
+ },
+ "oriente-y-occidente": {
+  "file": null
+ },
+ "huracan-wojtyla": {
+  "file": null
+ },
+ "donde-dios-llora": {
+  "file": null
+ },
+ "11-grandes-mensajes": {
+  "file": "covers/11-grandes-mensajes.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788479140601-L.jpg?default=false",
+  "color": "#1e671e",
+  "w": 297,
+  "h": 500
+ },
+ "biblia-para-la-familia-evangelios": {
+  "file": null
+ },
+ "youcat-catecismo-joven-de-la-iglesia-catolica": {
+  "file": null
+ },
+ "luz-del-mundo": {
+  "file": "covers/luz-del-mundo.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8425427568.01.LZZZZZZZ.jpg",
+  "color": "#fffde8",
+  "w": 318,
+  "h": 500
+ },
+ "jerusalen-ida-sin-vuelta": {
+  "file": null
+ },
+ "hija-del-silencio": {
+  "file": null
+ },
+ "sentido-del-pobre": {
+  "file": null
+ },
+ "pequeno-evangelio": {
+  "file": null
+ },
+ "vida-espiritual": {
+  "file": "covers/vida-espiritual.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788428406642-L.jpg?default=false",
+  "color": "#6c4a3b",
+  "w": 346,
+  "h": 500
+ },
+ "la-vida-en-fosforo": {
+  "file": null
+ },
+ "dios-ha-nacido-en-el-exilio": {
+  "file": "covers/dios-ha-nacido-en-el-exilio.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/14830917-L.jpg",
+  "color": "#b38269",
+  "w": 255,
+  "h": 417
+ },
+ "las-tinieblas-y-el-alba": {
+  "file": "covers/las-tinieblas-y-el-alba.jpg",
+  "src": "ol-isbn",
+  "url": "https://covers.openlibrary.org/b/isbn/9788401022876-L.jpg?default=false",
+  "color": "#2e0708",
+  "w": 173,
+  "h": 266
+ },
+ "sociologia-de-las-organizaciones": {
+  "file": null
+ },
+ "se-llamaba-lidia": {
+  "file": "covers/se-llamaba-lidia.jpg",
+  "src": "amazon",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/8413046785.01.LZZZZZZZ.jpg",
+  "color": "#d0a08d",
+  "w": 357,
+  "h": 500
+ },
+ "el-nombre-de-la-rosa": {
+  "file": null
+ },
+ "la-construccion-del-personaje": {
+  "file": "covers/la-construccion-del-personaje.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/7273525-L.jpg",
+  "color": "#515857",
+  "w": 317,
+  "h": 475
+ },
+ "miguel-strogoff": {
+  "file": "covers/miguel-strogoff.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/5268437-L.jpg",
+  "color": "#8b6152",
+  "w": 128,
+  "h": 184
+ },
+ "la-ciudad-de-la-alegria": {
+  "file": null
+ },
+ "del-origen-de-las-especies": {
+  "file": null
+ },
+ "fray-escoba": {
+  "file": null
+ },
+ "lazarillo-de-tormes": {
+  "file": null
+ },
+ "el-mes-de-maria": {
+  "file": null
+ },
+ "las-glorias-de-maria": {
+  "file": null
+ },
+ "flush": {
+  "file": "covers/flush.jpg",
+  "src": "ol-search",
+  "url": "https://covers.openlibrary.org/b/id/116161-L.jpg",
+  "color": "#96534e",
+  "w": 312,
+  "h": 475
  }
 }

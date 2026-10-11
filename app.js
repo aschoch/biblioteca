@@ -6,9 +6,9 @@
   const THEMES = [
     ["Narrativa", "#8c2f2b"], ["Poesía", "#7a4b86"], ["Teatro", "#a3423a"], ["Clásicos grecolatinos", "#b08a3e"],
     ["Filosofía", "#3e4f86"], ["Historia y actualidad", "#9a6a2f"], ["Arte", "#b4532f"],
-    ["Educación", "#3d7a5a"], ["Familia y crianza", "#c0703a"], ["Teología del cuerpo", "#a2456a"],
+    ["Educación", "#3d7a5a"], ["Familia y crianza", "#c0703a"], ["Cocina", "#b5602e"], ["Teología del cuerpo", "#a2456a"],
     ["Fe y espiritualidad", "#2f7480"], ["Magisterio de la Iglesia", "#b8892f"], ["Schoenstatt", "#2f7a6a"],
-    ["Obras de consulta", "#6b6257"], ["Liderazgo y empresa", "#2f5d7c"],
+    ["Obras de consulta", "#6b6257"], ["Ciencia y técnica", "#466a78"], ["Liderazgo y empresa", "#2f5d7c"],
   ];
   const THEME_COLOR = Object.fromEntries(THEMES);
   const THEME_ORDER = Object.fromEntries(THEMES.map(([t], i) => [t, i]));
