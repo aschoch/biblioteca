@@ -2761,7 +2761,12 @@
   "h": 475
  },
  "fundamentals-of-statistical-signal-processing-i-estimation-t": {
-  "file": null
+  "file": "covers/fundamentals-of-statistical-signal-processing-i-estimation-t.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/0133457117.01.LZZZZZZZ.jpg",
+  "color": "#349bbd",
+  "w": 426,
+  "h": 599
  },
  "network-security-private-communication-in-a-public-world": {
   "file": "covers/network-security-private-communication-in-a-public-world.jpg",
@@ -2772,7 +2777,12 @@
   "h": 500
  },
  "linear-and-nonlinear-optimization": {
-  "file": null
+  "file": "covers/linear-and-nonlinear-optimization.jpg",
+  "src": "override",
+  "url": "https://images-na.ssl-images-amazon.com/images/P/0898716616.01.LZZZZZZZ.jpg",
+  "color": "#2380d3",
+  "w": 445,
+  "h": 640
  },
  "market-operations-in-electric-power-systems": {
   "file": "covers/market-operations-in-electric-power-systems.jpg",
@@ -2791,10 +2801,20 @@
   "h": 500
  },
  "pasteleria-creativa-tartas-con-frutas": {
-  "file": null
+  "file": "covers/pasteleria-creativa-tartas-con-frutas.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/30825049001.jpg",
+  "color": "#626f72",
+  "w": 351,
+  "h": 624
  },
  "sabores-del-mundo-recetas-de-los-cinco-continentes": {
-  "file": null
+  "file": "covers/sabores-del-mundo-recetas-de-los-cinco-continentes.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32151780446.jpg",
+  "color": "#8a2022",
+  "w": 174,
+  "h": 289
  },
  "v-de-vendetta": {
   "file": "covers/v-de-vendetta.jpg",
@@ -2853,7 +2873,12 @@
   "h": 500
  },
  "no-tengais-miedo": {
-  "file": null
+  "file": "covers/no-tengais-miedo.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/isbn/9788401332081-es.jpg",
+  "color": "#91725f",
+  "w": 339,
+  "h": 500
  },
  "vida-de-la-santisima-virgen": {
   "file": null
@@ -2907,7 +2932,12 @@
   "h": 500
  },
  "san-pedro-primer-papa": {
-  "file": null
+  "file": "covers/san-pedro-primer-papa.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/798872023.jpg",
+  "color": "#3598cb",
+  "w": 447,
+  "h": 640
  },
  "el-dogma-catolico": {
   "file": null
@@ -2924,22 +2954,52 @@
   "h": 500
  },
  "de-los-pobres-al-papa-del-papa-al-mundo": {
-  "file": null
+  "file": "covers/de-los-pobres-al-papa-del-papa-al-mundo.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/isbn/9788412748642-es.jpg",
+  "color": "#9e796f",
+  "w": 337,
+  "h": 500
  },
  "el-mensaje-chaminade-hoy": {
-  "file": null
+  "file": "covers/el-mensaje-chaminade-hoy.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32323296250.jpg",
+  "color": "#292e38",
+  "w": 428,
+  "h": 640
  },
  "el-papa-con-las-familias": {
-  "file": null
+  "file": "covers/el-papa-con-las-familias.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/isbn/9788479148430-es.jpg",
+  "color": "#ddddd2",
+  "w": 275,
+  "h": 500
  },
  "oriente-y-occidente": {
-  "file": null
+  "file": "covers/oriente-y-occidente.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/30127084448.jpg",
+  "color": "#ca9359",
+  "w": 522,
+  "h": 640
  },
  "huracan-wojtyla": {
-  "file": null
+  "file": "covers/huracan-wojtyla.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32467078707.jpg",
+  "color": "#885b3b",
+  "w": 428,
+  "h": 640
  },
  "donde-dios-llora": {
-  "file": null
+  "file": "covers/donde-dios-llora.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32304724418.jpg",
+  "color": "#847940",
+  "w": 428,
+  "h": 640
  },
  "11-grandes-mensajes": {
   "file": "covers/11-grandes-mensajes.jpg",
@@ -2950,10 +3010,20 @@
   "h": 500
  },
  "biblia-para-la-familia-evangelios": {
-  "file": null
+  "file": "covers/biblia-para-la-familia-evangelios.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/31470050263.jpg",
+  "color": "#9b9c9d",
+  "w": 480,
+  "h": 640
  },
  "youcat-catecismo-joven-de-la-iglesia-catolica": {
-  "file": null
+  "file": "covers/youcat-catecismo-joven-de-la-iglesia-catolica.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/31855615193.jpg",
+  "color": "#fcf555",
+  "w": 398,
+  "h": 640
  },
  "luz-del-mundo": {
   "file": "covers/luz-del-mundo.jpg",
@@ -2964,13 +3034,28 @@
   "h": 500
  },
  "jerusalen-ida-sin-vuelta": {
-  "file": null
+  "file": "covers/jerusalen-ida-sin-vuelta.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32518581707.jpg",
+  "color": "#4c5638",
+  "w": 428,
+  "h": 640
  },
  "hija-del-silencio": {
-  "file": null
+  "file": "covers/hija-del-silencio.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/22877505825.jpg",
+  "color": "#ae885a",
+  "w": 451,
+  "h": 640
  },
  "sentido-del-pobre": {
-  "file": null
+  "file": "covers/sentido-del-pobre.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/31502686307.jpg",
+  "color": "#a39c93",
+  "w": 428,
+  "h": 640
  },
  "pequeno-evangelio": {
   "file": null
@@ -3003,7 +3088,12 @@
   "h": 266
  },
  "sociologia-de-las-organizaciones": {
-  "file": null
+  "file": "covers/sociologia-de-las-organizaciones.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32116964487.jpg",
+  "color": "#533f3c",
+  "w": 448,
+  "h": 640
  },
  "se-llamaba-lidia": {
   "file": "covers/se-llamaba-lidia.jpg",
@@ -3014,7 +3104,12 @@
   "h": 500
  },
  "el-nombre-de-la-rosa": {
-  "file": null
+  "file": "covers/el-nombre-de-la-rosa.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32530076516.jpg",
+  "color": "#322a2b",
+  "w": 428,
+  "h": 640
  },
  "la-construccion-del-personaje": {
   "file": "covers/la-construccion-del-personaje.jpg",
@@ -3033,22 +3128,47 @@
   "h": 184
  },
  "la-ciudad-de-la-alegria": {
-  "file": null
+  "file": "covers/la-ciudad-de-la-alegria.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32452137379.jpg",
+  "color": "#c33f26",
+  "w": 419,
+  "h": 640
  },
  "del-origen-de-las-especies": {
-  "file": null
+  "file": "covers/del-origen-de-las-especies.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/isbn/9788420613611-es.jpg",
+  "color": "#5f4255",
+  "w": 200,
+  "h": 326
  },
  "fray-escoba": {
-  "file": null
+  "file": "covers/fray-escoba.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/31060947018.jpg",
+  "color": "#6c8955",
+  "w": 482,
+  "h": 640
  },
  "lazarillo-de-tormes": {
-  "file": null
+  "file": "covers/lazarillo-de-tormes.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32502943564.jpg",
+  "color": "#3e3221",
+  "w": 425,
+  "h": 640
  },
  "el-mes-de-maria": {
   "file": null
  },
  "las-glorias-de-maria": {
-  "file": null
+  "file": "covers/las-glorias-de-maria.jpg",
+  "src": "override",
+  "url": "https://pictures.abebooks.com/inventory/32405141839.jpg",
+  "color": "#42342e",
+  "w": 480,
+  "h": 640
  },
  "flush": {
   "file": "covers/flush.jpg",
