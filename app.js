@@ -606,11 +606,13 @@
     window.scrollTo({ top: libraryTop(), behavior: reduceMotion ? "auto" : "smooth" });
   }
 
-  new IntersectionObserver(([e]) => $("#toolbar").classList.toggle("stuck", !e.isIntersecting), { rootMargin: "-1px 0px 0px 0px" })
-    .observe($(".masthead"));
-
   // La barra no cambia de alto al desplazarse: en iOS eso ancla mal el scroll y salta arriba.
   const toolbar = $("#toolbar"), toTop = $("#toTop");
+  const syncStuck = () => {
+    const stickAt = parseFloat(getComputedStyle(toolbar).top) || 0;
+    toolbar.classList.toggle("stuck", $(".masthead").getBoundingClientRect().bottom <= stickAt + 0.5);
+  };
+  syncStuck();
   const narrowQ = matchMedia("(max-width: 560px)");
   function placeChrome() {
     const meta = $("#meta"), random = $("#random"), inner = $(".toolbar__inner");
@@ -657,6 +659,7 @@
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
+      syncStuck();
       toTop.classList.toggle("show", scrollY > innerHeight * 1.5);
       ticking = false;
     });

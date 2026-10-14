@@ -44,7 +44,8 @@ html { -webkit-text-size-adjust: 100%; scroll-padding-top: 120px; }
 body {
   margin: 0; background: var(--paper); color: var(--ink);
   font: 15px/1.55 var(--sans); -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* `clip` no convierte el otro eje en scroll, como sí hace `hidden` (y en iOS eso desalinea la barra pegajosa). */
+  overflow-x: clip;
 }
 body.locked { overflow: hidden; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
@@ -80,15 +81,14 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 /* ——— Barra de herramientas ——— */
 .toolbar {
   position: sticky; top: env(safe-area-inset-top); z-index: 20; padding: 10px 0 0;
-  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  /* Papel opaco siempre: un fondo a medias deja ver los libros en el instante en que la barra se pega. */
+  background: var(--paper);
   border-bottom: 1px solid transparent;
-  transition: border-color .2s, background .2s, box-shadow .2s;
+  transition: border-color .2s, box-shadow .2s;
 }
-/* Al desplazar, fondo de papel sólido: el desenfoque durante el scroll se come el móvil.
-   El alto no cambia (el margen del notch va en `top`, no en el padding). */
+/* El alto no cambia (el margen del notch va en `top`, no en el padding). */
 .toolbar.stuck {
   border-bottom-color: var(--line); box-shadow: 0 6px 16px -14px rgba(0,0,0,.35);
-  background: var(--paper);
 }
 .filter-toggle { display: none; }
 .filter-toggle svg { width: 16px; height: 16px; }
