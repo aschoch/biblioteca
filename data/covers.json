@@ -3177,5 +3177,45 @@
   "color": "#96534e",
   "w": 312,
   "h": 475
+ },
+ "san-jose-acoger-proteger-y-alimentar": {
+  "file": "covers/san-jose-acoger-proteger-y-alimentar.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/01/9788432163401.webp",
+  "color": "#951a1e",
+  "w": 419,
+  "h": 640
+ },
+ "el-hermano-de-asis": {
+  "file": "covers/el-hermano-de-asis.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/87/9788428517287.webp",
+  "color": "#7c3928",
+  "w": 415,
+  "h": 640
+ },
+ "la-escuela-del-alma-de-la-forma-de-educar-a-la-manera-de-viv": {
+  "file": "covers/la-escuela-del-alma-de-la-forma-de-educar-a-la-manera-de-viv.jpg",
+  "src": "override",
+  "url": "https://www.acantilado.es/wp-content/uploads/La-escuela-del-alma-1.jpg",
+  "color": "#4a3422",
+  "w": 405,
+  "h": 640
+ },
+ "el-portico-del-misterio-de-la-segunda-virtud": {
+  "file": "covers/el-portico-del-misterio-de-la-segunda-virtud.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/34/9788413391434.webp",
+  "color": "#222e31",
+  "w": 435,
+  "h": 640
+ },
+ "la-ultima-del-cadalso": {
+  "file": "covers/la-ultima-del-cadalso.jpg",
+  "src": "override",
+  "url": "https://imagessl.casadellibro.com/a/l/s7/77/9788474909777.webp",
+  "color": "#b99d4c",
+  "w": 395,
+  "h": 640
  }
 }

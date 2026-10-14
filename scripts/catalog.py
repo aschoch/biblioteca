@@ -431,6 +431,11 @@ RAW = [
 ("Schoenstatt, camino de santidad","P. Carlos Padilla Esteban","Padilla",T_SCH),
 ("Cantos de vida y esperanza","Rubén Darío","Darío",T_POE,"Biblioteca Anaya, edición de Antonio Oliver Belmás"),
 ("Aquí es mi casa. O algunas formas de un paisaje inacabado","Mario Guixeras","Guixeras",T_POE),
+("San José. Acoger, proteger y alimentar","Fabio Rosini","Rosini",T_FE,"Rialp, colección Patmos (Libros de espiritualidad), 2.ª edición"),
+("El hermano de Asís","Ignacio Larrañaga","Larrañaga",T_FE,"San Pablo, colección Testigos"),
+("La escuela del alma. De la forma de educar a la manera de vivir","Josep Maria Esquirol","Esquirol",T_FIL,"Acantilado, 4.ª edición"),
+("El pórtico del misterio de la segunda virtud","Charles Péguy","Péguy",T_POE,"Ediciones Encuentro, colección Literaria"),
+("La última del cadalso","Gertrud von le Fort","Le Fort",T_NAR,"Ediciones Encuentro, colección Literatura"),
 ]
 
 def slug(s):

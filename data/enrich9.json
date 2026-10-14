@@ -600,5 +600,98 @@
    "arte"
   ],
   "confidence": "low"
+ },
+ {
+  "id": "san-jose-acoger-proteger-y-alimentar",
+  "summary": "A partir del sueño en el que un ángel habla a José, el padre Rosini medita sobre la vocación de acoger, proteger y alimentar la vida. El carpintero de Nazaret, sólido y humilde, se convierte en custodio de María y del Hijo, y en maestro para una generación a la que le falta padre. Con el estilo directo de sus catequesis, propone aprender de él el arte de custodiar la vida propia y la ajena, la natural y la del Espíritu. Un libro breve para rezar y para revisar la propia paternidad, también la espiritual.",
+  "authorBio": "Fabio Rosini es un sacerdote de la diócesis de Roma, durante años responsable de su pastoral vocacional y muy conocido por sus catequesis sobre los Diez Mandamientos.",
+  "year": 2021,
+  "originalTitle": "San Giuseppe. Accogliere, custodire e nutrire",
+  "language": "italiano",
+  "pages": 150,
+  "tags": [
+   "san josé",
+   "paternidad",
+   "espiritualidad",
+   "custodia",
+   "virgen maría",
+   "discernimiento"
+  ],
+  "isbn": "9788432163401",
+  "confidence": "high"
+ },
+ {
+  "id": "el-hermano-de-asis",
+  "summary": "Biografía espiritual de san Francisco de Asís en la que un capuchino busca la vida profunda del santo, no la estampa. Larrañaga recorre su juventud, la conversión, la fraternidad, a Clara —la «dama de luz»— y los últimos días, cuando Francisco pide que lo dejen sobre la tierra, desnudo, cantando el cántico del hermano sol. Escrita en prosa poética con motivo del octavo centenario de su nacimiento, es una invitación a vivir el Evangelio con alegría, pobreza y paz. Un clásico de la espiritualidad franciscana en español.",
+  "authorBio": "Ignacio Larrañaga (1928–2013) fue un sacerdote capuchino español, fundador de los Talleres de Oración y Vida y autor de numerosos libros de espiritualidad.",
+  "year": 1980,
+  "language": "español",
+  "pages": 432,
+  "tags": [
+   "san francisco de asís",
+   "biografía",
+   "franciscanismo",
+   "espiritualidad",
+   "pobreza",
+   "santa clara"
+  ],
+  "isbn": "9788428517287",
+  "confidence": "high"
+ },
+ {
+  "id": "la-escuela-del-alma-de-la-forma-de-educar-a-la-manera-de-viv",
+  "summary": "Esquirol propone un itinerario que va de la forma de educar a la manera de vivir. Palabras como lugar, enseñanza, compañía, atención, cuidado y contemplación van mostrando que educar no es adaptar a las personas a lo que hay, sino ayudarlas a hacerse cargo del mundo y de los demás. Cada ser humano aparece como un origen, y el encuentro, como un alma que toca otra alma. En la línea de su filosofía de la proximidad, el ensayo defiende lo que llama la orden filosófica del amor: una vida madura, fecunda y espiritual.",
+  "authorBio": "Josep Maria Esquirol es un filósofo catalán, catedrático en la Universidad de Barcelona, Premio Nacional de Ensayo en 2016 por «La resistencia íntima».",
+  "year": 2024,
+  "language": "español",
+  "pages": 192,
+  "tags": [
+   "filosofía",
+   "educación",
+   "cuidado",
+   "alma",
+   "proximidad",
+   "ensayo"
+  ],
+  "isbn": "9788419036902",
+  "confidence": "high"
+ },
+ {
+  "id": "el-portico-del-misterio-de-la-segunda-virtud",
+  "summary": "Poema de la esperanza, la segunda virtud teologal, escrito por Péguy en uno de los momentos más oscuros de su vida. Quien habla es a menudo Dios, y la esperanza se presenta como una niña pequeña que camina entre sus dos hermanas mayores, la fe y la caridad. Con un verso libre que insiste y vuelve sobre las mismas imágenes, el poeta convierte la angustia en ternura y canta la confianza de quien espera contra toda evidencia. Una de las cimas de la poesía religiosa del siglo XX.",
+  "authorBio": "Charles Péguy (1873–1914) fue un poeta y ensayista francés, fundador de los Cahiers de la Quinzaine. Murió en el frente al comienzo de la Primera Guerra Mundial.",
+  "year": 1911,
+  "originalTitle": "Le porche du mystère de la deuxième vertu",
+  "language": "francés",
+  "pages": 190,
+  "tags": [
+   "poesía",
+   "esperanza",
+   "fe",
+   "péguy",
+   "literatura francesa",
+   "oración"
+  ],
+  "isbn": "9788413391434",
+  "confidence": "high"
+ },
+ {
+  "id": "la-ultima-del-cadalso",
+  "summary": "En el Carmelo de Compiègne, durante el Terror, la novicia Blanca de la Force se siente incapaz del valor de sus hermanas, que se preparan para el martirio. Su fragilidad, lejos de quedar al margen, es el lugar por donde pasa la gracia en un desenlace inesperado. Gertrud von le Fort escribió esta novela breve en 1931; de ella nacieron los Diálogos de carmelitas de Bernanos y la ópera de Poulenc. Una obra maestra en miniatura sobre el miedo, la entrega y la comunión de los santos.",
+  "authorBio": "Gertrud von le Fort (1876–1971) fue una novelista y poeta alemana convertida al catolicismo, autora también de «La mujer eterna» y de los «Himnos a la Iglesia».",
+  "year": 1931,
+  "originalTitle": "Die Letzte am Schafott",
+  "language": "alemán",
+  "pages": 104,
+  "tags": [
+   "novela",
+   "carmelitas",
+   "revolución francesa",
+   "martirio",
+   "miedo",
+   "gracia"
+  ],
+  "isbn": "9788474909777",
+  "confidence": "high"
  }
 ]

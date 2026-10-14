@@ -3715,5 +3715,50 @@
   "theme": "Poesía",
   "shelf": 413,
   "note": ""
+ },
+ {
+  "id": "san-jose-acoger-proteger-y-alimentar",
+  "title": "San José. Acoger, proteger y alimentar",
+  "author": "Fabio Rosini",
+  "sortKey": "Rosini",
+  "theme": "Fe y espiritualidad",
+  "shelf": 414,
+  "note": "Rialp, colección Patmos (Libros de espiritualidad), 2.ª edición"
+ },
+ {
+  "id": "el-hermano-de-asis",
+  "title": "El hermano de Asís",
+  "author": "Ignacio Larrañaga",
+  "sortKey": "Larrañaga",
+  "theme": "Fe y espiritualidad",
+  "shelf": 415,
+  "note": "San Pablo, colección Testigos"
+ },
+ {
+  "id": "la-escuela-del-alma-de-la-forma-de-educar-a-la-manera-de-viv",
+  "title": "La escuela del alma. De la forma de educar a la manera de vivir",
+  "author": "Josep Maria Esquirol",
+  "sortKey": "Esquirol",
+  "theme": "Filosofía",
+  "shelf": 416,
+  "note": "Acantilado, 4.ª edición"
+ },
+ {
+  "id": "el-portico-del-misterio-de-la-segunda-virtud",
+  "title": "El pórtico del misterio de la segunda virtud",
+  "author": "Charles Péguy",
+  "sortKey": "Péguy",
+  "theme": "Poesía",
+  "shelf": 417,
+  "note": "Ediciones Encuentro, colección Literaria"
+ },
+ {
+  "id": "la-ultima-del-cadalso",
+  "title": "La última del cadalso",
+  "author": "Gertrud von le Fort",
+  "sortKey": "Le Fort",
+  "theme": "Narrativa",
+  "shelf": 418,
+  "note": "Ediciones Encuentro, colección Literatura"
  }
 ]
