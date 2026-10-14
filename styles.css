@@ -79,15 +79,15 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 
 /* ——— Barra de herramientas ——— */
 .toolbar {
-  position: sticky; top: 0; z-index: 20; padding: 10px 0 0;
+  position: sticky; top: env(safe-area-inset-top); z-index: 20; padding: 10px 0 0;
   background: color-mix(in srgb, var(--paper) 92%, transparent);
   border-bottom: 1px solid transparent;
-  transition: border-color .2s, padding-top .2s, background .2s, box-shadow .2s;
+  transition: border-color .2s, background .2s, box-shadow .2s;
 }
-/* Al desplazar, fondo de papel sólido: el desenfoque durante el scroll se come el móvil. */
+/* Al desplazar, fondo de papel sólido: el desenfoque durante el scroll se come el móvil.
+   El alto no cambia (el margen del notch va en `top`, no en el padding). */
 .toolbar.stuck {
   border-bottom-color: var(--line); box-shadow: 0 6px 16px -14px rgba(0,0,0,.35);
-  padding-top: calc(10px + env(safe-area-inset-top));
   background: var(--paper);
 }
 .filter-toggle { display: none; }
@@ -289,16 +289,12 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .divider--letter .divider__label { writing-mode: horizontal-tb; transform: none; font: 400 22px/1 var(--serif); letter-spacing: 0; text-transform: none; color: var(--ink); }
 .divider--letter .divider__label:not(:empty) { max-width: 30px; }
 
-.case.case--virt { display: block; padding: 0; }
-.case--virt .slot { position: absolute; left: var(--x); top: calc(var(--ri) * var(--row)); margin: 0; height: var(--row); }
 .case.searching .slot { animation: pop .35s var(--ease) both; }
 @keyframes pop { from { opacity: 0; transform: translateY(8px); } }
 
 /* ——— Rejilla de portadas ——— */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); align-items: start; gap: 30px 22px; }
 @media (max-width: 480px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 12px; } .tile .cover--gen { font-size: 9.5px; } .tile__t { font-size: 13.5px; margin: 7px 0 1px; } }
-.grid--virt { position: relative; display: block; }
-.grid--virt .tile { position: absolute; left: var(--x); top: var(--y); width: var(--tw); }
 .tile { text-align: left; display: block; min-width: 0; }
 .tile__cover { position: relative; aspect-ratio: 2 / 3; display: flex; align-items: flex-end; }
 .tile__cover .cover { width: 100%; height: 100%; border-radius: 3px 6px 6px 3px; box-shadow: var(--shadow); transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
@@ -440,29 +436,6 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   .stage.open .detail__book { position: static; justify-self: center; }
   .stage.open .book3d { width: min(190px, 50vw); }
 }
-/* En el móvil el libro sale en una hoja: la estantería sigue detrás y la portada no se encoge. */
-.stage.sheet .stage__body {
-  top: auto; bottom: 0; left: 0; right: 0; height: min(88dvh, 840px);
-  background: var(--paper); border-radius: 22px 22px 0 0;
-  box-shadow: 0 -24px 60px -20px rgba(20, 14, 8, .45);
-  transform: translateY(105%);
-  transition: transform .42s var(--ease), height .42s var(--ease), border-radius .42s;
-  overflow: hidden;
-}
-.stage.sheet.show .stage__body { transform: none; }
-.stage.sheet.open .stage__body { height: 100dvh; border-radius: 0; }
-.stage.sheet.dragging .stage__body { transition: none; }
-.stage.sheet .stage__backdrop,
-.stage.sheet.show:not(.dragging):not(.flying) .stage__backdrop {
-  background: color-mix(in srgb, var(--ink) 42%, transparent);
-  backdrop-filter: none; -webkit-backdrop-filter: none;
-}
-.stage.sheet .book3d { width: min(260px, 68vw); }
-.stage.sheet.open .book3d { width: min(280px, 74vw); }
-.stage.sheet:not(.open) .detail { min-height: auto; align-content: start; padding: 32px 20px calc(24px + env(safe-area-inset-bottom)); }
-.stage.sheet.open .detail { padding: 52px 20px calc(28px + env(safe-area-inset-bottom)); gap: 16px; }
-.stage.sheet .grabber { display: block; }
-.stage.sheet .stage__scroll { border-radius: inherit; }
 
 .theme-pill { display: inline-flex; align-items: center; gap: 8px; font: 600 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
 .theme-pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
@@ -557,19 +530,6 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
     padding: 2px max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));
   }
   #meta .stats { font-size: 12.5px; line-height: 1.35; }
-  .controls-slot {
-    display: grid; grid-template-rows: 1fr; width: 100%; min-height: 0;
-    transition: grid-template-rows .28s var(--ease), opacity .2s;
-  }
-  .controls-slot > .controls { min-height: 0; overflow: hidden; }
-  .chipfold {
-    display: grid; grid-template-rows: 1fr; min-height: 0;
-    transition: grid-template-rows .28s var(--ease), opacity .2s;
-  }
-  .chipfold__in { min-height: 0; overflow: hidden; }
-  .toolbar.condensed .controls-slot {
-    grid-template-rows: 0fr; opacity: 0; pointer-events: none;
-  }
   .chipfold { display: none; }
   .chip.filter-toggle { display: inline-flex; height: 44px; max-width: 46%; }
   .chip.filter-toggle span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -657,34 +617,6 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
 .access__when-on { display: none; }
 .access.connected .access__when-on { display: block; }
 .access.connected .access__when-off { display: none; }
-
-/* Hueco mientras llegan los datos: unas baldas o unas portadas, según la vista. */
-.skel-shelf, .skel-grid { display: none; }
-html[data-pending="shelf"] .skel-shelf { display: flex; }
-html[data-pending="grid"] .skel-grid { display: grid; }
-.skel-shelf {
-  align-items: flex-end; gap: 6px; height: var(--row); margin: 0 0 18px; padding: 0 16px 0;
-  border-radius: 8px;
-  background:
-    linear-gradient(to bottom,
-      transparent calc(var(--row) - var(--board)),
-      var(--wood-top) calc(var(--row) - var(--board)) calc(var(--row) - var(--board) + 3px),
-      var(--wood) calc(var(--row) - var(--board) + 3px) calc(var(--row) - 3px),
-      var(--wood-edge) calc(var(--row) - 3px) var(--row));
-  box-shadow: inset 0 0 0 1px var(--line);
-}
-.skel-shelf i {
-  display: block; width: 28px; border-radius: 3px 3px 1px 1px; height: 168px;
-  background: color-mix(in srgb, var(--ink) 16%, var(--wood-top));
-}
-.skel-shelf i:nth-child(3n) { height: 148px; width: 36px; }
-.skel-shelf i:nth-child(4n) { height: 186px; width: 22px; }
-.skel-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 22px 16px; }
-.skel-grid i {
-  display: block; aspect-ratio: 2 / 3; border-radius: 3px 6px 6px 3px;
-  background: color-mix(in srgb, var(--ink) 8%, var(--paper-2)); box-shadow: var(--shadow);
-}
-@media (max-width: 480px) { .skel-grid { grid-template-columns: repeat(3, 1fr); gap: 16px 12px; } }
 
 /* Hoja de temas en el móvil. */
 .filters {

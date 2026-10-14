@@ -25,13 +25,6 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Biblioteca">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <script>
-    try {
-      var savedView = localStorage.getItem("bib.view");
-      var phone = matchMedia("(max-width: 560px)").matches;
-      document.documentElement.setAttribute("data-pending", (savedView === "shelf" || savedView === "grid") ? savedView : (phone ? "grid" : "shelf"));
-    } catch (e) { document.documentElement.setAttribute("data-pending", "shelf"); }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -94,13 +87,7 @@
   </div>
 
   <div class="wrap"><div class="results" id="results" role="status" aria-live="polite" hidden></div></div>
-  <main class="wrap" id="library" aria-busy="true">
-    <div class="skel" id="skel">
-      <div class="skel-shelf" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="skel-shelf" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="skel-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    </div>
-  </main>
+  <main class="wrap" id="library"></main>
 
   <button class="to-top" id="toTop" type="button" aria-label="Volver arriba">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
@@ -187,7 +174,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script defer src="data/books.js"></script>
-  <script defer src="app.js"></script>
+  <script src="data/books.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -356,8 +356,8 @@
 
   // ——— Pintado ———
   const lib = $("#library");
-  function spineHTML(b, extra = "", geom = "") {
-    return `<div class="slot" ${geom}><button class="spine${extra}" data-id="${b.id}" data-band="${b.band}"
+  function spineHTML(b, extra = "") {
+    return `<div class="slot"><button class="spine${extra}" data-id="${b.id}" data-band="${b.band}"
       style="--c:${b.color};--t:${b.text};--w:${b.w}px;--h:${b.h}px"
       aria-label="${esc(b.title)}, de ${esc(b.author)}" title="${esc(b.title)} — ${esc(b.author)}">
       <span class="spine__title">${esc(b.spineTitle)}</span>
@@ -437,132 +437,12 @@
       if (res) { lab.style.fontSize = res.fs + "px"; lab.innerHTML = res.lines.map(esc).join("<br>"); }
     });
   }
-  if (document.fonts?.ready) document.fonts.ready.then(() => { widthCache.clear(); paintWindow(true); });
+  if (document.fonts?.ready) document.fonts.ready.then(() => { widthCache.clear(); fitSpines(); });
 
-  function tileHTML(b, geom = "") {
-    return `<button class="tile" data-id="${b.id}" style="${geom}" aria-label="${esc(b.title)}, de ${esc(b.author)}">
+  function tileHTML(b) {
+    return `<button class="tile" data-id="${b.id}" aria-label="${esc(b.title)}, de ${esc(b.author)}">
       <div class="tile__cover">${coverHTML(b, false, "thumb")}${readDotsHTML(b)}</div>
       <p class="tile__t">${esc(b.title)}</p><p class="tile__a">${esc(b.author)}</p></button>`;
-  }
-
-  // La estantería y la rejilla solo montan las filas cercanas a la pantalla.
-  let shelfModel = null, gridModel = null;
-  const rowPx = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--row")) || 236;
-  function packShelf(groups, innerW) {
-    const short = state.sort === "author" || state.sort === "title";
-    const rows = [];
-    let row = [], x = 0, first = true;
-    const place = (entry, w, ml, mr) => {
-      let lead = ml;
-      if ((first || x === 0) && entry.kind === "div") lead = 2;
-      if (x > 0 && x + lead + w > innerW + .5) {
-        rows.push(row); row = []; x = 0;
-        if (entry.kind === "div") lead = 2;
-      }
-      row.push({ ...entry, x: x + lead, w });
-      x += lead + w + mr;
-      first = false;
-    };
-    for (const g of groups) {
-      place({ kind: "div", g, short }, 34, 10, 8);
-      for (const b of g.items) place({ kind: "book", b }, b.w, 0, 2);
-    }
-    if (row.length) rows.push(row);
-    return rows;
-  }
-  function dividerHTML(slot, ri) {
-    const g = slot.g;
-    const c = state.sort === "theme" ? THEME_COLOR[g.label] : null;
-    return `<div class="slot slot--divider" style="--x:${slot.left}px;--ri:${ri}"><div class="divider${slot.short ? " divider--letter" : ""}" ${c ? `style="--c:${c}"` : ""} role="heading" aria-level="2">
-      <span class="divider__label">${esc(g.label)}</span><span class="divider__count">${g.items.length}</span></div></div>`;
-  }
-  function paintWindow(force = false) {
-    const caseEl = $("#case");
-    if (!caseEl || !shelfModel || state.view !== "shelf") return;
-    const { rows, inset, rowH } = shelfModel;
-    const rect = caseEl.getBoundingClientRect();
-    const i0 = Math.max(0, Math.floor((-rect.top - rowH * 2) / rowH));
-    const i1 = Math.min(rows.length, Math.ceil((-rect.top + innerHeight + rowH * 2) / rowH));
-    const key = `${i0}:${i1}:${rows.length}:${inset}`;
-    if (!force && caseEl.dataset.win === key) return;
-    caseEl.dataset.win = key;
-    const html = [];
-    for (let i = i0; i < i1; i++) {
-      for (const slot of rows[i]) {
-        if (slot.kind === "div") html.push(dividerHTML({ ...slot, left: inset + slot.x }, i));
-        else html.push(spineHTML(slot.b, "", `style="--x:${inset + slot.x}px;--ri:${i}"`));
-      }
-    }
-    caseEl.innerHTML = html.join("");
-    fitSpines(caseEl);
-    if (spineObserver) { spineObserver.disconnect(); $$(".spine", caseEl).forEach((el) => spineObserver.observe(el)); }
-    if (current) $(`.spine[data-id="${current.id}"]`, caseEl)?.classList.add("is-out");
-  }
-  function gridSpec(width) {
-    const narrow = matchMedia("(max-width: 480px)").matches;
-    const gapX = narrow ? 12 : 22, gapY = narrow ? 16 : 30;
-    const cols = narrow ? 3 : Math.max(2, Math.floor((width + gapX) / (140 + gapX)));
-    const colW = (width - gapX * (cols - 1)) / cols;
-    const tileH = Math.round(colW * 1.5 + (narrow ? 88 : 84));
-    return { cols, gapX, gapY, colW, tileH, stride: tileH + gapY };
-  }
-  function paintGrids() {
-    if (!gridModel || state.view !== "grid") return;
-    const { groups, spec } = gridModel;
-    $$(".grid--virt", lib).forEach((g) => {
-      const rect = g.getBoundingClientRect();
-      const items = groups[+g.dataset.gi].items;
-      if (rect.bottom < -500 || rect.top > innerHeight + 500) {
-        if (g.childElementCount) { g.innerHTML = ""; g.dataset.win = ""; }
-        return;
-      }
-      const i0 = Math.max(0, Math.floor((-rect.top - 240) / spec.stride) * spec.cols);
-      const i1 = Math.min(items.length, Math.ceil((-rect.top + innerHeight + 240) / spec.stride) * spec.cols);
-      const key = `${i0}:${i1}:${spec.cols}`;
-      if (g.dataset.win === key) return;
-      g.dataset.win = key;
-      g.innerHTML = items.slice(i0, i1).map((b, k) => {
-        const i = i0 + k, col = i % spec.cols, row = Math.floor(i / spec.cols);
-        return tileHTML(b, `--x:${col * (spec.colW + spec.gapX)}px;--y:${row * spec.stride}px;--tw:${spec.colW}px`);
-      }).join("");
-    });
-  }
-  function layoutGrids() {
-    const grids = $$(".grid--virt", lib);
-    if (!grids.length || !gridModel) return;
-    const spec = gridSpec(grids[0].clientWidth || lib.clientWidth);
-    gridModel.spec = spec;
-    grids.forEach((g) => {
-      const n = gridModel.groups[+g.dataset.gi].items.length;
-      const rows = Math.ceil(n / spec.cols) || 0;
-      g.style.height = (rows ? rows * spec.stride - spec.gapY : 0) + "px";
-      g.dataset.win = "";
-    });
-    paintGrids();
-  }
-  async function reveal(id) {
-    let y = null;
-    if (state.view === "shelf" && shelfModel) {
-      const { rows, rowH } = shelfModel;
-      for (let i = 0; i < rows.length; i++) {
-        if (rows[i].some((s) => s.b?.id === id)) {
-          y = $("#case").getBoundingClientRect().top + scrollY + i * rowH - 100;
-          break;
-        }
-      }
-    } else if (gridModel?.spec) {
-      for (let gi = 0; gi < gridModel.groups.length; gi++) {
-        const idx = gridModel.groups[gi].items.findIndex((b) => b.id === id);
-        if (idx < 0) continue;
-        const grid = $(`.grid--virt[data-gi="${gi}"]`);
-        y = grid.getBoundingClientRect().top + scrollY + Math.floor(idx / gridModel.spec.cols) * gridModel.spec.stride - 100;
-        break;
-      }
-    }
-    if (y != null) window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion ? "auto" : "smooth" });
-    await wait(reduceMotion ? 20 : 420);
-    if (state.view === "shelf") paintWindow(true); else paintGrids();
-    return $(`[data-id="${CSS.escape(id)}"]`, lib);
   }
 
   function render() {
@@ -570,10 +450,7 @@
     const groups = groupsFor(list);
     state.list = groups.flatMap((g) => g.items);
     renderStatus(list.length);
-    document.documentElement.removeAttribute("data-pending");
-    lib.removeAttribute("aria-busy");
     if (!list.length) {
-      shelfModel = null; gridModel = null;
       const bits = [];
       if (state.q) bits.push(`«${esc(state.q)}»`);
       if (state.theme) bits.push(esc(state.theme));
@@ -588,26 +465,21 @@
     }
     const count = (n) => `${n} ${n === 1 ? "libro" : "libros"}`;
     if (state.view === "grid") {
-      shelfModel = null;
-      gridModel = { groups, spec: null };
-      lib.innerHTML = groups.map((g, i) => `<section class="group" data-gi="${i}" aria-label="${esc(g.label)}">
+      lib.innerHTML = groups.map((g) => `<section class="group" aria-label="${esc(g.label)}">
         <header class="group__head"><h2>${esc(g.label)}</h2><span>${count(g.items.length)}</span></header>
-        <div class="grid grid--virt" data-gi="${i}"></div></section>`).join("");
-      layoutGrids();
+        <div class="grid">${g.items.map(tileHTML).join("")}</div></section>`).join("");
       return;
     }
-    gridModel = null;
-    // Estantería continua: el mueble (las baldas) ocupa todo el alto; los lomos se montan por filas.
-    const narrow = matchMedia("(max-width: 560px)").matches;
-    const inset = narrow ? 14 : 18;
-    lib.innerHTML = `<div class="case case--virt${state.q ? " searching" : ""}" id="case"></div>`;
-    const caseEl = $("#case");
-    const innerW = Math.max(160, caseEl.clientWidth - inset * 2);
-    const rows = packShelf(groups, innerW);
-    const rowH = rowPx();
-    shelfModel = { rows, inset, rowH };
-    caseEl.style.height = rows.length * rowH + "px";
-    paintWindow(true);
+    // Estantería continua, como en casa: cada grupo empieza con un separador.
+    const short = state.sort === "author" || state.sort === "title";
+    lib.innerHTML = `<div class="case${state.q ? " searching" : ""}">${groups.map((g) => {
+      const c = state.sort === "theme" ? THEME_COLOR[g.label] : null;
+      const divider = `<div class="slot slot--divider"><div class="divider${short ? " divider--letter" : ""}" ${c ? `style="--c:${c}"` : ""} role="heading" aria-level="2">
+        <span class="divider__label">${esc(g.label)}</span><span class="divider__count">${g.items.length}</span></div></div>`;
+      return divider + g.items.map((b) => spineHTML(b)).join("");
+    }).join("")}</div>`;
+    fitSpines();
+    if (spineObserver) { spineObserver.disconnect(); $$(".spine", lib).forEach((el) => spineObserver.observe(el)); }
   }
 
   // Resumen de la búsqueda o el filtro activo, con un atajo para quitarlos.
@@ -684,12 +556,7 @@
     chipsEl.classList.toggle("at-end", chipsEl.scrollLeft + chipsEl.clientWidth > chipsEl.scrollWidth - 4);
   };
   chipsEl.addEventListener("scroll", syncChipFade, { passive: true });
-  let resizeT;
-  addEventListener("resize", () => {
-    syncChipFade();
-    clearTimeout(resizeT);
-    resizeT = setTimeout(() => { if ($("#case") || $(".grid--virt")) render(); }, 140);
-  });
+  addEventListener("resize", syncChipFade);
   requestAnimationFrame(syncChipFade);
 
   // ——— Controles ———
@@ -742,11 +609,9 @@
   new IntersectionObserver(([e]) => $("#toolbar").classList.toggle("stuck", !e.isIntersecting), { rootMargin: "-1px 0px 0px 0px" })
     .observe($(".masthead"));
 
-  // En el móvil, al bajar se esconden orden, vista y temas (altura real, no solo opacidad).
-  // «Filtros» los vuelve a abrir hasta el siguiente gesto hacia abajo.
+  // La barra no cambia de alto al desplazarse: en iOS eso ancla mal el scroll y salta arriba.
   const toolbar = $("#toolbar"), toTop = $("#toTop");
   const narrowQ = matchMedia("(max-width: 560px)");
-  let filtersPinned = false;
   function placeChrome() {
     const meta = $("#meta"), random = $("#random"), inner = $(".toolbar__inner");
     if (narrowQ.matches) {
@@ -779,12 +644,7 @@
   }
   placeChrome();
   narrowQ.addEventListener("change", placeChrome);
-  $("#filterToggle").addEventListener("click", () => {
-    if (narrowQ.matches) { openFilters(); return; }
-    filtersPinned = true;
-    toolbar.classList.remove("condensed");
-    $("#filterToggle").setAttribute("aria-expanded", "true");
-  });
+  $("#filterToggle").addEventListener("click", () => { if (narrowQ.matches) openFilters(); });
   $("#filters").addEventListener("click", (e) => {
     if (e.target === $("#filters") || e.target.closest("[data-close-filters]")) closeFilters();
   });
@@ -792,27 +652,12 @@
     $("#controlsSlot").appendChild($(".controls"));
     $("#filterToggle")?.setAttribute("aria-expanded", "false");
   });
-  let lastY = scrollY, ticking = false, condenseLock = 0;
+  let ticking = false;
   addEventListener("scroll", () => {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
-      const y = scrollY, dy = y - lastY;
-      if (state.view === "shelf") paintWindow(); else paintGrids();
-      // Encoger la barra cambia su altura y el scroll rebota unos píxeles: no lo tomes por un gesto.
-      if (performance.now() < condenseLock) { lastY = y; toTop.classList.toggle("show", y > innerHeight * 1.5); ticking = false; return; }
-      const past = y > libraryTop() + 40;
-      const was = toolbar.classList.contains("condensed");
-      if (!past || dy < -28) {
-        toolbar.classList.remove("condensed");
-        if (dy < -28) filtersPinned = false;
-      } else if (dy > 8 && !filtersPinned && document.activeElement !== qInput) {
-        toolbar.classList.add("condensed");
-        $("#filterToggle").setAttribute("aria-expanded", "false");
-      }
-      if (toolbar.classList.contains("condensed") !== was) condenseLock = performance.now() + 480;
-      if (Math.abs(dy) > 4) lastY = y;
-      toTop.classList.toggle("show", y > innerHeight * 1.5);
+      toTop.classList.toggle("show", scrollY > innerHeight * 1.5);
       ticking = false;
     });
   }, { passive: true });
@@ -823,7 +668,11 @@
     const list = state.list.length ? state.list : BOOKS;
     const b = list[Math.floor(Math.random() * list.length)];
     preload(b);
-    const el = await reveal(b.id);
+    const el = $(`.spine[data-id="${b.id}"], .tile[data-id="${b.id}"]`);
+    if (el) {
+      el.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
+      await wait(reduceMotion ? 0 : 550);
+    }
     openBook(b.id, el);
   });
 
@@ -840,11 +689,6 @@
   const scroller = $("#stageScroll");
   const detail = $(".detail");
   const backdrop = $(".stage__backdrop");
-  const stageBody = $(".stage__body");
-  const sheetQ = matchMedia("(max-width: 760px)");
-  const syncSheet = () => stage.classList.toggle("sheet", sheetQ.matches);
-  syncSheet();
-  sheetQ.addEventListener("change", syncSheet);
   let current = null;   // libro abierto
   let source = null;    // elemento de la estantería desde el que salió
 
@@ -1030,17 +874,14 @@
     current = b;
     if (!wasOpen) source = el || null;
     fillStage(b);
-    syncSheet();
-    const sheet = stage.classList.contains("sheet");
-    stage.classList.toggle("flying", !sheet && !wasOpen && !!el?.classList.contains("spine"));
+    stage.classList.toggle("flying", !wasOpen && !!el?.classList.contains("spine"));
     stage.hidden = false;
     stage.classList.toggle("open", card);
     document.body.classList.add("locked");
-    if (sheet) stageBody.style.transform = "";
     frame().then(() => stage.classList.add("show"));
     if (push) setHash(b.id, wasOpen ? "replace" : "push");
 
-    if (!wasOpen && el && !sheet) {
+    if (!wasOpen && el) {
       const isSpine = el.classList.contains("spine");
       inner.style.visibility = "hidden";
       await preloadSoon(b);
@@ -1075,7 +916,6 @@
   function finishClose(target, push) {
     $$(".spine.is-out").forEach((s) => s.classList.remove("is-out"));
     stage.hidden = true; stage.classList.remove("open", "dragging", "flying");
-    stageBody.style.transform = "";
     inner.style.visibility = "";
     detail.style.transform = ""; detail.style.opacity = ""; backdrop.style.opacity = "";
     document.body.classList.remove("locked");
@@ -1094,19 +934,6 @@
     closing = true;
     const b = current;
     const target = (source && source.isConnected ? source : null) || (b && $(`.spine[data-id="${b.id}"], .tile[data-id="${b.id}"]`));
-    if (stage.classList.contains("sheet")) {
-      const dragged = stageBody.style.transform;
-      stage.classList.remove("dragging");
-      detail.style.transform = ""; detail.style.opacity = "";
-      if (dragged) {
-        await frame();
-        stageBody.style.transform = "translateY(105%)";
-      }
-      stage.classList.remove("show");
-      if (!dragged) stageBody.style.transform = "";
-      await wait(reduceMotion ? 0 : 440);
-      return finishClose(target, push);
-    }
     const canFly = b && target && inView(target) && inView($("#book3d")) && !reduceMotion;
     detail.style.opacity = "";
     stage.classList.remove("show");
@@ -1282,7 +1109,6 @@
   let g = null;
   function settle() {
     stage.classList.remove("dragging");
-    if (stage.classList.contains("sheet")) stageBody.style.transform = "";
     const anim = detail.animate([
       { transform: detail.style.transform || "none", opacity: detail.style.opacity || 1 },
       { transform: "none", opacity: 1 },
@@ -1319,17 +1145,12 @@
     if (g.mode === "native") return;
     e.preventDefault();
     g.dx = dx; g.dy = dy;
-    const sheet = stage.classList.contains("sheet");
     if (g.mode === "up") {
       // Resistencia elástica: el libro sube un poco, invitando a soltar.
       const y = Math.min(0, dy);
       const eased = -Math.pow(-y, .8);
       detail.style.transform = `translateY(${eased}px)`;
       inner.style.transform = `rotateY(${-14 + Math.min(10, -y / 12)}deg) scale(${1 + Math.min(.06, -y / 2500)})`;
-    } else if (sheet && (g.mode === "down" || g.mode === "edge")) {
-      const y = Math.max(0, g.mode === "edge" ? dx : dy);
-      stageBody.style.transform = `translateY(${y}px)`;
-      backdrop.style.opacity = String(Math.max(.15, 1 - y / 480));
     } else if (g.mode === "down") {
       const y = Math.max(0, dy);
       detail.style.transform = `translateY(${y}px) scale(${1 - Math.min(y, 600) / 2000})`;
