@@ -517,7 +517,11 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
     font-size: clamp(16px, 5.05vw, 22px); white-space: nowrap; letter-spacing: -.036em; line-height: 1.12;
   }
   .case { padding: 10px 10px 0; }
-  .search { flex: 1 1 0; min-width: 0; height: 44px; }
+  .search { flex: 1 1 100%; min-width: 0; height: 44px; order: 1; }
+  .controls { width: auto; flex: none; order: 2; }
+  .seg--icons button { width: 44px; height: 44px; padding: 0; }
+  #filterToggle { order: 3; }
+  #random { order: 4; }
   .random {
     width: 44px; height: 44px; padding: 0; border-radius: 14px; justify-content: center; flex: none;
   }
@@ -531,7 +535,7 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
   }
   #meta .stats { font-size: 12.5px; line-height: 1.35; }
   .chipfold { display: none; }
-  .chip.filter-toggle { display: inline-flex; height: 44px; max-width: 46%; }
+  .chip.filter-toggle { display: inline-flex; height: 44px; max-width: 46%; order: 3; }
   .chip.filter-toggle span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .chip { height: 44px; }
 }
@@ -648,5 +652,5 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
 @media (max-width: 560px) {
   .filters { height: auto; }
   .filters .seg:not(.seg--icons) { flex: 1; }
-  .filters .seg:not(.seg--icons) button { flex: 1; }
+  .filters .seg:not(.seg--icons) button { flex: 1; height: 44px; }
 }

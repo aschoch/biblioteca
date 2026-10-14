@@ -530,7 +530,7 @@
   function syncFilterLabel() {
     const btn = $("#filterToggle");
     if (!btn) return;
-    const text = state.theme ? themeLabel(state.theme) : state.read ? READ_FILTERS.find(([k]) => k === state.read)[1] : "Temas";
+    const text = state.theme ? themeLabel(state.theme) : state.read ? READ_FILTERS.find(([k]) => k === state.read)[1] : "Filtros";
     $("#filterToggleLabel").textContent = text;
     btn.classList.toggle("is-on", !!(state.theme || state.read));
     btn.style.setProperty("--c", state.theme ? (THEME_COLOR[state.theme] || "var(--muted)") : "transparent");
@@ -614,23 +614,36 @@
   };
   syncStuck();
   const narrowQ = matchMedia("(max-width: 560px)");
+  // En el móvil el orden vive en la hoja: la barra no lo repite y no cambia de alto al desplazarse.
+  function restoreControls() {
+    const controls = $(".controls");
+    if (narrowQ.matches) {
+      $("#filtersSort").appendChild($("#sort"));
+      controls.appendChild($("#view"));
+    } else {
+      controls.appendChild($("#sort"));
+      controls.appendChild($("#view"));
+      $(".chipfold__in").appendChild($("#chips"));
+    }
+    $("#controlsSlot").appendChild(controls);
+  }
   function placeChrome() {
     const meta = $("#meta"), random = $("#random"), inner = $(".toolbar__inner");
     if (narrowQ.matches) {
       inner.insertBefore(random, $("#controlsSlot"));
       toolbar.insertBefore(meta, $("#chipFold"));
       $("#filtersChips").appendChild($("#chips"));
+      restoreControls();
     } else {
       meta.appendChild(random);
       $(".masthead .wrap").appendChild(meta);
-      $(".chipfold__in").appendChild($("#chips"));
-      $("#controlsSlot").appendChild($(".controls"));
+      restoreControls();
       closeFilters();
     }
   }
   function openFilters() {
     $("#filtersChips").appendChild($("#chips"));
-    $("#filtersSort").appendChild($(".controls"));
+    $("#filtersSort").appendChild($("#sort"));
     const dlg = $("#filters");
     if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
     $("#filterToggle").setAttribute("aria-expanded", "true");
@@ -638,8 +651,7 @@
   function closeFilters() {
     const dlg = $("#filters");
     if (!dlg) return;
-    $("#controlsSlot").appendChild($(".controls"));
-    if (!narrowQ.matches) $(".chipfold__in").appendChild($("#chips"));
+    restoreControls();
     if (dlg.open && dlg.close) dlg.close();
     else dlg.removeAttribute("open");
     $("#filterToggle")?.setAttribute("aria-expanded", "false");
@@ -651,7 +663,7 @@
     if (e.target === $("#filters") || e.target.closest("[data-close-filters]")) closeFilters();
   });
   $("#filters").addEventListener("close", () => {
-    $("#controlsSlot").appendChild($(".controls"));
+    restoreControls();
     $("#filterToggle")?.setAttribute("aria-expanded", "false");
   });
   let ticking = false;
