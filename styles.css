@@ -575,6 +575,12 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
 @media (hover: hover) { .rflag:hover { color: var(--ink); border-color: color-mix(in srgb, var(--rc) 45%, transparent); } }
 .rflags--lg .rflag { height: 38px; font-size: 14.5px; padding-right: 15px; }
 .rflags--lg .rflag__dot { width: 26px; height: 26px; }
+@media (hover: none) {
+  .rflag, .rflags--lg .rflag { height: 44px; }
+  .tag { min-height: 44px; display: inline-flex; align-items: center; }
+  .info__author button { position: relative; }
+  .info__author button::after { content: ""; position: absolute; inset: -12px -8px; }
+}
 
 /* Puntos discretos de «leído» en lomos y portadas */
 .rdots { position: absolute; z-index: 2; display: flex; gap: 3px; pointer-events: none; }
