@@ -12,6 +12,8 @@
   ];
   const THEME_COLOR = Object.fromEntries(THEMES);
   const THEME_ORDER = Object.fromEntries(THEMES.map(([t], i) => [t, i]));
+  const THEME_SHORT = { "Clásicos grecolatinos": "Clásicos", "Historia y actualidad": "Historia" };
+  const themeLabel = (t) => THEME_SHORT[t] || t;
 
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -48,7 +50,11 @@
   const state = {
     q: "",
     sort: store.get("bib.sort", "theme"),
-    view: store.get("bib.view", "shelf"),
+    view: (() => {
+      const saved = store.get("bib.view", "");
+      if (saved === "shelf" || saved === "grid") return saved;
+      return matchMedia("(max-width: 560px)").matches ? "grid" : "shelf";
+    })(),
     theme: null,
     read: "",   // filtro de lecturas: "", "bea", "alfredo", "both", "none", "!bea", "!alfredo"
     list: [],
@@ -350,8 +356,8 @@
 
   // ——— Pintado ———
   const lib = $("#library");
-  function spineHTML(b, extra = "") {
-    return `<div class="slot"><button class="spine${extra}" data-id="${b.id}" data-band="${b.band}"
+  function spineHTML(b, extra = "", geom = "") {
+    return `<div class="slot" ${geom}><button class="spine${extra}" data-id="${b.id}" data-band="${b.band}"
       style="--c:${b.color};--t:${b.text};--w:${b.w}px;--h:${b.h}px"
       aria-label="${esc(b.title)}, de ${esc(b.author)}" title="${esc(b.title)} — ${esc(b.author)}">
       <span class="spine__title">${esc(b.spineTitle)}</span>
@@ -431,12 +437,132 @@
       if (res) { lab.style.fontSize = res.fs + "px"; lab.innerHTML = res.lines.map(esc).join("<br>"); }
     });
   }
-  if (document.fonts?.ready) document.fonts.ready.then(() => { widthCache.clear(); fitSpines(); });
+  if (document.fonts?.ready) document.fonts.ready.then(() => { widthCache.clear(); paintWindow(true); });
 
-  function tileHTML(b) {
-    return `<button class="tile" data-id="${b.id}" aria-label="${esc(b.title)}, de ${esc(b.author)}">
+  function tileHTML(b, geom = "") {
+    return `<button class="tile" data-id="${b.id}" style="${geom}" aria-label="${esc(b.title)}, de ${esc(b.author)}">
       <div class="tile__cover">${coverHTML(b, false, "thumb")}${readDotsHTML(b)}</div>
       <p class="tile__t">${esc(b.title)}</p><p class="tile__a">${esc(b.author)}</p></button>`;
+  }
+
+  // La estantería y la rejilla solo montan las filas cercanas a la pantalla.
+  let shelfModel = null, gridModel = null;
+  const rowPx = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--row")) || 236;
+  function packShelf(groups, innerW) {
+    const short = state.sort === "author" || state.sort === "title";
+    const rows = [];
+    let row = [], x = 0, first = true;
+    const place = (entry, w, ml, mr) => {
+      let lead = ml;
+      if ((first || x === 0) && entry.kind === "div") lead = 2;
+      if (x > 0 && x + lead + w > innerW + .5) {
+        rows.push(row); row = []; x = 0;
+        if (entry.kind === "div") lead = 2;
+      }
+      row.push({ ...entry, x: x + lead, w });
+      x += lead + w + mr;
+      first = false;
+    };
+    for (const g of groups) {
+      place({ kind: "div", g, short }, 34, 10, 8);
+      for (const b of g.items) place({ kind: "book", b }, b.w, 0, 2);
+    }
+    if (row.length) rows.push(row);
+    return rows;
+  }
+  function dividerHTML(slot, ri) {
+    const g = slot.g;
+    const c = state.sort === "theme" ? THEME_COLOR[g.label] : null;
+    return `<div class="slot slot--divider" style="--x:${slot.left}px;--ri:${ri}"><div class="divider${slot.short ? " divider--letter" : ""}" ${c ? `style="--c:${c}"` : ""} role="heading" aria-level="2">
+      <span class="divider__label">${esc(g.label)}</span><span class="divider__count">${g.items.length}</span></div></div>`;
+  }
+  function paintWindow(force = false) {
+    const caseEl = $("#case");
+    if (!caseEl || !shelfModel || state.view !== "shelf") return;
+    const { rows, inset, rowH } = shelfModel;
+    const rect = caseEl.getBoundingClientRect();
+    const i0 = Math.max(0, Math.floor((-rect.top - rowH * 2) / rowH));
+    const i1 = Math.min(rows.length, Math.ceil((-rect.top + innerHeight + rowH * 2) / rowH));
+    const key = `${i0}:${i1}:${rows.length}:${inset}`;
+    if (!force && caseEl.dataset.win === key) return;
+    caseEl.dataset.win = key;
+    const html = [];
+    for (let i = i0; i < i1; i++) {
+      for (const slot of rows[i]) {
+        if (slot.kind === "div") html.push(dividerHTML({ ...slot, left: inset + slot.x }, i));
+        else html.push(spineHTML(slot.b, "", `style="--x:${inset + slot.x}px;--ri:${i}"`));
+      }
+    }
+    caseEl.innerHTML = html.join("");
+    fitSpines(caseEl);
+    if (spineObserver) { spineObserver.disconnect(); $$(".spine", caseEl).forEach((el) => spineObserver.observe(el)); }
+    if (current) $(`.spine[data-id="${current.id}"]`, caseEl)?.classList.add("is-out");
+  }
+  function gridSpec(width) {
+    const narrow = matchMedia("(max-width: 480px)").matches;
+    const gapX = narrow ? 12 : 22, gapY = narrow ? 16 : 30;
+    const cols = narrow ? 3 : Math.max(2, Math.floor((width + gapX) / (140 + gapX)));
+    const colW = (width - gapX * (cols - 1)) / cols;
+    const tileH = Math.round(colW * 1.5 + (narrow ? 88 : 84));
+    return { cols, gapX, gapY, colW, tileH, stride: tileH + gapY };
+  }
+  function paintGrids() {
+    if (!gridModel || state.view !== "grid") return;
+    const { groups, spec } = gridModel;
+    $$(".grid--virt", lib).forEach((g) => {
+      const rect = g.getBoundingClientRect();
+      const items = groups[+g.dataset.gi].items;
+      if (rect.bottom < -500 || rect.top > innerHeight + 500) {
+        if (g.childElementCount) { g.innerHTML = ""; g.dataset.win = ""; }
+        return;
+      }
+      const i0 = Math.max(0, Math.floor((-rect.top - 240) / spec.stride) * spec.cols);
+      const i1 = Math.min(items.length, Math.ceil((-rect.top + innerHeight + 240) / spec.stride) * spec.cols);
+      const key = `${i0}:${i1}:${spec.cols}`;
+      if (g.dataset.win === key) return;
+      g.dataset.win = key;
+      g.innerHTML = items.slice(i0, i1).map((b, k) => {
+        const i = i0 + k, col = i % spec.cols, row = Math.floor(i / spec.cols);
+        return tileHTML(b, `--x:${col * (spec.colW + spec.gapX)}px;--y:${row * spec.stride}px;--tw:${spec.colW}px`);
+      }).join("");
+    });
+  }
+  function layoutGrids() {
+    const grids = $$(".grid--virt", lib);
+    if (!grids.length || !gridModel) return;
+    const spec = gridSpec(grids[0].clientWidth || lib.clientWidth);
+    gridModel.spec = spec;
+    grids.forEach((g) => {
+      const n = gridModel.groups[+g.dataset.gi].items.length;
+      const rows = Math.ceil(n / spec.cols) || 0;
+      g.style.height = (rows ? rows * spec.stride - spec.gapY : 0) + "px";
+      g.dataset.win = "";
+    });
+    paintGrids();
+  }
+  async function reveal(id) {
+    let y = null;
+    if (state.view === "shelf" && shelfModel) {
+      const { rows, rowH } = shelfModel;
+      for (let i = 0; i < rows.length; i++) {
+        if (rows[i].some((s) => s.b?.id === id)) {
+          y = $("#case").getBoundingClientRect().top + scrollY + i * rowH - 100;
+          break;
+        }
+      }
+    } else if (gridModel?.spec) {
+      for (let gi = 0; gi < gridModel.groups.length; gi++) {
+        const idx = gridModel.groups[gi].items.findIndex((b) => b.id === id);
+        if (idx < 0) continue;
+        const grid = $(`.grid--virt[data-gi="${gi}"]`);
+        y = grid.getBoundingClientRect().top + scrollY + Math.floor(idx / gridModel.spec.cols) * gridModel.spec.stride - 100;
+        break;
+      }
+    }
+    if (y != null) window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion ? "auto" : "smooth" });
+    await wait(reduceMotion ? 20 : 420);
+    if (state.view === "shelf") paintWindow(true); else paintGrids();
+    return $(`[data-id="${CSS.escape(id)}"]`, lib);
   }
 
   function render() {
@@ -444,34 +570,50 @@
     const groups = groupsFor(list);
     state.list = groups.flatMap((g) => g.items);
     renderStatus(list.length);
+    document.documentElement.removeAttribute("data-pending");
+    lib.removeAttribute("aria-busy");
     if (!list.length) {
-      lib.innerHTML = `<div class="empty"><h3>Ningún libro coincide</h3><p>Prueba con otra palabra, un apellido o un tema.</p>
-        <button class="btn btn--ghost" data-reset>Ver todos los libros</button></div>`;
+      shelfModel = null; gridModel = null;
+      const bits = [];
+      if (state.q) bits.push(`«${esc(state.q)}»`);
+      if (state.theme) bits.push(esc(state.theme));
+      if (state.read) {
+        const t = READ_FILTERS.find(([k]) => k === state.read)[1];
+        bits.push(t.toLowerCase());
+      }
+      const tail = bits.length ? ` con ${bits.join(" · ")}` : "";
+      lib.innerHTML = `<div class="empty"><p>Ningún libro coincide${tail}.</p>
+        <button class="btn" data-reset>Ver todos los libros</button></div>`;
       return;
     }
     const count = (n) => `${n} ${n === 1 ? "libro" : "libros"}`;
     if (state.view === "grid") {
-      lib.innerHTML = groups.map((g) => `<section class="group" aria-label="${esc(g.label)}">
+      shelfModel = null;
+      gridModel = { groups, spec: null };
+      lib.innerHTML = groups.map((g, i) => `<section class="group" data-gi="${i}" aria-label="${esc(g.label)}">
         <header class="group__head"><h2>${esc(g.label)}</h2><span>${count(g.items.length)}</span></header>
-        <div class="grid">${g.items.map(tileHTML).join("")}</div></section>`).join("");
+        <div class="grid grid--virt" data-gi="${i}"></div></section>`).join("");
+      layoutGrids();
       return;
     }
-    // Estantería continua, como en casa: cada grupo empieza con un separador.
-    const short = state.sort === "author" || state.sort === "title";
-    lib.innerHTML = `<div class="case${state.q ? " searching" : ""}">${groups.map((g) => {
-      const c = state.sort === "theme" ? THEME_COLOR[g.label] : null;
-      const divider = `<div class="slot slot--divider"><div class="divider${short ? " divider--letter" : ""}" ${c ? `style="--c:${c}"` : ""} role="heading" aria-level="2">
-        <span class="divider__label">${esc(g.label)}</span><span class="divider__count">${g.items.length}</span></div></div>`;
-      return divider + g.items.map((b) => spineHTML(b)).join("");
-    }).join("")}</div>`;
-    fitSpines();
-    if (spineObserver) { spineObserver.disconnect(); $$(".spine", lib).forEach((el) => spineObserver.observe(el)); }
+    gridModel = null;
+    // Estantería continua: el mueble (las baldas) ocupa todo el alto; los lomos se montan por filas.
+    const narrow = matchMedia("(max-width: 560px)").matches;
+    const inset = narrow ? 14 : 18;
+    lib.innerHTML = `<div class="case case--virt${state.q ? " searching" : ""}" id="case"></div>`;
+    const caseEl = $("#case");
+    const innerW = Math.max(160, caseEl.clientWidth - inset * 2);
+    const rows = packShelf(groups, innerW);
+    const rowH = rowPx();
+    shelfModel = { rows, inset, rowH };
+    caseEl.style.height = rows.length * rowH + "px";
+    paintWindow(true);
   }
 
   // Resumen de la búsqueda o el filtro activo, con un atajo para quitarlos.
   function renderStatus(n) {
     const el = $("#results");
-    if (!state.q && !state.theme && !state.read) { el.hidden = true; el.innerHTML = ""; return; }
+    if (!n || (!state.q && !state.theme && !state.read)) { el.hidden = true; el.innerHTML = ""; return; }
     const parts = [];
     if (state.read) { const t = READ_FILTERS.find(([k]) => k === state.read)[1]; parts.push(`· <b>${t[0].toLowerCase() + t.slice(1)}</b>`); }
     if (state.q) parts.push(`para «${esc(state.q)}»`);
@@ -510,19 +652,31 @@
       </label><span class="chips__sep" aria-hidden="true"></span>` +
       `<button class="chip" data-theme="" aria-pressed="${!state.theme}">Todos <small>${BOOKS.length}</small></button>` +
       THEMES.filter(([t]) => counts[t]).map(([t, c]) =>
-        `<button class="chip" data-theme="${esc(t)}" style="--c:${c}" aria-pressed="${state.theme === t}"><i></i>${esc(t)} <small>${counts[t]}</small></button>`).join("");
+        `<button class="chip" data-theme="${esc(t)}" style="--c:${c}" aria-pressed="${state.theme === t}" aria-label="${esc(t)}"><i></i>${esc(themeLabel(t))} <small>${counts[t]}</small></button>`).join("");
+    syncFilterLabel();
+  }
+  function syncFilterLabel() {
+    const btn = $("#filterToggle");
+    if (!btn) return;
+    const text = state.theme ? themeLabel(state.theme) : state.read ? READ_FILTERS.find(([k]) => k === state.read)[1] : "Temas";
+    $("#filterToggleLabel").textContent = text;
+    btn.classList.toggle("is-on", !!(state.theme || state.read));
+    btn.style.setProperty("--c", state.theme ? (THEME_COLOR[state.theme] || "var(--muted)") : "transparent");
+    btn.setAttribute("aria-pressed", String(!!(state.theme || state.read)));
   }
   $("#chips").addEventListener("click", (e) => {
     const c = e.target.closest(".chip"); if (!c || c.classList.contains("chip--read")) return;
     state.theme = c.dataset.theme || null;
     renderChips(); render(); scrollToLibrary();
-    const active = $(`.chip[aria-pressed="true"]`);
+    if (narrowQ.matches) closeFilters();
+    const active = $(`.chip[aria-pressed="true"]:not(.filter-toggle)`);
     active?.scrollIntoView({ inline: "center", block: "nearest", behavior: reduceMotion ? "auto" : "smooth" });
   });
   $("#chips").addEventListener("change", (e) => {
     if (e.target.id !== "readFilter") return;
     state.read = e.target.value;
     renderChips(); render(); scrollToLibrary();
+    if (narrowQ.matches) closeFilters();
   });
   const chipsEl = $("#chips");
   const syncChipFade = () => {
@@ -530,7 +684,12 @@
     chipsEl.classList.toggle("at-end", chipsEl.scrollLeft + chipsEl.clientWidth > chipsEl.scrollWidth - 4);
   };
   chipsEl.addEventListener("scroll", syncChipFade, { passive: true });
-  addEventListener("resize", syncChipFade);
+  let resizeT;
+  addEventListener("resize", () => {
+    syncChipFade();
+    clearTimeout(resizeT);
+    resizeT = setTimeout(() => { if ($("#case") || $(".grid--virt")) render(); }, 140);
+  });
   requestAnimationFrame(syncChipFade);
 
   // ——— Controles ———
@@ -541,10 +700,12 @@
   $("#sort").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     state.sort = b.dataset.sort; store.set("bib.sort", state.sort); syncSeg(); render(); scrollToLibrary();
+    if (narrowQ.matches) closeFilters();
   });
   $("#view").addEventListener("click", (e) => {
     const b = e.target.closest("button"); if (!b) return;
     state.view = b.dataset.view; store.set("bib.view", state.view); syncSeg(); render(); scrollToLibrary();
+    if (narrowQ.matches) closeFilters();
   });
   let qt;
   const qInput = $("#q");
@@ -581,18 +742,76 @@
   new IntersectionObserver(([e]) => $("#toolbar").classList.toggle("stuck", !e.isIntersecting), { rootMargin: "-1px 0px 0px 0px" })
     .observe($(".masthead"));
 
-  // En el móvil, al bajar se esconden los controles de orden y vista; al subir, vuelven.
+  // En el móvil, al bajar se esconden orden, vista y temas (altura real, no solo opacidad).
+  // «Filtros» los vuelve a abrir hasta el siguiente gesto hacia abajo.
   const toolbar = $("#toolbar"), toTop = $("#toTop");
-  let lastY = scrollY, ticking = false;
+  const narrowQ = matchMedia("(max-width: 560px)");
+  let filtersPinned = false;
+  function placeChrome() {
+    const meta = $("#meta"), random = $("#random"), inner = $(".toolbar__inner");
+    if (narrowQ.matches) {
+      inner.insertBefore(random, $("#controlsSlot"));
+      toolbar.insertBefore(meta, $("#chipFold"));
+      $("#filtersChips").appendChild($("#chips"));
+    } else {
+      meta.appendChild(random);
+      $(".masthead .wrap").appendChild(meta);
+      $(".chipfold__in").appendChild($("#chips"));
+      $("#controlsSlot").appendChild($(".controls"));
+      closeFilters();
+    }
+  }
+  function openFilters() {
+    $("#filtersChips").appendChild($("#chips"));
+    $("#filtersSort").appendChild($(".controls"));
+    const dlg = $("#filters");
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+    $("#filterToggle").setAttribute("aria-expanded", "true");
+  }
+  function closeFilters() {
+    const dlg = $("#filters");
+    if (!dlg) return;
+    $("#controlsSlot").appendChild($(".controls"));
+    if (!narrowQ.matches) $(".chipfold__in").appendChild($("#chips"));
+    if (dlg.open && dlg.close) dlg.close();
+    else dlg.removeAttribute("open");
+    $("#filterToggle")?.setAttribute("aria-expanded", "false");
+  }
+  placeChrome();
+  narrowQ.addEventListener("change", placeChrome);
+  $("#filterToggle").addEventListener("click", () => {
+    if (narrowQ.matches) { openFilters(); return; }
+    filtersPinned = true;
+    toolbar.classList.remove("condensed");
+    $("#filterToggle").setAttribute("aria-expanded", "true");
+  });
+  $("#filters").addEventListener("click", (e) => {
+    if (e.target === $("#filters") || e.target.closest("[data-close-filters]")) closeFilters();
+  });
+  $("#filters").addEventListener("close", () => {
+    $("#controlsSlot").appendChild($(".controls"));
+    $("#filterToggle")?.setAttribute("aria-expanded", "false");
+  });
+  let lastY = scrollY, ticking = false, condenseLock = 0;
   addEventListener("scroll", () => {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
       const y = scrollY, dy = y - lastY;
+      if (state.view === "shelf") paintWindow(); else paintGrids();
+      // Encoger la barra cambia su altura y el scroll rebota unos píxeles: no lo tomes por un gesto.
+      if (performance.now() < condenseLock) { lastY = y; toTop.classList.toggle("show", y > innerHeight * 1.5); ticking = false; return; }
       const past = y > libraryTop() + 40;
-      if (!past || dy < -6) toolbar.classList.remove("condensed");
-      else if (dy > 6 && document.activeElement !== qInput) toolbar.classList.add("condensed");
-      if (Math.abs(dy) > 6) lastY = y;
+      const was = toolbar.classList.contains("condensed");
+      if (!past || dy < -28) {
+        toolbar.classList.remove("condensed");
+        if (dy < -28) filtersPinned = false;
+      } else if (dy > 8 && !filtersPinned && document.activeElement !== qInput) {
+        toolbar.classList.add("condensed");
+        $("#filterToggle").setAttribute("aria-expanded", "false");
+      }
+      if (toolbar.classList.contains("condensed") !== was) condenseLock = performance.now() + 480;
+      if (Math.abs(dy) > 4) lastY = y;
       toTop.classList.toggle("show", y > innerHeight * 1.5);
       ticking = false;
     });
@@ -604,11 +823,7 @@
     const list = state.list.length ? state.list : BOOKS;
     const b = list[Math.floor(Math.random() * list.length)];
     preload(b);
-    const el = $(`.spine[data-id="${b.id}"], .tile[data-id="${b.id}"]`);
-    if (el) {
-      el.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
-      await wait(reduceMotion ? 0 : 550);
-    }
+    const el = await reveal(b.id);
     openBook(b.id, el);
   });
 
@@ -625,6 +840,11 @@
   const scroller = $("#stageScroll");
   const detail = $(".detail");
   const backdrop = $(".stage__backdrop");
+  const stageBody = $(".stage__body");
+  const sheetQ = matchMedia("(max-width: 760px)");
+  const syncSheet = () => stage.classList.toggle("sheet", sheetQ.matches);
+  syncSheet();
+  sheetQ.addEventListener("change", syncSheet);
   let current = null;   // libro abierto
   let source = null;    // elemento de la estantería desde el que salió
 
@@ -683,7 +903,7 @@
       <h2 class="info__title" id="d-title">${esc(b.title)}</h2>
       <p class="info__author">de <button data-search="${esc(b.author)}">${esc(b.author)}</button></p>
       ${readFlagsHTML(b, "lg")}
-      ${facts.length ? `<dl class="facts">${facts.map(([k, v]) => `<div class="fact"><dt>${k}</dt><dd>${typeof v === "string" && v.startsWith("<i>") ? v : esc(v)}</dd></div>`).join("")}</dl>` : '<div style="height:26px"></div>'}
+      ${facts.length ? `<dl class="facts">${facts.map(([k, v]) => `<div class="fact${k === "Título original" ? " fact--wide" : ""}"><dt>${k}</dt><dd>${typeof v === "string" && v.startsWith("<i>") ? v : esc(v)}</dd></div>`).join("")}</dl>` : '<div style="height:26px"></div>'}
       ${b.summary ? `<p class="summary">${esc(b.summary)}</p>` : ""}
       ${b.note ? `<p class="note">${esc(b.note)}</p>` : ""}
       ${b.authorBio ? `<h3>Sobre el autor</h3><p class="bio">${esc(b.authorBio)}</p>` : ""}
@@ -810,14 +1030,17 @@
     current = b;
     if (!wasOpen) source = el || null;
     fillStage(b);
-    stage.classList.toggle("flying", !wasOpen && !!el?.classList.contains("spine"));
+    syncSheet();
+    const sheet = stage.classList.contains("sheet");
+    stage.classList.toggle("flying", !sheet && !wasOpen && !!el?.classList.contains("spine"));
     stage.hidden = false;
     stage.classList.toggle("open", card);
     document.body.classList.add("locked");
+    if (sheet) stageBody.style.transform = "";
     frame().then(() => stage.classList.add("show"));
     if (push) setHash(b.id, wasOpen ? "replace" : "push");
 
-    if (!wasOpen && el) {
+    if (!wasOpen && el && !sheet) {
       const isSpine = el.classList.contains("spine");
       inner.style.visibility = "hidden";
       await preloadSoon(b);
@@ -849,11 +1072,41 @@
     focusIfKeyboard($("#d-title"));
   }
 
+  function finishClose(target, push) {
+    $$(".spine.is-out").forEach((s) => s.classList.remove("is-out"));
+    stage.hidden = true; stage.classList.remove("open", "dragging", "flying");
+    stageBody.style.transform = "";
+    inner.style.visibility = "";
+    detail.style.transform = ""; detail.style.opacity = ""; backdrop.style.opacity = "";
+    document.body.classList.remove("locked");
+    if (keyboardNav) focusIfKeyboard(target);
+    else if (document.activeElement && document.activeElement !== document.body && !document.activeElement.matches("input")) document.activeElement.blur();
+    current = null; source = null; closing = false;
+    document.title = baseTitle;
+    if (push) {
+      if (pushed) { pushed = false; history.back(); }
+      else if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    }
+  }
+
   async function closeStage({ push = true } = {}) {
     if (stage.hidden || closing) return;
     closing = true;
     const b = current;
     const target = (source && source.isConnected ? source : null) || (b && $(`.spine[data-id="${b.id}"], .tile[data-id="${b.id}"]`));
+    if (stage.classList.contains("sheet")) {
+      const dragged = stageBody.style.transform;
+      stage.classList.remove("dragging");
+      detail.style.transform = ""; detail.style.opacity = "";
+      if (dragged) {
+        await frame();
+        stageBody.style.transform = "translateY(105%)";
+      }
+      stage.classList.remove("show");
+      if (!dragged) stageBody.style.transform = "";
+      await wait(reduceMotion ? 0 : 440);
+      return finishClose(target, push);
+    }
     const canFly = b && target && inView(target) && inView($("#book3d")) && !reduceMotion;
     detail.style.opacity = "";
     stage.classList.remove("show");
@@ -870,19 +1123,7 @@
     } else {
       await wait(reduceMotion ? 0 : 300);
     }
-    $$(".spine.is-out").forEach((s) => s.classList.remove("is-out"));
-    stage.hidden = true; stage.classList.remove("open", "dragging");
-    inner.style.visibility = "";
-    detail.style.transform = ""; detail.style.opacity = ""; backdrop.style.opacity = "";
-    document.body.classList.remove("locked");
-    if (keyboardNav) focusIfKeyboard(target);
-    else if (document.activeElement && document.activeElement !== document.body && !document.activeElement.matches("input")) document.activeElement.blur();
-    current = null; source = null; closing = false;
-    document.title = baseTitle;
-    if (push) {
-      if (pushed) { pushed = false; history.back(); }
-      else if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-    }
+    finishClose(target, push);
   }
 
   // Pasar de libro; `from` es el desplazamiento del dedo si viene de un gesto.
@@ -921,10 +1162,30 @@
   }
 
   // ——— Eventos ———
+  // El lomo dibujado puede medir 26 px; el toque vale si cae a 22 px del centro (44 px de ancho).
+  function hitBook(e) {
+    const tile = e.target.closest(".tile");
+    if (tile) return tile;
+    const direct = e.target.closest(".spine");
+    if (direct && direct.contains(e.target)) return direct;
+    const slot = e.target.closest(".slot");
+    if (!slot || slot.classList.contains("slot--divider")) return null;
+    const x = e.clientX, y = e.clientY;
+    let best = null, bestD = Infinity;
+    for (const s of [slot.previousElementSibling, slot, slot.nextElementSibling]) {
+      const sp = s && $(".spine", s);
+      if (!sp) continue;
+      const r = sp.getBoundingClientRect();
+      if (y < r.top - 8 || y > r.bottom + 12) continue;
+      const d = Math.abs(x - (r.left + r.width / 2));
+      if (d <= 22 && d < bestD) { best = sp; bestD = d; }
+    }
+    return best;
+  }
   lib.addEventListener("pointerover", (e) => { const el = e.target.closest(".spine, .tile"); if (el) preload(byId[el.dataset.id]); }, { passive: true });
-  lib.addEventListener("pointerdown", (e) => { const el = e.target.closest(".spine, .tile"); if (el) preload(byId[el.dataset.id]); }, { passive: true });
+  lib.addEventListener("pointerdown", (e) => { const el = hitBook(e); if (el) preload(byId[el.dataset.id]); }, { passive: true });
   lib.addEventListener("click", (e) => {
-    const el = e.target.closest(".spine, .tile");
+    const el = hitBook(e);
     if (el) openBook(el.dataset.id, el);
   });
   $("#book3d").addEventListener("click", () => { if (suppressClick) return; if (!stage.classList.contains("open")) openCard(); });
@@ -1021,6 +1282,7 @@
   let g = null;
   function settle() {
     stage.classList.remove("dragging");
+    if (stage.classList.contains("sheet")) stageBody.style.transform = "";
     const anim = detail.animate([
       { transform: detail.style.transform || "none", opacity: detail.style.opacity || 1 },
       { transform: "none", opacity: 1 },
@@ -1057,12 +1319,17 @@
     if (g.mode === "native") return;
     e.preventDefault();
     g.dx = dx; g.dy = dy;
+    const sheet = stage.classList.contains("sheet");
     if (g.mode === "up") {
       // Resistencia elástica: el libro sube un poco, invitando a soltar.
       const y = Math.min(0, dy);
       const eased = -Math.pow(-y, .8);
       detail.style.transform = `translateY(${eased}px)`;
       inner.style.transform = `rotateY(${-14 + Math.min(10, -y / 12)}deg) scale(${1 + Math.min(.06, -y / 2500)})`;
+    } else if (sheet && (g.mode === "down" || g.mode === "edge")) {
+      const y = Math.max(0, g.mode === "edge" ? dx : dy);
+      stageBody.style.transform = `translateY(${y}px)`;
+      backdrop.style.opacity = String(Math.max(.15, 1 - y / 480));
     } else if (g.mode === "down") {
       const y = Math.max(0, dy);
       detail.style.transform = `translateY(${y}px) scale(${1 - Math.min(y, 600) / 2000})`;
