@@ -54,7 +54,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 @media (min-width: 720px) { .wrap { padding: 0 32px; } }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 :focus:not(:focus-visible) { outline: none; }
-#d-title:focus, .book3d:focus { outline: none; }
+#d-title:focus, #p-title:focus, .book3d:focus { outline: none; }
 
 /* ——— Cabecera ——— */
 .masthead { padding: calc(56px + env(safe-area-inset-top)) 0 22px; }
@@ -400,7 +400,9 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .book3d.tilting .book3d__inner { transition: none; }
 .book3d__inner.springing { transition: transform .8s cubic-bezier(.2, 1.35, .35, 1); }
 .peek { text-align: center; max-width: 420px; transition: opacity .35s ease .05s, transform .45s var(--ease); }
-.stage.flying .peek { opacity: 0; transform: translateY(10px); transition: none; }
+.stage.flying .peek, .stage.flying .detail__info { opacity: 0; transition: none; }
+.stage.flying .peek { transform: translateY(10px); }
+.peek__author button { font: inherit; letter-spacing: inherit; color: inherit; }
 .peek__nav { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .peek__step { display: none; }
 @media (max-width: 760px) {
@@ -435,6 +437,30 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   .stage.open .detail { grid-template-columns: 1fr; gap: 28px; padding: 76px 20px 96px; }
   .stage.open .detail__book { position: static; justify-self: center; }
   .stage.open .book3d { width: min(190px, 50vw); }
+}
+/* Móvil: la vista y la ficha son la misma columna. Abrir solo la desplaza; el libro no cambia de tamaño. */
+@media (max-width: 760px) {
+  .detail, .stage.open .detail {
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    place-items: unset; grid-template-columns: none; gap: 28px; max-width: none; margin: 0;
+    min-height: 100%;
+    padding: max(72px, calc(env(safe-area-inset-top) + 56px)) 20px calc(28px + env(safe-area-inset-bottom));
+  }
+  .detail__book, .stage.open .detail__book { position: static; top: auto; justify-self: center; width: min(100%, 460px); }
+  .detail__info, .stage.open .detail__info {
+    display: block; animation: none; width: min(100%, 460px); min-width: 0;
+  }
+  .stage.open .peek { display: block; }
+  .book3d, .stage.open .book3d {
+    width: min(300px, 64vw, calc((100dvh - 290px) / 1.55));
+    cursor: pointer;
+  }
+  .stage.open .book3d__inner { transform: rotateY(-14deg) rotateX(2deg); }
+  .detail__info .info__title,
+  .detail__info .info__author,
+  .detail__info > .rflags { display: none; }
+  .stage:not(.open) .stage__scroll { touch-action: none; }
+  .mini-row { touch-action: pan-x; }
 }
 
 .theme-pill { display: inline-flex; align-items: center; gap: 8px; font: 600 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
@@ -578,8 +604,8 @@ mark { background: color-mix(in srgb, var(--accent) 22%, transparent); color: in
 @media (hover: none) {
   .rflag, .rflags--lg .rflag { height: 44px; }
   .tag { min-height: 44px; display: inline-flex; align-items: center; }
-  .info__author button { position: relative; }
-  .info__author button::after { content: ""; position: absolute; inset: -12px -8px; }
+  .info__author button, .peek__author button { position: relative; }
+  .info__author button::after, .peek__author button::after { content: ""; position: absolute; inset: -12px -8px; }
 }
 
 /* Puntos discretos de «leído» en lomos y portadas */

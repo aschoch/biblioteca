@@ -704,6 +704,7 @@
   const scroller = $("#stageScroll");
   const detail = $(".detail");
   const backdrop = $(".stage__backdrop");
+  const phoneStage = matchMedia("(max-width: 760px)");
   let current = null;   // libro abierto
   let source = null;    // elemento de la estantería desde el que salió
 
@@ -722,7 +723,7 @@
     fitSpines(inner);
     sizeBook();
     $("#p-title").textContent = b.title;
-    $("#p-author").textContent = b.author;
+    $("#p-author").innerHTML = `<button type="button" data-search="${esc(b.author)}">${esc(b.author)}</button>`;
     $("#p-reads").innerHTML = readFlagsHTML(b, "sm");
     $("#info").innerHTML = infoHTML(b);
     $("#stageScroll").scrollTop = 0;
@@ -823,8 +824,8 @@
   // Al sacarlo: primero sale de la balda hacia nosotros, luego gira y vuela al centro.
   function flyBook(spineEl, b, { reverse = false } = {}) {
     if (reduceMotion) return Promise.resolve();
-    const open = stage.classList.contains("open");
-    const ry0 = open ? -8 : -14, rx0 = open ? 0 : 2;
+    const posed = stage.classList.contains("open") && !phoneStage.matches;
+    const ry0 = posed ? -8 : -14, rx0 = posed ? 0 : 2;
     const btn = $("#book3d").getBoundingClientRect();
     const W = inner.offsetWidth, H = inner.offsetHeight;
     const cx = btn.left + btn.width / 2, cy = btn.top + H / 2;
@@ -883,6 +884,111 @@
     $$(".spine.is-out").forEach((sp) => sp.classList.remove("is-out"));
   }
 
+  // En el móvil la ficha ya está debajo de la portada. `peekY` la deja bajo el pliegue;
+  // al soltar, el mismo desplazamiento pasa a ser scroll nativo (sin cambiar de maqueta).
+  let phase = "peek";
+  let peekY = 0;
+  let yAnim = null;
+  let gestureGen = 0;
+  let swallowClick = false;
+  function currentY() {
+    if (detail.getAnimations().length) {
+      const c = getComputedStyle(detail).transform;
+      if (!c || c === "none") return 0;
+      const m = /matrix(?:3d)?\(([^)]+)\)/.exec(c);
+      if (!m) return 0;
+      const p = m[1].split(",").map((n) => parseFloat(n));
+      return p.length === 16 ? p[13] : p[5];
+    }
+    const inline = /translateY\(([-\d.]+)px\)/.exec(detail.style.transform || "");
+    if (inline) return +inline[1];
+    const both = /translate\(([-\d.]+)px,\s*([-\d.]+)px\)/.exec(detail.style.transform || "");
+    return both ? +both[2] : 0;
+  }
+  function applyY(y) {
+    detail.style.transform = Math.abs(y) < 0.5 ? "" : `translateY(${y}px)`;
+  }
+  function freezeY() {
+    const y = currentY();
+    yAnim = null;
+    detail.getAnimations().forEach((a) => a.cancel());
+    applyY(y);
+    return y;
+  }
+  function resist(over) {
+    const a = Math.abs(over);
+    return Math.sign(over) * (a * 180) / (a + 180);
+  }
+  function maxScroll() {
+    return Math.max(0, scroller.scrollHeight - scroller.clientHeight);
+  }
+  function measurePeek() {
+    const view = scroller.clientHeight;
+    if (!view) return 0;
+    const infoTop = $("#info").offsetTop;
+    const btn = $("#openCard");
+    const btnBottom = btn.offsetTop + btn.offsetHeight;
+    const want = Math.max(0, view - 28 - infoTop);
+    const maxShift = Math.max(0, view - 12 - btnBottom);
+    return Math.min(want, maxShift);
+  }
+  function parkPeek() {
+    phase = "peek";
+    stage.classList.remove("open");
+    peekY = measurePeek();
+    scroller.scrollTop = 0;
+    scroller.style.overflowY = "hidden";
+    scroller.style.touchAction = "none";
+    backdrop.style.background = "";
+    backdrop.style.opacity = "";
+    applyY(peekY);
+    $(".stage__body").setAttribute("aria-labelledby", "p-title");
+  }
+  function commitScroll(scroll) {
+    phase = "ficha";
+    stage.classList.add("open");
+    scroller.style.overflowY = "";
+    scroller.style.touchAction = "";
+    backdrop.style.background = "";
+    backdrop.style.opacity = "";
+    scroller.scrollTop = Math.max(0, scroll);
+    applyY(0);
+    $(".stage__body").setAttribute("aria-labelledby", "p-title");
+    if (current) setHash(current.id, "replace");
+    focusIfKeyboard($("#p-title"));
+  }
+  function animateY(to) {
+    const from = freezeY();
+    if (reduceMotion || Math.abs(to - from) < 0.5) {
+      applyY(to);
+      return Promise.resolve();
+    }
+    const anim = detail.animate(
+      [{ transform: `translateY(${from}px)` }, { transform: Math.abs(to) < 0.5 ? "none" : `translateY(${to}px)` }],
+      { duration: Math.min(420, Math.max(180, Math.abs(to - from) * 0.7)), easing: "cubic-bezier(.2,.8,.2,1)", fill: "forwards" },
+    );
+    yAnim = anim;
+    return Promise.race([anim.finished.catch(() => {}), wait(520)]).then(() => {
+      if (yAnim !== anim) return;
+      yAnim = null;
+      applyY(to);
+      anim.cancel();
+    });
+  }
+  function paintSheet(y) {
+    const t = peekY > 0 ? 1 - Math.min(1, Math.max(0, y / peekY)) : (y <= 0 ? 1 : 0);
+    const pct = Math.round((82 + 18 * t) * 10) / 10;
+    backdrop.style.background = `color-mix(in srgb, var(--paper) ${pct}%, transparent)`;
+  }
+  function revealFicha() {
+    if (phase === "ficha" && currentY() >= -1 && scroller.scrollTop <= 1) return Promise.resolve();
+    const gen = gestureGen;
+    stage.classList.add("open");
+    backdrop.style.background = "";
+    backdrop.style.opacity = "";
+    return animateY(0).then(() => { if (gen === gestureGen) commitScroll(0); });
+  }
+
   async function openBook(id, el, { card = false, push = true } = {}) {
     const b = byId[id]; if (!b) return;
     const wasOpen = !stage.hidden;
@@ -891,10 +997,18 @@
     fillStage(b);
     stage.classList.toggle("flying", !wasOpen && !!el?.classList.contains("spine"));
     stage.hidden = false;
-    stage.classList.toggle("open", card);
+    const phone = phoneStage.matches;
+    stage.classList.toggle("open", card && !phone);
     document.body.classList.add("locked");
     frame().then(() => stage.classList.add("show"));
     if (push) setHash(b.id, wasOpen ? "replace" : "push");
+    if (phone) $(".stage__body").setAttribute("aria-labelledby", "p-title");
+
+    if (phone) {
+      await frame();
+      if (card) commitScroll(0);
+      else parkPeek();
+    }
 
     if (!wasOpen && el) {
       const isSpine = el.classList.contains("spine");
@@ -910,11 +1024,12 @@
       }
       inner.style.visibility = "";
     }
-    focusIfKeyboard(card ? $("#d-title") : $("#book3d"));
+    focusIfKeyboard(phone ? (card ? $("#p-title") : $("#book3d")) : (card ? $("#d-title") : $("#book3d")));
   }
 
   async function openCard() {
     if (!current) return;
+    if (phoneStage.matches) return revealFicha();
     const before = rectOf(inner);
     stage.classList.add("open");
     setHash(current.id, "replace");
@@ -932,7 +1047,12 @@
     $$(".spine.is-out").forEach((s) => s.classList.remove("is-out"));
     stage.hidden = true; stage.classList.remove("open", "dragging", "flying");
     inner.style.visibility = "";
-    detail.style.transform = ""; detail.style.opacity = ""; backdrop.style.opacity = "";
+    yAnim = null;
+    detail.getAnimations().forEach((a) => a.cancel());
+    detail.style.transform = ""; detail.style.opacity = "";
+    backdrop.style.opacity = ""; backdrop.style.background = "";
+    scroller.style.overflowY = ""; scroller.style.touchAction = ""; scroller.scrollTop = 0;
+    phase = "peek"; peekY = 0;
     document.body.classList.remove("locked");
     if (keyboardNav) focusIfKeyboard(target);
     else if (document.activeElement && document.activeElement !== document.body && !document.activeElement.matches("input")) document.activeElement.blur();
@@ -974,18 +1094,32 @@
     const list = state.list.length ? state.list : BOOKS;
     const i = list.indexOf(current);
     const next = list[(i + dir + list.length) % list.length];
+    gestureGen++;
+    yAnim = null;
     if (!reduceMotion) {
       const out = dir > 0 ? -1 : 1;
       await detail.animate([
         { transform: `translateX(${from}px)`, opacity: detail.style.opacity || 1 },
         { transform: `translateX(${out * innerWidth * .5}px)`, opacity: 0 },
-      ], { duration: 170, easing: "cubic-bezier(.4,0,1,1)" }).finished;
+      ], { duration: 170, easing: "cubic-bezier(.4,0,1,1)" }).finished.catch(() => {});
     }
     detail.style.transform = ""; detail.style.opacity = "";
     releaseSpines();
     current = next; source = $(`.spine[data-id="${next.id}"], .tile[data-id="${next.id}"]`);
     fillStage(next);
     setHash(next.id, "replace");
+    if (phoneStage.matches) {
+      parkPeek();
+      if (!reduceMotion) {
+        const rest = peekY ? `translateY(${peekY}px)` : "none";
+        detail.animate([
+          { opacity: 0, transform: `translate(${(dir > 0 ? 1 : -1) * 60}px, ${peekY}px)` },
+          { opacity: 1, transform: rest },
+        ], { duration: 340, easing: "cubic-bezier(.2,.8,.2,1)" });
+        applyY(peekY);
+      }
+      return;
+    }
     if (!reduceMotion) detail.animate([{ opacity: 0, transform: `translateX(${(dir > 0 ? 1 : -1) * 60}px)` }, { opacity: 1, transform: "none" }], { duration: 340, easing: "cubic-bezier(.2,.8,.2,1)" });
   }
 
@@ -1081,6 +1215,7 @@
   $("#prev").addEventListener("click", () => step(-1));
   $("#next").addEventListener("click", () => step(1));
   stage.addEventListener("click", (e) => {
+    if (swallowClick) return;
     if (e.target.closest("[data-close]")) return closeStage();
     if (e.target === scroller || e.target === detail) return closeStage();
     const rf = e.target.closest("[data-read]");
@@ -1088,7 +1223,8 @@
     const st = e.target.closest("[data-step]");
     if (st) { scroller.scrollTo({ top: 0 }); return step(+st.dataset.step); }
     const go = e.target.closest("[data-goto]");
-    if (go) { releaseSpines(); current = byId[go.dataset.goto]; source = null; fillStage(current); setHash(current.id, "replace");
+    if (go) { releaseSpines(); gestureGen++; yAnim = null; current = byId[go.dataset.goto]; source = null; fillStage(current); setHash(current.id, "replace");
+      if (phoneStage.matches) parkPeek();
       if (!reduceMotion) detail.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260 }); return; }
     const s = e.target.closest("[data-search]");
     if (s) { const q = s.dataset.search; closeStage().then(() => setQuery(q)); return; }
@@ -1117,24 +1253,76 @@
   function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 1800); }
 
   // ——— Gestos táctiles ———
-  //  · deslizar hacia abajo (estando arriba del todo): cerrar
+  //  · en el móvil, subir desde la vista arrastra la misma columna 1:1; al soltar encaja
+  //    y, a partir de ahí, el dedo solo hace scroll (nunca las dos cosas a la vez)
+  //  · bajar con la ficha arriba del todo vuelve a la vista, o cierra si el gesto sigue
   //  · deslizar desde el borde izquierdo hacia la derecha: volver (cerrar)
   //  · deslizar a izquierda/derecha: libro siguiente/anterior
-  // El contenido sigue al dedo y, si no se llega al umbral, vuelve a su sitio.
   let g = null;
+  function restTransform() {
+    return phoneStage.matches && phase === "peek" && peekY ? `translateY(${peekY}px)` : "none";
+  }
   function settle() {
     stage.classList.remove("dragging");
-    const anim = detail.animate([
+    const to = restTransform();
+    detail.animate([
       { transform: detail.style.transform || "none", opacity: detail.style.opacity || 1 },
-      { transform: "none", opacity: 1 },
-    ], { duration: 320, easing: "cubic-bezier(.2,.8,.2,1)" });
-    detail.style.transform = ""; detail.style.opacity = ""; backdrop.style.opacity = "";
-    return anim;
+      { transform: to, opacity: 1 },
+    ], { duration: reduceMotion ? 1 : 320, easing: "cubic-bezier(.2,.8,.2,1)" });
+    detail.style.transform = to === "none" ? "" : to;
+    detail.style.opacity = "";
+    backdrop.style.opacity = "";
+    if (!phoneStage.matches) return;
+    if (phase === "ficha") {
+      scroller.style.overflowY = "";
+      scroller.style.touchAction = "";
+      backdrop.style.background = "";
+    } else {
+      scroller.style.overflowY = "hidden";
+      scroller.style.touchAction = "none";
+      scroller.scrollTop = 0;
+    }
+  }
+  function releaseSheet(snap, dt, gen) {
+    const y = snap.sheetY ?? currentY();
+    const vy = snap.dy / dt;
+    const alive = () => gen === gestureGen;
+    // Un poco por encima del reposo de la ficha todavía encaja ahí; más adentro se queda donde el dedo lo dejó.
+    if (y < -96) {
+      if (alive()) commitScroll(-y);
+      return;
+    }
+    const towardFicha = vy < -0.4 || y <= 0 || (vy < 0.25 && y < peekY * 0.5);
+    if (towardFicha) {
+      phase = "ficha";
+      stage.classList.add("open");
+      backdrop.style.background = "";
+      backdrop.style.opacity = "";
+      animateY(0).then(() => { if (alive()) commitScroll(0); });
+      return;
+    }
+    if (y > peekY + 72 || (vy > 0.55 && y > peekY + 28)) {
+      if (alive()) closeStage();
+      return;
+    }
+    backdrop.style.background = "";
+    backdrop.style.opacity = "";
+    animateY(peekY).then(() => {
+      if (!alive()) return;
+      phase = "peek";
+      stage.classList.remove("open");
+      scroller.scrollTop = 0;
+      scroller.style.overflowY = "hidden";
+      scroller.style.touchAction = "none";
+      applyY(peekY);
+    });
   }
   stage.addEventListener("touchstart", (e) => {
     if (e.touches.length !== 1 || closing) { g = null; return; }
+    gestureGen++;
+    freezeY();
     const t = e.touches[0];
-    g = { x0: t.clientX, y0: t.clientY, t0: performance.now(), mode: null, dx: 0, dy: 0, inRow: !!e.target.closest(".mini-row") };
+    g = { x0: t.clientX, y0: t.clientY, t0: performance.now(), mode: null, dx: 0, dy: 0, inRow: !!e.target.closest(".mini-row"), atTop: scroller.scrollTop <= 1 };
     if (e.target.closest("#book3d")) {
       tilt = { x0: t.clientX, y0: t.clientY, active: false };
       tilt.timer = setTimeout(() => { if (g && !g.mode) startTilt(); }, 260);
@@ -1149,52 +1337,88 @@
     if (!g.mode) {
       if (Math.hypot(dx, dy) < 10) return;
       const horizontal = Math.abs(dx) > Math.abs(dy) * 1.2;
-      const peeking = !stage.classList.contains("open");
+      const phone = phoneStage.matches;
+      // Con la columna en transform (vista, o snap aún no entregado al scroll) el dedo solo arrastra.
+      const tracking = phone && scroller.style.overflowY === "hidden";
       if (g.x0 < 30 && dx > 0 && horizontal) g.mode = "edge";
-      else if (peeking && dy < 0 && !horizontal) g.mode = "up";
-      else if (dy > 0 && !horizontal && Math.abs(dy) > Math.abs(dx) && scroller.scrollTop <= 0) g.mode = "down";
+      else if (tracking && !horizontal) g.mode = "sheet";
+      else if (phone && phase === "ficha" && g.atTop && dy > 0 && !horizontal) g.mode = "sheet";
+      else if (!phone && !stage.classList.contains("open") && dy < 0 && !horizontal) g.mode = "up";
+      else if (!phone && dy > 0 && !horizontal && g.atTop) g.mode = "down";
       else if (horizontal && !g.inRow) g.mode = "side";
       else g.mode = "native";
+      if (g.mode === "sheet") {
+        g.originY = currentY();
+        if (phase === "ficha") {
+          peekY = measurePeek() || peekY;
+          scroller.style.overflowY = "hidden";
+          scroller.style.touchAction = "none";
+        }
+      }
+      if (g.mode === "down" || g.mode === "side" || g.mode === "edge") g.baseY = phone && phase === "peek" ? peekY : 0;
+      if (g.mode === "native" && phone && phase === "peek" && peekY < 8 && dy < 0 && !horizontal) commitScroll(0);
       if (g.mode !== "native") stage.classList.add("dragging");
     }
     if (g.mode === "native") return;
     e.preventDefault();
     g.dx = dx; g.dy = dy;
-    if (g.mode === "up") {
-      // Resistencia elástica: el libro sube un poco, invitando a soltar.
+    const base = g.baseY || 0;
+    if (g.mode === "sheet") {
+      const raw = g.originY + dy;
+      const minY = -maxScroll();
+      let y = raw;
+      if (raw > peekY) y = peekY + resist(raw - peekY);
+      else if (raw < minY) y = minY + resist(raw - minY);
+      g.sheetY = y;
+      applyY(y);
+      paintSheet(y);
+      backdrop.style.opacity = y > peekY ? String(1 - Math.min((y - peekY) / 450, .75)) : "";
+    } else if (g.mode === "up") {
       const y = Math.min(0, dy);
       const eased = -Math.pow(-y, .8);
       detail.style.transform = `translateY(${eased}px)`;
       inner.style.transform = `rotateY(${-14 + Math.min(10, -y / 12)}deg) scale(${1 + Math.min(.06, -y / 2500)})`;
     } else if (g.mode === "down") {
       const y = Math.max(0, dy);
-      detail.style.transform = `translateY(${y}px) scale(${1 - Math.min(y, 600) / 2000})`;
+      detail.style.transform = `translateY(${base + y}px) scale(${1 - Math.min(y, 600) / 2000})`;
       backdrop.style.opacity = String(1 - Math.min(y / 450, .75));
     } else if (g.mode === "edge") {
       const x = Math.max(0, dx);
-      detail.style.transform = `translateX(${x}px)`;
+      detail.style.transform = `translate(${x}px, ${base}px)`;
       backdrop.style.opacity = String(1 - Math.min(x / innerWidth, .75));
     } else {
-      detail.style.transform = `translateX(${dx}px) rotate(${dx / 60}deg)`;
+      detail.style.transform = `translate(${dx}px, ${base}px) rotate(${dx / 60}deg)`;
       detail.style.opacity = String(1 - Math.min(Math.abs(dx) / innerWidth, .6));
     }
   }, { passive: false });
   stage.addEventListener("touchend", () => {
     if (tilt) { const was = tilt.active; endTilt(); if (was) { g = null; return; } }
     if (!g || !g.mode || g.mode === "native") { g = null; return; }
-    const { dx, dy, mode, t0 } = g; g = null;
-    const dt = Math.max(1, performance.now() - t0);
+    const snap = g; g = null;
+    const dt = Math.max(1, performance.now() - snap.t0);
     stage.classList.remove("dragging");
-    if (mode === "up") {
-      inner.style.transform = "";
-      if (dy < -70 || (dy / dt < -.45 && dy < -25)) { detail.style.transform = ""; return openCard(); }
+    if (Math.hypot(snap.dx, snap.dy) > 10) {
+      swallowClick = true;
+      setTimeout(() => (swallowClick = false), 500);
     }
-    if (mode === "down" && (dy > 110 || (dy / dt > .5 && dy > 30))) return closeStage();
-    if (mode === "edge" && (dx > 90 || (dx / dt > .5 && dx > 30))) return closeStage();
-    if (mode === "side" && (Math.abs(dx) > 80 || (Math.abs(dx) / dt > .45 && Math.abs(dx) > 30))) return step(dx < 0 ? 1 : -1, dx);
+    if (snap.mode === "sheet") return releaseSheet(snap, dt, gestureGen);
+    if (snap.mode === "up") {
+      inner.style.transform = "";
+      if (snap.dy < -70 || (snap.dy / dt < -.45 && snap.dy < -25)) { detail.style.transform = ""; return openCard(); }
+    }
+    if (snap.mode === "down" && (snap.dy > 110 || (snap.dy / dt > .5 && snap.dy > 30))) return closeStage();
+    if (snap.mode === "edge" && (snap.dx > 90 || (snap.dx / dt > .5 && snap.dx > 30))) return closeStage();
+    if (snap.mode === "side" && (Math.abs(snap.dx) > 80 || (Math.abs(snap.dx) / dt > .45 && Math.abs(snap.dx) > 30))) return step(snap.dx < 0 ? 1 : -1, snap.dx);
     settle();
   });
   stage.addEventListener("touchcancel", () => { endTilt(); inner.style.transform = ""; if (g?.mode && g.mode !== "native") settle(); g = null; });
+  addEventListener("resize", () => {
+    if (stage.hidden || !phoneStage.matches || phase !== "peek" || g) return;
+    const y = measurePeek();
+    if (Math.abs(y - peekY) < 1) return;
+    peekY = y;
+    applyY(peekY);
+  });
 
   // ——— Diálogo de acceso ———
   const accessDlg = $("#access");
