@@ -3760,5 +3760,32 @@
   "theme": "Narrativa",
   "shelf": 418,
   "note": "Ediciones Encuentro, colección Literatura"
+ },
+ {
+  "id": "la-fe-de-los-demonios-o-el-ateismo-superado",
+  "title": "La fe de los demonios (o el ateísmo superado)",
+  "author": "Fabrice Hadjadj",
+  "sortKey": "Hadjadj",
+  "theme": "Fe y espiritualidad",
+  "shelf": 419,
+  "note": "Nuevo Inicio, colección Areópagos, Granada. Traducción de Sebastián Montiel"
+ },
+ {
+  "id": "lo-entenderas-mas-tarde",
+  "title": "Lo entenderás más tarde",
+  "author": "Carmelo Guillén Acosta",
+  "sortKey": "Guillén",
+  "theme": "Poesía",
+  "shelf": 420,
+  "note": "Cuadernos de Poesía Númenor, nº 43 (Fundación Altair, Sevilla). Edición de 200 ejemplares numerados"
+ },
+ {
+  "id": "descubrir-al-descubridor-una-gran-revelacion",
+  "title": "¡Descubrir al descubridor! (Una gran revelación)",
+  "author": "Luis Schoch y Pereira de Castro",
+  "sortKey": "Schoch",
+  "theme": "Historia y actualidad",
+  "shelf": 421,
+  "note": "Los enigmas de Colón. Ediciones Ordóñez, Madrid, colección Temas apasionantes. Del Patronato «Doce de Octubre». Depósito legal M. 23923-1971"
  }
 ]

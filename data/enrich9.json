@@ -693,5 +693,59 @@
   ],
   "isbn": "9788474909777",
   "confidence": "high"
+ },
+ {
+  "id": "la-fe-de-los-demonios-o-el-ateismo-superado",
+  "summary": "Muchos cristianos buscan a su enemigo entre los libertinos o entre los ateos. Hadjadj recuerda, con la carta de Santiago, que los demonios también creen y tiemblan: no hay artículo de la fe que no den por cierto, y sin embargo no aman. No es un tratado de demonología, sino una reflexión sobre la lógica del mal y sobre una fe que puede saberlo todo de Dios y no convertirse en caridad. Con su mezcla de rigor, humor y paradoja, lo presenta como un pequeño breviario de combate y de vulnerabilidad. Fue el libro que dio a conocer al autor entre los lectores de lengua española.",
+  "authorBio": "Fabrice Hadjadj (Nanterre, 1971) es filósofo y escritor francés, converso del ateísmo al catolicismo. Dirige el Instituto Philanthropos de Friburgo (Suiza) y es autor de una obra amplia y muy original.",
+  "year": 2009,
+  "originalTitle": "La foi des démons (ou l'athéisme dépassé)",
+  "language": "francés",
+  "pages": 280,
+  "tags": [
+   "fe",
+   "ateísmo",
+   "demonios",
+   "teología",
+   "mal",
+   "apologética"
+  ],
+  "isbn": "9788412470307",
+  "confidence": "high"
+ },
+ {
+  "id": "lo-entenderas-mas-tarde",
+  "summary": "Poemario en el que la fe, presente en toda la obra anterior de Guillén Acosta, pasa a ser el tema único. El título procede de una palabra del Evangelio de san Juan. El libro se divide en dos partes, de dieciséis poemas cada una, con abundantes referencias bíblicas —sobre todo del Nuevo Testamento— y une la doctrina con la experiencia cotidiana: la intimidad con Dios y el amor al prójimo. El verso, a menudo alejandrino y encabalgado, pide leerse despacio y de conjunto. Esta edición de Númenor lleva prólogo del propio autor.",
+  "authorBio": "Carmelo Guillén Acosta (Sevilla, 1955) es poeta y catedrático de Lengua Castellana y Literatura. Desde 2003 dirige la colección Adonáis, de Ediciones Rialp, y preside el jurado de su premio. Ha obtenido el accésit del Premio Adonáis (1976), el Premio Internacional de Poesía San Juan de la Cruz (1990) y el Premio Tiflos de la ONCE (1995).",
+  "year": 2025,
+  "language": "español",
+  "pages": 64,
+  "tags": [
+   "poesía",
+   "poesía religiosa",
+   "fe",
+   "biblia",
+   "espiritualidad",
+   "evangelio"
+  ],
+  "isbn": "9788412952568",
+  "confidence": "high"
+ },
+ {
+  "id": "descubrir-al-descubridor-una-gran-revelacion",
+  "summary": "Ensayo ilustrado sobre los enigmas de Cristóbal Colón y, sobre todo, sobre su origen. Schoch defiende que el descubridor no fue el genovés de la versión más difundida, sino que nació en Felanitx (Mallorca) en 1460, hijo del príncipe de Viana y de la mallorquina Margalida Colom. A partir de ahí recorre otras patrias que se le han atribuido. Un libro de 1971, con ilustraciones, en la colección Temas apasionantes.",
+  "authorBio": "Luis Schoch y Pereira de Castro publicó en 1971 este ensayo sobre el origen de Cristóbal Colón, del que defendía la cuna mallorquina. Quien lo trató entonces lo recordaba como portugués. En la portada consta como miembro del Patronato «Doce de Octubre».",
+  "year": 1971,
+  "language": "español",
+  "pages": 269,
+  "tags": [
+   "colón",
+   "descubrimiento de américa",
+   "mallorca",
+   "historia",
+   "biografía",
+   "enigmas"
+  ],
+  "confidence": "medium"
  }
 ]

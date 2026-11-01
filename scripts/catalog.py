@@ -436,6 +436,9 @@ RAW = [
 ("La escuela del alma. De la forma de educar a la manera de vivir","Josep Maria Esquirol","Esquirol",T_FIL,"Acantilado, 4.ª edición"),
 ("El pórtico del misterio de la segunda virtud","Charles Péguy","Péguy",T_POE,"Ediciones Encuentro, colección Literaria"),
 ("La última del cadalso","Gertrud von le Fort","Le Fort",T_NAR,"Ediciones Encuentro, colección Literatura"),
+("La fe de los demonios (o el ateísmo superado)","Fabrice Hadjadj","Hadjadj",T_FE,"Nuevo Inicio, colección Areópagos, Granada. Traducción de Sebastián Montiel"),
+("Lo entenderás más tarde","Carmelo Guillén Acosta","Guillén",T_POE,"Cuadernos de Poesía Númenor, nº 43 (Fundación Altair, Sevilla). Edición de 200 ejemplares numerados"),
+("¡Descubrir al descubridor! (Una gran revelación)","Luis Schoch y Pereira de Castro","Schoch",T_HIS,"Los enigmas de Colón. Ediciones Ordóñez, Madrid, colección Temas apasionantes. Del Patronato «Doce de Octubre». Depósito legal M. 23923-1971"),
 ]
 
 def slug(s):

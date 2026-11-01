@@ -3217,5 +3217,29 @@
   "color": "#b99d4c",
   "w": 395,
   "h": 640
+ },
+ "la-fe-de-los-demonios-o-el-ateismo-superado": {
+  "file": "covers/la-fe-de-los-demonios-o-el-ateismo-superado.jpg",
+  "src": "override",
+  "url": "https://nuevoinicio.es/wp-content/uploads/2026/05/Diseno-sin-titulo-2.jpg",
+  "color": "#edb434",
+  "w": 462,
+  "h": 640
+ },
+ "lo-entenderas-mas-tarde": {
+  "file": "covers/lo-entenderas-mas-tarde.jpg",
+  "src": "override",
+  "url": "https://www.fundacionaltair.org/wp-content/uploads/2026/01/loentenderasmastarde.jpg",
+  "color": "#f7f2de",
+  "w": 462,
+  "h": 640
+ },
+ "descubrir-al-descubridor-una-gran-revelacion": {
+  "file": "covers/descubrir-al-descubridor-una-gran-revelacion.jpg",
+  "src": "override",
+  "url": "https://libreriacajondesastre.com/wp-content/uploads/2024/11/descubrir-al-descubridor-1105.jpg",
+  "color": "#68553c",
+  "w": 324,
+  "h": 458
  }
 }

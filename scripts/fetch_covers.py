@@ -24,15 +24,50 @@ def get(url, timeout=20):
         data = gzip.decompress(data)
     return data
 
+def portrait_ok(im):
+    w, h = im.size
+    return w >= 120 and h >= 160 and 1.05 <= (h / w) <= 2.2
+
+def trim_blank_edges(im):
+    """Recorta bandas casi blancas de una foto de producto (la portada, dentro de un cuadrado)."""
+    im = im.convert("RGB")
+    w, h = im.size
+    px = im.load()
+    thr, need = 246, 6
+    def col_has(x):
+        n = 0
+        for y in range(h):
+            r, g, b = px[x, y]
+            if r < thr or g < thr or b < thr:
+                n += 1
+                if n >= need: return True
+        return False
+    def row_has(y):
+        n = 0
+        for x in range(w):
+            r, g, b = px[x, y]
+            if r < thr or g < thr or b < thr:
+                n += 1
+                if n >= need: return True
+        return False
+    xs = [x for x in range(w) if col_has(x)]
+    ys = [y for y in range(h) if row_has(y)]
+    if len(xs) < 2 or len(ys) < 2: return im
+    l, r, t, b = xs[0], xs[-1], ys[0], ys[-1]
+    if (r - l + 1) < w * 0.45 or (b - t + 1) < h * 0.45: return im
+    return im.crop((l, t, r + 1, b + 1))
+
 def img_ok(data):
     try:
         im = Image.open(io.BytesIO(data)); im.load()
     except Exception:
         return None
-    w, h = im.size
-    if w < 120 or h < 160 or h / w < 1.05 or h / w > 2.2:
-        return None
-    return im.convert("RGB")
+    im = im.convert("RGB")
+    if portrait_ok(im): return im
+    # Algunas librerías de viejo publican la foto en cuadrado, con márgenes blancos.
+    trimmed = trim_blank_edges(im)
+    if trimmed.size != im.size and portrait_ok(trimmed): return trimmed
+    return None
 
 def isbn10(i13):
     i13 = i13.replace("-", "")
